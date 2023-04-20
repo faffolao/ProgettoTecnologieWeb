@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+	<title>Catalogo Prodotti</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+			color: #333;
+		}
+		header {
+			background-color: #333;
+			padding: 20px;
+			color: #fff;
+			text-align: center;
+		}
+		main {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 20px;
+		}
+		aside {
+			flex-basis: 20%;
+			background-color: #fff;
+			padding: 20px;
+		}
+		nav ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		nav li {
+			margin-bottom: 10px;
+		}
+		nav a {
+			text-decoration: none;
+			color: #333;
+			font-size: 1.2em;
+			display: block;
+			padding: 5px;
+			border-radius: 5px;
+			transition: background-color 0.3s;
+		}
+		nav a:hover {
+			background-color: #f2f2f2;
+		}
+		section {
+			flex-basis: 70%;
+			background-color: #fff;
+			padding: 20px;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: start;
+			justify-content: space-between;
+		}
+		.card {
+			flex-basis: 30%;
+			background-color: #f2f2f2;
+			padding: 20px;
+			margin-bottom: 20px;
+			border-radius: 5px;
+			box-shadow: 0 0 5px rgba(0,0,0,.3);
+			text-align: center;
+		}
+		.card img {
+			max-width: 100%;
+			margin-bottom: 10px;
+		}
+		.card h2 {
+			font-size: 1.5em;
+			margin-bottom: 10px;
+			text-transform: uppercase;
+		}
+		.card p {
+			font-size: 1.2em;
+			margin-bottom: 10px;
+		}
+		.card button {
+			background-color: #333;
+			color: #fff;
+			border: none;
+			padding: 10px;
+			border-radius: 5px;
+			margin-top: 10px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+		}
+		.card button:hover {
+			background-color: #f2f2f2;
+			color: #333;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Catalogo Prodotti</h1>
+	</header>
+	<main>
+		<aside>
+			<nav>
+				<ul>
+					<li><a href="#">Azienda 1</a></li>
+					<li><a href="#">Azienda 2</a></li>
+					<li><a href="#">Azienda 3</a></li>
+				</ul>
+			</nav>
+		</aside>
+		<section>
+			<div class="card">
+				<img src="https://via.placeholder.com/150" alt="Prodotto 1">
+				<h2>Prodotto 1</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<button>Aggiungi al carrello</button>
+			</div>
+			<div class="card">
+				<img src="https://via.placeholder.com/150" alt="Prodotto 2">
+				<h2>Prodotto 2</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<button>Aggiungi al carrello</button>
+			</div>
+			<div class="card">
+				<img src="https://via.placeholder.com/150" alt="Prodotto 3">
+				<h2>Prodotto 3</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<button>Aggiungi al carrello</button>
+			</div>
+			<div class="card">
+				<img src="https://via.placeholder.com/150" alt="Prodotto 4">
+				<h2>Prodotto 4</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<button>Aggiungi al carrello</button>
+			</div>
+			<div class="card">
+				<img src="https://via.placeholder.com/150" alt="Prodotto 5">
+				<h2>Prodotto 5</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<button>Aggiungi al carrello</button>
+			</div>
+			<div class="card">
+				<img src="https://via.placeholder.com/150" alt="Prodotto 6">
+				<h2>Prodotto 6</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				<button>Aggiungi al carrello</button>
+			</div>
+		</section>
+	</main>
+</body>
+</html>
