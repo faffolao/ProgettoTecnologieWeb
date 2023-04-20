@@ -1,0 +1,43 @@
+.catalog {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.vendors, .deals {
+  width: 48%;
+}
+
+.deals h2 {
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+li h3 {
+  margin-top: 0;
+}
+
+li .price {
+  font-weight: bold;
+  color: green;
+}
+
+@media only screen and (max-width: 768px) {
+  .catalog {
+    flex-direction: column;
+  }
+
+  .vendors, .deals {
+    width: 100%;
+  }
+}
