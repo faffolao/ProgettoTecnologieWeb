@@ -68,8 +68,6 @@ main{
     cursor: pointer;
 }
 
-
-
 .services{
     display: flex;
     flex-wrap: wrap;
