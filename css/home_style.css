@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 header{
@@ -71,6 +72,13 @@ main{
     border-radius: 25px;
     border: none;
     cursor: pointer;
+}
+
+.desc{
+}
+
+.desc h2{
+    text-align: center;
 }
 
 .services{

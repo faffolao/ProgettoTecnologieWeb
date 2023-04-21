@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 header{
@@ -10,36 +11,134 @@ header{
     padding: 20px;
 }
 
-nav{
+/**************************************************************************/
+
+/*
+nav statico
+ */
+
+.nav1{
     display: flex;
-    justify-content: space-between;
     justify-content: flex-end;
     align-items: center;
     text-decoration: none;
 }
 
-nav ul{
+.nav1 ul{
     display: flex;
     list-style: none;
 }
 
-nav ul li{
+.nav1 ul li{
     margin-right: 20px;
 }
 
-nav ul li:last-child{
+.nav1 ul li:last-child{
     margin-right: 0;
 }
 
-nav ul li a{
+.nav1 ul li a{
     color: #ffffff;
     text-decoration: none;
 }
+/*******************************************************************/
+
+/*
+nav dinamico
+ */
+
+.nav2 ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav2 li{
+    margin-bottom: 10px;
+}
+
+.nav2 a{
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav2 a:hover{
+    background-color: #f2f2f2;
+}
+
+/*************************************************************************/
 
 main{
     max-width: 1200px;
     margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    /*margin: 20px;*/
 }
+
+aside{
+    flex-basis: 20%;
+    background-color: #fff;
+    padding: 20px;
+}
+
+/*
+Per le varie offerte
+ */
+
+section{
+    flex-basis: 70%;
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    /*align-items: start;*/
+    justify-content: space-between;
+}
+
+.card{
+    flex-basis: 30%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    text-align: center;
+}
+.card img{
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+.card h2{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.card p{
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+.card button{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.card button:hover{
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/**********************************************************************/
 
 .hero-image{
     background-image: url(https://wallpapers.com/images/featured/qbc6mlnwowjbszld.jpg);
