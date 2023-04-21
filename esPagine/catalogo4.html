@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <title>Catalogo</title>
+  <style>
+    h1 {
+      text-align: center;
+      font-size: 32px;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    .row {
+      display: flex;
+      flex-direction: row;
+      margin-bottom: 20px;
+    }
+    .col {
+      flex: 50%;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .card {
+      background-color: #f1f1f1;
+      box-shadow: 0px 0px 10px 2px #d3d3d3;
+      padding: 20px;
+      text-align: center;
+    }
+    .card h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .card p {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .card button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<h1>Catalogo</h1>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <h2>Offerta 1</h2>
+        <p>Descrizione offerta 1</p>
+        <p>Prezzo: 10€</p>
+        <button>Acquista</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <h2>Offerta 2</h2>
+        <p>Descrizione offerta 2</p>
+        <p>Prezzo: 20€</p>
+        <button>Acquista</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <h2>Offerta 3</h2>
+        <p>Descrizione offerta 3</p>
+        <p>Prezzo: 30€</p>
+        <button>Acquista</button>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <h2>Offerta 4</h2>
+        <p>Descrizione offerta 4</p>
+        <p>Prezzo: 40€</p>
+        <button>Acquista</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

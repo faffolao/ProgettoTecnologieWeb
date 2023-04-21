@@ -75,26 +75,42 @@ main{
 }
 
 .desc{
+    padding-top: 20px;
 }
 
 .desc h2{
     text-align: center;
+    font-size: 36px;
+}
+
+.container{
+    margin-top: 30px;
+}
+
+.container h2{
+    text-align: center;
+    font-size: 36px;
+    /*position: absolute; !*consente di rimuovere un elemento dal flusso naturale della pagina,*/
+    /*                      gli altri elementi vengono influenzati e si comportano come*/
+    /*                      se l'elemento sia stato completamente rimosso dalla pagina*!*/
+    margin-bottom: 30px;
 }
 
 .services{
-    display: flex;
-    flex-wrap: wrap; /*imposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe.
-                       Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate.*/
-    justify-content: center;
-    margin-top: 50px;
-}
+    /*align-items: start;*/
 
-.services h2{
-    position: absolute; /*consente di rimuovere un elemento dal flusso naturale della pagina,
-                          gli altri elementi vengono influenzati e si comportano come
-                          se l'elemento sia stato completamente rimosso dalla pagina*/
-    font-size: 36px;
+    /*justify-content: space-between;*/
+    /*flex-wrap: wrap; !*imposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe.*/
+    /*                   Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate.*!*/
+    /*flex-direction: row;*/
+    /*margin-top: 50px;*/
+    /**/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 50px;
+    flex-direction: row;
 }
 
 .service{
@@ -104,6 +120,8 @@ main{
     padding: 20px;
     text-align: center;
     max-width: 300px;
+
+    /*flex: 50%;*/
 }
 
 .service img{
