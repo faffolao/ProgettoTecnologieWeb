@@ -44,7 +44,7 @@ main{
 }
 
 .hero-image{
-    background-image: url("../files/sfondo_home.jpg");
+    background-image: url("sfondo_home.jpg");
     background-position: center;
     background-size: cover;
     text-align: center;
