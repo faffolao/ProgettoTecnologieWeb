@@ -1,8 +1,8 @@
-/**{*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    box-sizing: border-box;*/
-/*}*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 header{
     background-color: #333;
@@ -11,9 +11,12 @@ header{
 }
 
 nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /*abilita un contesto flessibile per tutti i suoi oggetti*/
+    justify-content: space-between; /*distribuisci gli oggetti in modo uniforme:
+                                      il primo elemento è a filo con l'inizio,
+                                      l'ultimo è a filo con la fine*/
+    justify-content:flex-end; /*gli oggetti vengono imballati verso la fine della direzione flessibile*/
+    align-items: center; /*mette gli oggetti intorno al centro*/
     text-decoration: none;
 }
 
@@ -41,7 +44,8 @@ main{
 }
 
 .hero-image{
-    background-image: url(https://wallpapers.com/images/featured/qbc6mlnwowjbszld.jpg);
+    /*background-image: url(https://wallpapers.com/images/featured/qbc6mlnwowjbszld.jpg);*/
+    background-image: url("img.jpg");
     background-position: center;
     background-size: cover;
     text-align: center;
@@ -49,11 +53,13 @@ main{
 }
 
 .hero-image h1{
+    color: antiquewhite;
     font-size: 50px;
     margin-bottom: 20px;
 }
 
 .hero-image p{
+    color: #cccccc;
     font-size: 24px;
     margin-bottom: 50px;
 }
