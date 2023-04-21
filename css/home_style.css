@@ -44,7 +44,6 @@ main{
 }
 
 .hero-image{
-    /*background-image: url(https://wallpapers.com/images/featured/qbc6mlnwowjbszld.jpg);*/
     background-image: url("../files/sfondo_home.jpg");
     background-position: center;
     background-size: cover;
@@ -76,13 +75,16 @@ main{
 
 .services{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /*imposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe.
+                       Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate.*/
     justify-content: center;
     margin-top: 50px;
 }
 
 .services h2{
-    position: absolute;
+    position: absolute; /*consente di rimuovere un elemento dal flusso naturale della pagina,
+                          gli altri elementi vengono influenzati e si comportano come
+                          se l'elemento sia stato completamente rimosso dalla pagina*/
     font-size: 36px;
     margin-bottom: 50px;
 }
@@ -99,7 +101,9 @@ main{
 .service img{
     width: 150px;
     height: 150px;
-    object-fit: cover;
+    object-fit: cover; /*proprietà imposta come il contenuto di un elemento sostituito,
+                         il contenuto sostituito viene dimensionato per mantenere le proporzioni mentre riempie
+                         l'intera casella del contenuto dell'elemento*/
     margin-bottom: 20px;
     border-radius: 50%;
 }
