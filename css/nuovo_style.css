@@ -1,0 +1,64 @@
+
+  address{
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+}
+
+header{
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+nav{
+  display: flex; /*abilita un contesto flessibile per tutti i suoi oggetti*/
+  justify-content: space-between; /*distribuisci gli oggetti in modo uniforme:
+                                    il primo elemento è a filo con l'inizio,
+                                    l'ultimo è a filo con la fine*/
+  justify-content:flex-end; /*gli oggetti vengono imballati verso la fine della direzione flessibile*/
+  align-items: center; /*mette gli oggetti intorno al centro*/
+  text-decoration: none;
+}
+
+nav ul{
+  display: flex;
+  list-style: none;
+}
+
+nav ul li{
+  margin-right: 20px;
+}
+
+nav ul li:last-child{
+  margin-right: 0;
+}
+
+nav ul li a{
+  color: #fff;
+  text-decoration: none;
+}
+
+
+footer{
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.back{
+    background-color: #5940d2;
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+    }
+
+.iscrizione{
+  background-color: #40d27a;
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+}
