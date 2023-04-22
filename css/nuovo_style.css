@@ -1,9 +1,9 @@
 
-  address{
-    background-color: #000000;
-    color: #FFFFFF;
-    padding: 20px;
-    text-align: center;
+address{
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 20px;
+  text-align: center;
 }
 
 header{
@@ -50,15 +50,15 @@ footer{
 
 
 .back{
-    background-color: #5940d2;
-    color: #000000;
-    padding: 20px;
-    text-align: center;
-    }
+  background-color: #5940d2;
+  color: #000000;
+  padding: 20px;
+  text-align: center;
+}
 
 .iscrizione{
   background-color: #40d27a;
-    color: #000000;
-    padding: 20px;
-    text-align: center;
+  color: #000000;
+  padding: 20px;
+  text-align: center;
 }
