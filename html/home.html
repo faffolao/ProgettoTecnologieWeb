@@ -2,8 +2,8 @@
 <head>
     <title>Il Mio Sito</title>
     <link rel="stylesheet" type="text/css" href="../css/home_style.css">
-    <meta http-equiv="refresh" content="no-cache, no-store, must-revalidate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 </head>
 <body>
 <header>
@@ -12,11 +12,44 @@
         <ul>
             <li><a href="home.html"><b>Home</b></a></li>
             <li><a href="catalogo.html">Catalogo</a></li>
-            <li><a href="Login.html">Login</a></li>
         </ul>
+        <button  class="btnLogin-popup">Login</button>
     </nav>
 </header>
 <main>
+    <div class="wrapper">
+            <span class="icon-close">
+                <ion-icon name="close"></ion-icon>
+            </span>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-open"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="rememberMe">
+                    <label><input type="checkbox">Ricordami</label>
+                </div>
+                <button type="submit" class="btnLogin">Login</button>
+                <div class="register">
+                    <p>Non hai un account?<b><a href="nuovo.html" class="register-link">
+                        Registrati</a></b>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
     <div class="hero-image">
         <h1>Scontati ma non scontrosi: il momento perfetto per togliersi qualche sfizio</h1>
         <p>Promozioni da tantissime aziende</p>
@@ -49,5 +82,8 @@
 <footer>
     <p>Tutti i diritti riservati © Il Mio Sito</p>
 </footer>
-
-</body></html>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="../javascript/home_script.js"></script>
+</body>
+</html>

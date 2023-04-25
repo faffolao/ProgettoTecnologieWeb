@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Catalogo Prodotti</title>
     <link rel="stylesheet" type="text/css" href="../css/catalogo_style.css">
-    <meta http-equiv="refresh" content="no-cache, no-store, must-revalidate">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -16,8 +15,8 @@
         <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="catalogo.html"><b>Catalogo</b></a></li>
-            <li><a href="Login.html">Login</a></li>
         </ul>
+        <button class="btnLogin-popup">Login</button>
     </nav>
 </header>
 <!--<main>-->
@@ -30,7 +29,40 @@
 <!--        </section>-->
 <!--    </div>-->
 <!--</main>-->
-<main>
+<main class="hero-image">
+    <div class="wrapper">
+            <span class="icon-close">
+                <ion-icon name="close"></ion-icon>
+            </span>
+        <div class="form-box login">
+            <h2>Login</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock-open"></ion-icon>
+                    </span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="rememberMe">
+                    <label><input type="checkbox">Ricordami</label>
+                </div>
+                <button type="submit" class="btnLogin">Login</button>
+                <div class="register">
+                    <p>Non hai un account?<b><a href="nuovo.html" class="register-link">
+                        Registrati</a></b>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
     <aside>
         <!--		<nav>-->
         <!--			<nav>-->
@@ -58,42 +90,45 @@
             <img src="https://via.placeholder.com/150" alt="Prodotto 1">
             <h2>Prodotto 1</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button>Aggiungi al carrello</button>
+            <button>Ottieni Coupon</button>
         </div>
         <div class="card">
             <img src="https://via.placeholder.com/150" alt="Prodotto 2">
             <h2>Prodotto 2</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button>Aggiungi al carrello</button>
+            <button>Ottieni Coupon</button>
         </div>
         <div class="card">
             <img src="https://via.placeholder.com/150" alt="Prodotto 3">
             <h2>Prodotto 3</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button>Aggiungi al carrello</button>
+            <button>Ottieni Coupon</button>
         </div>
         <div class="card">
             <img src="https://via.placeholder.com/150" alt="Prodotto 4">
             <h2>Prodotto 4</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button>Aggiungi al carrello</button>
+            <button>Ottieni Coupon</button>
         </div>
         <div class="card">
             <img src="https://via.placeholder.com/150" alt="Prodotto 5">
             <h2>Prodotto 5</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button>Aggiungi al carrello</button>
+            <button>Ottieni Coupon</button>
         </div>
         <div class="card">
             <img src="https://via.placeholder.com/150" alt="Prodotto 6">
             <h2>Prodotto 6</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button>Aggiungi al carrello</button>
+            <button>Ottieni Coupon</button>
         </div>
     </section>
 </main>
 <footer>
     <p>Tutti i diritti riservati © Il Mio Sito</p>
 </footer>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="../javascript/home_script.js"></script>
 </body>
 </html>
