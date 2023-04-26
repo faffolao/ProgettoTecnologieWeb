@@ -95,7 +95,7 @@ main aside .card{
 /*****************************************************/
 
 /*.hero-image{*/
-/*    background-image: url("../files/sfondo_home1.jpg");*/
+/*    background-image: url("../files/sfondo_home.jpg");*/
 /*    background-position: center;*/
 /*    background-size: cover;*/
 /*    text-align: center;*/
@@ -164,7 +164,8 @@ section{
 /**********************************************************************/
 
 .hero-image{
-    background-image: url(https://wallpapers.com/images/featured/qbc6mlnwowjbszld.jpg);
+    background-image: url("../files/sfondo_home.jpg");
+    /*background-image: url(https://wallpapers.com/images/featured/qbc6mlnwowjbszld.jpg);*/
     background-position: center;
     background-size: cover;
     text-align: center;
