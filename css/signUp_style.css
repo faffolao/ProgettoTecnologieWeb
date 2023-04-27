@@ -111,6 +111,7 @@ input[type="password"],
 input[type="tel"],
 input[type="date"],
 input[type="email"]{
+    font-size: medium;
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;

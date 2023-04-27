@@ -1,0 +1,64 @@
+<mxfile host="app.diagrams.net" modified="2023-04-26T08:54:02.219Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="VDqqam6FK3xCGAH_scf9" version="21.2.2" type="onedrive">
+  <diagram name="Pagina-1" id="BPd0MRd_K-sBMU0qDU0N">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-4" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="680" width="720" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="40" y="680" width="720" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-6" value="logo IL NOSTRO SITO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;fontSize=19;fontStyle=0;fontFamily=Verdana;" vertex="1" parent="1">
+          <mxGeometry x="50" y="687.5" width="220" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-7" value="Home &lt;u&gt;Catalogo&lt;/u&gt; Login" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="570" y="702.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-8" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="740" width="190" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-9" value="&lt;h1&gt;AZIENDE&lt;/h1&gt;&lt;div&gt;Tutte le aziende&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;azienda 1&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;azienda 2&lt;/div&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="67.5" y="770" width="135" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-10" value="&#xa;&#xa;&#xa;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1020" width="720" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-12" value="Tutti i diritti sno riservati al IL NOSTRO SITO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1050" width="270" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-13" value="Contattaci&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; +39 123456" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1020" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-14" value="" style="shape=mxgraph.signs.tech.telephone_3;html=1;pointerEvents=1;fillColor=#FFFFFF;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1050" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-17" value="Ricerca offerte" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="750" width="270" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-18" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="340" y="760" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-21" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="800" width="90" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-22" value="DETTAGLI" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="265" y="892.5" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="JAwBmD1N5kL1gkn6KSLy-23" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="270" y="810" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="NEXOPpQxuEFX4u0fNLNs-1" value="NIKE&lt;br&gt;nome offerta" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="860" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="NEXOPpQxuEFX4u0fNLNs-2" value="" style="line;strokeWidth=2;direction=south;html=1;rotation=90;dashed=1;dashPattern=1 1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="770" width="10" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="NEXOPpQxuEFX4u0fNLNs-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="JAwBmD1N5kL1gkn6KSLy-4" target="JAwBmD1N5kL1gkn6KSLy-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net" modified="2023-04-26T08:08:49.520Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="hAiyy_9ZKfdT6BZrVcgF" version="21.2.2" type="onedrive">
+  <diagram name="Pagina-1" id="2wGoWOPtyX03c4ZQdu3h">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="E48ft_O2Ffml3vH_02Zo-1" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="680" width="720" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="E48ft_O2Ffml3vH_02Zo-2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="40" y="680" width="720" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="E48ft_O2Ffml3vH_02Zo-3" value="logo IL NOSTRO SITO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;fontSize=19;fontStyle=0;fontFamily=Verdana;" vertex="1" parent="1">
+          <mxGeometry x="50" y="687.5" width="220" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="E48ft_O2Ffml3vH_02Zo-4" value="Home Catalogo Login" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="570" y="702.5" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="E48ft_O2Ffml3vH_02Zo-5" value="&#xa;&#xa;&#xa;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1070" width="720" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="E48ft_O2Ffml3vH_02Zo-6" value="Tutti i diritti sno riservati al IL NOSTRO SITO" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="40" y="1100" width="270" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="E48ft_O2Ffml3vH_02Zo-7" value="Contattaci&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; +39 123456" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="650" y="1070" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="E48ft_O2Ffml3vH_02Zo-8" value="" style="shape=mxgraph.signs.tech.telephone_3;html=1;pointerEvents=1;fillColor=#FFFFFF;strokeColor=none;verticalLabelPosition=bottom;verticalAlign=top;align=center;sketch=0;fontColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="670" y="1100" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="E48ft_O2Ffml3vH_02Zo-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="E48ft_O2Ffml3vH_02Zo-1" target="E48ft_O2Ffml3vH_02Zo-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="E48ft_O2Ffml3vH_02Zo-18" value="logo azienda" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="800" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="E48ft_O2Ffml3vH_02Zo-19" value="&lt;h1&gt;Dettagli offerta:&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="750" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="E48ft_O2Ffml3vH_02Zo-20" value="Genera coupon" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="990" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="bAMBmeQgq9xyWTRnncNk-1" value="Nome offerta" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=17;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="210" y="800" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="bAMBmeQgq9xyWTRnncNk-2" value="Dettagli offerta" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="850" width="100" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
