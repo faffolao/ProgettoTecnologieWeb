@@ -7,6 +7,8 @@
 
 body {
     background-color: #f2f2f2;
+    min-width: 800px;
+    margin: 0 auto;
 }
 
 header{
@@ -76,6 +78,14 @@ main{
     overflow: hidden;
 }
 
+/*@media (max-width: 768px) {*/
+/*			.form-container form {*/
+/*				flex: 1 1 100%;*/
+/*				margin: 10px;*/
+/*				height: auto;*/
+/*			}*/
+/*		}*/
+
 .form-container h1 {
     font-size: 28px;
     text-align: center;
@@ -117,7 +127,7 @@ input[type="email"]{
     margin-bottom: 20px;
     border: none;
     border-radius: 5px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 input[type="checkbox"]{
