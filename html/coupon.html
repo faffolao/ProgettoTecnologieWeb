@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Coupon Offerta</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/coupon_style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <button class="print-icon" onclick="stampaPagina()">
+            <!--        Questo mi serve per importare l'iconcina dedicata al print-->
+            <i class="material-icons">print</i></button>
+    </nav>
+</header>
+<main>
+    <div class="container">
+        <h1>Nome Offerta</h1>
+
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=https://www.google.com" alt="Codice QR" width="200px">
+        <h2>Codice alfanumerico: 123ABC456</h2>
+        <h2>Data: 20 dicembre 2021</h2>
+        <h2>Nome: Nome Cognome</h2>
+    </div>
+</main>
+<script type="text/javascript" src="../javascript/coupon_script.js"></script>
+</body>
+</html>
