@@ -274,6 +274,7 @@ main{
     margin-bottom: 30px;
 }
 
+
 .services{
     /*align-items: start;*/
 
@@ -284,7 +285,8 @@ main{
     /*margin-top: 50px;*/
     /**/
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /*mposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe.*/
+                      /*Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate.*/
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
@@ -326,4 +328,5 @@ footer{
     color: #fff;
     padding: 20px;
     text-align: center;
+    align-content: center;
 }
