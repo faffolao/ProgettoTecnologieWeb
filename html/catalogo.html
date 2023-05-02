@@ -22,8 +22,8 @@
 <div class="search-container">
     <form>
         <div class="search-wrapper">
-            <input type="text" id="search-bar" placeholder="Cerca...">
-            <button type="button" onclick="search()"><img
+            <input type="text" id="search-bar" onkeyup="search()" placeholder="Cerca..." title="Cerca un'offerta">
+            <button type="button"><img
                     src="https://www.google.com/images/icons/material/system/1x/search_black_24dp.png" alt="Cerca"></button>
         </div>
     </form>
@@ -42,7 +42,7 @@
             </ul>
         </nav>
     </aside>
-    <section>
+    <section id="section-offerte">
         <div class="card">
             <img src="https://via.placeholder.com/150" alt="Prodotto 1">
             <h2>Offerta Adidas</h2>
