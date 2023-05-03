@@ -15,5 +15,5 @@ function search() {
 }
 
 function openPage() {
-  window.location.href = "../html/offerta.html";
+  window.location.href = "infoAzienda.html";
 }

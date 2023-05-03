@@ -104,6 +104,7 @@ main{
     font-weight: 500;
     align-items: center;
 }
+
 .box button:hover{
     background: #cccccc;
     color: black;

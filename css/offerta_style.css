@@ -129,12 +129,13 @@ main{
 h2 {
     margin-top: 0;
     font-size: 28px;
+    padding: 10px;
 }
 
 p {
     font-size: 16px;
     line-height: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: left;
 }
 
@@ -181,6 +182,7 @@ p {
     font-weight: 500;
     align-items: center;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .btnBack:hover{

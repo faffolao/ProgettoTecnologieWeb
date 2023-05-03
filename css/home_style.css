@@ -103,164 +103,6 @@ main{
     cursor: pointer;
 }
 
-/*********************************************************/
-
-/*.wrapper{*/
-/*    position: absolute;*/
-/*    width: min-content;*/
-/*    height: min-content;*/
-/*    text-align: center;*/
-/*    top: 30%;*/
-/*    left: 50%;*/
-/*    !*!*height: 440px;*!*!*/
-/*    background: transparent;*/
-/*    border: 2px solid rgba(255, 255, 255, .5);*/
-/*    border-radius: 20px;*/
-/*    backdrop-filter: blur(100px);*/
-/*    box-shadow: 0 0 30px rgba(0, 0, 0, .5);*/
-/*    overflow: hidden;*/
-/*    transform: scale(0);*/
-/*    transition: transform .5s ease;*/
-/*}*/
-
-/*.wrapper.active-popup{*/
-/*    transform: scale(1);*/
-/*}*/
-
-/*.wrapper .form-box{*/
-/*    width: max-content;*/
-/*    padding: 40px;*/
-/*    text-align: center;*/
-/*}*/
-
-/*.wrapper .icon-close{*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    right: 0;*/
-/*    width: 45px;*/
-/*    height: 45px;*/
-/*    font-size: 2em;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    color: #cccccc;*/
-/*    border-bottom-left-radius: 20px;*/
-/*    cursor: pointer;*/
-/*    z-index: 1;*/
-/*}*/
-
-/*.icon-close:hover{*/
-/*    background: #FFFFFF;*/
-/*    color: #162938;*/
-/*}*/
-
-/*.form-box h2{*/
-/*    font-size: 2em;*/
-/*    color: #cccccc;*/
-/*    text-align: center;*/
-/*}*/
-
-/*.input-box{*/
-/*    position: relative;*/
-/*    width: 100%;*/
-/*    height: 50px;*/
-/*    border-bottom: 2px solid;*/
-/*    margin: 30px 0;*/
-/*    text-align: left;*/
-/*}*/
-
-/*.input-box label{*/
-/*    position: absolute;*/
-/*    color: #cccccc;*/
-/*    top: 50%;*/
-/*    left: 5px;*/
-/*    transform: translateY(-50%);*/
-/*    font-size: 1em;*/
-/*    font-weight: 500;*/
-/*    pointer-events: none;*/
-/*    transition: .5s;*/
-/*}*/
-
-/*.input-box input:focus~label,*/
-/*.input-box input:valid~label{*/
-/*    top: -5px;*/
-/*}*/
-
-/*.input-box input{*/
-/*    width: 100%;*/
-/*    height: 100%;*/
-/*    background: transparent;*/
-/*    border: none;*/
-/*    outline: none;*/
-/*    font-size: 1em;*/
-/*    color: #cccccc;*/
-/*    font-weight: 600;*/
-/*    padding: 0 35px 0 5px;*/
-/*}*/
-
-/*.input-box .icon{*/
-/*    position: absolute;*/
-/*    right: 8px;*/
-/*    bottom: 18px;*/
-/*    font-size: 1.2em;*/
-/*    color: #cccccc;*/
-/*}*/
-
-/*.rememberMe{*/
-/*    font-size: .9em;*/
-/*    font-weight: 500;*/
-/*    margin: -15px 0 15px;*/
-/*    color: #cccccc;*/
-/*    display: flex;*/
-/*}*/
-
-/*.rememberMe label input{*/
-/*    accent-color: #162938;*/
-/*    margin-right: 3px;*/
-/*    margin-bottom: 10px;*/
-/*}*/
-
-/*.btnLogin{*/
-/*    !*height: 45px;*!*/
-/*    cursor: pointer;*/
-/*    background-color: #d35400;*/
-/*    color: #fff;*/
-/*    font-size: 18px;*/
-/*    padding: 10px 30px;*/
-/*    border-radius: 25px;*/
-/*    border: none;*/
-/*    outline: none;*/
-/*    font-weight: 500;*/
-/*}*/
-
-/*.register p{*/
-/*    text-align: left;*/
-/*    font-size: .9em;*/
-/*    font-weight: 500;*/
-/*    margin: 25px 0 10px;*/
-/*    color: #ffffff;*/
-/*}*/
-
-/*.register-link{*/
-/*    color: #cccccc;*/
-/*    text-decoration: none;*/
-/*}*/
-
-/*.register a:hover{*/
-/*    text-decoration: underline;*/
-/*}*/
-
-/****************************************************************/
-
-.desc{
-    padding-top: 20px;
-}
-
-.desc h2{
-    text-align: center;
-    font-size: 36px;
-}
-
 .container{
     margin-top: 30px;
 }
@@ -271,7 +113,7 @@ main{
     /*position: absolute; !*consente di rimuovere un elemento dal flusso naturale della pagina,*/
     /*                      gli altri elementi vengono influenzati e si comportano come*/
     /*                      se l'elemento sia stato completamente rimosso dalla pagina*!*/
-    margin-bottom: 30px;
+    /*margin-bottom: 20px;*/
 }
 
 
@@ -286,10 +128,10 @@ main{
     /**/
     display: flex;
     flex-wrap: wrap; /*mposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe.*/
-                      /*Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate.*/
+    /*Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate.*/
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
+    /*margin-bottom: 30px;*/
     flex-direction: row;
 }
 
@@ -300,27 +142,45 @@ main{
     padding: 20px;
     text-align: center;
     max-width: 300px;
+    cursor: pointer;
 
     /*flex: 50%;*/
 }
 
 .service img{
     width: 150px;
-    height: 150px;
-    object-fit: cover; /*proprietà imposta come il contenuto di un elemento sostituito,
+    height: auto;
+    object-fit: scale-down; /*proprietà imposta come il contenuto di un elemento sostituito,
                          il contenuto sostituito viene dimensionato per mantenere le proporzioni mentre riempie
                          l'intera casella del contenuto dell'elemento*/
     margin-bottom: 20px;
-    border-radius: 50%;
+    /*border-radius: 10%;*/
 }
 
 .service h3{
     font-size: 24px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .service p{
     font-size: 16px;
+}
+
+.desc{
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /*mposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe.*/
+    /*Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate.*/
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-direction: row;
+}
+
+.desc h2{
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
 footer{
