@@ -109,6 +109,21 @@ main{
     background: #cccccc;
     color: black;
 }
+.btnBack{
+    /*height: 45px;*/
+    cursor: pointer;
+    background-color: #d30000;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
 footer {
     background-color: #333;
