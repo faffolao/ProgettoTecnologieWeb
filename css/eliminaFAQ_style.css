@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    z-index: 99;
+}
+
+nav{
+    display: flex; /*abilita un contesto flessibile per tutti i suoi oggetti*/
+    /*justify-content: space-between; !* distribuisci gli oggetti in modo uniforme:*/
+    /*                                  il primo elemento è a filo con l'inizio,*/
+    /*                                  l'ultimo è a filo con la fine*!*/
+    justify-content:flex-end; /*gli oggetti vengono imballati verso la fine della direzione flessibile*/
+    align-items: center; /*mette gli oggetti intorno al centro*/
+    text-decoration: none;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li{
+    margin-right: 20px;
+}
+
+nav ul li:last-child{
+    margin-right: 0;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover{
+    text-decoration: underline;
+}
+
+main{
+    max-width: 1200px;
+    margin: 50px auto;
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.delete-btn {
+    background-color: red;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.delete-btn:hover{
+    background: #cccccc;
+    color: black;
+}
+
+.btnBack{
+    /*height: 45px;*/
+    cursor: pointer;
+    background-color: #d30000;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    /*align-items: center;*/
+    text-align: center;
+    align-items: center;
+    display: block;
+    margin: 20px auto 10px;
+}
+
+.btnBack:hover{
+    background: #cccccc;
+    color: black;
+}
+
+footer{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    align-content: center;
+}
