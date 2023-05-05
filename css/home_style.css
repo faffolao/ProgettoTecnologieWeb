@@ -168,19 +168,34 @@ main{
 
 .desc{
     padding-top: 20px;
-    display: flex;
+    display: block;
     flex-wrap: wrap; /*mposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe.*/
     /*Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate.*/
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
     flex-direction: row;
+    text-align: center;
 }
 
 .desc h2{
     text-align: center;
     font-size: 36px;
     margin-bottom: 20px;
+}
+
+.desc p{
+    margin-bottom: 10px;
+}
+
+.desc button{
+    background-color: #d35400;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
 }
 
 footer{
