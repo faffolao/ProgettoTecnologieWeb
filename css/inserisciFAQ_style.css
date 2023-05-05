@@ -61,7 +61,7 @@ h2{
 }
 
 #form-aggiunta {
-    max-width: 600px;
+    max-width: max-content;
     margin: 0 auto;
 }
 
