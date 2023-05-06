@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Il Mio Sito</title>
+    <link rel="stylesheet" type="text/css" href="../css/createStaff.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+    <h1>IL NOSTRO SITO</h1>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aziende.html">Aziende</a></li>
+            <li><a href="catalogo.html">Catalogo</a></li>
+            <li><a href="hub_amministratore.html">Mio profilo</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div id="form-aggiunta">
+        <h1>Inserisci un nuovo membro dello Staff</h1>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome">
+            <label for="cognome">Cognome:</label>
+            <input type="text" id="cognome" name="cognome">
+            <label for="username">Username:</label>
+            <textarea id="username" name="username"></textarea>
+            <button type="button" onclick="nuovoMembroStaff()">Conferma inserimento</button>
+        </form>
+    </div>
+
+    <h2>Elenco membri Staff aggiunti</h2>
+
+    <div id="staff"></div>
+    <button type="button" class="btnBack" onclick="window.location.href='gestioneStaffAmministratore.html'">Torna indietro</button>
+</main>
+<footer>
+    <p>Tutti i diritti riservati © Il Mio Sito</p>
+</footer>
+<script type="text/javascript" src="../javascript/createStaff.js"></script>
+</body>
+</html>
