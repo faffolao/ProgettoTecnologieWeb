@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    z-index: 99;
+}
+
+nav{
+    display: flex; /*abilita un contesto flessibile per tutti i suoi oggetti*/
+    /*justify-content: space-between; !* distribuisci gli oggetti in modo uniforme:*/
+    /*                                  il primo elemento è a filo con l'inizio,*/
+    /*                                  l'ultimo è a filo con la fine*!*/
+    justify-content:flex-end; /*gli oggetti vengono imballati verso la fine della direzione flessibile*/
+    align-items: center; /*mette gli oggetti intorno al centro*/
+    text-decoration: none;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li{
+    margin-right: 20px;
+}
+
+nav ul li:last-child{
+    margin-right: 0;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+nav ul li a:hover{
+    text-decoration: underline;
+}
+
+main{
+    max-width: 1200px;
+    margin: 50px auto;
+    display: block;
+}
+
+h1{
+    margin-bottom: 20px;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#form-aggiunta {
+    max-width: max-content;
+    margin: 0 auto;
+}
+
+#form-aggiunta label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#form-aggiunta input[type="text"], #form-aggiunta textarea {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: .9em;
+}
+
+#form-aggiunta button {
+    display: block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4285f4;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#form-aggiunta button:hover {
+    background-color: #3367d6;
+}
+
+#domande-risposte-aggiuntive {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.question {
+    font-weight: bold;
+    border: none;
+}
+
+.answer {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.btnBack{
+    /*height: 45px;*/
+    cursor: pointer;
+    background-color: #d30000;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    /*align-items: center;*/
+    text-align: center;
+    align-items: center;
+    display: block;
+    margin: 20px auto 10px;
+}
+
+.btnBack:hover{
+    background: #cccccc;
+    color: black;
+}
+
+footer{
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    align-content: center;
+}

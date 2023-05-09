@@ -20,20 +20,42 @@
 <main>
     <div id="form-aggiunta">
         <h1>Inserisci un nuovo membro dello Staff</h1>
-        <form>
+        <form id="nuovoStaff">
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome">
+            <input type="text" id="nome" name="nome" required>
+
             <label for="cognome">Cognome:</label>
-            <input type="text" id="cognome" name="cognome">
+            <input type="text" id="cognome" name="cognome" required>
+
+            <label for="cognome">Età:</label>
+            <input type="text" id="eta" name="eta" required>
+
+            <label for="genere">Genere:</label>
+            <input type="radio" id="uomo" name="genere" value="Uomo" checked>
+            <label for="uomo">Uomo</label>
+            <input type="radio" id="donna" name="genere" value="Donna">
+            <label for="donna">Donna</label>
+            <input type="radio" id="altro" name="genere" value="Altro">
+            <label for="altro">Altro</label>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+
+            <label for="telefono">Telefono:</label>
+            <input type="text" id="telefono" name="telefono">
+
             <label for="username">Username:</label>
-            <textarea id="username" name="username"></textarea>
+            <input id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="hidden" id="livello" name="livello" value="2">
+
             <button type="button" onclick="nuovoMembroStaff()">Conferma inserimento</button>
         </form>
     </div>
-
-    <h2>Elenco membri Staff aggiunti</h2>
-
-    <div id="staff"></div>
+    
     <button type="button" class="btnBack" onclick="window.location.href='gestioneStaffAmministratore.html'">Torna indietro</button>
 </main>
 <footer>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Il Mio Sito</title>
+    <link rel="stylesheet" type="text/css" href="../css/createStaff.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+    <h1>IL NOSTRO SITO</h1>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aziende.html">Aziende</a></li>
+            <li><a href="catalogo.html">Catalogo</a></li>
+            <li><a href="hub_amministratore.html">Mio profilo</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <div id="form-aggiunta">
+        <h1>Inserisci una nuova azienda</h1>
+        <!-- DA FARE -->
+        <form id="nuovaAzienda">
+
+            <!-- hidden id-->
+
+            <input type="hidden" id="id" name="id" value="1">
+
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="descrizione">Descrizione:</label>
+            <input type="text" id="descrizione" name="descrizione" required>
+
+            <label for="ragionesociale">Ragione sociale:</label>
+            <input type="text" id="ragionesociale" name="ragionesociale" required>
+
+            <label for="tipologia">Tipologia:</label>
+            <input type="text" id="tipologia" name="tipologia">
+
+            <label for="avatar">Carica il logo (formati accetati: png, jpeg):</label>
+
+            <input type="file"
+            id="logo" name="logo"
+            accept="image/png, image/jpeg">
+            
+           
+
+            <button type="button" onclick="nuovaAzienda()">Conferma inserimento</button>
+        </form>
+    </div>
+
+    <h2>Elenco aziende aggiunte</h2>
+
+    <div id="aziende">
+        
+    </div>
+
+    <button type="button" class="btnBack" onclick="window.location.href='gestioneAziendeAmministratore.html'">Torna indietro</button>
+</main>
+<footer>
+    <p>Tutti i diritti riservati © Il Mio Sito</p>
+</footer>
+<script type="text/javascript" src="../javascript/createAzienda.js"></script>
+</body>
+</html>
