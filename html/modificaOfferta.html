@@ -2,7 +2,7 @@
 <html lang="">
 <head>
     <title>Il Mio Sito</title>
-    <link rel="stylesheet" type="text/css" href="../css/inserire_offerte_style.css">
+    <link rel="stylesheet" type="text/css" href="../css/modificaOfferte_style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -13,46 +13,46 @@
             <li><a href="home.html">Home</a></li>
             <li><a href="aziende.html">Aziende</a></li>
             <li><a href="catalogo.html">Catalogo</a></li>
-            <li><a href="hub_utente.html">Mio profilo</a></li>
+            <li><a href="hubUtente.html">Mio profilo</a></li>
         </ul>
     </nav>
 </header>
 <main>
     <div class="form-container">
-        <h1>Iserisci offerte</h1>
+        <h1>Modifica offerte</h1>
         <form>
             <div class="form-left">
-                <fieldset title="Inserisci i dati dell'offerta">
+                <fieldset title="Modifica i dati identificativi dell'offerta">
                     <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required>
+                    <input type="text" id="nome" name="nome">
 
-                    <label for="id">Id:</label>
-                    <input type="text" id="id" name="id" required>
+<!--                    <label for="id">Id:</label>-->
+<!--                    <input type="text" id="id" name="id" required>-->
 
                     <label for="oggetto">Oggetto:</label>
-                    <input type="text" id="oggetto" name="oggetto" required>
+                    <input type="text" id="oggetto" name="oggetto">
 
                 </fieldset>
             </div>
             <div class="form-right">
-                <fieldset title="Inserisci i dati dell'offerta">
+                <fieldset title="Modifica i dati dell'offerta">
                     <label for="modalita_fruizione">Modalita di fruizione:</label>
-                    <input type="text" id="modalita_fruizione" name="modalita_fruizione" required>
+                    <input type="text" id="modalita_fruizione" name="modalita_fruizione">
 
                     <label for="data_ora_creazione">Data e ora di creazione:</label>
-                    <input type="date" id="data_ora_creazione" name="data_ora_creazione" required>
+                    <input type="date" id="data_ora_creazione" name="data_ora_creazione">
 
                     <label for="data_ora_scadenza">Data e ora di scadenza:</label>
-                    <input type="date" id="data_ora_scadenza" name="data_ora_scadenza" required>
+                    <input type="date" id="data_ora_scadenza" name="data_ora_scadenza">
 
                     <label for="luogo_fruizione">Luogo di fruizione:</label>
-                    <input type="text" id="luogo_fruizione" name="luogo_fruizione" required>
+                    <input type="text" id="luogo_fruizione" name="luogo_fruizione">
                 </fieldset>
             </div>
             <div style="clear:both;"></div>
             <button type="submit" class="btnLogin">Modifica dati</button>
             <br>
-            <button type="button" class="btnBack" onclick="window.location.href='hub_staff.html'">Torna indietro</button>
+            <button type="button" class="btnBack" onclick="window.location.href='eliminaOfferte.html'">Torna indietro</button>
         </form>
     </div>
 </main>
