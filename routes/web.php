@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Rotta per il caricamento della home page.
+Route::view('/', 'homepage')
+    ->name("homepage");

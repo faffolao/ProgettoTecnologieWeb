@@ -1,0 +1,57 @@
+section{
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    /*align-items: start;*/
+    justify-content: space-evenly;
+}
+
+.card{
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    text-align: center;
+    min-height: fit-content;
+    min-width: fit-content;
+    cursor: pointer;
+}
+
+.card img{
+    width: 150px;
+    height: auto;
+    object-fit: scale-down; /*proprietà imposta come il contenuto di un elemento sostituito,
+                         il contenuto sostituito viene dimensionato per mantenere le proporzioni mentre riempie
+                         l'intera casella del contenuto dell'elemento*/
+    margin-bottom: 10px;
+}
+
+.card h2{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.card p{
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.card button{
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card button:hover{
+    background-color: #f2f2f2;
+    color: #333;
+}
