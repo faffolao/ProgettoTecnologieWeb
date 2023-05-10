@@ -16,40 +16,99 @@
         </ul>
     </nav>
 </header>
-<div class="search-container">
-    <form>
-        <div class="search-wrapper">
-            <input type="text" id="search-bar" onkeyup="search()" placeholder="Cerca gli utenti qui..." title="Cerca un'offerta">
-            <button type="button"><img
-                src="https://www.google.com/images/icons/material/system/1x/search_black_24dp.png" alt="Cerca"></button>
-        </div>
-    </form>
-</div>
+
 <main>
-    <div class="form-container">
-        <table>
-            <thead>
-            <tr>
-                <th>Username</th>
-                <th>N° Coupon utilizzati</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr class="user">
-                <td><button title="Clicca qui per visualizzare il numero di coupon riscattati" onclick="countClicks(1)">Utente 1</button></td>
-                <td class="numb"><span id="count1">0</span></td>
-            </tr>
-            <tr class="user">
-                <td><button title="Clicca qui per visualizzare il numero di coupon riscattati" onclick="countClicks(2)">Utente 2</button></td>
-                <td class="numb"><span id="count2">0</span></td>
-            </tr>
-            <tr class="user">
-                <td><button title="Clicca qui per visualizzare il numero di coupon riscattati" onclick="countClicks(3)">Utente 3</button></td>
-                <td class="numb"><span id="count3">0</span></td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+
+    <dl style="text-align: center;">
+        <dt>Numero totale di Coupon generati:</dt>
+        <dd><span id="total">0</span></dd>
+    </dl>
+
+    <table>
+
+        <th>
+
+            <div class="search-container">
+                <form>
+                    <div class="search-wrapper">
+                        <input type="text" id="search-bar1" onkeyup="searchUsers()" placeholder="Utenti..." title="Cerca un'offerta">
+                        <button type="button"><img
+                            src="https://www.google.com/images/icons/material/system/1x/search_black_24dp.png" alt="Cerca"></button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>N° Coupon utilizzati</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="user">
+                        <td><button title="Clicca qui per visualizzare il numero di coupon riscattati" onclick="countClicks(1)">Utente 1</button></td>
+                        <td class="numb"><span id="count1">0</span></td>
+                    </tr>
+                    <tr class="user">
+                        <td><button title="Clicca qui per visualizzare il numero di coupon riscattati" onclick="countClicks(2)">Utente 2</button></td>
+                        <td class="numb"><span id="count2">0</span></td>
+                    </tr>
+                    <tr class="user">
+                        <td><button title="Clicca qui per visualizzare il numero di coupon riscattati" onclick="countClicks(3)">Utente 3</button></td>
+                        <td class="numb"><span id="count3">0</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </th>
+
+        <th>
+
+            <div class="search-container">
+                <form>
+                    <div class="search-wrapper">
+                        <input type="text" id="search-bar2" onkeyup="searchCoupons()" placeholder="Offerte..." title="Cerca un coupon">
+                        <button type="button"><img
+                            src="https://www.google.com/images/icons/material/system/1x/search_black_24dp.png" alt="Cerca"></button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="form-container">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Nome offerta</th>
+                        <th>N° Coupon erogati</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="promo">
+                        <td><button title="Clicca qui per visualizzare il numero di coupon riscattati" onclick="countPromo(1)">Offerta 1</button></td>
+                        <td class="numb"><span id="countP1">0</span></td>
+                    </tr>
+                    <tr class="promo">
+                        <td><button title="Clicca qui per visualizzare il numero di coupon riscattati" onclick="countPromo(2)">Offerta 2</button></td>
+                        <td class="numb"><span id="countP2">0</span></td>
+                    </tr>
+                    <tr class="promo">
+                        <td><button title="Clicca qui per visualizzare il numero di coupon riscattati" onclick="countPromo(3)">Offerta 3</button></td>
+                        <td class="numb"><span id="countP3">0</span></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </th>
+    </table>
+
+
+
+
 </main>
 <footer>
     <p>Tutti i diritti riservati © Il Mio Sito</p>
