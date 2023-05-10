@@ -1,4 +1,6 @@
-/* impostazioni di base per tutte le pagine */
+/* --------------------------------------------
+    impostazioni di base per tutte le pagine
+------------------------------------------------ */
 *{
     margin: 0;
     padding: 0;
@@ -12,6 +14,10 @@ header{
     padding: 20px;
     z-index: 99;
 }
+
+/* navigation bar */
+.navbar-logo  {vertical-align: bottom; width: 60px;}
+.navbar-title {display: inline;}
 
 nav{
     display: flex; /*abilita un contesto flessibile per tutti i suoi oggetti*/
@@ -46,11 +52,13 @@ nav ul li a:hover{
     text-decoration: underline;
 }
 
+/* contenitore della pagina */
 main{
     max-width: 1200px;
     margin: 50px auto;
 }
 
+/* rende ancore e Buttons con un aspetto da pulsante */
 .btn {
     background-color: #d35400;
     color: #fff;
@@ -62,7 +70,9 @@ main{
     text-decoration: none;
 }
 
-/* impostazioni per home page */
+/* ----------------------------------------------------
+        impostazioni specifiche per home page
+----------------------------------------------------- */
 .hero-image{
     background-image: url("../images/home_wall.jpeg");
     background-position: bottom;
