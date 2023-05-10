@@ -127,6 +127,11 @@ main{
     margin-bottom: 10px;
 }
 
+.btnBack:hover{
+    background: #cccccc;
+    color: black;
+}
+
 footer {
     background-color: #333;
     color: #fff;

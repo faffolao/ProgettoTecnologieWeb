@@ -113,6 +113,20 @@ tr:nth-child(even) {
     height: 20px;
 }
 
+.delete-btn {
+    background-color: red;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.delete-btn:hover{
+    background: #cccccc;
+    color: black;
+}
+
 .btnBack{
     /*height: 45px;*/
     cursor: pointer;
@@ -129,16 +143,7 @@ tr:nth-child(even) {
     margin-bottom: 10px;
 }
 
-.delete-btn {
-    background-color: red;
-    color: #fff;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-    border-radius: 25px;
-}
-
-.delete-btn:hover{
+.btnBack:hover{
     background: #cccccc;
     color: black;
 }
