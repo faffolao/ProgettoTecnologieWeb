@@ -83,6 +83,20 @@ tr:nth-child(even) {
     border-radius: 25px;
 }
 
+.update-btn:hover{
+    background: #cccccc;
+    color: black;
+}
+
+.delete-btn {
+    background-color: red;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
 .delete-btn:hover{
     background: #cccccc;
     color: black;

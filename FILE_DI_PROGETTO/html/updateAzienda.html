@@ -1,56 +1,55 @@
 <html lang="">
 <head>
-  <title>Il Mio Sito</title>
-  <link rel="stylesheet" type="text/css" href="../css/updateAzienda.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="UTF-8">
+    <title>Il Mio Sito</title>
+    <link rel="stylesheet" type="text/css" href="../css/updateAzienda.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 </head>
 <body>
 <header>
-  <h1>IL NOSTRO SITO</h1>
-  <nav>
-    <ul>
-      <li><a href="home.html">Home</a></li>
-      <li><a href="aziende.html">Aziende</a></li>
-      <li><a href="catalogo.html">Catalogo</a></li>
-      <li><a href="hub_amministratore.html"><b>Mio profilo</b></a></li>
-    </ul>
-  </nav>
+    <h1>IL NOSTRO SITO</h1>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="aziende.html">Aziende</a></li>
+            <li><a href="catalogo.html">Catalogo</a></li>
+            <li><a href="hub_amministratore.html"><b>Mio profilo</b></a></li>
+        </ul>
+    </nav>
 </header>
 <main>
-  <div class="container">
-    <div class="hub">
-      <h2>Seleziona l'azienda da aggiornare</h2>
-      <div class="box">
-
-        <table id="tabella">
-          <thead>
-          <tr>
-            <th>Nome</th>
-            <th> <center> Logo </center> </th>
-            <th>Modifica</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>Adidas</td>
-            <td> <center>
-
-              <img src="../files/logo_adidas.png" width="210" height="100">
-
-            </center> </td>
-            <td><button class="update-btn">Modifica</button></td>
-          </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="container">
+        <div class="hub">
+            <h2>Seleziona l'azienda da aggiornare</h2>
+            <div class="box">
+                <table id="tabella">
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Modifica</th>
+                        <th>Elimina</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Adidas</td>
+                        <td><button class="update-btn" onclick="window.location.href='createAzienda.html'">Modifica</button></td>
+                        <td><button class="delete-btn">Elimina</button></td>
+                    </tr>
+                    <tr>
+                        <td>Nike</td>
+                        <td><button class="update-btn" onclick="window.location.href='createAzienda.html'">Modifica</button></td>
+                        <td><button class="delete-btn">Elimina</button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button type="button" class="btnBack" onclick="window.location.href='gestioneAziendeAmministratore.html'">Torna indietro</button>
+        </div>
     </div>
-    <button type="button" class="btnBack" onclick="window.location.href='gestioneAziendeAmministratore.html'">Torna indietro</button>
-  </div>
-
 </main>
 <footer>
-  <p>Tutti i diritti riservati © Il Mio Sito</p>
+    <p>Tutti i diritti riservati © Il Mio Sito</p>
 </footer>
 <script type="text/javascript" src="../javascript/updateAzienda.js"></script>
 </body>
