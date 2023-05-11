@@ -15,58 +15,60 @@ header{
     z-index: 99;
 }
 
-/* navigation bar */
-.navbar-logo  {vertical-align: bottom; width: 60px;}
+/*
+    Navigation Bar (navbar): basata sull'uso del Flexbox Layout (attivabile tramite il valore "flex" di display).
+    Viene usata per creare un layout dove gli elementi contenuti in questo si adattano in automatico al loro contenitore
+    padre. In questo caso viene usato perchè le due parti della navigation bar devono apparire sulla stessa riga (senza
+    spostarsi una sotto l'altra) e gli elementi contenuti devono essere allineati al centro.
+    Ognuna delle due colonne contenute occupa il 50% dello spazio.
+*/
+nav{
+    display: flex;
+    align-items: center; /* gli elementi contenuti saranno allineati verticalmente al centro */
+    text-decoration: none;
+}
+
+.navbar-logo-container {
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo  {vertical-align: bottom; width: 60px; margin-right: 10px;}
 .navbar-title {display: inline;}
 
-nav{
-    display: flex; /*abilita un contesto flessibile per tutti i suoi oggetti*/
-    /*justify-content: space-between; !* distribuisci gli oggetti in modo uniforme:*/
-    /*                                  il primo elemento è a filo con l'inizio,*/
-    /*                                  l'ultimo è a filo con la fine*!*/
-    justify-content:flex-end; /*gli oggetti vengono imballati verso la fine della direzione flessibile*/
-    align-items: center; /*mette gli oggetti intorno al centro*/
-    text-decoration: none;
-}
-
-nav ul{
+/* gli elementi di questo contenitore sono disposti da destra verso sinistra, anzichè il contrario */
+.navbar-links-container {
     display: flex;
-    list-style: none;
+    width: 50%;
+    justify-content: flex-end;
 }
 
-nav ul li{
-    margin-right: 20px;
-}
+nav ul               {display: flex; list-style: none;}
+nav ul li            {margin-right: 20px;}
 
-nav ul li:last-child{
-    margin-right: 0;
-}
+/* l'ultimo elemento della lista non ordinata (UL, Unordered List) non avrà margine a destra, per evitare problemi grafici */
+nav ul li:last-child {margin-right: 0;}
 
-nav ul li a{
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1em;
-}
+nav ul li a          {color: #fff; text-decoration: none; font-size: 1.1em;}
+nav ul li a:hover    {text-decoration: underline;}
 
-nav ul li a:hover{
-    text-decoration: underline;
-}
+/*
+    Main: è l'area della pagina che contiene il corpo della pagina (quello che viene inserito dinamicamente con Blade e Laravel)
+*/
+main {margin: 50px 10%;}
 
-/* contenitore della pagina */
-main{
-    max-width: 1200px;
-    margin: 50px auto;
-}
-
-/* rende ancore e Buttons con un aspetto da pulsante */
+/*
+    Questa classe grafica conferisce ad ancore (<a>) e pulsanti (<button>) un aspetto estetico da pulsante cliccabile.
+*/
 .btn {
     background-color: #d35400;
     color: #fff;
     font-size: 18px;
-    padding: 10px 30px;
+    padding: 13px 30px;
     border-radius: 25px;
     border: none;
-    cursor: pointer;
+    cursor: pointer;    /* assegna il cursore della "manina" a questo elemento */
     text-decoration: none;
 }
 
@@ -92,7 +94,6 @@ main{
     font-size: 30px;
     margin-bottom: 50px;
 }
-
 
 .container{
     margin-top: 30px;
@@ -138,14 +139,13 @@ main{
     /*flex: 50%;*/
 }
 
+/* l'immagine dell'azienda viene impostata ad una dimensione fissa (150x150 px) e il suo contenuto viene riadattato
+automaticamente per evitare che possa apparire stretchato */
 .service img{
     width: 150px;
-    height: auto;
-    object-fit: scale-down; /*proprietà imposta come il contenuto di un elemento sostituito,
-                         il contenuto sostituito viene dimensionato per mantenere le proporzioni mentre riempie
-                         l'intera casella del contenuto dell'elemento*/
+    height: 150px;
+    object-fit: scale-down;
     margin-bottom: 20px;
-    /*border-radius: 10%;*/
 }
 
 .service h3{
@@ -177,6 +177,7 @@ main{
 
 .desc p{
     margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .desc button{
@@ -188,6 +189,14 @@ main{
     border: none;
     cursor: pointer;
 }
+
+.faq              {margin-top: 17px; text-align: center}
+.faq h2           {font-size: 2rem;}
+.faq ul           {list-style: none; margin: 0; padding: 0;}
+.faq li           {margin: 20px 0;}
+.faq .question    {font-size: 1.2rem; font-weight: bold; cursor: pointer;}
+.faq .answer      {display: none; font-size: 1rem; padding: 10px;}
+.faq .answer.show {display: block;}
 
 /*-----------------------
  | Footer (pie di pagina
@@ -208,7 +217,7 @@ verso sinistra, in modo tale che queste vengono inserite orizzontalmente all'int
 .footer-col {
     width: 50%;
     float: left;
-    padding: 5px 0px;
+    padding: 5px 0;
 }
 
 /* Proprietà utilitaria che imposta l'allineamento del testo del tag a cui è applicata a destra. */
