@@ -4,6 +4,24 @@ function countClicks(id) {
     count.innerHTML = clicks;
 }
 
+function searchCoupons() {
+  var input = document.getElementById("search-bar2");
+  var filter = input.value.toUpperCase();
+  var elements = document.getElementsByClassName("promo");
+
+
+  for (var i = 0; i < elements.length; i++) {
+    var text = elements[i].textContent || elements[i].innerText;
+    if (text.toUpperCase().indexOf(filter) > -1) {
+      elements[i].style.display = "";
+    } else {
+      elements[i].style.display = "none";
+    }
+  }
+}
+
+/***************************************************************************/
+
 var tot = document.getElementById("total")
 function countPromo(id) {
   var count = document.getElementById("countP" + id);
@@ -28,23 +46,6 @@ function searchUsers() {
   var input = document.getElementById("search-bar1");
   var filter = input.value.toUpperCase();
   var elements = document.getElementsByClassName("user");
-
-
-  for (var i = 0; i < elements.length; i++) {
-    var text = elements[i].textContent || elements[i].innerText;
-    if (text.toUpperCase().indexOf(filter) > -1) {
-      elements[i].style.display = "";
-    } else {
-      elements[i].style.display = "none";
-    }
-  }
-}
-
-
-function searchCoupons() {
-  var input = document.getElementById("search-bar2");
-  var filter = input.value.toUpperCase();
-  var elements = document.getElementsByClassName("promo");
 
 
   for (var i = 0; i < elements.length; i++) {

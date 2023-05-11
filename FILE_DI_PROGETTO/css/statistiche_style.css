@@ -46,11 +46,45 @@ nav ul li a:hover{
 
 main{
     max-width: 1200px;
-    margin: 20px auto;
-    display: flex;
+    margin: 50px auto;
+    background-position: center;
+    background-size: cover;
+}
+
+/*main{*/
+/*    max-width: 1200px;*/
+/*    margin: 20px auto;*/
+/*    display: block;*/
+/*    flex-wrap: wrap;*/
+/*    background: transparent;*/
+/*    !*margin: 20px;*!*/
+/*}*/
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    color: black;
+}
+
+.hub{
+    display: block;
     flex-wrap: wrap;
-    background: transparent;
-    /*margin: 20px;*/
+    justify-content: center;
+    margin-top: 30px;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 5px;
+    /*margin: 10px;*/
+    padding: 20px;
+    align-items: center;
+    /*justify-content: left;*/
+    flex: 1 1 300px;
+    height: max-content;
+}
+
+.item1{
+    text-align: center;
 }
 
 .search-container {
@@ -63,7 +97,7 @@ main{
     border-radius: 50px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    max-width: 30%;
+    max-width: 55%;
 }
 
 .search-wrapper {
@@ -132,12 +166,17 @@ main{
     /*box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);*/
     text-align: center;
 
-    background: transparent;
+    background-color: white;
+    /*background: transparent;*/
     border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 20px;
     backdrop-filter: blur(100px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
     overflow: hidden;
+}
+
+.item2{
+    text-align: center;
 }
 
 table {
@@ -150,7 +189,7 @@ th, td {
     border-bottom: 1px solid #ddd;
 }
 
-button {
+.btnGen {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -164,7 +203,28 @@ button {
     border-radius: 25px;
 }
 
-button:hover{
+.btnGen:hover{
+    background: #cccccc;
+    color: black;
+}
+
+.btnBack{
+    /*height: 45px;*/
+    cursor: pointer;
+    background-color: #d30000;
+    color: #fff;
+    font-size: 18px;
+    padding: 10px 30px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    font-weight: 500;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.btnBack:hover{
     background: #cccccc;
     color: black;
 }
