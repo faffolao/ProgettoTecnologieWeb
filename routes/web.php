@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 // Rotta per il caricamento della home page.
 Route::view('/', 'homepage')
     ->name("homepage");
+
+// Rotta per il caricamento della lista delle aziende.
+Route::view("/aziende", 'aziende')
+    ->name("aziende");

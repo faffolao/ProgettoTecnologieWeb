@@ -72,6 +72,29 @@ main {margin: 50px 10%;}
     text-decoration: none;
 }
 
+/*
+    "container" contiene il corpo testuale della pagina e in generale contenuti standard (quindi nessun contenuto in
+    primo piano o contenuto particolarmente rilevante)
+ */
+.container        {margin-top: 30px;}
+.container h1, h2 {text-align: center}
+.container h2     {font-size: 36px;}
+
+/* "desc" contiene del contenuto descrittivo alla pagina, ad esempio, dei testi introduttivi */
+.desc{
+    padding-top: 20px;
+    display: block;
+    flex-wrap: wrap; /*mposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe.*/
+                     /*Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate.*/
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-direction: row;
+    text-align: center;
+}
+.desc h2{text-align: center; font-size: 36px; margin-bottom: 20px;}
+.desc p{margin-bottom: 10px; font-size: 20px;}
+
 /* ----------------------------------------------------
         impostazioni specifiche per home page
 ----------------------------------------------------- */
@@ -95,39 +118,19 @@ main {margin: 50px 10%;}
     margin-bottom: 50px;
 }
 
-.container{
-    margin-top: 30px;
-}
-
-.container h2{
-    text-align: center;
-    font-size: 36px;
-    /*position: absolute; !*consente di rimuovere un elemento dal flusso naturale della pagina,*/
-    /*                      gli altri elementi vengono influenzati e si comportano come*/
-    /*                      se l'elemento sia stato completamente rimosso dalla pagina*!*/
-    /*margin-bottom: 20px;*/
-}
-
-
-.services{
-    /*align-items: start;*/
-
-    /*justify-content: space-between;*/
-    /*flex-wrap: wrap; !*imposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe.*/
-    /*                   Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate.*!*/
-    /*flex-direction: row;*/
-    /*margin-top: 50px;*/
-    /**/
+/*
+    Card Deck: contiene le Card, ovvero un insieme di elementi graficamente rappresentati come delle "carte"
+ */
+.card-deck{
     display: flex;
-    flex-wrap: wrap; /*mposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe.*/
-    /*Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate.*/
+    flex-wrap: wrap; /* imposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe. */
+                     /* Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate. */
     justify-content: center;
     align-items: center;
-    /*margin-bottom: 30px;*/
     flex-direction: row;
 }
 
-.service{
+.card{
     background-color: #f1f1f1;
     border-radius: 10px;
     margin: 20px;
@@ -135,52 +138,17 @@ main {margin: 50px 10%;}
     text-align: center;
     max-width: 300px;
     cursor: pointer;
-
-    /*flex: 50%;*/
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
 }
 
 /* l'immagine dell'azienda viene impostata ad una dimensione fissa (150x150 px) e il suo contenuto viene riadattato
 automaticamente per evitare che possa apparire stretchato */
-.service img{
-    width: 150px;
-    height: 150px;
-    object-fit: scale-down;
-    margin-bottom: 20px;
-}
+.card img {width: 150px; height: 150px; object-fit: scale-down; margin-bottom: 20px;}
+.card h3  {font-size: 24px; margin-bottom: 10px;}
+.card-title-link {font-size: 21px; text-decoration: none; display: block; color: black; font-weight: bold;}
+.card p   {font-size: 16px;}
 
-.service h3{
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-.service p{
-    font-size: 16px;
-}
-
-.desc{
-    padding-top: 20px;
-    display: block;
-    flex-wrap: wrap; /*mposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe.*/
-    /*Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate.*/
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-    flex-direction: row;
-    text-align: center;
-}
-
-.desc h2{
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 20px;
-}
-
-.desc p{
-    margin-bottom: 10px;
-    font-size: 20px;
-}
-
-.desc button{
+/*.desc button{
     background-color: #d35400;
     color: #fff;
     font-size: 18px;
@@ -188,7 +156,7 @@ automaticamente per evitare che possa apparire stretchato */
     border-radius: 25px;
     border: none;
     cursor: pointer;
-}
+}*/
 
 .faq              {margin-top: 17px; text-align: center}
 .faq h2           {font-size: 2rem;}
