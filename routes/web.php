@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes(); //per importare le rotte di autenticazione degli utenti
+
 // Rotta per il caricamento della home page.
 Route::view('/', 'homepage')
     ->name("homepage");
@@ -20,3 +22,6 @@ Route::view('/', 'homepage')
 // Rotta per il caricamento della lista delle aziende.
 Route::view("/aziende", 'aziende')
     ->name("aziende");
+
+Route::view("/catalogo", 'catalogo')
+    ->name("catalogo");

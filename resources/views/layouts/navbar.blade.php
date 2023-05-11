@@ -9,7 +9,7 @@
         <ul>
             <li><a href="{{ route('homepage') }}"><b>Home</b></a></li>
             <li><a href="{{ route('aziende') }}">Aziende</a></li>
-            <li><a href="catalogo.html">Catalogo</a></li>
+            <li><a href="{{ route('catalogo') }}">Catalogo</a></li>
             <li><a href="login.html">Login</a></li>
         </ul>
     </div>
