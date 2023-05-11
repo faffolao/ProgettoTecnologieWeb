@@ -34,7 +34,7 @@ nav{
     align-items: center;
 }
 
-.navbar-logo  {vertical-align: bottom; width: 60px; margin-right: 10px;}
+.navbar-logo  {vertical-align: bottom; width: 170px; margin-right: 10px;}
 .navbar-title {display: inline;}
 
 /* gli elementi di questo contenitore sono disposti da destra verso sinistra, anzichè il contrario */

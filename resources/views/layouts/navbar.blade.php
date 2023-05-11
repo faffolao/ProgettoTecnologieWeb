@@ -1,8 +1,7 @@
 <nav>
-    <!-- area di sinistra: contiene titolo e logo di Offertopoli -->
+    <!-- area di sinistra: contiene logo di Offertopoli -->
     <div class="navbar-logo-container">
-        <img src="{{ asset('assets/images/website_logo.png') }}" class="navbar-logo" alt="Logo Offertopoli">
-        <h1 class="navbar-title">Offertopoli</h1>
+        <img src="{{ asset('assets/images/logo_with_text.png') }}" class="navbar-logo" alt="Logo Offertopoli">
     </div>
 
     <!-- area di destra: contiene i link che indirizzano alle pagine del sito web  -->
