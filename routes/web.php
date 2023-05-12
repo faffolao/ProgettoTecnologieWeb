@@ -27,8 +27,10 @@ use App\Http\Controllers\CouponController;
  * -------------------------- */
 
 // Rotta per il caricamento della home page.
-Route::view('/', 'homepage') //Così strutturata, la rende la pagina che si apre di default
-    ->name("homepage");
+Route::get('/', [FAQController::class, 'getData'])
+    ->name('homepage');
+//Route::view('/', 'homepage') //Così strutturata, la rende la pagina che si apre di default
+//    ->name("homepage");
 
 // Rotta per il caricamento della lista delle aziende.
 Route::view("/aziende", 'aziende')
