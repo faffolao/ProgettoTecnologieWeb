@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Offer extends Model
 {
     use HasFactory;
-    public $table="Utenti";
+    public $table="Offerte";
 }

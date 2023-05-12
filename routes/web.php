@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+//per database
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\OfferController;
+use App\Http\Controllers\FAQController;
+use App\Http\Controllers\FactoryController;
+use App\Http\Controllers\CouponController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,11 +32,11 @@ Route::view('/', 'homepage') //Così strutturata, la rende la pagina che si apre
 Route::view("/aziende", 'aziende')
     ->name("aziende");
 
-// Rotta per il caricamento della lista delle offerte.    
+// Rotta per il caricamento della lista delle offerte.
 Route::view("/catalogo", 'catalogo')
     ->name("catalogo");
 
-// Rotta per il caricamento della pagina di Login.    
+// Rotta per il caricamento della pagina di Login.
 Route::view("/login", 'login')
     ->name("login");
 
@@ -42,7 +48,7 @@ Route::view("/login", 'login')
 
 // Rotte per gli utenti
 
-// Rotta per andare nella Home dopo il Login 
+// Rotta per andare nella Home dopo il Login
 
 // Rotta per richiede una promozione
 
@@ -56,7 +62,7 @@ Route::view("/login", 'login')
 
 
 
-/*    
+/*
 // Rotte per le faq
 
 Route::get('/gestioneFAQ','utenteController@gestioneFAQ')
@@ -70,7 +76,7 @@ Route::get('/modifica_faq/{id}', 'utenteController@modificaFAQ')
 
 Route::post('/modifica_faq/{id}', 'utenteController@modificaFAQ')
     ->name("modificaFAQ")
-    ->middleware('can:isAdmin');    
+    ->middleware('can:isAdmin');
 
 // Rotte get e post per eliminare le FAQ
 Route::get('/elimina_faq/{id}', 'utenteController@eliminaFAQ')
@@ -79,5 +85,13 @@ Route::get('/elimina_faq/{id}', 'utenteController@eliminaFAQ')
 
 Route::post('/elimina_faq/{id}', 'utenteController@eliminaFAQ')
     ->name("eliminaFAQ")
-    ->middleware('can:isAdmin');       
+    ->middleware('can:isAdmin');
 */
+
+//Rotta per il controller user (lavoro database)
+//Route::get('users', [UserController::class, 'index']);
+Route::get('Utenti', [UserController::class, 'getData']);
+Route::get('Offerte', [OfferController::class, 'getData']);
+Route::get('FAQs', [FAQController::class, 'getData']);
+Route::get('Aziende', [FactoryController::class, 'getData']);
+Route::get('Coupons', [CouponController::class, 'getData']);
