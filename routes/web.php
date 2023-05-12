@@ -68,11 +68,37 @@ Route::view("/login", 'login')
 Route::view("/hubUtente", 'hubUtente')
     ->name("hubUtente");
 
-// Rotta per andare nella Home dopo il Login
+// Rotte per andare nella Home dopo il Login
+
+/*
+Route::get('/home1', function () { // Home dei clienti
+    return view('home1');
+})->middleware(['auth', 'can:access-level-1'])->name('home1');
+
+Route::get('/home2', function () { // Home dello staff
+    return view('home2');
+})->middleware(['auth', 'can:access-level-2'])->name('home2');
+
+Route::get('/home3', function () { // Home dell'amministratore
+    return view('home3');
+})->middleware(['auth', 'can:access-level-3'])->name('home3');
+*/
+
+/* --------------------------
+ * ROTTE CLIENTI
+ * -------------------------- */
 
 // Rotta per richiede una promozione
 
-// Rotta per la gestione del profilo
+
+
+// Rotta per la modifica delle profilo
+
+/*
+Route::get('/modifica-credenziali', function () {
+    return view('modifica-credenziali');
+})->middleware(['auth', 'checkLevel']);
+*/
 
 // Rotta per lo staff
 

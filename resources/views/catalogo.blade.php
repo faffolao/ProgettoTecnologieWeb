@@ -37,6 +37,11 @@
                 <h3>2 aspirapolveri al prezzo di 1</h3>
                 <p>Incredibile offerta di Dyson per i nuovi aspirapolveri V8 e V10</p>
                 <a href="#" class="card-btn">Scopri di più</a>
+                <!--
+                @if(Auth::user()->level == 1)
+                <button type="button">Genera coupon</button>
+                @endif
+                -->
             </div>
             <div class="card">
                 <img src="https://m.media-amazon.com/images/I/51PwOB5WjCL._UXNaN_FMjpg_QL85_.jpg" alt="Offerta">

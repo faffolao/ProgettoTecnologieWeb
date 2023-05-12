@@ -64,4 +64,14 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     ];
+
+    //Registrazione del controllo dei livello di utenza. Per questo, è stato creato un middleware personalizzato CheckLevel
+
+    /*
+
+    protected $routeMiddleware = [
+    'checkLevel' => \App\Http\Middleware\CheckLevel::class,
+];
+
+    */
 }
