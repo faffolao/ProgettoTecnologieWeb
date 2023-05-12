@@ -79,6 +79,9 @@ main {margin: 50px 10%;}
 .container        {margin-top: 30px;}
 .container h1, h2 {text-align: center}
 .container h2     {font-size: 36px;}
+/* se il container contiene un elemento aside (un menu di navigazione che giace ai lati della pagina) questi dovrà assumere
+il flexbox layout per poter visualizzare allo stesso livello sia l'aside che il corpo della pagina */
+.with-aside {display: flex;}
 
 /* "desc" contiene del contenuto descrittivo alla pagina, ad esempio, dei testi introduttivi */
 .desc{
@@ -94,6 +97,21 @@ main {margin: 50px 10%;}
 }
 .desc h2{text-align: center; font-size: 36px; margin-bottom: 20px;}
 .desc p{margin-bottom: 10px; font-size: 20px;}
+
+/*
+    Aside Navigation Bar (aside-nav): barra di navigazione posta a sinistra del contenuto. Viene usata nel catalogo per filtrare le offerte
+    in base all'azienda specifica che si desidera (o anche per tutte le aziende)
+ */
+aside {
+    width: 25%;
+    background-color: #fff;
+    padding: 20px;
+}
+.aside-nav h2 {text-align: left;}
+.aside-nav ul{list-style: none; padding: 0; margin: 0;}
+.aside-nav li{margin-bottom: 10px;}
+.aside-nav a{text-decoration: none; color: #333; font-size: 1.2em; display: block; padding: 5px; border-radius: 5px;}
+.aside-nav a:hover{background-color: #f2f2f2;}
 
 /* ----------------------------------------------------
         impostazioni specifiche per home page
@@ -137,7 +155,6 @@ main {margin: 50px 10%;}
     padding: 20px;
     text-align: center;
     max-width: 300px;
-    cursor: pointer;
     box-shadow: 0 0 5px rgba(0,0,0,.3);
 }
 
@@ -146,7 +163,20 @@ automaticamente per evitare che possa apparire stretchato */
 .card img {width: 150px; height: 150px; object-fit: scale-down; margin-bottom: 20px;}
 .card h3  {font-size: 24px; margin-bottom: 10px;}
 .card-title-link {font-size: 21px; text-decoration: none; display: block; color: black; font-weight: bold;}
+.card-title-link:hover {color: #d35400;}
 .card p   {font-size: 16px;}
+.card-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+.card-btn:hover {background-color: #d35400;}
 
 /*.desc button{
     background-color: #d35400;
@@ -165,6 +195,94 @@ automaticamente per evitare che possa apparire stretchato */
 .faq .question    {font-size: 1.2rem; font-weight: bold; cursor: pointer;}
 .faq .answer      {display: none; font-size: 1rem; padding: 10px;}
 .faq .answer.show {display: block;}
+
+/*
+    Barra di ricerca
+ */
+
+/* search-container è il contenitore della barra di ricerca */
+.search-container {
+    position: relative;
+    justify-content: center;
+    margin: 30px auto;
+    align-items: center;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    max-width: 30%;
+}
+
+/* search-wrapper è la barra stessa di ricerca (l'input box per intenderci) */
+.search-wrapper {
+    position: relative;
+    display: flex;
+}
+
+.search-wrapper input[type="text"] {
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.search-wrapper button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.search-wrapper button img {width: 17px; height: 17px;}
+
+/*
+    Form: gestione grafiche delle form, del form-box (il suo contenitore) e il wrapper (l'area che contiene tutto)
+ */
+.wrapper {
+    width: 100%;
+    margin: 50px auto;
+    background-image: url('../images/login_wall.jpeg');
+    background-position: bottom;
+    background-size: cover;
+    padding: 100px;
+}
+.form-box {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    width: 40%;
+    max-height: min-content;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(100px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    color: black;
+    padding: 70px 40px;
+}
+.form-box h2 {font-size: 30px;}
+.input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid;
+    margin: 30px 0;
+    text-align: left;
+    color: black;
+}
+.input-box .icon {position: absolute; right: 8px; bottom: 18px; font-size: 1.2em; color: black;}
+.input-box input {width: 100%; height: 100%; background: transparent; border: none; outline: none; font-size: 1em; color: black; padding: 0 35px 0 5px;}
+.input-box label {position: absolute; color: black; top: 50%; left: 5px; transform: translateY(-50%); font-size: 1em; font-weight: bold; transition: .3s;}
+.register-link {color: black; text-decoration: none;}
+.register {margin-top: 30px;}
+
+/* quando si fa click su un input box (quindi questa ottiene il focus), il label di questa viene shiftato di 5px verso l'alto */
+.input-box input:focus~label, .input-box input:valid~label{top: -5px;}
 
 /*-----------------------
  | Footer (pie di pagina

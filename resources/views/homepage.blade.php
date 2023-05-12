@@ -5,7 +5,7 @@
     <div class="hero-image">
         <h1>Scontati ma non scontrosi: il momento perfetto per togliersi qualche sfizio</h1>
         <p>Promozioni da tantissime aziende</p>
-        <a class="btn" href="">Inizia a sfogliare il catalogo</a>
+        <a class="btn" href="{{ route('catalogo') }}">Inizia a sfogliare il catalogo</a>
     </div>
 
     <div class="container">

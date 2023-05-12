@@ -1,15 +1,13 @@
 @extends('layouts.skel')
 
 @section('content')
-    <!-- una hero image è un'area che viene particolarmente risaltata -->
+    <!-- il wrapper è il contenitore che contiene il box della form di login -->
     <div class="wrapper">
-<!--            <span class="icon-close">-->
-<!--                <ion-icon name="close"></ion-icon>-->
-<!--            </span>-->
+        <!-- box che contiene la form di login -->
         <div class="form-box login">
             <h2>Login</h2>
-<!--        <form action="#"-->
-            <form>
+            <!-- effettiva form di login -->
+            <form action="no" method="POST">
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="person"></ion-icon>
@@ -17,6 +15,7 @@
                     <input type="text" id="username" name="username" required>
                     <label for="username">Username</label>
                 </div>
+
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock-open"></ion-icon>
@@ -24,20 +23,17 @@
                     <input type="password" id="password" name="password" required>
                     <label for="password">Password</label>
                 </div>
-                <div class="rememberMe">
-                    <label><input type="checkbox">Ricordami</label>
-                </div>
-<!--            <button type="submit class="btnLogin">Login</button>-->
-                <button type="button" class="btnLogin" onclick="login()">Login</button>
+
+                <button type="submit" class="btn">Login</button>
                 <div class="register">
-                    <p>Non hai un account?<b><a href="../html/signUp.html" class="register-link">
-                        Registrati</a></b>
+                    <p>
+                        Non hai un account?<b><a href="../html/signUp.html" class="register-link">Registrati</a></b>
                     </p>
                 </div>
             </form>
         </div>
     </div>
 
-    <script type="text/javascript" src="{{ asset('assets/js/login.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/faq_viewer.js') }}"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 @endsection

@@ -12,7 +12,6 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <!-- inserimento fogli di stile necessari al rendering del layout della pagina -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/skel.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/aziendeList.css') }}">
 </head>
 
 <body>

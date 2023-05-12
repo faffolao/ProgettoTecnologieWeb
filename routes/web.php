@@ -15,7 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 //Auth::routes(); //per importare le rotte di autenticazione degli utenti
 
-//ROTTE PER LA NAVBAR
+/* --------------------------
+ * ROTTE PER LA NAVBAR
+ * -------------------------- */
 
 // Rotta per il caricamento della home page.
 Route::view('/', 'homepage') //Così strutturata, la rende la pagina che si apre di default
@@ -26,11 +28,11 @@ Route::view('/', 'homepage') //Così strutturata, la rende la pagina che si apre
 Route::view("/aziende", 'aziende')
     ->name("aziende");
 
-// Rotta per il caricamento della lista delle offerte.    
+// Rotta per il caricamento della lista delle offerte.
 Route::view("/catalogo", 'catalogo')
     ->name("catalogo");
 
-// Rotta per il caricamento della pagina di Login.    
+// Rotta per il caricamento della pagina di Login.
 Route::view("/login", 'login')
     ->name("login");
 
@@ -42,7 +44,7 @@ Route::view("/login", 'login')
 
 // Rotte per gli utenti
 
-// Rotta per andare nella Home dopo il Login 
+// Rotta per andare nella Home dopo il Login
 
 // Rotta per richiede una promozione
 
@@ -56,7 +58,7 @@ Route::view("/login", 'login')
 
 
 
-/*    
+/*
 // Rotte per le faq
 
 Route::get('/gestioneFAQ','utenteController@gestioneFAQ')
@@ -70,7 +72,7 @@ Route::get('/modifica_faq/{id}', 'utenteController@modificaFAQ')
 
 Route::post('/modifica_faq/{id}', 'utenteController@modificaFAQ')
     ->name("modificaFAQ")
-    ->middleware('can:isAdmin');    
+    ->middleware('can:isAdmin');
 
 // Rotte get e post per eliminare le FAQ
 Route::get('/elimina_faq/{id}', 'utenteController@eliminaFAQ')
@@ -79,5 +81,5 @@ Route::get('/elimina_faq/{id}', 'utenteController@eliminaFAQ')
 
 Route::post('/elimina_faq/{id}', 'utenteController@eliminaFAQ')
     ->name("eliminaFAQ")
-    ->middleware('can:isAdmin');       
+    ->middleware('can:isAdmin');
 */
