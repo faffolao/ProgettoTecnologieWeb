@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
+//per database
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\OfferController;
+use App\Http\Controllers\FAQController;
+use App\Http\Controllers\FactoryController;
+use App\Http\Controllers\CouponController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -83,3 +89,11 @@ Route::post('/elimina_faq/{id}', 'utenteController@eliminaFAQ')
     ->name("eliminaFAQ")
     ->middleware('can:isAdmin');
 */
+
+//Rotta per il controller user (lavoro database)
+//Route::get('users', [UserController::class, 'index']);
+Route::get('Utenti', [UserController::class, 'getData']);
+Route::get('Offerte', [OfferController::class, 'getData']);
+Route::get('FAQs', [FAQController::class, 'getData']);
+Route::get('Aziende', [FactoryController::class, 'getData']);
+Route::get('Coupons', [CouponController::class, 'getData']);

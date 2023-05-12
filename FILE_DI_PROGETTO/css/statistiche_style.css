@@ -51,6 +51,12 @@ main{
     background-size: cover;
 }
 
+main h1{
+    text-align: center;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
 /*main{*/
 /*    max-width: 1200px;*/
 /*    margin: 20px auto;*/

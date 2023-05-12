@@ -20,6 +20,23 @@ function searchCoupons() {
   }
 }
 
+function searchUsers() {
+  var input = document.getElementById("search-bar1");
+  var filter = input.value.toUpperCase();
+  var elements = document.getElementsByClassName("user");
+
+
+  for (var i = 0; i < elements.length; i++) {
+    var text = elements[i].textContent || elements[i].innerText;
+    if (text.toUpperCase().indexOf(filter) > -1) {
+      elements[i].style.display = "";
+    } else {
+      elements[i].style.display = "none";
+    }
+  }
+}
+
+
 /***************************************************************************/
 
 var tot = document.getElementById("total")
@@ -41,19 +58,3 @@ function sumAllCounts() {
 
 var total = sumAllCounts();
 document.getElementById("total").innerHTML = total;
-
-function searchUsers() {
-  var input = document.getElementById("search-bar1");
-  var filter = input.value.toUpperCase();
-  var elements = document.getElementsByClassName("user");
-
-
-  for (var i = 0; i < elements.length; i++) {
-    var text = elements[i].textContent || elements[i].innerText;
-    if (text.toUpperCase().indexOf(filter) > -1) {
-      elements[i].style.display = "";
-    } else {
-      elements[i].style.display = "none";
-    }
-  }
-}
