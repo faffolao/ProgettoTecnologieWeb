@@ -55,6 +55,8 @@ Route::view("/login", 'login')
 // Rotta per mostrare l'elenco delle aziende
 
 // Rotte per gli utenti
+Route::view("/hubUtente", 'hubUtente')
+    ->name("hubUtente");
 
 // Rotta per andare nella Home dopo il Login
 
