@@ -69,27 +69,12 @@
         <div class="faq">
             <p>Queste sono le domande più frequenti che gli utenti ci pongono. Clicca sulla domanda che ti interessa per scoprire la risposta!</p>
             <ul>
-                <li>
-                    <div class="question">Come faccio ad applicare un coupon?</div>
-                    <div class="answer">
-                        &Egrave; sufficiente selezionare l'offerta desiderata e cliccare sul tasto Genera coupon. Per poter usufruire
-                        dei coupon è necessario aver effettuato il login (quindi essere registrati sul nostro sito!)
-                    </div>
-                </li>
-                <li>
-                    <div class="question">Posso ottenere più coupon per la stessa offerta?</div>
-                    <div class="answer">
-                        No, purtroppo le nostre politiche non consentono l'applicazione di più coupon per la stessa offerta.
-                        L'utente potrà quindi ottenere un solo coupon per ogni offerta che desidera.
-                    </div>
-                </li>
-                <li>
-                    <div class="question">L'uso dei coupon generati da Offertopoli è soggetto a pagamento?</div>
-                    <div class="answer">
-                        No, l'uso e la generazione dei coupon di Offertopoli è completamente gratuito; non è quindi richiesto
-                        nessun pagamento e nessun inserimento di qualche carta di credito.
-                    </div>
-                </li>
+                @foreach($List as $list)
+                    <li>
+                        <div class="question">{{$list['domanda']}}</div>
+                        <div class="answer">{{$list['risposta']}}</div>
+                    </li>
+                @endforeach
             </ul>
         </div>
     </div>

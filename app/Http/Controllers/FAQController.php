@@ -10,6 +10,9 @@ class FAQController extends Controller
     //
         function getData()
     {
-        return FAQ::all();
+//        return FAQ::all('domanda');
+        $data= FAQ::all('domanda', 'risposta');
+//        $dataR= FAQ::all('risposta');
+        return view('homepage', ['List'=>$data]);
     }
 }
