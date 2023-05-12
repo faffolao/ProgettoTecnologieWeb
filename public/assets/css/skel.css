@@ -285,6 +285,40 @@ automaticamente per evitare che possa apparire stretchato */
 /* quando si fa click su un input box (quindi questa ottiene il focus), il label di questa viene shiftato di 5px verso l'alto */
 .input-box input:focus~label, .input-box input:valid~label{top: -5px;}
 
+/*
+    Panel: contenitore aggiuntivo (puramente estetico), caratteristico delle aree personali (di tutti i livelli di utenza)
+    Il Panel può contenere una Toggle List, ovvero una lista di elementi che si può comprimere
+ */
+.panel {
+    background-color: #f5f5f5;
+    box-shadow: 0 0 5px #ccc;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 300px;
+    height: max-content;
+}
+/* contenitore che contiene un logo seguito da un titolo */
+.title-with-logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+}
+.title-with-logo img {max-width: 125px;}
+.title-with-logo h2 {margin-left: 25px; font-size: 28px;}
+
+.toggle-list {
+    margin: 0 auto;
+    text-align: center;
+}
+.toggle-list ul {list-style: none; margin-bottom: 10px;}
+.toggle {cursor: pointer;}
+.toggle h2 {font-size: 24px; margin-bottom: 15px;}
+.hidden {display: none;}
+
 /*-----------------------
  | Footer (pie di pagina
 -------------------------*/
