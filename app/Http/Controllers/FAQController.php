@@ -8,11 +8,11 @@ use App\Models\FAQ;
 class FAQController extends Controller
 {
     //
-        function getData()
+    function getData()
     {
-//        return FAQ::all('domanda');
-        $data= FAQ::all('domanda', 'risposta');
-//        $dataR= FAQ::all('risposta');
-        return view('homepage', ['List'=>$data]);
+////        return FAQ::all('domanda');
+//        $data= FAQ::all();
+////        $dataR= FAQ::all('risposta');
+//        return view('homepage', ['List'=>$data]);
     }
 }

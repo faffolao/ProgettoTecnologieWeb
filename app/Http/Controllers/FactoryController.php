@@ -11,9 +11,14 @@ class FactoryController extends Controller
     //
     function getData()
     {
-        $data= Factory::all('nome');
+        $data= Factory::all();
         return view('catalogo', ['Aziende'=>$data]);
     }
+//        function getDataHome()
+//    {
+//        $dataHome= Factory::all();
+//        return view('homepage', ['Aziende'=>$dataHome]);
+//    }
 //    function show()
 //    {
 //        return view('list');

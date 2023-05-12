@@ -9,6 +9,8 @@ use App\Http\Controllers\OfferController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\FactoryController;
 use App\Http\Controllers\CouponController;
+use App\Http\Controllers\HomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,8 +29,10 @@ use App\Http\Controllers\CouponController;
  * -------------------------- */
 
 // Rotta per il caricamento della home page.
-Route::get('/', [FAQController::class, 'getData'])
+Route::get('/', [HomeController::class, 'index'])
     ->name('homepage');
+//Route::get('/', [FAQController::class, 'getData'])
+//    ->name('homepage');
 //Route::view('/', 'homepage') //Così strutturata, la rende la pagina che si apre di default
 //    ->name("homepage");
 
@@ -101,9 +105,7 @@ Route::post('/elimina_faq/{id}', 'utenteController@eliminaFAQ')
 */
 
 //Rotta per il controller user (lavoro database)
-//Route::get('users', [UserController::class, 'index']);
 Route::get('UtentiDB', [UserController::class, 'getData']);
 Route::get('OfferteDB', [OfferController::class, 'getData']);
 Route::get('FAQsDB', [FAQController::class, 'getData']);
 Route::get('CouponsDB', [CouponController::class, 'getData']);
-//Route::get('list', [FactoryController::class, 'show']);
