@@ -211,7 +211,7 @@ automaticamente per evitare che possa apparire stretchato */
     border-radius: 50px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    max-width: 30%;
+    max-width: 45%;
 }
 
 /* search-wrapper è la barra stessa di ricerca (l'input box per intenderci) */
@@ -248,13 +248,13 @@ automaticamente per evitare che possa apparire stretchato */
     background-image: url('../images/login_wall.jpeg');
     background-position: bottom;
     background-size: cover;
-    padding: 100px;
+    padding: 100px 0;
+    text-align: center;
 }
 .form-box {
     position: relative;
     text-align: center;
     margin: 0 auto;
-    width: 40%;
     max-height: min-content;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, .5);
@@ -264,6 +264,7 @@ automaticamente per evitare che possa apparire stretchato */
     overflow: hidden;
     color: black;
     padding: 70px 40px;
+    width: 430px;
 }
 .form-box h2 {font-size: 30px;}
 .input-box {
