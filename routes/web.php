@@ -34,6 +34,10 @@ Route::view('/', 'homepage') //Così strutturata, la rende la pagina che si apre
 Route::view("/aziende", 'aziende')
     ->name("aziende");
 
+// Rotta per il caricamento dei dettagli di un'azienda
+Route::view("/dettagliAzienda", "dettagliAzienda")
+    ->name("dettagliAzienda");
+
 // Rotta per il caricamento del catalogo corredato di lista delle offerte.
 Route::get('/catalogo', [FactoryController::class, 'getData'])
     ->name('catalogo');
