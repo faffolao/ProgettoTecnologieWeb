@@ -19,16 +19,19 @@
                 </ul>
                 <ul>
                     <li><a href="#">Tutte le Aziende</a></li>
-                    <li><a href="#">Adidas</a></li>
-                    <li><a href="#">Apple</a></li>
-                    <li><a href="#">Microsoft</a></li>
-                    <li><a href="#">Dyson</a></li>
-                    <li><a href="#">Samsung</a></li>
-                    <li><a href="#">Lenovo</a></li>
-                    <li><a href="#">MyProtein</a></li>
-                    <li><a href="#">Daniel Wellington</a></li>
-                    <li><a href="#">Just Eat</a></li>
-                    <li><a href="#">Huawei</a></li>
+{{--                    <li><a href="#">Adidas</a></li>--}}
+{{--                    <li><a href="#">Apple</a></li>--}}
+{{--                    <li><a href="#">Microsoft</a></li>--}}
+{{--                    <li><a href="#">Dyson</a></li>--}}
+{{--                    <li><a href="#">Samsung</a></li>--}}
+{{--                    <li><a href="#">Lenovo</a></li>--}}
+{{--                    <li><a href="#">MyProtein</a></li>--}}
+{{--                    <li><a href="#">Daniel Wellington</a></li>--}}
+{{--                    <li><a href="#">Just Eat</a></li>--}}
+{{--                    <li><a href="#">Huawei</a></li>--}}
+                    @foreach($Aziende as $Aziende)
+                        <li><a href="#">{{$Aziende['nome']}}</a></li>
+                    @endforeach
                 </ul>
             </div>
         </aside>

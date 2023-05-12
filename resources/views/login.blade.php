@@ -7,7 +7,7 @@
         <div class="form-box login">
             <h2>Login</h2>
             <!-- effettiva form di login -->
-            <form action="no" method="POST">
+            <form action="" method="POST">
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="person"></ion-icon>

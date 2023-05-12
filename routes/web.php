@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 //per database
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserAuth;
 use App\Http\Controllers\OfferController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\FactoryController;
@@ -29,14 +30,19 @@ use App\Http\Controllers\CouponController;
 Route::view('/', 'homepage') //Così strutturata, la rende la pagina che si apre di default
     ->name("homepage");
 
-
 // Rotta per il caricamento della lista delle aziende.
 Route::view("/aziende", 'aziende')
     ->name("aziende");
 
-// Rotta per il caricamento della lista delle offerte.
-Route::view("/catalogo", 'catalogo')
-    ->name("catalogo");
+// Rotta per il caricamento del catalogo corredato di lista delle offerte.
+Route::get('/catalogo', [FactoryController::class, 'getData'])
+    ->name('catalogo');
+
+//Rotta per il POST del login
+Route::post("user", [UserAuth::class, 'userLogin']);
+// Rotta post login
+Route::view("/profile", 'profile')
+    ->name("profile");
 
 // Rotta per il caricamento della pagina di Login.
 Route::view("/login", 'login')
@@ -92,8 +98,8 @@ Route::post('/elimina_faq/{id}', 'utenteController@eliminaFAQ')
 
 //Rotta per il controller user (lavoro database)
 //Route::get('users', [UserController::class, 'index']);
-Route::get('Utenti', [UserController::class, 'getData']);
-Route::get('Offerte', [OfferController::class, 'getData']);
-Route::get('FAQs', [FAQController::class, 'getData']);
-Route::get('Aziende', [FactoryController::class, 'getData']);
-Route::get('Coupons', [CouponController::class, 'getData']);
+Route::get('UtentiDB', [UserController::class, 'getData']);
+Route::get('OfferteDB', [OfferController::class, 'getData']);
+Route::get('FAQsDB', [FAQController::class, 'getData']);
+Route::get('CouponsDB', [CouponController::class, 'getData']);
+//Route::get('list', [FactoryController::class, 'show']);
