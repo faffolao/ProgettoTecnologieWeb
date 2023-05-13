@@ -318,6 +318,9 @@ automaticamente per evitare che possa apparire stretchato */
 .toggle {cursor: pointer;}
 .toggle h2 {font-size: 24px; margin-bottom: 15px;}
 .hidden {display: none;}
+/* contenitore dei pulsanti di un Panel */
+.panel-buttons {text-align: center; padding: 23px;}
+.panel-buttons .btn {margin: 10px;}
 
 /*-----------------------
  | Footer (pie di pagina

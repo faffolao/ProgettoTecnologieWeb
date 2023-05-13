@@ -25,46 +25,6 @@
                     <a class="card-title-link" href="{{ route('dettagliAzienda') }}">{{$aziende['nome']}}</a>
                 </div>
             @endforeach
-            {{--        <div class="card">--}}
-            {{--            <img src="{{ asset('assets/images/logo_adidas.png') }}" alt="Service Image" class="logo-azienda">--}}
-            {{--            <a class="card-title-link" href="{{ route('dettagliAzienda') }}">Adidas</a>--}}
-            {{--        </div>--}}
-            {{--        <div class="card">--}}
-            {{--            <img src="{{ asset('assets/images/default_logo.png') }}" alt="Service Image">--}}
-            {{--            <a class="card-title-link" href="{{ route('dettagliAzienda') }}">Apple</a>--}}
-            {{--        </div>--}}
-            {{--        <div class="card">--}}
-            {{--            <img src="https://seeklogo.com/images/M/microsoft-logo-8EE94BD68A-seeklogo.com.png" alt="Service Image">--}}
-            {{--            <a class="card-title-link" href="{{ route('dettagliAzienda') }}">Microsoft</a>--}}
-            {{--        </div>--}}
-            {{--        <div class="card">--}}
-            {{--            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Dyson_logo.svg/2560px-Dyson_logo.svg.png" alt="Service Image">--}}
-            {{--            <a class="card-title-link" href="{{ route('dettagliAzienda') }}">Dyson</a>--}}
-            {{--        </div>--}}
-            {{--        <div class="card">--}}
-            {{--            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/2560px-Samsung_Logo.svg.png" alt="Service Image">--}}
-            {{--            <a class="card-title-link" href="{{ route('dettagliAzienda') }}">Samsung</a>--}}
-            {{--        </div>--}}
-            {{--        <div class="card">--}}
-            {{--            <img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Lenovo_Global_Corporate_Logo.png" alt="Service Image">--}}
-            {{--            <a class="card-title-link" href="{{ route('dettagliAzienda') }}">Lenovo</a>--}}
-            {{--        </div>--}}
-            {{--        <div class="card">--}}
-            {{--            <img src="https://upload.wikimedia.org/wikipedia/en/0/05/Myprotein_logo.png" alt="Service Image">--}}
-            {{--            <a class="card-title-link" href="{{ route('dettagliAzienda') }}">MyProtein</a>--}}
-            {{--        </div>--}}
-            {{--        <div class="card">--}}
-            {{--            <img src="https://www.orafoleo.it/wp-content/uploads/2020/06/danielwellington_logo.png" alt="Service Image">--}}
-            {{--            <a class="card-title-link" href="{{ route('dettagliAzienda') }}">Daniel Wellington</a>--}}
-            {{--        </div>--}}
-            {{--        <div class="card">--}}
-            {{--            <img src="https://1000marche.net/wp-content/uploads/2021/01/Just-Eat-logo.png" alt="Service Image">--}}
-            {{--            <a class="card-title-link" href="{{ route('dettagliAzienda') }}">Just Eat</a>--}}
-            {{--        </div>--}}
-            {{--        <div class="card">--}}
-            {{--            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Huawei_Standard_logo.svg/2016px-Huawei_Standard_logo.svg.png" alt="Service Image">--}}
-            {{--            <a class="card-title-link" href="{{ route('dettagliAzienda') }}">Huawei</a>--}}
-            {{--        </div>--}}
         </div>
     </div>
 

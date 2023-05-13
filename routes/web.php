@@ -58,6 +58,14 @@ Route::view("/profile", 'profile')
 Route::view("/login", 'login')
     ->name("login");
 
+// Rotta per il caricamento della pagina dei dettagli di un'offerta selezionata.
+Route::view("/dettagliOfferta", "dettagliOfferta")
+    ->name("dettagliOfferta");
+
+// Rotta per mostrare la pagina stampabile del coupon.
+Route::view("/coupon", "coupon")
+    ->name("getCoupon");
+
 // Rotta per mostrare le FAQ
 
 // Rotta per mostrare la lista del catalogo
