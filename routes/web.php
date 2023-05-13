@@ -37,7 +37,7 @@ Route::get('/', [HomeController::class, 'index'])
 //    ->name("homepage");
 
 // Rotta per il caricamento della lista delle aziende.
-Route::view("/aziende", 'aziende')
+Route::get("/aziende", [FactoryController::class, 'getDataA'])
     ->name("aziende");
 
 // Rotta per il caricamento dei dettagli di un'azienda
@@ -45,7 +45,7 @@ Route::view("/dettagliAzienda", "dettagliAzienda")
     ->name("dettagliAzienda");
 
 // Rotta per il caricamento del catalogo corredato di lista delle offerte.
-Route::get('/catalogo', [FactoryController::class, 'getData'])
+Route::get('/catalogo', [FactoryController::class, 'getDataC'])
     ->name('catalogo');
 
 //Rotta per il POST del login

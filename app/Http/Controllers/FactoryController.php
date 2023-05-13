@@ -9,10 +9,15 @@ use App\Models\Factory;
 class FactoryController extends Controller
 {
     //
-    function getData()
+    function getDataC()
     {
         $data= Factory::all();
         return view('catalogo', ['Aziende'=>$data]);
+    }
+    function getDataA()
+    {
+        $data= Factory::all();
+        return view('aziende', ['Aziende'=>$data]);
     }
 //        function getDataHome()
 //    {
