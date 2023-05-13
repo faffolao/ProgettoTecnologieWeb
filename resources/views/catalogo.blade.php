@@ -28,7 +28,7 @@
         <div id="section-offerte" class="card-deck">
             <div class="card">
                 <img src="https://www.my-personaltrainer.it/2022/09/26/peperoni-2_900x760.jpeg" alt="Offerta">
-                <h3>-50% laptop Samsung</h3>
+                <h3>-50% sui laptop Samsung</h3>
                 <p>Affrettati per ricevere il 50% di sconto sui laptop Samsung!</p>
                 <a href="{{ route('dettagliOfferta') }}" class="card-btn">Scopri di più</a>
             </div>

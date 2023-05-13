@@ -22,7 +22,7 @@
 
         <h2>Alcune delle aziende associate</h2>
         <!-- le aziende vengono rappresentate graficamente come delle Card (carte), contenute in un Card Deck -->
-        <div class="card-deck">
+        <div class="card-deck" title="Clicca su nome dell'azienda per saparne di più!!!">
             @foreach($Aziende as $aziende)
                 <div class="card">
                     <img src="data:image/png/jpeg;base64,{{ base64_encode($aziende['logo']) }}" alt="Service Image" class="logo-azienda">
