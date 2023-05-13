@@ -41,8 +41,10 @@ Route::get("/aziende", [FactoryController::class, 'getDataA'])
     ->name("aziende");
 
 // Rotta per il caricamento dei dettagli di un'azienda
-Route::view("/dettagliAzienda", "dettagliAzienda")
-    ->name("dettagliAzienda");
+Route::get("/dettagliAzienda/{nome}", [FactoryController::class, 'getDataDA'])
+    ->name('dettagliAzienda');
+//Route::view("/dettagliAzienda", "dettagliAzienda")
+//    ->name("dettagliAzienda");
 
 // Rotta per il caricamento del catalogo corredato di lista delle offerte.
 Route::get('/catalogo', [FactoryController::class, 'getDataC'])

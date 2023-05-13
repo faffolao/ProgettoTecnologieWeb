@@ -72,6 +72,11 @@ main {margin: 50px 10%;}
     text-decoration: none;
 }
 
+.btn:hover{
+    background: #cccccc;
+    color: black;
+}
+
 /*
     "container" contiene il corpo testuale della pagina e in generale contenuti standard (quindi nessun contenuto in
     primo piano o contenuto particolarmente rilevante)
