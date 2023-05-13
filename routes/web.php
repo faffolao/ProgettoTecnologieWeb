@@ -72,9 +72,13 @@ Route::view("/coupon", "coupon")
 
 // Rotta per mostrare l'elenco delle aziende
 
-// Rotte per gli utenti
+// Rotta per accedere all'area personale di un Cliente (utente di livello 1).
 Route::view("/hubUtente", 'hubUtente')
     ->name("hubUtente");
+
+// Rotta per accedere alla modifica dei dati personali (livello 1).
+Route::view("/modificaDati_L1", 'modificaDati_L1')
+    ->name("modificaDatiL1");
 
 // Rotte per andare nella Home dopo il Login
 

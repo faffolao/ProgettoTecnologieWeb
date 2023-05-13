@@ -2,16 +2,20 @@
 
 @section('content')
     <div class="container">
-        <div class="hub">
-            <h2>Benvenuto Utente</h2>
-            <div class="box">
-                <button onclick="window.location.href='home.html'">Logout</button>
+        <div class="panel">
+            <div class="title-with-logo">
+                <img src="{{ asset('assets/images/customer_icon.png') }}" alt="Logo utente">
+                <h2>Benvenuto nell'Area personale</h2>
             </div>
-            <div class="box">
-                <button onclick="window.location.href='modificaDatiPersonaliUtente.html'">Modifica dati personali</button>
+
+            <div class="panel-buttons">
+                <a href="#" class="btn">Logout</a>
             </div>
-            <div class="box">
-                <button onclick="window.location.href='listaCouponUtilizzati.html'">Visualizza coupon utilizzati</button>
+            <div class="panel-buttons">
+                <a href="{{ route('modificaDatiL1') }}" class="btn">Modifica dati personali</a>
+            </div>
+            <div class="panel-buttons">
+                <a href="#" class="btn">Visualizza coupon utilizzati</a>
             </div>
         </div>
     </div>

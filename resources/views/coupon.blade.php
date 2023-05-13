@@ -34,6 +34,9 @@
         <i class="material-icons">print</i>
     </button>
 
+    <!-- logo di Offertopoli - posto in basso a sinistra -->
+    <img src="{{ asset('assets/images/logo_with_text.png') }}" class="site-logo" alt="Logo di Offertopoli">
+
     <main>
         <div class="container">
             <h1>Nome Offerta</h1>
@@ -48,7 +51,7 @@
 
     <footer class="can-hide">
         <a href="{{ route('dettagliOfferta') }}">Torna all'offerta</a>
-        <a href="#">Torna nel tuo Hub</a>
+        <a href="{{ route('hubUtente') }}">Torna nel tuo Hub</a>
     </footer>
 
     <script type="text/javascript" src="{{ asset('assets/js/couponPageFunctions.js') }}"></script>
