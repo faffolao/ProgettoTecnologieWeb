@@ -46,7 +46,7 @@
         </div>
     </main>
 
-    <footer>
+    <footer class="can-hide">
         <a href="{{ route('dettagliOfferta') }}">Torna all'offerta</a>
         <a href="#">Torna nel tuo Hub</a>
     </footer>

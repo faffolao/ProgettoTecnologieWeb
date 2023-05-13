@@ -1,9 +1,11 @@
 function stampaPagina() {
-    var x = document.getElementsByClassName("hide");
+    var x = document.getElementsByClassName("can-hide");
+
     for (var i = 0; i < x.length; i++) {
         x[i].style.display = "none";
     }
     window.print();
+
     for (var i = 0; i < x.length; i++) {
         x[i].style.display = "inherit";
     }
