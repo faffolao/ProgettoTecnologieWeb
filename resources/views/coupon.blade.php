@@ -28,32 +28,32 @@
 </head>
 
 <body>
-    <!-- pulsante per stampare la pagina -->
-    <button class="print-icon" onclick="stampaPagina()">
-        <!-- Questo mi serve per importare l'iconcina dedicata al print -->
-        <i class="material-icons">print</i>
-    </button>
+<!-- pulsante per stampare la pagina -->
+<button class="print-icon" onclick="stampaPagina()">
+    <!-- Questo mi serve per importare l'iconcina dedicata al print -->
+    <i class="material-icons">print</i>
+</button>
 
-    <!-- logo di Offertopoli - posto in basso a sinistra -->
-    <img src="{{ asset('assets/images/logo_with_text.png') }}" class="site-logo" alt="Logo di Offertopoli">
+<!-- logo di Offertopoli - posto in basso a sinistra -->
+<img src="{{ asset('assets/images/logo_with_text.png') }}" class="site-logo" alt="Logo di Offertopoli">
 
-    <main>
-        <div class="container">
-            <h1>Nome Offerta</h1>
+<main>
+    <div class="container">
+        <h1>{{$tuple['nome']}}</h1>
 
-            <img src="https://api.qrserver.com/v1/create-qr-code/?data=IY7FSDYKI3CWUTKFKG" alt="Codice QR del coupon" width="200px">
-            <h2>Codice alfanumerico: <span id="codice-generato"></span></h2>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=IY7FSDYKI3CWUTKFKG" alt="Codice QR del coupon" width="200px">
+        <h2>Codice alfanumerico: <span id="codice-generato"></span></h2>
 
-            <h2>Data: 20 dicembre 2021</h2>
-            <h2>Nome: Nome Cognome</h2>
-        </div>
-    </main>
+        <h2>Data: <?php echo date('d/m/Y'); ?></h2>
+        <h2>Nome: Nome Cognome</h2>
+    </div>
+</main>
 
-    <footer class="can-hide">
-        <a href="{{ route('dettagliOfferta') }}">Torna all'offerta</a>
-        <a href="{{ route('hubUtente') }}">Torna nel tuo Hub</a>
-    </footer>
+<footer class="can-hide">
+    <a href="{{ route('catalogo') }}">Torna al catalogo delle offerte</a>
+    <a href="{{ route('hubUtente') }}">Torna nel tuo Hub</a>
+</footer>
 
-    <script type="text/javascript" src="{{ asset('assets/js/couponPageFunctions.js') }}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/couponPageFunctions.js') }}"></script>
 </body>
 </html>

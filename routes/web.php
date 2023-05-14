@@ -10,6 +10,7 @@ use App\Http\Controllers\FAQController;
 use App\Http\Controllers\FactoryController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CatalogoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,10 +32,6 @@ use App\Http\Controllers\HomeController;
 // Rotta per il caricamento della home page.
 Route::get('/', [HomeController::class, 'index'])
     ->name('homepage');
-//Route::get('/', [FAQController::class, 'getData'])
-//    ->name('homepage');
-//Route::view('/', 'homepage') //Così strutturata, la rende la pagina che si apre di default
-//    ->name("homepage");
 
 // Rotta per il caricamento della lista delle aziende.
 Route::get("/aziende", [FactoryController::class, 'getDataA'])
@@ -43,12 +40,11 @@ Route::get("/aziende", [FactoryController::class, 'getDataA'])
 // Rotta per il caricamento dei dettagli di un'azienda
 Route::get("/dettagliAzienda/{nome}", [FactoryController::class, 'getDataDA'])
     ->name('dettagliAzienda');
-//Route::view("/dettagliAzienda", "dettagliAzienda")
-//    ->name("dettagliAzienda");
 
 // Rotta per il caricamento del catalogo corredato di lista delle offerte.
 Route::get('/catalogo', [FactoryController::class, 'getDataC'])
     ->name('catalogo');
+Route::get('/catalogo/{idAzienda}', [CatalogoController::class, 'index']);
 
 //Rotta per il POST del login
 Route::post("user", [UserAuth::class, 'userLogin']);
@@ -65,12 +61,12 @@ Route::view("/registrazione", 'registrazione')
     ->name("registrazione");
 
 // Rotta per il caricamento della pagina dei dettagli di un'offerta selezionata.
-Route::view("/dettagliOfferta", "dettagliOfferta")
+Route::get("/dettagliOfferta/{id}", [OfferController::class, 'getDataDO'])
     ->name("dettagliOfferta");
 
 // Rotta per mostrare la pagina stampabile del coupon.
-Route::view("/coupon", "coupon")
-    ->name("getCoupon");
+Route::get("/coupon/{id}", [CouponController::class, 'getDataNO'])
+    ->name("coupon");
 
 // Rotta per mostrare le FAQ
 

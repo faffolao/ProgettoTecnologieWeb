@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FAQ;
+use App\Models\Offer;
 use Illuminate\Http\Request;
 use App\Models\Factory;
 
@@ -12,7 +12,8 @@ class FactoryController extends Controller
     function getDataC()
     {
         $data= Factory::all();
-        return view('catalogo', ['Aziende'=>$data]);
+        $dataAO= Offer::all();
+        return view('catalogo', ['Aziende'=>$data], ['Offerte'=>$dataAO]);
     }
     function getDataA()
     {

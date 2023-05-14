@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('faqs', function (Blueprint $table) {
             $table->bigIncrements('id')->nullable(false);
             $table->string('usernameCreatore', 30)->nullable(false);
-            $table->string('domanda', 100)->nullable(false);
-            $table->string('risposta', 200)->nullable(false);
+            $table->string('domanda', 300)->nullable(false);
+            $table->string('risposta', 300)->nullable(false);
             $table->timestamps(); // generazione automatica di data ed ora di inserimento e modifica di una riga
         });
     }
