@@ -60,6 +60,10 @@ Route::view("/profile", 'profile')
 Route::view("/login", 'login')
     ->name("login");
 
+// Rotta per il caricamento della pagina di registrazione.
+Route::view("/registrazione", 'registrazione')
+    ->name("registrazione");
+
 // Rotta per il caricamento della pagina dei dettagli di un'offerta selezionata.
 Route::view("/dettagliOfferta", "dettagliOfferta")
     ->name("dettagliOfferta");

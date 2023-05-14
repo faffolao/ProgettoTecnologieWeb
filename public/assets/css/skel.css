@@ -246,6 +246,8 @@ automaticamente per evitare che possa apparire stretchato */
 
 /*
     Form: gestione grafiche delle form, del form-box (il suo contenitore) e il wrapper (l'area che contiene tutto)
+    Il form-box ha una variante, il form-box-inputdialog, che è il form impiegato in tutte le pagine che non sono la
+    pagina di login (quindi in tutte le pagine dove sono richiesti molti dati in input da inviare ad una pagina)
  */
 .wrapper {
     width: 100%;
@@ -256,6 +258,7 @@ automaticamente per evitare che possa apparire stretchato */
     padding: 100px 0;
     text-align: center;
 }
+.wrapper-register {background-image: url("../images/register_wall.jpg");}
 .form-box {
     position: relative;
     text-align: center;
@@ -271,6 +274,34 @@ automaticamente per evitare che possa apparire stretchato */
     padding: 70px 40px;
     width: 430px;
 }
+.form-box-inputdialog {padding: 40px; width: 760px;}
+.form-box-inputdialog .form-row {display: flex; text-align: left; margin-top: 25px; margin-bottom: 15px;}
+.form-box-inputdialog .form-left {width: 50%; padding-right: 18px;}
+.form-box-inputdialog .form-right {width: 50%; padding-left: 18px;}
+.form-box-inputdialog fieldset {border: none;}
+.form-box-inputdialog label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+input[type="text"], input[type="password"], input[type="tel"], input[type="date"], input[type="email"] {
+    font-size: medium;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.form-box-inputdialog legend {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+}
+
 .form-box h2 {font-size: 30px;}
 .input-box {
     position: relative;

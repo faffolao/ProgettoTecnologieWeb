@@ -7,7 +7,7 @@
         <div class="form-box login">
             <h2>Login</h2>
             <!-- effettiva form di login -->
-            <form action="hubUtente" method="">
+            <form action="hubUtente" method="POST">
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="person"></ion-icon>
@@ -27,7 +27,7 @@
                 <button type="submit" class="btn">Login</button>
                 <div class="register">
                     <p>
-                        Non hai un account?<b><a href="../html/signUp.html" class="register-link">Registrati</a></b>
+                        Non hai un account?&nbsp;&nbsp;<b><a href="{{ route('registrazione') }}" class="register-link">Registrati</a></b>
                     </p>
                 </div>
             </form>
