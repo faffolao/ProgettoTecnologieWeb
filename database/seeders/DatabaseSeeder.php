@@ -36,6 +36,23 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
+        DB::table('faqs') -> insert([
+            [
+                'id' => NULL,
+                'usernameCreatore' => 'root',
+                'domanda' => 'Come faccio ad applicare un coupon?',
+                'risposta' => 'È sufficiente selezionare l\'offerta desiderata e cliccare sul tasto Genera coupon.
+                               Per poter usufruire dei coupon è necessario aver effettuato il login (quindi essere
+                               registrati sul nostro sito!)'
+            ],
+            [
+                'id' => NULL,
+                'usernameCreatore' => 'root',
+                'domanda' => "L'uso di Offertopoli è gratuito oppure è necessario pagare un abbonamento per usare i coupon?",
+                'risposta' => 'Si, Offertopoli è gratuito, tutti i coupon contenuti sono liberamente e gratuitamente utilizzabili.'
+            ]
+        ]);
+
 //        DB::table('aziende') -> insert(
 //            [
 //                [
@@ -72,15 +89,6 @@ class DatabaseSeeder extends Seeder
 //            ],
 //        );
 //
-//        DB::table('faqs') -> insert(
-//            [
-//                'id' => 2,
-//                'usernameCreatore' => 'root',
-//                'domanda' => 'Come faccio ad applicare un coupon?',
-//                'risposta' => 'È sufficiente selezionare l\'offerta desiderata e cliccare sul tasto Genera coupon.
-//                               Per poter usufruire dei coupon è necessario aver effettuato il login (quindi essere
-//                               registrati sul nostro sito!)',
-//            ],
-//        );
+//
     }
 }
