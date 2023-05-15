@@ -23,7 +23,8 @@ class DatabaseSeeder extends Seeder
         // Comando per avviare la migration:
         //  $ php artisan migrate:refresh
         //  $ php artisan migrate
-        // Comando per caricare i dati sottostanti: php artisan db:seed
+        // Comando per caricare i dati sottostanti:
+        //  $ php artisan db:seed
 
         DB::table('utenti') -> insert(
             [
