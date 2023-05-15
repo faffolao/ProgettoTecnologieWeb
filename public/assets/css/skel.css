@@ -324,6 +324,8 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="date"
 /* quando si fa click su un input box (quindi questa ottiene il focus), il label di questa viene shiftato di 5px verso l'alto */
 .input-box input:focus~label, .input-box input:valid~label{top: -5px;}
 
+/* quando si passa sopra il link quest'ultimo viene sottolineato*/
+.register a:hover    {text-decoration: underline;}
 /*
     Panel: contenitore aggiuntivo (puramente estetico), caratteristico delle aree personali (di tutti i livelli di utenza)
     Il Panel può contenere una Toggle List, ovvero una lista di elementi che si può comprimere
