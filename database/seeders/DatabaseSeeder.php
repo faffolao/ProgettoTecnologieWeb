@@ -20,6 +20,9 @@ class DatabaseSeeder extends Seeder
     {
         $request = new Request();
         // \App\Models\User::factory(10)->create();
+        // Comando per avviare la migration:
+        //  $ php artisan migrate:refresh
+        //  $ php artisan migrate
         // Comando per caricare i dati sottostanti: php artisan db:seed
 
         DB::table('utenti') -> insert(
