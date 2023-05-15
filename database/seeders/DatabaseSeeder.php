@@ -2,12 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -18,8 +14,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        // Per caricare le immagini varie, ho bisogno di caricarle dal progetto.
+        // Verranno poi trasformate in BLOB binari successivamente all'inserimento nel database.
+        $huaweiLogo = file_get_contents(base_path("database/data/huawei.png"));
+        $justEatLogo = file_get_contents(base_path("database/data/justeat.png"));
 
-        DB::table('utenti') -> insert(
+        $huaweiOffer = file_get_contents(base_path("database/data/offer_huawei.jpeg"));
+        $justEatOffer = file_get_contents(base_path("database/data/offer_just_eat.jpeg"));
+
+        // Creazione tabella Utenti.
+        DB::table('utenti') -> insert([
             [
                 'username' => 'root',
                 'nome' => 'System',
@@ -30,9 +34,21 @@ class DatabaseSeeder extends Seeder
                 'password' => 'root',
                 'telefono' => NULL,
                 'email' => 'root@admin',
+            ],
+            [
+                'username' => 'marco99',
+                'nome' => 'Marco',
+                'cognome' => 'Alessandrini',
+                'eta' => 34,
+                'genere' => 'M',
+                'livello' => 1,
+                'password' => "1e4e888ac66f8dd41e00c5a7ac36a32a9950d271",
+                'telefono' => '7832891231',
+                'email' => 'marcoaless99@gmail.com'
             ]
-        );
+        ]);
 
+        // Creazione tabella Aziende.
         DB::table('aziende') -> insert([
             [
                 'id' => NULL,
@@ -40,11 +56,65 @@ class DatabaseSeeder extends Seeder
                 'descrizione' => 'Servizio online di food delivery, supportato da più di 2500 ristoranti in tutta Italia',
                 'nome' => 'Just Eat',
                 'ragioneSociale' => 'Just Eat',
-                'logo' => 'dd',
+                'logo' => $justEatLogo,
                 'tipologia' => 'Cibo e Ristorazione'
+            ],
+            [
+                'id' => NULL,
+                'managerUsername' => 'root',
+                'descrizione' => "É una società cinese impegnata nello sviluppo, produzione e commercializzazione di
+                                 prodotti, di sistemi e di soluzioni di rete e telecomunicazioni, smartphones ed
+                                 elettronica di consumo generale.",
+                'nome' => 'Huawei',
+                'ragioneSociale' => 'Huawei Tecnologies Corporation, Limited',
+                'logo' => $huaweiLogo,
+                'tipologia' => 'Informatica'
             ]
         ]);
 
+        // Creazione tabella Offerte
+        DB::table('offerte') -> insert([
+            [
+                'id' => NULL,
+                'idAzienda' => 1,
+                'nome' => '30% di sconto per 2 ordini',
+                'oggetto' => 'Ottieni il 30% di sconto sul totale dei prossimi 2 ordini - Solo da Just Eat!',
+                'modalitaFruizione' => "Inserire il codice del coupon nella sezione Inserisci sconto al momento dell'ordine sull'app.",
+                'luogoFruizione' => "Utilizzabile solo sull'app Just Eat.",
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => $justEatOffer
+            ],
+            [
+                'id' => NULL,
+                'idAzienda' => 2,
+                'nome' => 'Huawei P60 a prezzo stracciato!',
+                'oggetto' => 'Ottieni il nuovo Huawei P60 scontato del 35%!',
+                'modalitaFruizione' => 'Mostrare il codice generato dal coupon alla cassa al momento del pagamento.',
+                'luogoFruizione' => 'Presso negozi e punti vendita certificati Huawei.',
+                'dataOraCreazione' => now(),
+                'dataOraScadenza' => '2024-01-01 10:15:00',
+                'immagine' => $huaweiOffer
+            ]
+        ]);
+
+        // Creazione tabella Coupons.
+        DB::table('coupons') -> insert([
+            [
+                'codice' => 'W3FIV467KYU237',
+                'usernameCliente' => 'marco99',
+                'idOfferta' => 1,
+                'dataOraCreazione' => '2023-02-12 14:15:26'
+            ],
+            [
+                'codice' => '894GHO47843F3',
+                'usernameCliente' => 'marco99',
+                'idOfferta' => 2,
+                'dataOraCreazione' => '2023-03-13 19:34:34'
+            ]
+        ]);
+
+        // Creazione tabella FAQs.
         DB::table('faqs') -> insert([
             [
                 'id' => NULL,
@@ -61,44 +131,5 @@ class DatabaseSeeder extends Seeder
                 'risposta' => 'Si, Offertopoli è gratuito, tutti i coupon contenuti sono liberamente e gratuitamente utilizzabili.'
             ]
         ]);
-
-
-//        DB::table('aziende') -> insert(
-//            [
-//                [
-//                    'id' => 5,
-//                    'managerUsername' => 'root',
-//                    'descrizione' => 'Una tra le migliori aziende che produce elettrodomestici tra cui:
-//                                   aspirapolvere; ventilatori e asciugacapelli ',
-//                    'nome' => 'Dyson',
-//                    'ragioneSociale' => 'Dyson S.R.L.',
-//                    'logo' => Storage::putFile('public', $request->file('logo')),
-//                    'tipologia' => 'multinazionale',
-//                ],
-//                [
-//                    'id' => 6,
-//                    'managerUsername' => 'root',
-//                    'descrizione' => 'Una tra le migliori aziende che produce elettrodomestici tra cui:
-//                                   aspirapolvere; ventilatori e asciugacapelli ',
-//                    'nome' => 'Dyson',
-//                    'ragioneSociale' => 'Dyson S.R.L.',
-//                    'logo' => Storage::putFile('public', $request->file('logo')),
-//                    'tipologia' => 'multinazionale',
-//                ]
-//            ]
-//
-//        );
-//
-//        //Questa deve essere una delle ultime tabelle da riempire
-//        DB::table('coupons') -> insert(
-//            [
-//                'codice' => 'codicetest',
-//                'usernameCliente' => 'GabrielP',
-//                'idOfferta' => 1,
-//                'dataOraCreazione', //completa dopo
-//            ],
-//        );
-//
-//
     }
 }
