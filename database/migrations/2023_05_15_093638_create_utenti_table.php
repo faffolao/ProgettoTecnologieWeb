@@ -17,10 +17,11 @@ return new class extends Migration
             $table->string('username', 30)->primary();
             $table->string('nome', 20)->nullable(false);
             $table->string('cognome', 20)->nullable(false);
-            $table->smallInteger('eta');
-            $table->string('genere', 1);
+            $table->smallInteger('eta')->nullable();
+            $table->string('genere', 1)->nullable();
+            $table->integer('livello');
             $table->string('password', 255)->nullable(false);
-            $table->string('telefono', 10);
+            $table->string('telefono', 10)->nullable();
             $table->string('email', 30)->nullable(false);
         });
     }
