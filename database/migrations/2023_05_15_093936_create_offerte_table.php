@@ -14,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Offerte', function (Blueprint $table) {
+        Schema::create('offerte', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
             $table->foreign('idAzienda')->references('id')->on('Aziende');
             $table->string('nome', 70)->nullable(false);
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Offerte');
+        Schema::dropIfExists('offerte');
     }
 };

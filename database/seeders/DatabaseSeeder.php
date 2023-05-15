@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         $request = new Request();
         // \App\Models\User::factory(10)->create();
 
-        DB::table('Utenti') -> insert(
+        DB::table('utenti') -> insert(
             [
                 'username' => 'root',
                 'nome' => 'System',
@@ -35,51 +35,51 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        DB::table('Aziende') -> insert(
-            [
-                [
-                    'id' => 5,
-                    'managerUsername' => 'root',
-                    'descrizione' => 'Una tra le migliori aziende che produce elettrodomestici tra cui:
-                                   aspirapolvere; ventilatori e asciugacapelli ',
-                    'nome' => 'Dyson',
-                    'ragioneSociale' => 'Dyson S.R.L.',
-                    'logo' => Storage::putFile('public', $request->file('logo')),
-                    'tipologia' => 'multinazionale',
-                ],
-                [
-                    'id' => 6,
-                    'managerUsername' => 'root',
-                    'descrizione' => 'Una tra le migliori aziende che produce elettrodomestici tra cui:
-                                   aspirapolvere; ventilatori e asciugacapelli ',
-                    'nome' => 'Dyson',
-                    'ragioneSociale' => 'Dyson S.R.L.',
-                    'logo' => Storage::putFile('public', $request->file('logo')),
-                    'tipologia' => 'multinazionale',
-                ]
-            ]
-
-        );
-
-        //Questa deve essere una delle ultime tabelle da riempire
-        DB::table('Coupons') -> insert(
-            [
-                'codice' => 'codicetest',
-                'usernameCliente' => 'GabrielP',
-                'idOfferta' => 1,
-                'dataOraCreazione', //completa dopo
-            ],
-        );
-
-        DB::table('FAQs') -> insert(
-            [
-                'id' => 2,
-                'usernameCreatore' => 'root',
-                'domanda' => 'Come faccio ad applicare un coupon?',
-                'risposta' => 'È sufficiente selezionare l\'offerta desiderata e cliccare sul tasto Genera coupon.
-                               Per poter usufruire dei coupon è necessario aver effettuato il login (quindi essere
-                               registrati sul nostro sito!)',
-            ],
-        );
+//        DB::table('aziende') -> insert(
+//            [
+//                [
+//                    'id' => 5,
+//                    'managerUsername' => 'root',
+//                    'descrizione' => 'Una tra le migliori aziende che produce elettrodomestici tra cui:
+//                                   aspirapolvere; ventilatori e asciugacapelli ',
+//                    'nome' => 'Dyson',
+//                    'ragioneSociale' => 'Dyson S.R.L.',
+//                    'logo' => Storage::putFile('public', $request->file('logo')),
+//                    'tipologia' => 'multinazionale',
+//                ],
+//                [
+//                    'id' => 6,
+//                    'managerUsername' => 'root',
+//                    'descrizione' => 'Una tra le migliori aziende che produce elettrodomestici tra cui:
+//                                   aspirapolvere; ventilatori e asciugacapelli ',
+//                    'nome' => 'Dyson',
+//                    'ragioneSociale' => 'Dyson S.R.L.',
+//                    'logo' => Storage::putFile('public', $request->file('logo')),
+//                    'tipologia' => 'multinazionale',
+//                ]
+//            ]
+//
+//        );
+//
+//        //Questa deve essere una delle ultime tabelle da riempire
+//        DB::table('coupons') -> insert(
+//            [
+//                'codice' => 'codicetest',
+//                'usernameCliente' => 'GabrielP',
+//                'idOfferta' => 1,
+//                'dataOraCreazione', //completa dopo
+//            ],
+//        );
+//
+//        DB::table('faqs') -> insert(
+//            [
+//                'id' => 2,
+//                'usernameCreatore' => 'root',
+//                'domanda' => 'Come faccio ad applicare un coupon?',
+//                'risposta' => 'È sufficiente selezionare l\'offerta desiderata e cliccare sul tasto Genera coupon.
+//                               Per poter usufruire dei coupon è necessario aver effettuato il login (quindi essere
+//                               registrati sul nostro sito!)',
+//            ],
+//        );
     }
 }

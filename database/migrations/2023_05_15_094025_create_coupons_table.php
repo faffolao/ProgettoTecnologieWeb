@@ -14,7 +14,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('Coupons', function (Blueprint $table) {
+        Schema::create('coupons', function (Blueprint $table) {
             $table->string('codice', 15)->primary();
 //            $table->string('usernameCliente', 30)->nullable(false);
             $table->foreign('usernameCliente')->references('username')->on('Utenti');
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Coupons');
+        Schema::dropIfExists('coupons');
     }
 };

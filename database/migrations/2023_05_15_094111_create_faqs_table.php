@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('FAQs', function (Blueprint $table) {
+        Schema::create('faqs', function (Blueprint $table) {
             $table->bigIncrements('id')->primary();
 //            $table->string('usernameCreatore', 30)->nullable(false);
             $table->foreign('usernameCreatore')->references('username')->on('Utenti');
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('FAQs');
+        Schema::dropIfExists('faqs');
     }
 };
