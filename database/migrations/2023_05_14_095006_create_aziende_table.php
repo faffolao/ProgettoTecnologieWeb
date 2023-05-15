@@ -17,12 +17,11 @@ return new class extends Migration
             $table->bigIncrements('id')->primary();
 //            $table->string('managerUsername', 30)->nullable(false);
             $table->foreign('managerUsername')->references('username')->on('Utenti');
-            $table->text('descrizione')->nullable();
+            $table->text('descrizione');
             $table->string('nome', 40)->unique()->nullable(false);
             $table->string('ragioneSociale', 50)->unique()->nullable(false);
             $table->binary('logo')->nullable(false);
             $table->string('tipologia', 30)->nullable(false);
-            $table->timestamps(); // generazione automatica di data ed ora di inserimento e modifica di una riga
         });
     }
 

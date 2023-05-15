@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Http\Request;
@@ -19,27 +20,55 @@ class DatabaseSeeder extends Seeder
     {
         $request = new Request();
         // \App\Models\User::factory(10)->create();
+
+        DB::table('Utenti') -> insert(
+            [
+                'username' => 'root',
+                'nome' => 'System',
+                'cognome' => 'Administrator',
+                'eta' => NULL,
+                'genere' => NULL,
+                'livello' => 3,
+                'password' => 'root',
+                'telefono' => NULL,
+                'email' => 'root@admin',
+            ]
+        );
+
         DB::table('Aziende') -> insert(
             [
-                'id' => 1,
-                'managerUsername' => 'root',
-                'descrizione' => 'Questa è la descrizione dell\'azienda',
-                'nome' => 'Nome dell\'azienda',
-                'ragioneSociale' => 'Ragione sociale dell\'azienda',
-                'logo' => Storage::putFile('public', $request->file('logo')),
-                'tipologia' => 'Tipologia dell\'azienda',
-            ],
+                [
+                    'id' => 5,
+                    'managerUsername' => 'root',
+                    'descrizione' => 'Una tra le migliori aziende che produce elettrodomestici tra cui:
+                                   aspirapolvere; ventilatori e asciugacapelli ',
+                    'nome' => 'Dyson',
+                    'ragioneSociale' => 'Dyson S.R.L.',
+                    'logo' => Storage::putFile('public', $request->file('logo')),
+                    'tipologia' => 'multinazionale',
+                ],
+                [
+                    'id' => 6,
+                    'managerUsername' => 'root',
+                    'descrizione' => 'Una tra le migliori aziende che produce elettrodomestici tra cui:
+                                   aspirapolvere; ventilatori e asciugacapelli ',
+                    'nome' => 'Dyson',
+                    'ragioneSociale' => 'Dyson S.R.L.',
+                    'logo' => Storage::putFile('public', $request->file('logo')),
+                    'tipologia' => 'multinazionale',
+                ]
+            ]
 
         );
 
         //Questa deve essere una delle ultime tabelle da riempire
         DB::table('Coupons') -> insert(
-          [
-            'codice' => 'codicetest',
-            'usernameCliente' => 'GabrielP',
-            'idOfferta' => 1,
-            'dataOraCreazione', //completa dopo
-          ],
+            [
+                'codice' => 'codicetest',
+                'usernameCliente' => 'GabrielP',
+                'idOfferta' => 1,
+                'dataOraCreazione', //completa dopo
+            ],
         );
 
         DB::table('FAQs') -> insert(

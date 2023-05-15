@@ -19,7 +19,6 @@ return new class extends Migration
             $table->foreign('usernameCreatore')->references('username')->on('Utenti');
             $table->string('domanda', 300)->unique()->nullable(false);
             $table->string('risposta', 300)->unique()->nullable(false);
-            $table->timestamps(); // generazione automatica di data ed ora di inserimento e modifica di una riga
         });
     }
 

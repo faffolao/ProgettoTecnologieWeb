@@ -20,8 +20,7 @@ return new class extends Migration
             $table->foreign('usernameCliente')->references('username')->on('Utenti');
 //            $table->integer('idOfferta')->nullable(false);
             $table->foreign('idOfferta')->references('id')->on('Offerte');
-            $table->dateTime('dataOraCreazione')->default(DB::raw('CURRENT_DATE'));
-            $table->timestamps(); // generazione automatica di data ed ora di inserimento e modifica di una riga
+            $table->dateTime('dataOraCreazione')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }
 
