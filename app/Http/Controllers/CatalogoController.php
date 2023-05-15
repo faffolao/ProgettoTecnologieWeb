@@ -16,4 +16,14 @@ class CatalogoController extends Controller
         $dataOff = Offer::where('idAzienda', $idAzienda)->get();
         return view('catalogo', ['Aziende'=>$data], ['ListOfferte'=>$dataOff]);
     }
+    public function getDataBR(Request $request)
+    {
+        $data = Factory::all();
+        $query = $request->input('query');
+        $dataNO = Offer::where('nome', 'LIKE', '%' .$query. '%')
+            ->orWhere('oggetto', 'LIKE', '%' .$query. '%')
+            ->get();
+//        $dataO = Offer::where('oggetto', 'LIKE', '%' .$query. '%')->get();
+        return view('catalogo', ['Aziende'=>$data], ['nOOfferte'=>$dataNO]);
+    }
 }

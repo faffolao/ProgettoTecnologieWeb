@@ -9,22 +9,32 @@
         </div>
 
         <div class="search-container">
-            <form>
+            <form id="search-form" method="POST" action="{{route('aziende')}}">
+                @csrf
                 <div class="search-wrapper">
                     <!-- l'evento onkeyup viene attivato quando viene premuto un tasto qualsiasi della tastiera quando ho il focus sull'input -->
-                    <input type="text" id="search-bar" onkeyup="search()" placeholder="Cerca un'azienda..." title="Cerca un'azienda">
-                    <button type="button"><img src="{{ asset("assets/images/search.svg") }}" alt="Cerca"></button>
+                    <input type="text" id="search-bar" name="query" {{--onkeyup="search()"--}} placeholder="Cerca un'azienda..." title="Cerca un'azienda scrivendo qui e poi premendo il taSto INVIO/ENTER">
+                    <button type="submit"><img src="{{ asset("assets/images/search.svg") }}" alt="Cerca"></button>
                 </div>
             </form>
         </div>
 
         <div id="section-offerte" class="card-deck">
-            @foreach($Aziende as $aziende)
-                <div class="card" title="Clicca su nome dell'azienda per saparne di più!!!">
-                    <img src="data:image/png/jpeg;base64,{{ base64_encode($aziende['logo']) }}" alt="Service Image" class="logo-azienda">
-                    <a class="card-title-link" href="{{ route('dettagliAzienda', $aziende['nome']) }}">{{$aziende['nome']}}</a>
-                </div>
-            @endforeach
+            @if(isset($NAziende))
+                @foreach($NAziende as $nAziende)
+                    <div class="card" title="Clicca su nome dell'azienda per saparne di più!!!">
+                        <img src="data:image/png/jpeg;base64,{{ base64_encode($nAziende['logo']) }}" alt="Service Image" class="logo-azienda">
+                        <a class="card-title-link" href="{{ route('dettagliAzienda', $nAziende['nome']) }}">{{$nAziende['nome']}}</a>
+                    </div>
+                @endforeach
+            @else
+                @foreach($Aziende as $aziende)
+                    <div class="card" title="Clicca su nome dell'azienda per saparne di più!!!">
+                        <img src="data:image/png/jpeg;base64,{{ base64_encode($aziende['logo']) }}" alt="Service Image" class="logo-azienda">
+                        <a class="card-title-link" href="{{ route('dettagliAzienda', $aziende['nome']) }}">{{$aziende['nome']}}</a>
+                    </div>
+                @endforeach
+            @endif
         </div>
     </div>
 

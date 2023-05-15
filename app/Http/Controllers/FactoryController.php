@@ -25,6 +25,13 @@ class FactoryController extends Controller
         $data = Factory::where('nome', $nome)->first();
         return view('dettagliAzienda', ['tuple'=>$data]);
     }
+    public function getDataBR(Request $request)
+    {
+        $data = Factory::all();
+        $query = $request->input('query');
+        $dataNO = Factory::where('nome', 'LIKE', '%' .$query. '%')->get();
+        return view('aziende', ['Aziende'=>$data], ['NAziende'=>$dataNO]);
+    }
 //        function getDataHome()
 //    {
 //        $dataHome= Factory::all();

@@ -36,6 +36,7 @@ Route::get('/', [HomeController::class, 'index'])
 // Rotta per il caricamento della lista delle aziende.
 Route::get("/aziende", [FactoryController::class, 'getDataA'])
     ->name("aziende");
+Route::post('/aziende', [FactoryController::class, 'getDataBR']);
 
 // Rotta per il caricamento dei dettagli di un'azienda
 Route::get("/dettagliAzienda/{nome}", [FactoryController::class, 'getDataDA'])
@@ -45,6 +46,8 @@ Route::get("/dettagliAzienda/{nome}", [FactoryController::class, 'getDataDA'])
 Route::get('/catalogo', [FactoryController::class, 'getDataC'])
     ->name('catalogo');
 Route::get('/catalogo/{idAzienda}', [CatalogoController::class, 'index']);
+Route::post('/catalogo', [CatalogoController::class, 'getDataBR']);
+//Route::get('/catalogo?query={inputR}', [CatalogoController::class, 'getDataBR']);
 
 //Rotta per il POST del login
 Route::post("user", [UserAuth::class, 'userLogin']);
