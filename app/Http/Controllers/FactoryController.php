@@ -11,18 +11,18 @@ class FactoryController extends Controller
     //
     function getDataC()
     {
-        $data= Factory::all();
-        $dataAO= Offer::all();
+        $data = Factory::all();
+        $dataAO = Offer::all();
         return view('catalogo', ['Aziende'=>$data], ['Offerte'=>$dataAO]);
     }
     function getDataA()
     {
-        $data= Factory::all();
+        $data = Factory::all();
         return view('aziende', ['Aziende'=>$data]);
     }
     public function getDataDA($nome)
     {
-        $data= Factory::where('nome', $nome)->first();
+        $data = Factory::where('nome', $nome)->first();
         return view('dettagliAzienda', ['tuple'=>$data]);
     }
 //        function getDataHome()

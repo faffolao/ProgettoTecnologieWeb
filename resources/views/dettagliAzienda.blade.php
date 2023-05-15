@@ -12,23 +12,17 @@
                 <ul>
                     <li class="toggle" title="Clicca qui per saperne di più!"><h2>Descrizione</h2>
                         <ul class="sub-list hidden">
-                            <li><p>
-                                    {{$tuple['descrizione']}}
-                                </p></li>
+                            <li><p>{{$tuple['descrizione']}}</p></li>
                         </ul>
                     </li>
                     <li class="toggle" title="Clicca qui per saperne di più!"><h2>Tipologia</h2>
                         <ul class="sub-list hidden">
-                            <li><p>
-                                    {{$tuple['tipologia']}}
-                                </p></li>
+                            <li><p>{{$tuple['tipologia']}}</p></li>
                         </ul>
                     </li>
                     <li class="toggle" title="Clicca qui per saperne di più!"><h2>Ragione Sociale</h2>
                         <ul class="sub-list hidden">
-                            <li><p>
-                                    {{$tuple['ragioneSociale']}}
-                                </p></li>
+                            <li><p>{{$tuple['ragioneSociale']}}</p></li>
                         </ul>
                     </li>
                 </ul>

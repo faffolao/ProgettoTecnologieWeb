@@ -15,7 +15,7 @@ class CouponController extends Controller
     }
     function getDataNO($id)
     {
-        $data= Offer::where('id', $id)->first();
+        $data = Offer::where('id', $id)->first();
         return view('coupon', ['tuple'=>$data]);
     }
 

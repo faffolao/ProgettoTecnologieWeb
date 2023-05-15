@@ -12,8 +12,8 @@ class CatalogoController extends Controller
     //
     public function index($idAzienda)
     {
-        $data= Factory::all();
-        $dataOff= Offer::where('idAzienda', $idAzienda)->get();
+        $data = Factory::all();
+        $dataOff = Offer::where('idAzienda', $idAzienda)->get();
         return view('catalogo', ['Aziende'=>$data], ['ListOfferte'=>$dataOff]);
     }
 }

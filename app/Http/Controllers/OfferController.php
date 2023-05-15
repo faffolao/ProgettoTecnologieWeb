@@ -14,7 +14,7 @@ class OfferController extends Controller
     }
     function getDataDO($id)
     {
-        $data= Offer::where('id', $id)->first();
+        $data = Offer::where('id', $id)->first();
         return view('dettagliOfferta', ['tuple'=>$data]);
     }
 }
