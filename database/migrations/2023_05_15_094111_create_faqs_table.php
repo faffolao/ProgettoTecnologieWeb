@@ -14,11 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('faqs', function (Blueprint $table) {
+            // Primary key auto-incrementale della tabella.
             $table->bigIncrements('id');
-            $table->string('usernameCreatore', 30)->nullable(false);
+
+            $table->string('usernameCreatore', 30);
+            $table->string('domanda', 300)->unique();
+            $table->string('risposta', 300)->unique();
+
+            // definizione del vincolo di FK
             $table->foreign('usernameCreatore')->references('username')->on('utenti');
-            $table->string('domanda', 300)->unique()->nullable(false);
-            $table->string('risposta', 300)->unique()->nullable(false);
         });
     }
 

@@ -25,7 +25,7 @@
         <div class="card-deck" title="Clicca su nome dell'azienda per saparne di più!!!">
             @foreach($Aziende as $aziende)
                 <div class="card">
-                    <img src="data:image/png/jpeg;base64,{{ base64_encode($aziende['logo']) }}" alt="Service Image" class="logo-azienda">
+                    <img src="{{ (unserialize($aziende['logo'])) }}" alt="Service Image" class="logo-azienda">
                     <a class="card-title-link" href="{{ route('dettagliAzienda', $aziende['nome']) }}">{{$aziende['nome']}}</a>
 {{--                    <a class="card-title-link" href="{{ route('dettagliAzienda') }}">{{$aziende['nome']}}</a>--}}
                 </div>

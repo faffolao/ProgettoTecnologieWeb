@@ -15,16 +15,23 @@ return new class extends Migration
     public function up()
     {
         Schema::create('offerte', function (Blueprint $table) {
+            // Primary key auto-incrementale della tabella.
             $table->bigIncrements('id');
-            $table->bigInteger('idAzienda')->unsigned();
-            $table->foreign('idAzienda')->references('id')->on('aziende');
-            $table->string('nome', 70)->nullable(false);
-            $table->text('oggetto')->nullable(false);
-            $table->text('modalitaFruizione')->nullable(false);
+
+            $table->bigInteger('idAzienda')->unsigned();    // foreign key -> punta a Aziende(id)
+            $table->string('nome', 70);
+            $table->text('oggetto');
+
+            $table->text('modalitaFruizione');
+            $table->text('luogoFruizione');
+
+            // inserisco come data di default la data corrente, nel caso questo valore non dovesse essere riempito
             $table->dateTime('dataOraCreazione')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->dateTime('dataOraScadenza')->nullable(false);
-            $table->text('luogoFruizione')->nullable(false);
-            $table->binary('immagine')->nullable(false);
+            $table->dateTime('dataOraScadenza');
+            $table->binary('immagine');
+
+            // definizione dei vincoli della FK
+            $table->foreign('idAzienda')->references('id')->on('aziende');
         });
     }
 

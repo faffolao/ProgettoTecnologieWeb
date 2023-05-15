@@ -15,12 +15,19 @@ return new class extends Migration
     public function up()
     {
         Schema::create('coupons', function (Blueprint $table) {
+            // Primary key della tabella.
             $table->string('codice', 15)->primary();
-            $table->string('usernameCliente', 30)->nullable(false);
-            $table->foreign('usernameCliente')->references('username')->on('utenti');
-            $table->bigInteger('idOfferta')->nullable(false)->unsigned();
-            $table->foreign('idOfferta')->references('id')->on('offerte');
+
+            // Foreign Keys -> puntano a Utenti(username) e Offerte(id) rispettivamente.
+            $table->string('usernameCliente', 30);
+            $table->bigInteger('idOfferta')->unsigned();
+
+            // inserisco come data di default la data corrente, nel caso questo valore non dovesse essere riempito
             $table->dateTime('dataOraCreazione')->default(DB::raw('CURRENT_TIMESTAMP'));
+
+            // definizione dei vincoli di FK
+            $table->foreign('usernameCliente')->references('username')->on('utenti');
+            $table->foreign('idOfferta')->references('id')->on('offerte');
         });
     }
 

@@ -14,15 +14,18 @@ return new class extends Migration
     public function up()
     {
         Schema::create('aziende', function (Blueprint $table) {
+            // Primary key auto-incrementata della tabella.
             $table->bigIncrements('id');
-//            $table->string('managerUsername', 30)->nullable(false);
-            $table->string('managerUsername', 30);
-            $table->foreign('managerUsername')->references('username')->on('utenti');
+
+            $table->string('managerUsername', 30); // foreign key -> punta a Utenti(username)
             $table->text('descrizione');
-            $table->string('nome', 40)->unique()->nullable(false);
-            $table->string('ragioneSociale', 50)->unique()->nullable(false);
-            $table->binary('logo')->nullable(false);
-            $table->string('tipologia', 30)->nullable(false);
+            $table->string('nome', 40)->unique();
+            $table->string('ragioneSociale', 50)->unique();
+            $table->binary('logo');
+            $table->string('tipologia', 30);
+
+            // definizione del vincolo di FK
+            $table->foreign('managerUsername')->references('username')->on('utenti');
         });
     }
 

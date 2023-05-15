@@ -18,13 +18,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $request = new Request();
-        // \App\Models\User::factory(10)->create();
-        // Comando per avviare la migration:
-        //  $ php artisan migrate:refresh
-        //  $ php artisan migrate
-        // Comando per caricare i dati sottostanti:
-        //  $ php artisan db:seed
 
         DB::table('utenti') -> insert(
             [
@@ -39,6 +32,18 @@ class DatabaseSeeder extends Seeder
                 'email' => 'root@admin',
             ]
         );
+
+        DB::table('aziende') -> insert([
+            [
+                'id' => NULL,
+                'managerUsername' => 'root',
+                'descrizione' => 'Servizio online di food delivery, supportato da più di 2500 ristoranti in tutta Italia',
+                'nome' => 'Just Eat',
+                'ragioneSociale' => 'Just Eat',
+                'logo' => 'dd',
+                'tipologia' => 'Cibo e Ristorazione'
+            ]
+        ]);
 
         DB::table('faqs') -> insert([
             [
@@ -56,6 +61,7 @@ class DatabaseSeeder extends Seeder
                 'risposta' => 'Si, Offertopoli è gratuito, tutti i coupon contenuti sono liberamente e gratuitamente utilizzabili.'
             ]
         ]);
+
 
 //        DB::table('aziende') -> insert(
 //            [
