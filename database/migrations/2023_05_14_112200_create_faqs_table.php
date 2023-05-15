@@ -13,11 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('faqs', function (Blueprint $table) {
-            $table->bigIncrements('id')->nullable(false);
-            $table->string('usernameCreatore', 30)->nullable(false);
-            $table->string('domanda', 300)->nullable(false);
-            $table->string('risposta', 300)->nullable(false);
+        Schema::create('FAQs', function (Blueprint $table) {
+            $table->bigIncrements('id')->primary();
+//            $table->string('usernameCreatore', 30)->nullable(false);
+            $table->foreign('usernameCreatore')->references('username')->on('Utenti');
+            $table->string('domanda', 300)->unique()->nullable(false);
+            $table->string('risposta', 300)->unique()->nullable(false);
             $table->timestamps(); // generazione automatica di data ed ora di inserimento e modifica di una riga
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('faqs');
+        Schema::dropIfExists('FAQs');
     }
 };

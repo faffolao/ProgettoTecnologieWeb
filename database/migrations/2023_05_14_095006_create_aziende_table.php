@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('aziende', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('managerUsername', 30)->nullable(false);
+        Schema::create('Aziende', function (Blueprint $table) {
+            $table->bigIncrements('id')->primary();
+//            $table->string('managerUsername', 30)->nullable(false);
+            $table->foreign('managerUsername')->references('username')->on('Utenti');
             $table->text('descrizione')->nullable();
-            $table->string('nome', 40)->nullable(false);
-            $table->string('ragioneSociale', 50)->nullable(false);
+            $table->string('nome', 40)->unique()->nullable(false);
+            $table->string('ragioneSociale', 50)->unique()->nullable(false);
             $table->binary('logo')->nullable(false);
             $table->string('tipologia', 30)->nullable(false);
             $table->timestamps(); // generazione automatica di data ed ora di inserimento e modifica di una riga
@@ -32,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('aziende');
+        Schema::dropIfExists('Aziende');
     }
 };

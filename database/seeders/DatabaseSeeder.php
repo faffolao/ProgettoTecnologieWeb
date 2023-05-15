@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,10 +19,10 @@ class DatabaseSeeder extends Seeder
     {
         $request = new Request();
         // \App\Models\User::factory(10)->create();
-        DB::table('aziende') -> insert(
+        DB::table('Aziende') -> insert(
             [
                 'id' => 1,
-                'managerUsername' => 'johndoe',
+                'managerUsername' => 'root',
                 'descrizione' => 'Questa è la descrizione dell\'azienda',
                 'nome' => 'Nome dell\'azienda',
                 'ragioneSociale' => 'Ragione sociale dell\'azienda',
@@ -30,19 +32,20 @@ class DatabaseSeeder extends Seeder
 
         );
 
-        DB::table('coupons') -> insert(
+        //Questa deve essere una delle ultime tabelle da riempire
+        DB::table('Coupons') -> insert(
           [
             'codice' => 'codicetest',
             'usernameCliente' => 'GabrielP',
             'idOfferta' => 1,
-            'dataOraCreazione' => 2023/05/14, //completa dopo
+            'dataOraCreazione', //completa dopo
           ],
         );
 
-        DB::table('faqs') -> insert(
+        DB::table('FAQs') -> insert(
             [
-                'id' => 1,
-                'usernameCreatore' => 'admin',
+                'id' => 2,
+                'usernameCreatore' => 'root',
                 'domanda' => 'Come faccio ad applicare un coupon?',
                 'risposta' => 'È sufficiente selezionare l\'offerta desiderata e cliccare sul tasto Genera coupon.
                                Per poter usufruire dei coupon è necessario aver effettuato il login (quindi essere
