@@ -14,9 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('faqs', function (Blueprint $table) {
-            $table->bigIncrements('id')->primary();
-//            $table->string('usernameCreatore', 30)->nullable(false);
-            $table->foreign('usernameCreatore')->references('username')->on('Utenti');
+            $table->bigIncrements('id');
+            $table->string('usernameCreatore', 30)->nullable(false);
+            $table->foreign('usernameCreatore')->references('username')->on('utenti');
             $table->string('domanda', 300)->unique()->nullable(false);
             $table->string('risposta', 300)->unique()->nullable(false);
         });

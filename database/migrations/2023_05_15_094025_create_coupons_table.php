@@ -16,10 +16,10 @@ return new class extends Migration
     {
         Schema::create('coupons', function (Blueprint $table) {
             $table->string('codice', 15)->primary();
-//            $table->string('usernameCliente', 30)->nullable(false);
-            $table->foreign('usernameCliente')->references('username')->on('Utenti');
-//            $table->integer('idOfferta')->nullable(false);
-            $table->foreign('idOfferta')->references('id')->on('Offerte');
+            $table->string('usernameCliente', 30)->nullable(false);
+            $table->foreign('usernameCliente')->references('username')->on('utenti');
+            $table->bigInteger('idOfferta')->nullable(false)->unsigned();
+            $table->foreign('idOfferta')->references('id')->on('offerte');
             $table->dateTime('dataOraCreazione')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
     }

@@ -15,8 +15,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('offerte', function (Blueprint $table) {
-            $table->bigIncrements('id')->primary();
-            $table->foreign('idAzienda')->references('id')->on('Aziende');
+            $table->bigIncrements('id');
+            $table->bigInteger('idAzienda')->unsigned();
+            $table->foreign('idAzienda')->references('id')->on('aziende');
             $table->string('nome', 70)->nullable(false);
             $table->text('oggetto')->nullable(false);
             $table->text('modalitaFruizione')->nullable(false);
