@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
     {
         $request = new Request();
         // \App\Models\User::factory(10)->create();
+        // Comando per caricare i dati sottostanti: php artisan db:seed
 
         DB::table('utenti') -> insert(
             [
