@@ -81,7 +81,7 @@ main {margin: 50px 10%;}
     "container" contiene il corpo testuale della pagina e in generale contenuti standard (quindi nessun contenuto in
     primo piano o contenuto particolarmente rilevante)
  */
-.container        {margin-top: 30px;}
+.container        {margin-top: 30px; text-align: center;}
 .container h1, h2 {text-align: center}
 .container h2     {font-size: 36px;}
 /* se il container contiene un elemento aside (un menu di navigazione che giace ai lati della pagina) questi dovrà assumere
@@ -108,9 +108,10 @@ il flexbox layout per poter visualizzare allo stesso livello sia l'aside che il 
     in base all'azienda specifica che si desidera (o anche per tutte le aziende)
  */
 aside {
-    width: 25%;
+    width: 40%;
     background-color: #fff;
     padding: 20px;
+    text-align: left;
 }
 .aside-nav h2 {text-align: left;}
 .aside-nav ul{list-style: none; padding: 0; margin: 0;}

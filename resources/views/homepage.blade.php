@@ -44,6 +44,11 @@
                 @endforeach
             </ul>
         </div>
+
+        <h2>Documentazione del sito</h2>
+        <p style="margin-top: 17px;">
+            Tramite <a href="#">questo link</a> è possibile scaricare il documento in formato PDF che contiene la documentazione del sito web.
+        </p>
     </div>
 
     <script type="text/javascript" src="{{ asset('assets/js/homepage.js') }}"></script>
