@@ -10,8 +10,8 @@
                        title="Cerca un'offerta scrivendo qui e poi premendo il tasto INVIO/ENTER">
 
                 @if(isset($AziendaSelezionata))
-                <!-- questo contiene l'id dell'azienda se è stata selezionata un'azienda dall'aside della pagina (serve per la ricerca incrociata) -->
-                <input type="hidden" name="factoryId" value="{{ $AziendaSelezionata->id }}">
+                    <!-- questo contiene l'id dell'azienda se è stata selezionata un'azienda dall'aside della pagina (serve per la ricerca incrociata) -->
+                    <input type="hidden" name="factoryId" value="{{ $AziendaSelezionata->id }}">
                 @endif
 
                 <button type="submit">
@@ -21,19 +21,19 @@
         </form>
 
         @if(isset($AziendaSelezionata) or isset($searchQuery))
-        <div class="active-filters-container">
-            Filtri attivi:
-            @if(isset($AziendaSelezionata))
-            <span><strong>{{ $AziendaSelezionata->nome }}</strong></span>
-            @endif
+            <div class="active-filters-container">
+                Filtri attivi:
+                @if(isset($AziendaSelezionata))
+                    <span><strong>{{ $AziendaSelezionata->nome }}</strong></span>
+                @endif
 
-            @if(isset($searchQuery))
-            <span><em>"{{ $searchQuery }}"</em></span>
-            @endif
+                @if(isset($searchQuery))
+                    <span><em>"{{ $searchQuery }}"</em></span>
+                @endif
 
-            <span> - </span>
-            <a href="{{ route('catalogo') }}">Reimposta</a>
-        </div>
+                <span> - </span>
+                <a href="{{ route('catalogo') }}">Reimposta</a>
+            </div>
         @endif
     </div>
 
