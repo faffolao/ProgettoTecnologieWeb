@@ -212,17 +212,18 @@ automaticamente per evitare che possa apparire stretchato */
     margin: 30px auto;
     align-items: center;
     background: transparent;
-    border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 50px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
     max-width: 45%;
+    text-align: center;
 }
 
 /* search-wrapper è la barra stessa di ricerca (l'input box per intenderci) */
 .search-wrapper {
     position: relative;
     display: flex;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
 }
 
 input[type="text"], input[type="password"], input[type="tel"], input[type="date"], input[type="email"] {
@@ -236,7 +237,7 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="date"
 }
 
 .search-wrapper input[type="text"] {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     padding: 10px 20px;
     border: none;
     font-size: 16px;
@@ -335,7 +336,7 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="date"
     box-shadow: 0 0 5px #ccc;
     border-radius: 5px;
     margin: 20px;
-    padding: 20px;
+    padding: 30px;
     align-items: center;
     justify-content: center;
     flex: 1 1 300px;
@@ -352,7 +353,7 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="date"
 .title-with-logo h2 {margin-left: 25px; font-size: 28px;}
 
 .toggle-list {
-    margin: 0 auto;
+    margin-top: 25px;
     text-align: center;
 }
 .toggle-list ul {list-style: none; margin-bottom: 10px;}
@@ -360,7 +361,7 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="date"
 .toggle h2 {font-size: 24px; margin-bottom: 15px;}
 .hidden {display: none;}
 /* contenitore dei pulsanti di un Panel */
-.panel-buttons {text-align: center; padding: 23px;}
+.panel-buttons {text-align: center; padding-top: 30px;}
 .panel-buttons .btn {margin: 10px;}
 
 /*-----------------------

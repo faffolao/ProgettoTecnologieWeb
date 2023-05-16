@@ -2,14 +2,39 @@
 
 @section('content')
     <div class="search-container">
-        <form id="search-form" method="POST" action="{{route('catalogo')}}">
+        <form id="search-form" method="POST" action="{{ route('catalogo') }}">
             @csrf
             <div class="search-wrapper">
                 <!-- l'evento onkeyup viene attivato quando viene premuto un tasto qualsiasi della tastiera quando ho il focus sull'input -->
-                <input type="text" id="search-bar" name="query" {{--onkeyup="search()"--}} placeholder="Cerca un'offerta..." title="Cerca un'offerta scrivendo qui e poi premendo il taSto INVIO/ENTER">
-                <button type="submit"><img src="{{ asset("assets/images/search.svg") }}" alt="Cerca"></button>
+                <input type="text" id="search-bar" name="query" placeholder="Cerca un'offerta..."
+                       title="Cerca un'offerta scrivendo qui e poi premendo il tasto INVIO/ENTER">
+
+                @if(isset($AziendaSelezionata))
+                <!-- questo contiene l'id dell'azienda se è stata selezionata un'azienda dall'aside della pagina (serve per la ricerca incrociata) -->
+                <input type="hidden" name="factoryId" value="{{ $AziendaSelezionata->id }}">
+                @endif
+
+                <button type="submit">
+                    <img src="{{ asset("assets/images/search.svg") }}" alt="Cerca">
+                </button>
             </div>
         </form>
+
+        @if(isset($AziendaSelezionata) or isset($searchQuery))
+        <div class="active-filters-container">
+            Filtri attivi:
+            @if(isset($AziendaSelezionata))
+            <span><strong>{{ $AziendaSelezionata->nome }}</strong></span>
+            @endif
+
+            @if(isset($searchQuery))
+            <span><em>"{{ $searchQuery }}"</em></span>
+            @endif
+
+            <span> - </span>
+            <a href="{{ route('catalogo') }}">Reimposta</a>
+        </div>
+        @endif
     </div>
 
     <div class="container with-aside">
@@ -27,25 +52,7 @@
             </div>
         </aside>
         <div id="section-offerte" class="card-deck">
-            @if(isset($ListOfferte))
-                @foreach($ListOfferte as $Sofferta)
-                    <div class="card">
-                        <img src="data:image/png/jpg/webp/jpeg;base64,{{ base64_encode($Sofferta['immagine']) }}" alt="Offerta">
-                        <h3>{{$Sofferta['nome']}}</h3>
-                        <p>{{$Sofferta['oggetto']}}</p>
-                        <a href="{{ url('/dettagliOfferta/'.$Sofferta['id']) }}" class="card-btn">Scopri di più</a>
-                    </div>
-                @endforeach
-            @elseif(isset($nOOfferte))
-                @foreach($nOOfferte as $nOOfferta)
-                    <div class="card">
-                        <img src="data:image/png/jpg/webp/jpeg;base64,{{ base64_encode($nOOfferta['immagine']) }}" alt="Offerta">
-                        <h3>{{$nOOfferta['nome']}}</h3>
-                        <p>{{$nOOfferta['oggetto']}}</p>
-                        <a href="{{ url('/dettagliOfferta/'.$nOOfferta['id']) }}" class="card-btn">Scopri di più</a>
-                    </div>
-                @endforeach
-            @else
+            @if(isset($Offerte))
                 @foreach($Offerte as $offerte)
                     <div class="card">
                         <img src="data:image/png/jpg/webp/jpeg;base64,{{ base64_encode($offerte['immagine']) }}" alt="Offerta">
