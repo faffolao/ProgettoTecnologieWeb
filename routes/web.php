@@ -122,6 +122,9 @@ Route::view("/hubStaff", 'hubStaff')
     ->name("hubStaff");
 
 // Rotta per inserire una nuova offerta
+Route::view("/inserisciOfferte", 'inserisciOfferte')
+    ->name('inserisciOfferte');
+Route::post('/inserisciOfferte', [OfferController::class, 'addOff']);
 
 //Rotta per modificare le offerte
 Route::get("/modificaOfferte", [OfferController::class, 'getDataOff'])
