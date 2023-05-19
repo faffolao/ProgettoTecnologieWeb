@@ -9,13 +9,13 @@
             </div>
 
             <div class="panel-buttons">
-                <a href="#" class="btn">Logout</a>
-            </div>
-            <div class="panel-buttons">
                 <a href="{{ route('modificaDatiL1') }}" class="btn">Modifica dati personali</a>
             </div>
             <div class="panel-buttons">
                 <a href="#" class="btn">Visualizza coupon utilizzati</a>
+            </div>
+            <div class="panel-buttons">
+                <a href="#" class="btn">Logout</a>
             </div>
         </div>
     </div>
