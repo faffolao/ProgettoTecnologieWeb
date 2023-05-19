@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- titolo della pagina -->
-    <title>Offertopoli: Scontati ma non scontrosi</title>
+    <title>Offertopoli: @yield('title', 'Scontati ma non scontrosi')</title>
 
     <!-- icona della pagina (favicon) -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">

@@ -1,5 +1,7 @@
 @extends('layouts.skel')
 
+@section('title', 'Login')
+
 @section('content')
     <!-- il wrapper è il contenitore che contiene il box della form di login -->
     <div class="wrapper">
