@@ -118,8 +118,17 @@ Route::get('/modifica-credenziali', function () {
 */
 
 // Rotta per lo staff
+Route::view("/hubStaff", 'hubStaff')
+    ->name("hubStaff");
 
 // Rotta per inserire una nuova offerta
+
+//Rotta per modificare le offerte
+Route::get("/modificaOfferte", [OfferController::class, 'getDataOff'])
+    ->name("modificaOfferte");
+//QUESTA ROTTA SERVER PER ELIMINARE UN'OFFERTA
+Route::delete("/modificaOfferte/elimina/{id}", [OfferController::class, 'deleteR'])
+    ->name("eliminaOfferte");
 
 // Rotta per l'amministratore
 Route::view("/hubAmministratore", 'hubAmministratore')
