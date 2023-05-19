@@ -4,7 +4,7 @@
     <div class="container">
         <div class="panel">
             <div class="title-with-logo">
-                <img src="{{ asset('assets/images/admin_icon.png') }}" alt="Logo aadmin">
+                <img src="{{ asset('assets/images/admin_icon.png') }}" alt="Logo admin">
                 <h2>Benvenuto nell'Area personale</h2>
             </div>
             <div class="panel-buttons">
