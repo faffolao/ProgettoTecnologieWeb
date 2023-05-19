@@ -9,4 +9,5 @@ class Offer extends Model
 {
     use HasFactory;
     public $table = "offerte";
+    public $timestamps = false;
 }

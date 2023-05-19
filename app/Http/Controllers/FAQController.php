@@ -26,6 +26,28 @@ class FAQController extends Controller
         $row->delete();
 
         // Esempio di reindirizzamento alla pagina principale
-        return redirect()->route('modificaFAQ')->with('message', 'Domanda eliminata con successo.');
+        return redirect()->route('modificaFAQ');
+    }
+    function getForm()
+    {
+        return view('inserisciFAQ');
+    }
+    function addFAQ(Request $request){
+
+        // Validazione dei dati inviati nella form
+        $validatedData = $request->validate([
+            'domanda' => 'required|string',
+            'risposta' => 'required|string',
+        ]);
+
+        $faq = new FAQ;
+        $root = "root";
+        $faq['domanda'] = $request->input('domanda');
+        $faq['risposta'] = $request->input('risposta');
+        $faq['usernameCreatore'] = $root;
+        $faq->save();
+
+        return redirect()->route('modificaFAQ');
+//        return view('modificaFAQ');
     }
 }

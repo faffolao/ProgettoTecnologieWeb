@@ -3,6 +3,21 @@
 @section('content')
     <div class="container">
         <div class="panel">
+            <h2>Gestione F.A.Q.</h2>
+            <br>
+            {{--            Inserire form inserisci F.A.Q.--}}
+            <table class="tabella">
+                <tbody>
+                <tr>
+                    <th style="text-align: center;">Vuoi inserire una nuova F.A.Q.?</th>
+                    <th style="text-align: left;">
+                        <a href="{{route('inserisciFAQ')}}" class="btn btn-FAQ">Inserisci</a>
+                    </th>
+                </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
             <table class="tabella">
                 <thead>
                 <tr>
@@ -19,8 +34,8 @@
                         <td>{{$list['id']}}</td>
                         <td>{{$list['domanda']}}</td>
                         <td>{{$list['risposta']}}</td>
-                        <td><button class="update-btn" onclick="window.location.href='inserisciFAQ.html'">Modifica</button></td>
-                        <td>
+                        <td title="Clicca qui per AGGIORNARE la seguente domanda/risposta"><button class="update-btn" onclick="window.location.href='inserisciFAQ.html'">Modifica</button></td>
+                        <td title="Clicca qui per ELIMINARE la seguente domanda/risposta">
                             <form class="delete-form" action="{{ route('eliminaFAQ', $list['id']) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -33,7 +48,9 @@
                 @endforeach
                 </tbody>
             </table>
-            <button type="button" class="btn btn-back" onclick="window.location.href='gestioneFAQ.html'">Torna indietro</button>
+            <div class="panel-buttons">
+                <a class="btn btn-back" href="{{ route('hubAmministratore') }}">Torna indietro</a>
+            </div>
         </div>
     </div>
 @endsection

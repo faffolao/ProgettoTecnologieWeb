@@ -401,7 +401,7 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="date"
     border-radius: 25px;
 }
 
-.tabella .update-btn:hover{
+.tabella .update-btn:hover {
     background: #cccccc;
     color: black;
 }
@@ -415,16 +415,41 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="date"
     border-radius: 25px;
 }
 
-.tabella .delete-btn:hover{
+.tabella .delete-btn:hover {
     background: #cccccc;
     color: black;
 }
 
-.btn-back{
+.btn-back {
     /*height: 45px;*/
     cursor: pointer;
     background-color: #d30000;
     text-align: center;
+}
+
+.btn-FAQ {
+    font-size: 1em;
+    padding: 8px 20px;
+    border-radius: 25px;
+}
+
+.form-insertFAQ label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-insertFAQ textarea {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: .9em;
+    max-width: 100%;
+    min-width: 100%;
 }
 
 /*-----------------------

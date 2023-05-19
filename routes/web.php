@@ -130,11 +130,16 @@ Route::view("/hubAmministratore", 'hubAmministratore')
 /* --------------------------
  * ROTTE F.A.Q
  * -------------------------- */
-
 //Rotta standard
 Route::get("/modificaFAQ", [FAQController::class, 'getData'])
     ->name("modificaFAQ");
-//QUESTA ROTTA SERVER PER ELIMINARE UNA DOMANDA/RISPOSTA
+
+//Rotta per inserire una f.a.q
+Route::view("/inserisciFAQ", 'inserisciFAQ')
+    ->name('inserisciFAQ');
+Route::post('/inserisciFAQ', [FAQController::class, 'addFAQ']);
+
+//QUESTA ROTTA SERVE PER ELIMINARE UNA DOMANDA/RISPOSTA
 Route::delete("/modificaFAQ/elimina/{id}", [FAQController::class, 'deleteR'])
     ->name("eliminaFAQ");
 

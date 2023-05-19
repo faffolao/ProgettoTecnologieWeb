@@ -9,4 +9,5 @@ class User extends Model
 {
     use HasFactory;
     public $table = "utenti";
+    public $timestamps = false;
 }
