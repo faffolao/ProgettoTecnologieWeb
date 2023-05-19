@@ -25,15 +25,15 @@
                     <div class="form-right">
                         <fieldset title="Inserisci dati offerta">
                             <label for="luogoFruizione">Luogo di fruizione:</label>
-                            <input type="text" id="luogoFruizione" name="luogoFruizione" required>
+                            <input type="text" id="luogoFruizione" name="luogoFruizione" value="{{$dati['luogoFruizione']}}" required>
 
-                            <label for="data_ora_scadenza">Data e ora di scadenza:</label>
-                            <input type="date" id="data_ora_scadenza" name="data_ora_scadenza" required>
+                            <label for="dataOraScadenza">Data e ora di scadenza:</label>
+                            <input type="date" id="dataOraScadenza" name="dataOraScadenza" value="{{$dati['dataOraScadenza']}}" required>
 
                             <fieldset title="Carica immagini in formato .png o .jpeg">
                                 <label for="logo">Carica l'immagine dell'offerta:</label>
                                 <input type="file" id="logo" name="logo"
-                                       accept="image/png, image/jpeg" required>
+                                       accept="image/png, image/jpeg" value="{{$dati['immagine']}}" required>
                             </fieldset>
                         </fieldset>
                     </div>
