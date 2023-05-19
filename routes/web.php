@@ -121,14 +121,20 @@ Route::get('/modifica-credenziali', function () {
 Route::view("/hubStaff", 'hubStaff')
     ->name("hubStaff");
 
+//Rotta standard
+Route::get("/modificaOfferte", [OfferController::class, 'getDataOff'])
+    ->name("modificaOfferte");
+
 // Rotta per inserire una nuova offerta
 Route::view("/inserisciOfferte", 'inserisciOfferte')
     ->name('inserisciOfferte');
 Route::post('/inserisciOfferte', [OfferController::class, 'addOff']);
 
-//Rotta per modificare le offerte
-Route::get("/modificaOfferte", [OfferController::class, 'getDataOff'])
-    ->name("modificaOfferte");
+//Rotta per agiornare un'offerta
+Route::get('/aggiornaOfferte/{id}/edit', [OfferController::class, 'getDataSingleOff'])
+    ->name('aggiornaOfferte');
+Route::put('/aggiornaOfferte/{id}', [OfferController::class, 'updateDataSingleOff']);
+
 //QUESTA ROTTA SERVER PER ELIMINARE UN'OFFERTA
 Route::delete("/modificaOfferte/elimina/{id}", [OfferController::class, 'deleteR'])
     ->name("eliminaOfferte");

@@ -36,18 +36,36 @@ class OfferController extends Controller
     }
     function addOff(Request $request){
 
-        $faq = new Offer();
+        $off = new Offer();
         $root = "root";
-        $faq['nome'] = $request->input('nome');
-        $faq['oggetto'] = $request->input('oggetto');
-        $faq['modalitaFruizione'] = $request->input('modalitaFruizione');
-        $faq['dataOraScadenza'] = $request->input('dataOraScadenza');
-        $faq['luogoFruizione'] = $request->input('luogoFruizione');
-        $faq['immagine'] = $request->input('immagine');
-        $faq['usernameCreatore'] = $root;
-        $faq->save();
+        $off['nome'] = $request->input('nome');
+        $off['oggetto'] = $request->input('oggetto');
+        $off['modalitaFruizione'] = $request->input('modalitaFruizione');
+        $off['dataOraScadenza'] = $request->input('dataOraScadenza');
+        $off['luogoFruizione'] = $request->input('luogoFruizione');
+        $off['immagine'] = $request->input('immagine');
+        $off['usernameCreatore'] = $root;
+        $off->save();
 
         return redirect()->route('modificaOfferte');
 //        return view('modificaFAQ');
+    }
+
+    function getDataSingleOff($id){
+        $data = Offer::where('id', $id)->first();
+        return view('aggiornaOfferte', ['dati'=>$data]);
+    }
+
+    function updateDataSingleOff(Request $request, $id)
+    {
+        $record = Offer::where('id', $id)->first();
+        $record['nome'] = $request->input('nome');
+        $record['oggetto'] = $request->input('oggetto');
+        $record['modalitaFruizione'] = $request->input('modalitaFruizione');
+        $record['dataOraScadenza'] = $request->input('dataOraScadenza');
+        $record['luogoFruizione'] = $request->input('luogoFruizione');
+        $record['immagine'] = $request->input('immagine');
+        $record->update();
+        return redirect()->route('modificaFAQ');
     }
 }

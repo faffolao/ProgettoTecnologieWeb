@@ -4,7 +4,7 @@
     <!-- il wrapper è il contenitore che contiene il box della form di login -->
     <div>
         <!-- box che contiene la form di login -->
-        <div class="form-box form-box-inputdialog">
+        <div class="ins-off ins-off-inputdialog">
             <h2>Inserisci una nuova offerta</h2>
 
             <!-- effettiva form di input -->

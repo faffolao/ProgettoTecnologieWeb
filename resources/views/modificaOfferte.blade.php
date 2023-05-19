@@ -11,7 +11,7 @@
                 <tr>
                     <th style="text-align: center;">Vuoi inserire una nuova Offerta?</th>
                     <th style="text-align: left;">
-                        <a href="{{route('inserisciOfferte')}}" class="btn">Inserisci</a>
+                        <a href="{{route('inserisciOfferte')}}" class="btn btn-Ins">Inserisci</a>
                     </th>
                 </tr>
                 </tbody>
@@ -32,8 +32,8 @@
                     <tr>
                         <td>{{$list['id']}}</td>
                         <td>{{$list['nome']}}</td>
-                        <td><button class="update-btn" onclick="window.location.href='inserisciOfferte.html'">Modifica</button></td>
-                        <td>
+                        <td title="Clicca qui per AGGIORNARE la seguente offerta"><a class="update-btn" href="{{route('aggiornaOfferte', $list['id'])}}">Modifica</a></td>
+                        <td title="Clicca qui per ELIMINARE la seguente offerta">
                             <form class="delete-form" action="{{ route('eliminaOfferte', $list['id']) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
@@ -46,7 +46,9 @@
                 @endforeach
                 </tbody>
             </table>
-            <button type="button" class="btn btn-back" {{ route('hubStaff') }}">Torna indietro</button>
+            <div class="panel-buttons">
+                <a class="btn btn-back" href="{{ route('hubStaff') }}">Torna indietro</a>
+            </div>
         </div>
     </div>
 @endsection
