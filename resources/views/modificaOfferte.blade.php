@@ -3,6 +3,21 @@
 @section('content')
     <div class="container">
         <div class="panel">
+            <h2>Gestione Offerte</h2>
+            <br>
+            {{--            Inserire form inserisci Offerte--}}
+            <table class="tabella">
+                <tbody>
+                <tr>
+                    <th style="text-align: center;">Vuoi inserire una nuova Offerta?</th>
+                    <th style="text-align: left;">
+                        <a href="{{route('inserisciOfferte')}}" class="btn">Inserisci</a>
+                    </th>
+                </tr>
+                </tbody>
+            </table>
+            <br>
+            <br>
             <table class="tabella">
                 <thead>
                 <tr>
@@ -31,7 +46,7 @@
                 @endforeach
                 </tbody>
             </table>
-            <button type="button" class="btn btn-back" onclick="window.location.href='gestioneOfferte.html'">Torna indietro</button>
+            <button type="button" class="btn btn-back" {{ route('hubStaff') }}">Torna indietro</button>
         </div>
     </div>
 @endsection
