@@ -9,4 +9,5 @@ class Factory extends Model
 {
     use HasFactory;
     public $table = "aziende";
+    public $timestamps = false;
 }

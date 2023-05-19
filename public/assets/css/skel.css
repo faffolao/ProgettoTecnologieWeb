@@ -86,7 +86,7 @@ main {margin: 50px 10%;}
 .container h2     {font-size: 36px;}
 /* se il container contiene un elemento aside (un menu di navigazione che giace ai lati della pagina) questi dovrà assumere
 il flexbox layout per poter visualizzare allo stesso livello sia l'aside che il corpo della pagina */
-.with-aside {display: flex;}
+.container-with-aside {display: flex;}
 
 /* "desc" contiene del contenuto descrittivo alla pagina, ad esempio, dei testi introduttivi */
 .desc{
@@ -108,9 +108,7 @@ il flexbox layout per poter visualizzare allo stesso livello sia l'aside che il 
     in base all'azienda specifica che si desidera (o anche per tutte le aziende)
  */
 aside {
-    width: 40%;
     background-color: #fff;
-    padding: 20px;
     text-align: left;
 }
 .aside-nav h2 {text-align: left;}
@@ -152,6 +150,7 @@ aside {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    width: 100%;
 }
 
 .card{
@@ -216,6 +215,8 @@ automaticamente per evitare che possa apparire stretchato */
     max-width: 45%;
     text-align: center;
 }
+.search-container-aside {text-align: left; margin: 0; min-width: 100%;}
+
 
 /* search-wrapper è la barra stessa di ricerca (l'input box per intenderci) */
 .search-wrapper {
@@ -365,6 +366,128 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="date"
 .panel-buttons {text-align: center; padding-top: 30px;}
 .panel-buttons .btn {margin: 10px;}
 
+/*---------------------------------------------------
+ | Background Inserisci offerte
+-----------------------------------------------------*/
+.ins-off {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    max-height: min-content;
+    background: #f5f5f5;
+    box-shadow: 0 0 5px #ccc;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(100px);
+    overflow: hidden;
+    color: black;
+    padding: 70px 40px;
+    width: 430px;
+}
+.ins-off-inputdialog {padding: 40px; width: 760px;}
+.ins-off-inputdialog .form-row {display: flex; text-align: left; margin-top: 25px; margin-bottom: 15px;}
+.ins-off-inputdialog .form-left {width: 50%; padding-right: 18px;}
+.ins-off-inputdialog .form-right {width: 50%; padding-left: 18px;}
+.ins-off-inputdialog fieldset {border: none;}
+
+.btn-Ins {
+    font-size: 1em;
+    padding: 8px 20px;
+    border-radius: 25px;
+}
+
+
+
+/*---------------------------------------------------
+ | Tabella per la gestione delle F.A.Q./utente/staff
+-----------------------------------------------------*/
+
+.tabella {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tabella th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.tabella th {
+    background-color: #ddd;
+}
+
+.tabella tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabella .checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.tabella .update-btn {
+    background-color: rgb(238, 0, 255);
+    color: #fff;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: .86em;
+}
+
+.tabella .update-btn:hover {
+    background: #cccccc;
+    color: black;
+}
+
+.tabella .delete-btn {
+    background-color: red;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.tabella .delete-btn:hover {
+    background: #cccccc;
+    color: black;
+}
+
+.btn-back {
+    /*height: 45px;*/
+    cursor: pointer;
+    background-color: #d30000;
+    text-align: center;
+}
+
+.btn-FAQ {
+    font-size: 1em;
+    padding: 8px 20px;
+    border-radius: 25px;
+}
+
+.form-insertFAQ label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-insertFAQ textarea {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: .9em;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 100px;
+}
+
 /*-----------------------
  | Footer (pie di pagina
 -------------------------*/
@@ -395,3 +518,22 @@ verso sinistra, in modo tale che queste vengono inserite orizzontalmente all'int
 La proprietà vertical-align indica l'allineamento in verticale che l'immagine deve avere rispetto al testo che la segue. */
 .phone-link     {color: white; text-decoration: none;}
 .phone-link img {width: 20px; vertical-align: middle; color: white;}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+.paginator-icon {width: 25px; vertical-align: bottom; margin: 0 5px;}
+/* serve per risolvere un bug che comportava la sottolineatura non volontaria delle immagini */
+.pagination a {text-decoration: none;}
+.search-container-aside h2 {text-align: left; font-size: 20px; margin-bottom: 12px;}
+
+.active-filters-container {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.open-search-area {
+    width: 70px; margin-bottom: 20px;
+}
+#search-form {display: none;}

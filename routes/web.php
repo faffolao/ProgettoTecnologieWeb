@@ -49,9 +49,7 @@ Route::get("/dettagliAzienda/{nome}", [FactoryController::class, 'getDataDA'])
 // Rotta per il caricamento del catalogo corredato di lista delle offerte.
 Route::get('/catalogo', [FactoryController::class, 'getDataC'])
     ->name('catalogo');
-Route::get('/catalogo/{idAzienda}', [CatalogoController::class, 'index']);
 Route::post('/catalogo', [CatalogoController::class, 'getDataBR']);
-//Route::get('/catalogo?query={inputR}', [CatalogoController::class, 'getDataBR']);
 
 //Rotta per il POST del login
 Route::post("user", [UserAuth::class, 'userLogin']);
@@ -174,16 +172,65 @@ Route::get('/modifica-credenziali', function () {
 */
 
 // Rotta per lo staff
+Route::view("/hubStaff", 'hubStaff')
+    ->name("hubStaff");
+
+//Rotta standard
+Route::get("/modificaOfferte", [OfferController::class, 'getDataOff'])
+    ->name("modificaOfferte");
 
 // Rotta per inserire una nuova offerta
+Route::view("/inserisciOfferte", 'inserisciOfferte')
+    ->name('inserisciOfferte');
+Route::post('/inserisciOfferte', [OfferController::class, 'addOff']);
+
+//Rotta per agiornare un'offerta
+Route::get('/aggiornaOfferte/{id}/edit', [OfferController::class, 'getDataSingleOff'])
+    ->name('aggiornaOfferte');
+Route::put('/aggiornaOfferte/{id}', [OfferController::class, 'updateDataSingleOff']);
+
+//QUESTA ROTTA SERVER PER ELIMINARE UN'OFFERTA
+Route::delete("/modificaOfferte/elimina/{id}", [OfferController::class, 'deleteR'])
+    ->name("eliminaOfferte");
 
 // Rotta per l'amministratore
+Route::view("/hubAmministratore", 'hubAmministratore')
+    ->name("hubAmministratore");
 
 
+
+/* --------------------------
+ * ROTTE F.A.Q
+ * -------------------------- */
+//Rotta standard
+Route::get("/modificaFAQ", [FAQController::class, 'getData'])
+    ->name("modificaFAQ");
+
+//Rotta per inserire una f.a.q
+Route::view("/inserisciFAQ", 'inserisciFAQ')
+    ->name('inserisciFAQ');
+Route::post('/inserisciFAQ', [FAQController::class, 'addFAQ']);
+
+//Rotta per agiornare una domanda/risposta delle F.A.Q.
+Route::get('/aggiornaFAQ/{id}/edit', [FAQController::class, 'getDataSingleFAQ'])
+    ->name('aggiornaFAQ');
+Route::put('/aggiornaFAQ/{id}', [FAQController::class, 'updateDataSingleFAQ']);
+
+//QUESTA ROTTA SERVE PER ELIMINARE UNA DOMANDA/RISPOSTA
+Route::delete("/modificaFAQ/elimina/{id}", [FAQController::class, 'deleteR'])
+    ->name("eliminaFAQ");
+
+/* --------------------------
+ * ROTTE Cancellazione Clienti
+ * -------------------------- */
+Route::get("/cancellazioneClienti", [UserController::class, 'getDataClienti'])
+    ->name("cancellazioneClienti");
+/*Rotta per ricercare i clienti da eliminare*/
+Route::post('/cancellazioneClienti', [UserController::class, 'getDataBR']);
+Route::delete('cancellazioneClienti/{username}', [UserController::class, 'deleteC'])
+    ->name('eliminaClienti');
 
 /*
-// Rotte per le faq
-
 Route::get('/gestioneFAQ','utenteController@gestioneFAQ')
     ->name("gestioneFAQ")
     ->middleware('can:isAdmin');

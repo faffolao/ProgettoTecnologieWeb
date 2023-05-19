@@ -51,30 +51,30 @@ main{
     display: block;
 }
 
-table {
+.tabella {
     border-collapse: collapse;
     width: 100%;
 }
 
-th, td {
+.tabella th, td {
     text-align: left;
     padding: 8px;
 }
 
-th {
+.tabella th {
     background-color: #ddd;
 }
 
-tr:nth-child(even) {
+.tabella tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-.checkbox {
+.tabella .checkbox {
     width: 20px;
     height: 20px;
 }
 
-.update-btn {
+.tabella .update-btn {
     background-color: rgb(238, 0, 255);
     color: #fff;
     border: none;
@@ -83,12 +83,12 @@ tr:nth-child(even) {
     border-radius: 25px;
 }
 
-.update-btn:hover{
+.tabella .update-btn:hover{
     background: #cccccc;
     color: black;
 }
 
-.delete-btn {
+.tabella .delete-btn {
     background-color: red;
     color: #fff;
     border: none;
@@ -97,27 +97,14 @@ tr:nth-child(even) {
     border-radius: 25px;
 }
 
-.delete-btn:hover{
+.tabella .delete-btn:hover{
     background: #cccccc;
     color: black;
 }
 
-.btnBack{
+.btn-back{
     /*height: 45px;*/
-    cursor: pointer;
     background-color: #d30000;
-    color: #fff;
-    font-size: 18px;
-    padding: 10px 30px;
-    border-radius: 25px;
-    border: none;
-    outline: none;
-    font-weight: 500;
-    /*align-items: center;*/
-    text-align: center;
-    align-items: center;
-    display: block;
-    margin: 20px auto 10px;
 }
 
 .btnBack:hover{

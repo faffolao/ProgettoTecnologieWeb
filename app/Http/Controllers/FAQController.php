@@ -10,9 +10,57 @@ class FAQController extends Controller
     //
     function getData()
     {
+        $data = FAQ::all();
+        return view('modificaFAQ', ['List'=>$data]);
 ////        return FAQ::all('domanda');
 //        $data= FAQ::all();
 ////        $dataR= FAQ::all('risposta');
 //        return view('homepage', ['List'=>$data]);
+    }
+    function deleteR($id)
+    {
+        // Trova la riga nel database
+        $row = FAQ::findOrFail($id);
+
+        // Elimina la riga
+        $row->delete();
+
+        // Esempio di reindirizzamento alla pagina principale
+        return redirect()->route('modificaFAQ');
+    }
+    function getForm()
+    {
+        return view('inserisciFAQ');
+    }
+    function addFAQ(Request $request){
+
+        // Validazione dei dati inviati nella form
+//        $validatedData = $request->validate([
+//            'domanda' => 'required|string',
+//            'risposta' => 'required|string',
+//        ]);
+
+        $faq = new FAQ;
+        $root = "root";
+        $faq['domanda'] = $request->input('domanda');
+        $faq['risposta'] = $request->input('risposta');
+        $faq['usernameCreatore'] = $root;
+        $faq->save();
+
+        return redirect()->route('modificaFAQ');
+//        return view('modificaFAQ');
+    }
+    function getDataSingleFAQ($id){
+        $data = FAQ::where('id', $id)->first();
+        return view('aggiornaFAQ', ['dati'=>$data]);
+    }
+
+    function updateDataSingleFAQ(Request $request, $id)
+    {
+        $record = FAQ::where('id', $id)->first();
+        $record['domanda'] = $request->input('domanda');
+        $record['risposta'] = $request->input('risposta');
+        $record->update();
+        return redirect()->route('modificaFAQ');
     }
 }
