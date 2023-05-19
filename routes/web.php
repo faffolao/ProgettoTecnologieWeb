@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 //per database
 use App\Http\Controllers\UserController;
@@ -23,7 +24,10 @@ use App\Http\Controllers\CatalogoController;
 |
 */
 
-//Auth::routes(); //per importare le rotte di autenticazione degli utenti
+Auth::user();
+Auth::id();
+Auth::check();
+Auth::logout();
 
 /* --------------------------
  * ROTTE PER LA NAVBAR
@@ -59,6 +63,23 @@ Route::view("/profile", 'profile')
 Route::view("/login", 'login')
     ->name("login");
 
+/*
+ * Route::get('/login', [
+ *     'uses' => 'Auth\AuthController@getLogin',
+ *     'as' => 'login'
+ * ]);
+ * Route::post('/login', [
+ *     'uses' => 'Auth\AuthController@getLogin',
+ *     'as' => 'login.post'
+ * ]);
+ * Route::group(['middleware' => 'auth'], function() {
+ *     Route::get('/logout', [
+ *     'uses' => 'Auth\AuthController@getLogout',
+ *     'as' => 'logout'
+ * ]);
+ * });
+ */
+
 // Rotta per il caricamento della pagina di registrazione.
 Route::view("/registrazione", 'registrazione')
     ->name("registrazione");
@@ -85,20 +106,55 @@ Route::view("/hubUtente", 'hubUtente')
 Route::view("/modificaDati_L1", 'modificaDati_L1')
     ->name("modificaDatiL1");
 
+// Rotta di registrazione
+
+Route::post('/registrazione', function(){
+    User::create([
+    'username' => request('username'),
+    'nome' => request('nome'),
+    'cognome' => request('cognome'),
+    'data_nascita' => request('data_nascita'),
+    'sesso' => request('sesso'),
+    'livello' => request('livello'),
+    'password' => request('password'),
+    'telefono' => request('telefono'),
+    'email' => request('email'),
+    ]);
+    return redirect('/login');
+});
+
 // Rotte per andare nella Home dopo il Login
 
 /*
-Route::get('/home1', function () { // Home dei clienti
-    return view('home1');
-})->middleware(['auth', 'can:access-level-1'])->name('home1');
 
-Route::get('/home2', function () { // Home dello staff
-    return view('home2');
-})->middleware(['auth', 'can:access-level-2'])->name('home2');
+Route::post('/login', function () {
+    $credentials = request(['username', 'password']);
+    if (Auth::attempt($credentials)) {
+        $user = Auth::user();
+        if ($user->livello == 1) {
+            return redirect()->route('hubUtente');
+        } else if ($user->livello == 2) {
+            return redirect()->route('hubStaff');
+        } else if ($user->livello == 3) {
+            return redirect()->route('hubAmministratore');
+        }
+    }
+    return redirect()->back()->withErrors([
+        'username' => 'Le credenziali inserite non sono valide.',
+    ])->withInput(request(['username']));
+});
 
-Route::get('/home3', function () { // Home dell'amministratore
-    return view('home3');
-})->middleware(['auth', 'can:access-level-3'])->name('home3');
+/* ??
+ Route::get('/users/{username}', function ($username) {
+    // check if user is level 1
+    if (Auth::user()->level == 1) {
+        // do something
+    } else {
+        return redirect('/');
+    }
+});
+
+ * /
 */
 
 /* --------------------------
@@ -156,3 +212,7 @@ Route::get('UtentiDB', [UserController::class, 'getData']);
 Route::get('OfferteDB', [OfferController::class, 'getData']);
 Route::get('FAQsDB', [FAQController::class, 'getData']);
 Route::get('CouponsDB', [CouponController::class, 'getData']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

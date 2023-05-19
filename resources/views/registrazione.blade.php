@@ -8,50 +8,105 @@
             <h2>Registrazione</h2>
 
             <!-- effettiva form di input -->
-            <form>
-                <div class="form-row">
-                    <div class="form-left">
-                        <fieldset title="Inserisci i tuoi dati personali">
-                            <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome" required>
+            {{ Form::open(array('route' => 'registrazione', 'class' => 'contact-form')) }}
+            <div class="form-row">
+                <div class="form-left">
+                {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
+                {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome']) }}
+                @if ($errors->first('nome'))
+                    <ul class="errors">
+                        @foreach ($errors->get('nome') as $message)
+                            <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                @endif
 
-                            <label for="cognome">Cognome:</label>
-                            <input type="text" id="cognome" name="cognome" required>
+                {{ Form::label('cognome', 'Cognome', ['class' => 'label-input']) }}
+                {{ Form::text('cognome', '', ['class' => 'input', 'id' => 'cognome']) }}
+                @if ($errors->first('cognome'))
+                    <ul class="errors">
+                        @foreach ($errors->get('cognome') as $message)
+                            <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                @endif
 
-                            <label for="data_nascita">Data di nascita:</label>
-                            <input type="date" id="data_nascita" name="data_nascita" required>
+                {{ Form::label('data_nascita', 'Data di nascita', ['class' => 'label-input']) }}
+                {{ Form::date('data_nascita', '', ['class' => 'input', 'id' => 'data_nascita', 'rules' => 'date_format:d-m-Y']) }}
+                @if ($errors->first('cognome'))
+                    <ul class="errors">
+                        @foreach ($errors->get('data_nascita') as $message)
+                            <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                @endif
 
-                            <fieldset title="Inserisci il tuo sesso" style="display: flex;">
-                                <legend>Sesso:</legend>
-                                <label for="maschio">
-                                    <input type="radio" id="maschio" name="sesso" value="maschio" checked> Maschio&nbsp;&nbsp;</label>
-                                <label for="femmina">
-                                    <input type="radio" id="femmina" name="sesso" value="femmina"> Femmina&nbsp;&nbsp;</label>
-                                <label for="altro">
-                                    <input type="radio" id="altro" name="sesso" value="altro"> Altro&nbsp;&nbsp;</label>
-                            </fieldset>
+                {{ Form::label('sesso', 'Sesso') }}
 
-                            <label for="telefono">Telefono:</label>
-                            <input type="tel" id="telefono" name="telefono" required>
+                {{ Form::radio('sesso', 'maschio', true, ['style' => 'display:inline;']) }}
+                {{ Form::label('sesso', 'Maschio', ['style' => 'display:inline;']) }}
+                {{ Form::radio('sesso', 'femmina', false, ['style' => 'display:inline;']) }}
+                {{ Form::label('sesso', 'Femmina', ['style' => 'display:inline;']) }}
+                {{ Form::radio('sesso', 'altro', false, ['style' => 'display:inline;']) }}
+                {{ Form::label('sesso', 'Altro', ['style' => 'display:inline;']) }}
+                @if ($errors->first('sesso'))
+                    <ul class="errors">
+                        @foreach ($errors->get('sesso') as $message)
+                            <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                @endif
 
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required>
-                        </fieldset>
-                    </div>
-                    <div class="form-right">
-                        <fieldset title="Inserisci i tuoi dati identificativi">
-                            <label for="username">Username:</label>
-                            <input type="text" id="username" name="username" required>
+                {{ Form::label('telefono', 'Numero di telefono', ['class' => 'label-input']) }}
+                {{ Form::text('telefono', '', ['class' => 'input', 'id' => 'telefono', 'rules' => 'phone']) }}
+                @if ($errors->first('telefono'))
+                    <ul class="errors">
+                        @foreach ($errors->get('telefono') as $message)
+                            <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                @endif
 
-                            <label for="password">Password:</label>
-                            <input type="password" id="password" name="password" required>
-                        </fieldset>
-                    </div>
+                {{ Form::label('email', 'Email', ['class' => 'label-input']) }}
+                {{ Form::text('email', '', ['class' => 'input', 'id' => 'email', 'rules' => 'email']) }}
+                @if ($errors->first('email'))
+                    <ul class="errors">
+                        @foreach ($errors->get('email') as $message)
+                            <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                @endif
                 </div>
 
-                <div style="clear:both;"></div>
+                <div class="form-right">
+                {{ Form::label('username','Username' ) }}
+                {{ Form::text('username') }}
+                @if ($errors->first('username'))
+                    <ul class="errors">
+                        @foreach ($errors->get('username') as $message)
+                            <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                @endif
 
-                <button type="submit" class="btn">Registrazione</button>
+                {{ Form::label('password', 'Password') }}
+                {{ Form::password('password') }}
+                @if ($errors->first('password'))
+                    <ul class="errors">
+                        @foreach ($errors->get('password') as $message)
+                            <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+                </div>
+            </div>
+
+            {{ Form::submit('Registrazione', ['class' => 'btn'])}}
+
+            {{ Form::close() }}
+
+            <div style="clear:both;"></div>
+
 
                 <div class="register">
                     <p>Hai già un account?<b><a href="{{ route('login') }}" class="register-link">

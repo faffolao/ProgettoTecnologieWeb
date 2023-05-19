@@ -6,6 +6,7 @@
             <div class="title-with-logo">
                 <img src="{{ asset('assets/images/customer_icon.png') }}" alt="Logo utente">
                 <h2>Benvenuto nell'Area personale</h2>
+            <!--    <p> {{Auth::user() -> nome }} {{Auth::user() -> cognome }}</p>  -->
             </div>
 
             <div class="panel-buttons">
