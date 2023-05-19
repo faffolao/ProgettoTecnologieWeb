@@ -157,6 +157,16 @@ Route::put('/aggiornaFAQ/{id}', [FAQController::class, 'updateDataSingleFAQ']);
 Route::delete("/modificaFAQ/elimina/{id}", [FAQController::class, 'deleteR'])
     ->name("eliminaFAQ");
 
+/* --------------------------
+ * ROTTE Cancellazione Clienti
+ * -------------------------- */
+Route::get("/cancellazioneClienti", [UserController::class, 'getDataClienti'])
+    ->name("cancellazioneClienti");
+/*Rotta per ricercare i clienti da eliminare*/
+Route::post('/cancellazioneClienti', [UserController::class, 'getDataBR']);
+Route::delete('cancellazioneClienti/{username}', [UserController::class, 'deleteC'])
+    ->name('eliminaClienti');
+
 /*
 Route::get('/gestioneFAQ','utenteController@gestioneFAQ')
     ->name("gestioneFAQ")

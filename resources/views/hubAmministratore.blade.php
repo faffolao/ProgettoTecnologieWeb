@@ -17,7 +17,7 @@
                 <a href="#" class="btn">Statistiche</a>
             </div>
             <div class="panel-buttons">
-                <a href="#" class="btn">Cancellazione clienti</a>
+                <a href="{{route('cancellazioneClienti')}}" class="btn">Cancellazione clienti</a>
             </div>
             <div class="panel-buttons">
                 <a href="#" class="btn">Gestione staff</a>
