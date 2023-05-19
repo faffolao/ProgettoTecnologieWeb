@@ -13,7 +13,7 @@
                 @csrf
                 <div class="search-wrapper">
                     <!-- l'evento onkeyup viene attivato quando viene premuto un tasto qualsiasi della tastiera quando ho il focus sull'input -->
-                    <input type="text" id="search-bar" name="query" {{--onkeyup="search()"--}} placeholder="Cerca un'azienda..." title="Cerca un'azienda scrivendo qui e poi premendo il taSto INVIO/ENTER">
+                    <input type="text" id="search-bar" name="query" {{--onkeyup="search()"--}} placeholder="Cerca un'azienda..." title="Cerca un'azienda scrivendo qui e poi premendo il tasto INVIO/ENTER">
                     <button type="submit"><img src="{{ asset("assets/images/search.svg") }}" alt="Cerca"></button>
                 </div>
             </form>
