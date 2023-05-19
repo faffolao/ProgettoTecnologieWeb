@@ -122,12 +122,23 @@ Route::get('/modifica-credenziali', function () {
 // Rotta per inserire una nuova offerta
 
 // Rotta per l'amministratore
+Route::view("/hubAmministratore", 'hubAmministratore')
+    ->name("hubAmministratore");
 
 
+
+/* --------------------------
+ * ROTTE F.A.Q
+ * -------------------------- */
+
+//Rotta standard
+Route::get("/modificaFAQ", [FAQController::class, 'getData'])
+    ->name("modificaFAQ");
+//QUESTA ROTTA SERVER PER ELIMINARE UNA DOMANDA/RISPOSTA
+Route::delete("/modificaFAQ/elimina/{id}", [FAQController::class, 'deleteR'])
+    ->name("eliminaFAQ");
 
 /*
-// Rotte per le faq
-
 Route::get('/gestioneFAQ','utenteController@gestioneFAQ')
     ->name("gestioneFAQ")
     ->middleware('can:isAdmin');

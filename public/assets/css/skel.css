@@ -365,6 +365,68 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="date"
 .panel-buttons {text-align: center; padding-top: 30px;}
 .panel-buttons .btn {margin: 10px;}
 
+/*---------------------------------------------------
+ | Tabella per la gestione delle F.A.Q./utente/staff
+-----------------------------------------------------*/
+
+.tabella {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tabella th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+.tabella th {
+    background-color: #ddd;
+}
+
+.tabella tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabella .checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.tabella .update-btn {
+    background-color: rgb(238, 0, 255);
+    color: #fff;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.tabella .update-btn:hover{
+    background: #cccccc;
+    color: black;
+}
+
+.tabella .delete-btn {
+    background-color: red;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.tabella .delete-btn:hover{
+    background: #cccccc;
+    color: black;
+}
+
+.btn-back{
+    /*height: 45px;*/
+    cursor: pointer;
+    background-color: #d30000;
+    text-align: center;
+}
+
 /*-----------------------
  | Footer (pie di pagina
 -------------------------*/
