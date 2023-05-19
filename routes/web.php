@@ -139,6 +139,11 @@ Route::view("/inserisciFAQ", 'inserisciFAQ')
     ->name('inserisciFAQ');
 Route::post('/inserisciFAQ', [FAQController::class, 'addFAQ']);
 
+//Rotta per agiornare una domanda/risposta delle F.A.Q.
+Route::get('/aggiornaFAQ/{id}/edit', [FAQController::class, 'getDataSingleFAQ'])
+    ->name('aggiornaFAQ');
+Route::put('/aggiornaFAQ/{id}', [FAQController::class, 'updateDataSingleFAQ']);
+
 //QUESTA ROTTA SERVE PER ELIMINARE UNA DOMANDA/RISPOSTA
 Route::delete("/modificaFAQ/elimina/{id}", [FAQController::class, 'deleteR'])
     ->name("eliminaFAQ");

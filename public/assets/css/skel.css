@@ -399,6 +399,8 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="date"
     padding: 8px;
     cursor: pointer;
     border-radius: 25px;
+    text-decoration: none;
+    font-size: .86em;
 }
 
 .tabella .update-btn:hover {
@@ -450,6 +452,7 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="date"
     font-size: .9em;
     max-width: 100%;
     min-width: 100%;
+    min-height: 100px;
 }
 
 /*-----------------------
