@@ -116,8 +116,26 @@ Route::get('/modifica-credenziali', function () {
 */
 
 // Rotta per lo staff
+Route::view("/hubStaff", 'hubStaff')
+    ->name("hubStaff");
+
+//Rotta standard
+Route::get("/modificaOfferte", [OfferController::class, 'getDataOff'])
+    ->name("modificaOfferte");
 
 // Rotta per inserire una nuova offerta
+Route::view("/inserisciOfferte", 'inserisciOfferte')
+    ->name('inserisciOfferte');
+Route::post('/inserisciOfferte', [OfferController::class, 'addOff']);
+
+//Rotta per agiornare un'offerta
+Route::get('/aggiornaOfferte/{id}/edit', [OfferController::class, 'getDataSingleOff'])
+    ->name('aggiornaOfferte');
+Route::put('/aggiornaOfferte/{id}', [OfferController::class, 'updateDataSingleOff']);
+
+//QUESTA ROTTA SERVER PER ELIMINARE UN'OFFERTA
+Route::delete("/modificaOfferte/elimina/{id}", [OfferController::class, 'deleteR'])
+    ->name("eliminaOfferte");
 
 // Rotta per l'amministratore
 Route::view("/hubAmministratore", 'hubAmministratore')
@@ -137,9 +155,24 @@ Route::view("/inserisciFAQ", 'inserisciFAQ')
     ->name('inserisciFAQ');
 Route::post('/inserisciFAQ', [FAQController::class, 'addFAQ']);
 
+//Rotta per agiornare una domanda/risposta delle F.A.Q.
+Route::get('/aggiornaFAQ/{id}/edit', [FAQController::class, 'getDataSingleFAQ'])
+    ->name('aggiornaFAQ');
+Route::put('/aggiornaFAQ/{id}', [FAQController::class, 'updateDataSingleFAQ']);
+
 //QUESTA ROTTA SERVE PER ELIMINARE UNA DOMANDA/RISPOSTA
 Route::delete("/modificaFAQ/elimina/{id}", [FAQController::class, 'deleteR'])
     ->name("eliminaFAQ");
+
+/* --------------------------
+ * ROTTE Cancellazione Clienti
+ * -------------------------- */
+Route::get("/cancellazioneClienti", [UserController::class, 'getDataClienti'])
+    ->name("cancellazioneClienti");
+/*Rotta per ricercare i clienti da eliminare*/
+Route::post('/cancellazioneClienti', [UserController::class, 'getDataBR']);
+Route::delete('cancellazioneClienti/{username}', [UserController::class, 'deleteC'])
+    ->name('eliminaClienti');
 
 /*
 Route::get('/gestioneFAQ','utenteController@gestioneFAQ')

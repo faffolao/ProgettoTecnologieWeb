@@ -4,12 +4,13 @@
     <div class="container">
         <div class="panel">
             <h2>Inserisci F.A.Q.</h2>
+            <br>
             <form class="form-insertFAQ" action="/inserisciFAQ" method="POST">
                 @csrf
                 <label for="domanda">Inserisci la domanda:</label>
-                <input type="text" id="domanda" name="domanda" placeholder="Domanda...">
+                <input type="text" id="domanda" name="domanda" placeholder="Domanda..." required>
                 <label for="risposta">Inserisci la risposta:</label>
-                <textarea type="text" id="risposta" name="risposta" placeholder="Risposta..."></textarea>
+                <textarea type="text" id="risposta" name="risposta" placeholder="Risposta..." required></textarea>
                 <button class="btn" type="submit">Aggiungi domanda e risposta</button>
             </form>
             <div class="panel-buttons">
@@ -17,14 +18,4 @@
             </div>
         </div>
     </div>
-    {{--    <div id="form-aggiunta">--}}
-    {{--        <h1>Aggiungi domande e risposte nelle FAQ</h1>--}}
-    {{--        <form>--}}
-    {{--            <label for="domanda">Inserisci la domanda:</label>--}}
-    {{--            <input type="text" id="domanda" name="domanda">--}}
-    {{--            <label for="risposta">Inserisci la risposta:</label>--}}
-    {{--            <textarea id="risposta" name="risposta"></textarea>--}}
-    {{--            <button type="button" onclick="aggiungiDomanda()">Aggiungi domanda e risposta</button>--}}
-    {{--        </form>--}}
-    {{--    </div>--}}
 @endsection

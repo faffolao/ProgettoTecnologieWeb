@@ -35,10 +35,10 @@ class FAQController extends Controller
     function addFAQ(Request $request){
 
         // Validazione dei dati inviati nella form
-        $validatedData = $request->validate([
-            'domanda' => 'required|string',
-            'risposta' => 'required|string',
-        ]);
+//        $validatedData = $request->validate([
+//            'domanda' => 'required|string',
+//            'risposta' => 'required|string',
+//        ]);
 
         $faq = new FAQ;
         $root = "root";
@@ -49,5 +49,18 @@ class FAQController extends Controller
 
         return redirect()->route('modificaFAQ');
 //        return view('modificaFAQ');
+    }
+    function getDataSingleFAQ($id){
+        $data = FAQ::where('id', $id)->first();
+        return view('aggiornaFAQ', ['dati'=>$data]);
+    }
+
+    function updateDataSingleFAQ(Request $request, $id)
+    {
+        $record = FAQ::where('id', $id)->first();
+        $record['domanda'] = $request->input('domanda');
+        $record['risposta'] = $request->input('risposta');
+        $record->update();
+        return redirect()->route('modificaFAQ');
     }
 }
