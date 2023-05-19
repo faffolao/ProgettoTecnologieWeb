@@ -45,9 +45,7 @@ Route::get("/dettagliAzienda/{nome}", [FactoryController::class, 'getDataDA'])
 // Rotta per il caricamento del catalogo corredato di lista delle offerte.
 Route::get('/catalogo', [FactoryController::class, 'getDataC'])
     ->name('catalogo');
-Route::get('/catalogo/{idAzienda}', [CatalogoController::class, 'index']);
 Route::post('/catalogo', [CatalogoController::class, 'getDataBR']);
-//Route::get('/catalogo?query={inputR}', [CatalogoController::class, 'getDataBR']);
 
 //Rotta per il POST del login
 Route::post("user", [UserAuth::class, 'userLogin']);

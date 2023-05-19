@@ -86,7 +86,7 @@ main {margin: 50px 10%;}
 .container h2     {font-size: 36px;}
 /* se il container contiene un elemento aside (un menu di navigazione che giace ai lati della pagina) questi dovrà assumere
 il flexbox layout per poter visualizzare allo stesso livello sia l'aside che il corpo della pagina */
-.with-aside {display: flex;}
+.container-with-aside {display: flex;}
 
 /* "desc" contiene del contenuto descrittivo alla pagina, ad esempio, dei testi introduttivi */
 .desc{
@@ -108,9 +108,7 @@ il flexbox layout per poter visualizzare allo stesso livello sia l'aside che il 
     in base all'azienda specifica che si desidera (o anche per tutte le aziende)
  */
 aside {
-    width: 40%;
     background-color: #fff;
-    padding: 20px;
     text-align: left;
 }
 .aside-nav h2 {text-align: left;}
@@ -152,6 +150,7 @@ aside {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    width: 100%;
 }
 
 .card{
@@ -216,6 +215,8 @@ automaticamente per evitare che possa apparire stretchato */
     max-width: 45%;
     text-align: center;
 }
+.search-container-aside {text-align: left; margin: 0; min-width: 100%;}
+
 
 /* search-wrapper è la barra stessa di ricerca (l'input box per intenderci) */
 .search-wrapper {
@@ -517,3 +518,22 @@ verso sinistra, in modo tale che queste vengono inserite orizzontalmente all'int
 La proprietà vertical-align indica l'allineamento in verticale che l'immagine deve avere rispetto al testo che la segue. */
 .phone-link     {color: white; text-decoration: none;}
 .phone-link img {width: 20px; vertical-align: middle; color: white;}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+.paginator-icon {width: 25px; vertical-align: bottom; margin: 0 5px;}
+/* serve per risolvere un bug che comportava la sottolineatura non volontaria delle immagini */
+.pagination a {text-decoration: none;}
+.search-container-aside h2 {text-align: left; font-size: 20px; margin-bottom: 12px;}
+
+.active-filters-container {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.open-search-area {
+    width: 70px; margin-bottom: 20px;
+}
+#search-form {display: none;}
