@@ -13,4 +13,6 @@ yarn-error.log
 /.idea
 /.vscode
 /vendor/laravel/ui
+/vendor/composer
 projectFiles/PasswordTW.html
+composer.*
