@@ -21,14 +21,17 @@ return new class extends Migration
 
             $table->string('nome', 20);
             $table->string('cognome', 20);
-            $table->smallInteger('eta')->nullable();
-            $table->string('genere', 1)->nullable();
+            $table->date('data_nascita')->nullable();
+            $table->string('sesso', 1)->nullable();
 
             $table->integer('livello');
             $table->string('password', 255);
 
             $table->string('telefono', 10)->nullable();
             $table->string('email', 30);
+
+            $table->fillable(['username', 'nome', 'cognome',
+                'data_nascita', 'sesso', 'livello', 'password', 'telefono', 'email']);
         });
     }
 
