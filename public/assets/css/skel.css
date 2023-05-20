@@ -238,6 +238,10 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="date"
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+input[type="radio"]{
+    margin-bottom: 20px;
+}
+
 .search-wrapper input[type="text"] {
     margin-bottom: 0;
     padding: 10px 20px;
@@ -536,4 +540,6 @@ La proprietà vertical-align indica l'allineamento in verticale che l'immagine d
 .open-search-area {
     width: 70px; margin-bottom: 20px;
 }
-#search-form {display: none;}
+
+/*Ardu OCCHIO QUESTO FORM È USATO D'APPERTUTTO SE ME LO NASCONDI QUI NON LO VEDO DA NESSUNA PARTE*/
+/*#search-form {display: none;}*/

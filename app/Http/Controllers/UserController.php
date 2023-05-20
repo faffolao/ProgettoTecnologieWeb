@@ -50,7 +50,7 @@ class UserController extends Controller
     function getDataGS()
     {
         $data = User::all('username');
-        return view('gestioneStaff', ['ListaStaff'=>$data]);
+        return view('gestioneStaff', ['List'=>$data]);
     }
 
     // per la Barra di Ricerca in gestioneStaff
@@ -60,5 +60,66 @@ class UserController extends Controller
         $query = $request->input('query');
         $dataUN = User::where('username', 'LIKE', '%' .$query. '%')->get();
         return view('gestioneStaff', ['Staff'=>$data], ['List'=>$dataUN]);
+    }
+    function deleteS($username)
+    {
+        // Trova la riga nel database
+        // Elimina la riga
+        DB::table('utenti')->where('username', $username)->delete();
+
+        // Esempio di reindirizzamento alla pagina principale
+        return redirect()->route('gestioneStaff');
+    }
+    function addStaff(Request $request){
+
+        // Validazione dei dati inviati nella form
+//        $validatedData = $request->validate([
+//            'domanda' => 'required|string',
+//            'risposta' => 'required|string',
+//        ]);
+
+        $user = new User();
+        $livello = 2;
+        $user['username'] = $request->input('username');
+        $user['nome'] = $request->input('nome');
+        $user['cognome'] = $request->input('cognome');
+        $user['eta'] = $request->input('eta');
+        $user['password'] = $request->input('password');
+        $user['email'] = $request->input('email');
+        $user['telefono'] = $request->input('telefono');
+        $user['genere'] = $request->input('genere');
+        $user['livello'] = $livello;
+        $user->save();
+
+        return redirect()->route('gestioneStaff');
+//        return view('modificaFAQ');
+    }
+    function getDataSingleStaff($username){
+        $data = User::where('username', $username)->first();
+        return view('aggiornaStaff', ['dati'=>$data]);
+    }
+
+    function updateDataSingleStaff(Request $request, $username)
+    {
+        User::where('username', $username)->update(
+            ['username'=>$request->input('username'),
+                'nome'=>$request->input('nome'),
+                'cognome'=>$request->input('cognome'),
+                'eta'=>$request->input('eta'),
+                'password'=>$request->input('password'),
+                'email'=>$request->input('email'),
+                'telefono'=>$request->input('telefono'),
+                'genere'=>$request->input('genere')
+            ]);
+//        $user['username'] = $request->input('username');
+//        $user['nome'] = $request->input('nome');
+//        $user['cognome'] = $request->input('cognome');
+//        $user['eta'] = $request->input('eta');
+//        $user['password'] = $request->input('password');
+//        $user['email'] = $request->input('email');
+//        $user['telefono'] = $request->input('telefono');
+//        $user['genere'] = $request->input('genere');
+//        $user->update();
+        return redirect()->route('gestioneStaff');
     }
 }

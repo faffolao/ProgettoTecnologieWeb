@@ -40,7 +40,7 @@ class DatabaseSeeder extends Seeder
                 'username' => 'marco99',
                 'nome' => 'Marco',
                 'cognome' => 'Alessandrini',
-                'eta' => 34,
+                'eta' => '2023-05-08',
                 'genere' => 'M',
                 'livello' => 1,
                 'password' => Hash::make("ciao"),

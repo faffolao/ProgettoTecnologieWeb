@@ -20,7 +20,7 @@
                 <a href="{{route('cancellazioneClienti')}}" class="btn">Cancellazione clienti</a>
             </div>
             <div class="panel-buttons">
-                <a href="#" class="btn">Gestione staff</a>
+                <a href="{{route('gestioneStaff')}}" class="btn">Gestione staff</a>
             </div>
             <div class="panel-buttons">
                 <a href="#" class="btn">Gestione aziende</a>

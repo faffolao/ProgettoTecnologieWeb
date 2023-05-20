@@ -21,8 +21,8 @@ return new class extends Migration
 
             $table->string('nome', 20);
             $table->string('cognome', 20);
-            $table->date('data_nascita')->nullable();
-            $table->string('sesso', 1)->nullable();
+            $table->date('eta')->nullable();
+            $table->string('genere', 1)->nullable();
 
             $table->integer('livello');
             $table->string('password', 255);
