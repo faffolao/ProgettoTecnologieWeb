@@ -42,7 +42,7 @@
                 <button class="btn" type="submit">Aggiorna l'offerta</button>
             </form>
             <div class="panel-buttons">
-                <a class="btn btn-back" href="{{ route('modificaOfferte') }}">Torna indietro</a>
+                <a class="btn btn-back" href="{{ route('gestioneOfferte') }}">Torna indietro</a>
             </div>
         </div>
     </div>

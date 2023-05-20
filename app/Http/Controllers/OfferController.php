@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Factory;
 use Illuminate\Http\Request;
 use App\Models\Offer;
 
@@ -21,7 +22,7 @@ class OfferController extends Controller
     function getDataOff()
     {
         $data = Offer::all();
-        return view('modificaOfferte', ['List'=>$data]);
+        return view('gestioneOfferte', ['List'=>$data]);
     }
     function deleteR($id)
     {
@@ -32,23 +33,31 @@ class OfferController extends Controller
         $row->delete();
 
         // Esempio di reindirizzamento alla pagina principale
-        return redirect()->route('modificaOfferte')->with('message', 'Offerta eliminata con successo.');
+        return redirect()->route('gestioneOfferte')->with('message', 'Offerta eliminata con successo.');
     }
     function addOff(Request $request){
 
         $off = new Offer();
         $root = "root";
+        $nomeA = $request->input('idAzienda');
+        $azienda = Factory::where('nome', $nomeA)->first();
+        $off['idAzienda'] = $azienda['id'];
         $off['nome'] = $request->input('nome');
         $off['oggetto'] = $request->input('oggetto');
         $off['modalitaFruizione'] = $request->input('modalitaFruizione');
         $off['dataOraScadenza'] = $request->input('dataOraScadenza');
         $off['luogoFruizione'] = $request->input('luogoFruizione');
         $off['immagine'] = $request->input('immagine');
-        $off['usernameCreatore'] = $root;
         $off->save();
 
-        return redirect()->route('modificaOfferte');
+        return redirect()->route('gestioneOfferte');
 //        return view('modificaFAQ');
+    }
+
+    function getNomeAziende()
+    {
+     $data = Factory::all('nome');
+     return view('inserisciOfferte', ['ListaNomi'=>$data]);
     }
 
     function getDataSingleOff($id){
@@ -66,6 +75,6 @@ class OfferController extends Controller
         $record['luogoFruizione'] = $request->input('luogoFruizione');
         $record['immagine'] = $request->input('immagine');
         $record->update();
-        return redirect()->route('modificaFAQ');
+        return redirect()->route('gestioneOfferte');
     }
 }

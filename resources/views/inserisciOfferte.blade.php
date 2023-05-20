@@ -8,7 +8,8 @@
             <h2>Inserisci una nuova offerta</h2>
 
             <!-- effettiva form di input -->
-            <form>
+            <form class="form-insertFAQ" action="/inserisciOfferte" method="POST">
+                @csrf
                 <div class="form-row">
                     <div class="form-left">
                         <fieldset title="Inserisci dati offerta">
@@ -17,6 +18,12 @@
 
                             <label for="oggetto">Oggetto:</label>
                             <input type="text" id="oggetto" name="oggetto" required>
+
+                            <select id="idAzienda" name="idAzienda" required>
+                                @foreach($ListaNomi as $listaNomi)
+                                    <option value="{{ $listaNomi['nome'] }}">{{ $listaNomi['nome'] }}</option>
+                                @endforeach
+                            </select>
 
                             <label for="modalitaFruizione">Modalità di fruizione:</label>
                             <input type="text" id="modalitaFruizione" name="modalitaFruizione" required>
@@ -27,12 +34,12 @@
                             <label for="luogoFruizione">Luogo di fruizione:</label>
                             <input type="text" id="luogoFruizione" name="luogoFruizione" required>
 
-                            <label for="data_ora_scadenza">Data e ora di scadenza:</label>
-                            <input type="date" id="data_ora_scadenza" name="data_ora_scadenza" required>
+                            <label for="dataOraScadenza">Data e ora di scadenza:</label>
+                            <input type="date" id="dataOraScadenza" name="dataOraScadenza" required>
 
                             <fieldset title="Carica immagini in formato .png o .jpeg">
-                                <label for="logo">Carica l'immagine dell'offerta:</label>
-                                <input type="file" id="logo" name="logo"
+                                <label for="immagine">Carica l'immagine dell'offerta:</label>
+                                <input type="file" id="immagine" name="immagine"
                                        accept="image/png, image/jpeg" required>
                             </fieldset>
                         </fieldset>
@@ -43,7 +50,7 @@
 
                 <button type="submit" class="btn">Inserisci Offerta</button>
                 <div class="panel-buttons">
-                    <a class="btn btn-back" href="{{ route('modificaOfferte') }}">Torna indietro</a>
+                    <a class="btn btn-back" href="{{ route('gestioneOfferte') }}">Torna indietro</a>
                 </div>
             </form>
         </div>
