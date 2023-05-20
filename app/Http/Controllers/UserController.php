@@ -17,7 +17,9 @@ class UserController extends Controller
     {
         return User::all();
     }
-     public function getDataBR(Request $request)
+
+    // per la Barra di Ricerca in CancellazioneClienti
+    public function getDataBRCC(Request $request)
     {
         $data = User::all();
         $query = $request->input('query');
@@ -43,5 +45,20 @@ class UserController extends Controller
     {
         $data = User::all();
         return view('cancellazioneClienti', ['List'=>$data]);
+    }
+
+    function getDataGS()
+    {
+        $data = User::all('username');
+        return view('gestioneStaff', ['ListaStaff'=>$data]);
+    }
+
+    // per la Barra di Ricerca in gestioneStaff
+    function getDataBRGS(Request $request)
+    {
+        $data = User::all();
+        $query = $request->input('query');
+        $dataUN = User::where('username', 'LIKE', '%' .$query. '%')->get();
+        return view('gestioneStaff', ['Staff'=>$data], ['List'=>$dataUN]);
     }
 }

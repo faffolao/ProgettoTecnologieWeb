@@ -109,15 +109,15 @@ Route::view("/modificaDati_L1", 'modificaDati_L1')
 
 Route::post('/registrazione', function(){
     User::create([
-    'username' => request('username'),
-    'nome' => request('nome'),
-    'cognome' => request('cognome'),
-    'data_nascita' => request('data_nascita'),
-    'sesso' => request('sesso'),
-    'livello' => request('livello'),
-    'password' => request('password'),
-    'telefono' => request('telefono'),
-    'email' => request('email'),
+        'username' => request('username'),
+        'nome' => request('nome'),
+        'cognome' => request('cognome'),
+        'data_nascita' => request('data_nascita'),
+        'sesso' => request('sesso'),
+        'livello' => request('livello'),
+        'password' => request('password'),
+        'telefono' => request('telefono'),
+        'email' => request('email'),
     ]);
     return redirect('/login');
 });
@@ -227,9 +227,32 @@ Route::delete("/gestioneFAQ/elimina/{id}", [FAQController::class, 'deleteR'])
 Route::get("/cancellazioneClienti", [UserController::class, 'getDataClienti'])
     ->name("cancellazioneClienti");
 /*Rotta per ricercare i clienti da eliminare*/
-Route::post('/cancellazioneClienti', [UserController::class, 'getDataBR']);
+Route::post('/cancellazioneClienti', [UserController::class, 'getDataBRCC']);
 Route::delete('cancellazioneClienti/{username}', [UserController::class, 'deleteC'])
     ->name('eliminaClienti');
+
+/* --------------------------
+ * ROTTE Gestione Staff
+ * -------------------------- */
+Route::get("/gestioneStaff", [UserController::class, 'getDataGS'])
+    ->name("gestioneStaff");
+/*Rotta per ricercare lo Staff da gestire*/
+Route::post('/gestioneStaff', [UserController::class, 'getDataBRGS']);
+
+//Rotta per inserire un membro dello staff
+Route::view("/inserisciStaff", 'inserisciStaff')
+    ->name('inserisciStaff');
+Route::post('/inserisciStaff', [UserController::class, 'addStaff']);
+
+//Rotta per agiornare un membro dello Staff
+Route::get('/aggiornaStaff/{username}/edit', [UserController::class, 'getDataSingleStaff'])
+    ->name('aggiornaStaff');
+Route::put('/aggiornaStaff/{username}', [UserController::class, 'updateDataSingleStaff']);
+
+//QUESTA ROTTA SERVE PER ELIMINARE UN MEMBRO DELLO STAFF
+Route::delete("/gestioneStaff/elimina/{username}", [UserController::class, 'deleteS'])
+    ->name("eliminaStaff");
+
 
 /*
 Route::get('/gestioneFAQ','utenteController@gestioneFAQ')
