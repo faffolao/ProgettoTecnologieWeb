@@ -90,7 +90,7 @@
                     @endif
 
                     {{ Form::label('password', 'Password') }}
-                    {{ Form::password('password') }}
+                    {{ Form::text('password') }}
                     @if ($errors->first('password'))
                         <ul class="errors">
                             @foreach ($errors->get('password') as $message)
