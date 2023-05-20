@@ -176,11 +176,11 @@ Route::view("/hubStaff", 'hubStaff')
     ->name("hubStaff");
 
 //Rotta standard
-Route::get("/modificaOfferte", [OfferController::class, 'getDataOff'])
-    ->name("modificaOfferte");
+Route::get("/gestioneOfferte", [OfferController::class, 'getDataOff'])
+    ->name("gestioneOfferte");
 
 // Rotta per inserire una nuova offerta
-Route::view("/inserisciOfferte", 'inserisciOfferte')
+Route::get("/inserisciOfferte", [OfferController::class, 'getNomeAziende'])
     ->name('inserisciOfferte');
 Route::post('/inserisciOfferte', [OfferController::class, 'addOff']);
 
@@ -190,7 +190,7 @@ Route::get('/aggiornaOfferte/{id}/edit', [OfferController::class, 'getDataSingle
 Route::put('/aggiornaOfferte/{id}', [OfferController::class, 'updateDataSingleOff']);
 
 //QUESTA ROTTA SERVER PER ELIMINARE UN'OFFERTA
-Route::delete("/modificaOfferte/elimina/{id}", [OfferController::class, 'deleteR'])
+Route::delete("/gestioneOfferte/elimina/{id}", [OfferController::class, 'deleteR'])
     ->name("eliminaOfferte");
 
 // Rotta per l'amministratore
