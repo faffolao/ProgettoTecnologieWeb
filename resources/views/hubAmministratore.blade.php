@@ -11,7 +11,7 @@
                 <a href="{{route('homepage')}}" class="btn">Logout</a>
             </div>
             <div class="panel-buttons">
-                <a href="{{route('modificaFAQ')}}" class="btn">Gestione F.A.Q.</a>
+                <a href="{{route('gestioneFAQ')}}" class="btn">Gestione F.A.Q.</a>
             </div>
             <div class="panel-buttons">
                 <a href="#" class="btn">Statistiche</a>

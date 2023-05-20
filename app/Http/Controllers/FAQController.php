@@ -11,7 +11,7 @@ class FAQController extends Controller
     function getData()
     {
         $data = FAQ::all();
-        return view('modificaFAQ', ['List'=>$data]);
+        return view('gestioneFAQ', ['List'=>$data]);
 ////        return FAQ::all('domanda');
 //        $data= FAQ::all();
 ////        $dataR= FAQ::all('risposta');
@@ -26,7 +26,7 @@ class FAQController extends Controller
         $row->delete();
 
         // Esempio di reindirizzamento alla pagina principale
-        return redirect()->route('modificaFAQ');
+        return redirect()->route('gestioneFAQ');
     }
     function getForm()
     {
@@ -47,7 +47,7 @@ class FAQController extends Controller
         $faq['usernameCreatore'] = $root;
         $faq->save();
 
-        return redirect()->route('modificaFAQ');
+        return redirect()->route('gestioneFAQ');
 //        return view('modificaFAQ');
     }
     function getDataSingleFAQ($id){
@@ -61,6 +61,6 @@ class FAQController extends Controller
         $record['domanda'] = $request->input('domanda');
         $record['risposta'] = $request->input('risposta');
         $record->update();
-        return redirect()->route('modificaFAQ');
+        return redirect()->route('gestioneFAQ');
     }
 }

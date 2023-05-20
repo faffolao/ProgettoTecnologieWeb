@@ -14,7 +14,7 @@
                 <button class="btn" type="submit">Aggiungi domanda e risposta</button>
             </form>
             <div class="panel-buttons">
-                <a class="btn btn-back" href="{{ route('modificaFAQ') }}">Torna indietro</a>
+                <a class="btn btn-back" href="{{ route('gestioneFAQ') }}">Torna indietro</a>
             </div>
         </div>
     </div>
