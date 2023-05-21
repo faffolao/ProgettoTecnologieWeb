@@ -20,7 +20,7 @@
                 <tr>
                     <th style="text-align: center;">Vuoi inserire un nuovo membro dello Staff?</th>
                     <th style="text-align: left;">
-                        <a href="{{route('inserisciStaff')}}" class="btn btn-Ins">Inserisci</a>
+                        <a href="{{route('inserisciStaff')}}" class="btn btn-FAQ">Inserisci</a>
                     </th>
                 </tr>
                 </tbody>
