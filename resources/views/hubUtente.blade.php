@@ -16,7 +16,7 @@
                 <a href="#" class="btn">Visualizza coupon utilizzati</a>
             </div>
             <div class="panel-buttons">
-                <a href="#" class="btn">Logout</a>
+                <a href="#" class="btn btn-back">Logout</a>
             </div>
         </div>
     </div>

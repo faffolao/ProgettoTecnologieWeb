@@ -8,9 +8,6 @@
                 <h2>Benvenuto nell'Area personale</h2>
             </div>
             <div class="panel-buttons">
-                <a href="{{route('homepage')}}" class="btn">Logout</a>
-            </div>
-            <div class="panel-buttons">
                 <a href="{{route('gestioneFAQ')}}" class="btn">Gestione F.A.Q.</a>
             </div>
             <div class="panel-buttons">
@@ -24,6 +21,9 @@
             </div>
             <div class="panel-buttons">
                 <a href="{{route('gestioneAziende')}}" class="btn">Gestione aziende</a>
+            </div>
+            <div class="panel-buttons">
+                <a href="{{route('homepage')}}" class="btn btn-back">Logout</a>
             </div>
         </div>
     </div>

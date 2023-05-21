@@ -32,7 +32,7 @@
                                 <p style="margin-bottom: 5px;"><em>Logo attualmete selezionato:</em></p>
                                 <img src="data:image/png/jpg/webp/jpeg/bin;base64,{{ base64_encode($dati['logo']) }}" style="max-height: 40%;max-width: 40%;" alt="Logo Azienda">
                                 <input type="file" id="logo" name="logo"
-                                       accept="image/png, image/jpeg, image/bin, image/jpg" required>
+                                       accept="image/png, image/jpeg, image/bin, image/jpg">
                             </fieldset>
                         </fieldset>
                     </div>

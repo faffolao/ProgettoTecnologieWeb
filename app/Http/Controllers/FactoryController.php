@@ -90,16 +90,28 @@ class FactoryController extends Controller
 
     function updateDataSingleAzienda(Request $request, $id)
     {
-        $immagine = $request->file('logo');
-        $logo = file_get_contents($immagine);
-        Factory::where('id', $id)->update(
-            [
-                'nome'=>$request->input('nome'),
-                'descrizione'=>$request->input('descrizione'),
-                'tipologia'=>$request->input('tipologia'),
-                'ragioneSociale'=>$request->input('ragioneSociale'),
-                'logo'=>$logo
-            ]);
+        if (!$request->file('logo'))
+        {
+            Factory::where('id', $id)->update(
+                [
+                    'nome'=>$request->input('nome'),
+                    'descrizione'=>$request->input('descrizione'),
+                    'tipologia'=>$request->input('tipologia'),
+                    'ragioneSociale'=>$request->input('ragioneSociale')
+                ]);
+        } else
+        {
+            $immagine = $request->file('logo');
+            $logo = file_get_contents($immagine);
+            Factory::where('id', $id)->update(
+                [
+                    'nome'=>$request->input('nome'),
+                    'descrizione'=>$request->input('descrizione'),
+                    'tipologia'=>$request->input('tipologia'),
+                    'ragioneSociale'=>$request->input('ragioneSociale'),
+                    'logo'=>$logo
+                ]);
+        }
 //        $user['username'] = $request->input('username');
 //        $user['nome'] = $request->input('nome');
 //        $user['cognome'] = $request->input('cognome');

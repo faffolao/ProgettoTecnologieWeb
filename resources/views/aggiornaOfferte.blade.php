@@ -20,8 +20,9 @@
                             <label for="idAzienda">Azienda:</label>
                             <p><em>Azienda attuale: {{$dati['idAzienda']}}</em></p>
                             <select id="idAzienda" name="idAzienda" required>
+                                <option value="NULL">seleziona</option>
                                 @foreach($ListaNomi as $listaNomi)
-                                        <option value="{{ $listaNomi['nome'] }}">{{$listaNomi['id']}}: {{ $listaNomi['nome'] }}</option>
+                                    <option value="{{ $listaNomi['id'] }}">{{$listaNomi['id']}}: {{ $listaNomi['nome'] }}</option>
                                 @endforeach
                             </select>
 
@@ -34,16 +35,17 @@
                         <fieldset title="Inserisci dati offerta">
                             <label for="luogoFruizione">Luogo di fruizione:</label>
                             <textarea type="text" id="luogoFruizione" name="luogoFruizione" required>{{$dati['luogoFruizione']}}</textarea>
-
-                            <label for="dataOraScadenza">Data e ora di scadenza:</label>
-                            <input type="datetime-local" id="dataOraScadenza" name="dataOraScadenza" value="{{$dati['dataOraScadenza']}}" required>
+                            <fieldset title="Aggiorna data e ora!">
+                                <label for="dataOraScadenza">Data e ora di scadenza:</label>
+                                <input type="datetime-local" id="dataOraScadenza" name="dataOraScadenza" value="{{$dati['dataOraScadenza']}}" required>
+                            </fieldset>
 
                             <fieldset title="Carica immagini in formato .png o .jpeg">
                                 <label for="logo">Aggiorna l'immagine dell'Offerta:</label>
                                 <p style="margin-bottom: 5px;"><em>Immagine attualmete selezionata:</em></p>
                                 <img src="data:image/png/jpg/webp/jpeg/bin;base64,{{ base64_encode($dati['immagine']) }}" style="max-height: 40%;max-width: 40%;" alt="Immagine Offerta">
                                 <input type="file" id="immagine" name="immagine"
-                                       accept="image/png, image/jpeg, image/bin, image/jpg" required>
+                                       accept="image/png, image/jpeg, image/bin, image/jpg">
                             </fieldset>
                         </fieldset>
                     </div>

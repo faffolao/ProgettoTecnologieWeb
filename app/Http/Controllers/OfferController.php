@@ -48,8 +48,14 @@ class OfferController extends Controller
 
         $off = new Offer();
         $root = "root";
-        $nomeA = $request->input('idAzienda');
-        $azienda = Factory::where('nome', $nomeA)->first();
+        if ($request->input('idAzienda')=="NULL")
+        {
+            $azienda = Factory::first();
+        } else
+        {
+            $nomeA = $request->input('idAzienda');
+            $azienda = Factory::where('nome', $nomeA)->first();
+        }
         $off['idAzienda'] = $azienda['id'];
         $off['nome'] = $request->input('nome');
         $off['oggetto'] = $request->input('oggetto');
@@ -60,14 +66,13 @@ class OfferController extends Controller
         $immagine = file_get_contents($img);
         $off['immagine'] = $immagine;
         $off->save();
-
         return redirect()->route('gestioneOfferte');
     }
 
     function getNomeAziende()
     {
-     $data = Factory::all('nome');
-     return view('inserisciOfferte', ['ListaNomi'=>$data]);
+        $data = Factory::orderBy('id', 'asc')->get();
+        return view('inserisciOfferte', ['ListaNomi'=>$data]);
     }
 
     function getDataSingleOff($id){
@@ -78,18 +83,58 @@ class OfferController extends Controller
 
     function updateDataSingleOff(Request $request, $id)
     {
-        $img = $request->file('immagine');
-        $immagine = file_get_contents($img);
-        Offer::where('id', $id)->update(
-            [
-                'idAzienda' => $request->input('idAzienda'),
-                'nome'=>$request->input('nome'),
-                'oggetto'=>$request->input('oggetto'),
-                'modalitaFruizione'=>$request->input('modalitaFruizione'),
-                'luogoFruizione'=>$request->input('luogoFruizione'),
-                'dataOraScadenza'=>$request->input('dataOraScadenza'),
-                'immagine'=> $immagine
-            ]);
+        if (!$request->file('immagine'))
+        {
+            if ($request->input('idAzienda')=="NULL")
+            {
+                Offer::where('id', $id)->update(
+                    [
+                        'nome'=>$request->input('nome'),
+                        'oggetto'=>$request->input('oggetto'),
+                        'modalitaFruizione'=>$request->input('modalitaFruizione'),
+                        'luogoFruizione'=>$request->input('luogoFruizione'),
+                        'dataOraScadenza'=>$request->input('dataOraScadenza')
+                    ]);
+            } else {
+                Offer::where('id', $id)->update(
+                    [
+                        'idAzienda' => $request->input('idAzienda'),
+                        'nome'=>$request->input('nome'),
+                        'oggetto'=>$request->input('oggetto'),
+                        'modalitaFruizione'=>$request->input('modalitaFruizione'),
+                        'luogoFruizione'=>$request->input('luogoFruizione'),
+                        'dataOraScadenza'=>$request->input('dataOraScadenza')
+                    ]);
+            }
+        } else
+        {
+            $img = $request->file('immagine');
+            $immagine = file_get_contents($img);
+            if ($request->input('idAzienda')=="NULL")
+            {
+                Offer::where('id', $id)->update(
+                    [
+                        'nome'=>$request->input('nome'),
+                        'oggetto'=>$request->input('oggetto'),
+                        'modalitaFruizione'=>$request->input('modalitaFruizione'),
+                        'luogoFruizione'=>$request->input('luogoFruizione'),
+                        'dataOraScadenza'=>$request->input('dataOraScadenza'),
+                        'immagine'=>$immagine
+                    ]);
+            } else
+            {
+                Offer::where('id', $id)->update(
+                    [
+                        'idAzienda'=>$request->input('idAzienda'),
+                        'nome'=>$request->input('nome'),
+                        'oggetto'=>$request->input('oggetto'),
+                        'modalitaFruizione'=>$request->input('modalitaFruizione'),
+                        'luogoFruizione'=>$request->input('luogoFruizione'),
+                        'dataOraScadenza'=>$request->input('dataOraScadenza'),
+                        'immagine'=>$immagine
+                    ]);
+            }
+        }
         return redirect()->route('gestioneOfferte');
     }
 }

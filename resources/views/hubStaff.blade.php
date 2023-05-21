@@ -14,7 +14,7 @@
                 <a href="{{route('gestioneOfferte')}}" class="btn">Gestione offerte</a>
             </div>
             <div class="panel-buttons">
-                <a href="{{route('homepage')}}" class="btn">Logout</a>
+                <a href="{{route('homepage')}}" class="btn btn-back">Logout</a>
             </div>
         </div>
     </div>

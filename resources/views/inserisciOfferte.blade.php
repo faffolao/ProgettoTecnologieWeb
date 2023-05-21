@@ -20,10 +20,11 @@
                             <label for="oggetto">Oggetto:</label>
                             <textarea type="text" id="oggetto" name="oggetto" required></textarea>
 
-                            <label for="idAzienda">Azienda:</label>
+                            <label title="ATTENZIONE SELEZIONARE QUESTO CAMPO ALMENO UNA VOLTA ALTRIMENTI INSERIRÀ LA PRIMA AZIENDA DISPONIBILE!!!" for="idAzienda">Azienda:</label>
                             <select id="idAzienda" name="idAzienda" required>
+                                <option value="NULL">seleziona</option>
                                 @foreach($ListaNomi as $listaNomi)
-                                    <option value="{{ $listaNomi['nome'] }}">{{ $listaNomi['nome'] }}</option>
+                                    <option value="{{ $listaNomi['id'] }}">{{$listaNomi['id']}}: {{ $listaNomi['nome'] }}</option>
                                 @endforeach
                             </select>
 
@@ -36,8 +37,10 @@
                             <label for="luogoFruizione">Luogo di fruizione:</label>
                             <textarea type="text" id="luogoFruizione" name="luogoFruizione" required></textarea>
 
-                            <label for="dataOraScadenza">Data e ora di scadenza:</label>
-                            <input type="datetime-local" id="dataOraScadenza" name="dataOraScadenza" required>
+                            <fieldset title="Inserisci data e ora!">
+                                <label for="dataOraScadenza">Data e ora di scadenza:</label>
+                                <input type="datetime-local" id="dataOraScadenza" name="dataOraScadenza" required>
+                            </fieldset>
 
 
                             <fieldset title="Carica immagini in formato .png o .jpeg">
