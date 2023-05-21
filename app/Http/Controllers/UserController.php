@@ -102,7 +102,8 @@ class UserController extends Controller
     function updateDataSingleStaff(Request $request, $username)
     {
         User::where('username', $username)->update(
-            ['username'=>$request->input('username'),
+            [
+                'username'=>$request->input('username'),
                 'nome'=>$request->input('nome'),
                 'cognome'=>$request->input('cognome'),
                 'eta'=>$request->input('eta'),

@@ -23,7 +23,7 @@
                 <a href="{{route('gestioneStaff')}}" class="btn">Gestione staff</a>
             </div>
             <div class="panel-buttons">
-                <a href="#" class="btn">Gestione aziende</a>
+                <a href="{{route('gestioneAziende')}}" class="btn">Gestione aziende</a>
             </div>
         </div>
     </div>

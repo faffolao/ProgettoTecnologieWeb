@@ -253,6 +253,28 @@ Route::put('/aggiornaStaff/{username}', [UserController::class, 'updateDataSingl
 Route::delete("/gestioneStaff/elimina/{username}", [UserController::class, 'deleteS'])
     ->name("eliminaStaff");
 
+/* --------------------------
+ * ROTTE Gestione Aziende
+ * -------------------------- */
+Route::get("/gestioneAziende", [FactoryController::class, 'getDataGA'])
+    ->name("gestioneAziende");
+/*Rotta per ricercare lo Staff da gestire*/
+Route::post('/gestioneAziende', [FactoryController::class, 'getDataBRGA']);
+
+//Rotta per inserire un membro dello staff
+Route::view("/inserisciAziende", 'inserisciAzienda')
+    ->name('inserisciAziende');
+Route::post('/inserisciAziende', [FactoryController::class, 'addAzienda']);
+
+//Rotta per agiornare un membro dello Staff
+Route::get('/aggiornaAziende/{id}/edit', [FactoryController::class, 'getDataSingleAzienda'])
+    ->name('aggiornaAziende');
+Route::put('/aggiornaAziende/{id}', [FactoryController::class, 'updateDataSingleAzienda']);
+
+//QUESTA ROTTA SERVE PER ELIMINARE UN MEMBRO DELLO STAFF
+Route::delete("/gestioneAziende/elimina/{id}", [FactoryController::class, 'deleteA'])
+    ->name("eliminaAziende");
+
 
 /*
 Route::get('/gestioneFAQ','utenteController@gestioneFAQ')

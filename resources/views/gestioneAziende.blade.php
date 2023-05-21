@@ -6,7 +6,7 @@
             <h2>Gestione Azienda</h2>
             <br>
             <div class="search-container">
-                <form id="search-form" method="POST" action="{{route('gestioneAzienda')}}">
+                <form id="search-form" method="POST" action="{{route('gestioneAziende')}}">
                     @csrf
                     <div class="search-wrapper">
                         <!-- l'evento onkeyup viene attivato quando viene premuto un tasto qualsiasi della tastiera quando ho il focus sull'input -->
@@ -20,7 +20,7 @@
                 <tr>
                     <th style="text-align: center;">Vuoi inserire una nuova Azienda?</th>
                     <th style="text-align: left;">
-                        <a href="{{route('inserisciAzienda')}}" class="btn btn-Ins">Inserisci</a>
+                        <a href="{{route('inserisciAziende')}}" class="btn btn-FAQ">Inserisci</a>
                     </th>
                 </tr>
                 </tbody>
@@ -41,9 +41,9 @@
                     <tr>
                         <td>{{$list['id']}}</td>
                         <td>{{$list['nome']}}</td>
-                        <td title="Clicca qui per AGGIORNARE la seguente azienda"><a class="update-btn" href="{{route('aggiornaStaff', $list['username'])}}">Modifica</a></td>
+                        <td title="Clicca qui per AGGIORNARE la seguente azienda"><a class="update-btn" href="{{route('aggiornaAziende', $list['id'])}}">Modifica</a></td>
                         <td title="Clicca qui per ELIMINARE la seguente azienda">
-                            <form class="delete-form" action="{{ route('eliminaAzienda', $list['id']) }}" method="POST">
+                            <form class="delete-form" action="{{ route('eliminaAziende', $list['id']) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="delete-btn" onclick="return confirm('Sei sicuro di voler eliminare questa Azienda?')">
@@ -60,6 +60,6 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="{{ asset('assets/js/searchGestioneAzienda.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/searchGestioneAziende.js') }}"></script>
 @endsection
 
