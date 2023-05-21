@@ -20,7 +20,8 @@ class CatalogoController extends Controller
 
         if ($factoryQuery != null)
         {
-            $dbQuery->join("aziende", "offerte.idAzienda", "=", "aziende.id")
+            $dbQuery->select("offerte.*")
+                    ->join("aziende", "offerte.idAzienda", "=", "aziende.id")
                     ->where("aziende.nome", "LIKE", "%" . $factoryQuery . "%");
 
             $viewData['FactoryQuery'] = $factoryQuery;
