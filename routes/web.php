@@ -17,6 +17,7 @@ use App\Http\Controllers\FactoryController;
 use App\Http\Controllers\CouponController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CatalogoController;
+use App\Http\Controllers\RegistrationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -141,7 +142,10 @@ Route::view("/modificaDati_L1", 'modificaDati_L1')
     ->name("modificaDatiL1");
 
 // Rotta di registrazione
+Route::post('/registrazione', [RegistrationController::class, 'register'])
+    ->name('registrazione');
 
+/*
 Route::post('/registrazione', function(){
     User::create([
         'username' => request('username'),
@@ -156,6 +160,7 @@ Route::post('/registrazione', function(){
     ]);
     return redirect('/login');
 });
+*/
 
 // Rotte per andare nella Home dopo il Login
 

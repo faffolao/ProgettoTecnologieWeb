@@ -26,15 +26,15 @@ class DatabaseSeeder extends Seeder
         // Creazione tabella Utenti.
         DB::table('utenti') -> insert([
             [
-                'username' => 'root',
-                'nome' => 'System',
-                'cognome' => 'Administrator',
-                'eta' => NULL,
-                'genere' => NULL,
-                'livello' => 3,
+                'username' => 'mrossi1',
+                'nome' => 'Mario',
+                'cognome' => 'Rossi',
+                'eta' => 2005-06-11,
+                'genere' => 'M',
+                'livello' => 1,
                 'password' => Hash::make('root'),
                 'telefono' => NULL,
-                'email' => 'root@admin',
+                'email' => NULL,
             ],
             [
                 'username' => 'marco99',
