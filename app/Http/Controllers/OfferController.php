@@ -61,7 +61,7 @@ class OfferController extends Controller
     }
 
     function getDataSingleOff($id){
-        $dataAziende = Factory::all('nome');
+        $dataAziende = Factory::orderBy('id' , 'asc')->get();
         $data = Offer::where('id', $id)->first();
         return view('aggiornaOfferte', ['dati'=>$data], ['ListaNomi'=>$dataAziende]);
     }

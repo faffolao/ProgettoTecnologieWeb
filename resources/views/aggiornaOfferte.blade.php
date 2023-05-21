@@ -18,12 +18,10 @@
                             <input type="text" id="oggetto" name="oggetto" value="{{$dati['oggetto']}}" required>
 
                             <label for="idAzienda">Azienda:</label>
+                            <p><em>Azienda attuale: {{$dati['idAzienda']}}</em></p>
                             <select id="idAzienda" name="idAzienda" required>
-{{--                                <option value="{{ $['nome'] }}">{{ $primoNome['nome'] }}</option>--}}
                                 @foreach($ListaNomi as $listaNomi)
-{{--                                    @if($primoNome['nome']!==$listaNomi['nome'])--}}
-                                        <option value="{{ $listaNomi['nome'] }}">{{ $listaNomi['nome'] }}</option>
-{{--                                    @endif--}}
+                                        <option value="{{ $listaNomi['nome'] }}">{{$listaNomi['id']}}: {{ $listaNomi['nome'] }}</option>
                                 @endforeach
                             </select>
 
@@ -38,7 +36,7 @@
                             <input type="text" id="luogoFruizione" name="luogoFruizione" value="{{$dati['luogoFruizione']}}" required>
 
                             <label for="dataOraScadenza">Data e ora di scadenza:</label>
-                            <input type="date" id="dataOraScadenza" name="dataOraScadenza" value="{{$dati['dataOraScadenza']}}" required>
+                            <input type="datetime-local" id="dataOraScadenza" name="dataOraScadenza" value="{{$dati['dataOraScadenza']}}" required>
 
                             <fieldset title="Carica immagini in formato .png o .jpeg">
                                 <label for="logo">Carica l'immagine dell'offerta:</label>

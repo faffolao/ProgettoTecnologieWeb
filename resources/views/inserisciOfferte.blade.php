@@ -36,7 +36,7 @@
                             <input type="text" id="luogoFruizione" name="luogoFruizione" required>
 
                             <label for="dataOraScadenza">Data e ora di scadenza:</label>
-                            <input type="date" id="dataOraScadenza" name="dataOraScadenza" required>
+                            <input type="datetime-local" id="dataOraScadenza" name="dataOraScadenza" required>
 
                             <fieldset title="Carica immagini in formato .png o .jpeg">
                                 <label for="immagine">Carica l'immagine dell'offerta:</label>
