@@ -11,10 +11,10 @@
                 <div class="form-row">
                     <div class="form-left">
                         <fieldset title="Aggiorna dati offerta">
-                            <label for="nome">Aggiorna il nome:</label>
+                            <label for="nome">Nome:</label>
                             <input type="text" id="nome" name="nome" value="{{$dati['nome']}}" required>
 
-                            <label for="oggetto">Aggiorna l'oggetto:</label>
+                            <label for="oggetto">Oggetto:</label>
                             <textarea type="text" id="oggetto" name="oggetto" required>{{$dati['oggetto']}}"</textarea>
 
                             <label for="idAzienda">Azienda:</label>

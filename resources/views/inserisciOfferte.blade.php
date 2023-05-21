@@ -42,7 +42,6 @@
 
                             <fieldset title="Carica immagini in formato .png o .jpeg">
                                 <label for="immagine">Inserisci l'immagine dell'Offerta:</label>
-                                <img src="data:image/png/jpg/webp/jpeg/bin;base64 }}" style="max-height: 40%;max-width: 40%;" alt="Immagine Offerta">
                                 <input type="file" id="immagine" name="immagine"
                                        accept="image/png, image/jpeg, image/bin, image/jpg" required>
                             </fieldset>
