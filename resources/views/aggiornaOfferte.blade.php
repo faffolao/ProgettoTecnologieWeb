@@ -17,6 +17,16 @@
                             <label for="oggetto">Aggiorna l'oggetto:</label>
                             <input type="text" id="oggetto" name="oggetto" value="{{$dati['oggetto']}}" required>
 
+                            <label for="idAzienda">Azienda:</label>
+                            <select id="idAzienda" name="idAzienda" required>
+{{--                                <option value="{{ $['nome'] }}">{{ $primoNome['nome'] }}</option>--}}
+                                @foreach($ListaNomi as $listaNomi)
+{{--                                    @if($primoNome['nome']!==$listaNomi['nome'])--}}
+                                        <option value="{{ $listaNomi['nome'] }}">{{ $listaNomi['nome'] }}</option>
+{{--                                    @endif--}}
+                                @endforeach
+                            </select>
+
                             <label for="modalitaFruizione">Modalità di fruizione:</label>
                             <input type="text" id="modalitaFruizione" name="modalitaFruizione" value="{{$dati['modalitaFruizione']}}" required>
                         </fieldset>
@@ -32,7 +42,7 @@
 
                             <fieldset title="Carica immagini in formato .png o .jpeg">
                                 <label for="logo">Carica l'immagine dell'offerta:</label>
-                                <input type="file" id="logo" name="logo"
+                                <input type="file" id="immagine" name="immagine"
                                        accept="image/png, image/jpeg" value="{{$dati['immagine']}}" required>
                             </fieldset>
                         </fieldset>
