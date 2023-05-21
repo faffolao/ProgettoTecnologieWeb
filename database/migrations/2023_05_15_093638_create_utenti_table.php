@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('email', 30);
 
             $table->fillable(['username', 'nome', 'cognome',
-                'data_nascita', 'sesso', 'livello', 'password', 'telefono', 'email']);
+                'eta', 'genere', 'livello', 'password', 'telefono', 'email']);
         });
     }
 
