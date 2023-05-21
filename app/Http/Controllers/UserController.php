@@ -21,9 +21,11 @@ class UserController extends Controller
     // per la Barra di Ricerca in CancellazioneClienti
     public function getDataBRCC(Request $request)
     {
-        $data = User::all();
+        $data = User::where('livello', 1)->get();
         $query = $request->input('query');
-        $dataUN = User::where('username', 'LIKE', '%' .$query. '%')->get();
+        $dataUN = User::where('username', 'LIKE', '%' .$query. '%')
+            ->where('livello', 1)
+            ->get();
         return view('cancellazioneClienti', ['Clienti'=>$data], ['List'=>$dataUN]);
     }
     function deleteC($username)
@@ -43,22 +45,24 @@ class UserController extends Controller
 
     function getDataClienti()
     {
-        $data = User::all();
+        $data = User::where('livello', 1)->get();
         return view('cancellazioneClienti', ['List'=>$data]);
     }
 
     function getDataGS()
     {
-        $data = User::all('username');
+        $data = User::where('livello', 2)->get();
         return view('gestioneStaff', ['List'=>$data]);
     }
 
     // per la Barra di Ricerca in gestioneStaff
     function getDataBRGS(Request $request)
     {
-        $data = User::all();
+        $data = User::where('livello', 2)->get();
         $query = $request->input('query');
-        $dataUN = User::where('username', 'LIKE', '%' .$query. '%')->get();
+        $dataUN = User::where('username', 'LIKE', '%' .$query. '%')
+            ->where('livello', 2)
+            ->get();
         return view('gestioneStaff', ['Staff'=>$data], ['List'=>$dataUN]);
     }
     function deleteS($username)

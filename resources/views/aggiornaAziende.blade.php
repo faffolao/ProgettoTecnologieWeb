@@ -38,7 +38,7 @@
                     </div>
                 </div>
 
-                <button class="btn" type="submit">Aggiorna l'offerta</button>
+                <button class="btn" type="submit">Aggiorna l'azienda</button>
             </form>
             <div class="panel-buttons">
                 <a class="btn btn-back" href="{{ route('gestioneAziende') }}">Torna indietro</a>
