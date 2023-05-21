@@ -176,6 +176,10 @@ Route::get('/modifica-credenziali', function () {
 Route::view("/hubStaff", 'hubStaff')
     ->name("hubStaff");
 
+//Rotta modifica dati personali
+Route::view("/modifcaDati_L2", 'modificaDati_L2')
+    ->name("modificaDati_L2");
+
 //Rotta standard
 Route::get("/gestioneOfferte", [OfferController::class, 'getDataOff'])
     ->name("gestioneOfferte");
