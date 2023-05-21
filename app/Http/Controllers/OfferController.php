@@ -61,13 +61,15 @@ class OfferController extends Controller
     }
 
     function getDataSingleOff($id){
+        $dataAziende = Factory::orderBy('id' , 'asc')->get();
         $data = Offer::where('id', $id)->first();
-        return view('aggiornaOfferte', ['dati'=>$data]);
+        return view('aggiornaOfferte', ['dati'=>$data], ['ListaNomi'=>$dataAziende]);
     }
 
     function updateDataSingleOff(Request $request, $id)
     {
         $record = Offer::where('id', $id)->first();
+        $record['idAzienda'] = $request->input('idAzienda');
         $record['nome'] = $request->input('nome');
         $record['oggetto'] = $request->input('oggetto');
         $record['modalitaFruizione'] = $request->input('modalitaFruizione');
