@@ -24,6 +24,15 @@ class OfferController extends Controller
         $data = Offer::all();
         return view('gestioneOfferte', ['List'=>$data]);
     }
+
+    public function getDataRO(Request $request)
+    {
+        $data = Offer::all();
+        $query = $request->input('query');
+        $dataUN = Offer::where('nome', 'LIKE', '%' .$query. '%')->get();
+        return view('gestioneOfferte', ['Offerta'=>$data], ['List'=>$dataUN]);
+    }
+
     function deleteR($id)
     {
         // Trova la riga nel database
@@ -47,11 +56,12 @@ class OfferController extends Controller
         $off['modalitaFruizione'] = $request->input('modalitaFruizione');
         $off['dataOraScadenza'] = $request->input('dataOraScadenza');
         $off['luogoFruizione'] = $request->input('luogoFruizione');
-        $off['immagine'] = $request->input('immagine');
+        $img = $request->file('immagine');
+        $immagine = file_get_contents($img);
+        $off['immagine'] = $immagine;
         $off->save();
 
         return redirect()->route('gestioneOfferte');
-//        return view('modificaFAQ');
     }
 
     function getNomeAziende()
@@ -68,15 +78,18 @@ class OfferController extends Controller
 
     function updateDataSingleOff(Request $request, $id)
     {
-        $record = Offer::where('id', $id)->first();
-        $record['idAzienda'] = $request->input('idAzienda');
-        $record['nome'] = $request->input('nome');
-        $record['oggetto'] = $request->input('oggetto');
-        $record['modalitaFruizione'] = $request->input('modalitaFruizione');
-        $record['dataOraScadenza'] = $request->input('dataOraScadenza');
-        $record['luogoFruizione'] = $request->input('luogoFruizione');
-        $record['immagine'] = $request->input('immagine');
-        $record->update();
+        $img = $request->file('immagine');
+        $immagine = file_get_contents($img);
+        Offer::where('id', $id)->update(
+            [
+                'idAzienda' => $request->input('idAzienda'),
+                'nome'=>$request->input('nome'),
+                'oggetto'=>$request->input('oggetto'),
+                'modalitaFruizione'=>$request->input('modalitaFruizione'),
+                'luogoFruizione'=>$request->input('luogoFruizione'),
+                'dataOraScadenza'=>$request->input('dataOraScadenza'),
+                'immagine'=> $immagine
+            ]);
         return redirect()->route('gestioneOfferte');
     }
 }

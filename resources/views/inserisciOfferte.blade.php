@@ -8,7 +8,7 @@
             <h2>Inserisci una nuova offerta</h2>
 
             <!-- effettiva form di input -->
-            <form class="form-insertFAQ" action="/inserisciOfferte" method="POST">
+            {{ Form::open(array('url' => '/inserisciOfferte', 'class' => 'contact-form', 'enctype' => 'multipart/form-data')) }}
                 @csrf
                 <div class="form-row">
                     <div class="form-left">
@@ -38,11 +38,15 @@
                             <label for="dataOraScadenza">Data e ora di scadenza:</label>
                             <input type="datetime-local" id="dataOraScadenza" name="dataOraScadenza" required>
 
-                            <fieldset title="Carica immagini in formato .png o .jpeg">
-                                <label for="immagine">Carica l'immagine dell'offerta:</label>
-                                <input type="file" id="immagine" name="immagine"
-                                       accept="image/png, image/jpeg" required>
-                            </fieldset>
+                            {{ Form::label('immagine','Immagine di questa Offerta' ) }}
+                            {{ Form::file('immagine') }}
+                            @if ($errors->first('immagine'))
+                                <ul class="errors">
+                                    @foreach ($errors->get('immagine') as $message)
+                                        <li>{{ $message }}</li>
+                                    @endforeach
+                                </ul>
+                            @endif
                         </fieldset>
                     </div>
                 </div>

@@ -5,7 +5,7 @@
         <div class="form-box form-box-inputdialog login">
             <h2>Aggiorna Offerte</h2>
             <br>
-            <form class="form-insertFAQ" action={{url('/aggiornaOfferte/'.$dati['id'])}} method="POST">
+            <form class="form-insertFAQ" action={{url('/aggiornaOfferte/'.$dati['id'])}} method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-row">
@@ -39,9 +39,11 @@
                             <input type="datetime-local" id="dataOraScadenza" name="dataOraScadenza" value="{{$dati['dataOraScadenza']}}" required>
 
                             <fieldset title="Carica immagini in formato .png o .jpeg">
-                                <label for="logo">Carica l'immagine dell'offerta:</label>
+                                <label for="logo">Aggiorna l'immagine dell'Offerta:</label>
+                                <p style="margin-bottom: 5px;"><em>Immagine attualmete selezionata:</em></p>
+                                <img src="data:image/png/jpg/webp/jpeg/bin;base64,{{ base64_encode($dati['immagine']) }}" style="max-height: 40%;max-width: 40%;" alt="Immagine Offerta">
                                 <input type="file" id="immagine" name="immagine"
-                                       accept="image/png, image/jpeg" value="{{$dati['immagine']}}" required>
+                                       accept="image/png, image/jpeg, image/bin, image/jpg" required>
                             </fieldset>
                         </fieldset>
                     </div>

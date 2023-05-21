@@ -183,6 +183,8 @@ Route::view("/modifcaDati_L2", 'modificaDati_L2')
 //Rotta standard
 Route::get("/gestioneOfferte", [OfferController::class, 'getDataOff'])
     ->name("gestioneOfferte");
+//Rotta per ricercare lo Staff da gestire
+Route::post('/gestioneOfferte', [OfferController::class, 'getDataRO']);
 
 // Rotta per inserire una nuova offerta
 Route::get("/inserisciOfferte", [OfferController::class, 'getNomeAziende'])
