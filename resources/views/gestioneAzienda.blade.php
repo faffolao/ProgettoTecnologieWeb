@@ -3,14 +3,14 @@
 @section('content')
     <div class="container">
         <div class="panel">
-            <h2>Gestione Staff</h2>
+            <h2>Gestione Azienda</h2>
             <br>
             <div class="search-container">
-                <form id="search-form" method="POST" action="{{route('gestioneStaff')}}">
+                <form id="search-form" method="POST" action="{{route('gestioneAzienda')}}">
                     @csrf
                     <div class="search-wrapper">
                         <!-- l'evento onkeyup viene attivato quando viene premuto un tasto qualsiasi della tastiera quando ho il focus sull'input -->
-                        <input type="text" id="search-bar" name="query" onkeyup="search()" placeholder="Cerca un membro dello Staff..." title="Cerca un membro dello staff scrivendo qui e poi premendo il tasto INVIO/ENTER">
+                        <input type="text" id="search-bar" name="query" onkeyup="search()" placeholder="Cerca un'Azienda..." title="Cerca un'azienda scrivendo qui e poi premendo il tasto INVIO/ENTER">
                         <button type="submit"><img src="{{ asset("assets/images/search.svg") }}" alt="Cerca"></button>
                     </div>
                 </form>
@@ -18,9 +18,9 @@
             <table class="tabella">
                 <tbody>
                 <tr>
-                    <th style="text-align: center;">Vuoi inserire un nuovo membro dello Staff?</th>
+                    <th style="text-align: center;">Vuoi inserire una nuova Azienda?</th>
                     <th style="text-align: left;">
-                        <a href="{{route('inserisciStaff')}}" class="btn btn-Ins">Inserisci</a>
+                        <a href="{{route('inserisciAzienda')}}" class="btn btn-Ins">Inserisci</a>
                     </th>
                 </tr>
                 </tbody>
@@ -30,7 +30,8 @@
             <table class="tabella">
                 <thead>
                 <tr>
-                    <th>Username</th>
+                    <th>Id</th>
+                    <th>Nome</th>
                     <th>Modifica</th>
                     <th>Elimina</th>
                 </tr>
@@ -38,13 +39,14 @@
                 <tbody>
                 @foreach($List as $list)
                     <tr>
-                        <td>{{$list['username']}}</td>
-                        <td title="Clicca qui per AGGIORNARE il seguente membro Staff"><a class="update-btn" href="{{route('aggiornaStaff', $list['username'])}}">Modifica</a></td>
-                        <td title="Clicca qui per ELIMINARE il seguente membro dello Staff">
-                            <form class="delete-form" action="{{ route('eliminaStaff', $list['username']) }}" method="POST">
+                        <td>{{$list['id']}}</td>
+                        <td>{{$list['nome']}}</td>
+                        <td title="Clicca qui per AGGIORNARE la seguente azienda"><a class="update-btn" href="{{route('aggiornaStaff', $list['username'])}}">Modifica</a></td>
+                        <td title="Clicca qui per ELIMINARE la seguente azienda">
+                            <form class="delete-form" action="{{ route('eliminaAzienda', $list['id']) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="delete-btn" onclick="return confirm('Sei sicuro di voler eliminare questo membro dello Staff?')">
+                                <button type="submit" class="delete-btn" onclick="return confirm('Sei sicuro di voler eliminare questa Azienda?')">
                                     Elimina</button>
                             </form>
                         </td>
@@ -58,6 +60,6 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="{{ asset('assets/js/searchGestioneStaff.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/searchGestioneAzienda.js') }}"></script>
 @endsection
 
