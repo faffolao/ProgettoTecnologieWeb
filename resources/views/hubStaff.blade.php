@@ -11,7 +11,7 @@
                 <a href="#" class="btn">Modifica dati personali</a>
             </div>
             <div class="panel-buttons">
-                <a href="{{route('modificaOfferte')}}" class="btn">Gestione offerte</a>
+                <a href="{{route('gestioneOfferte')}}" class="btn">Gestione offerte</a>
             </div>
             <div class="panel-buttons">
                 <a href="{{route('homepage')}}" class="btn">Logout</a>
