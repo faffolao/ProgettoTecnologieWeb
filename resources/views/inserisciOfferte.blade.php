@@ -1,9 +1,9 @@
 @extends('layouts.skel')
 
 @section('content')
-    <!-- il wrapper è il contenitore che contiene il box della form di login -->
+    <!-- il wrapper è il contenitore -->
     <div class="wrapper wrapper-register">
-        <!-- box che contiene la form di login -->
+
         <div class="form-box form-box-inputdialog login">
             <h2>Inserisci una nuova offerta</h2>
 
