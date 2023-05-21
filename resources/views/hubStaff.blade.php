@@ -8,7 +8,7 @@
                 <h2>Benvenuto nell'Area personale</h2>
             </div>
             <div class="panel-buttons">
-                <a href="#" class="btn">Modifica dati personali</a>
+                <a href="{{route('modificaDati_L2')}}" class="btn">Modifica dati personali</a>
             </div>
             <div class="panel-buttons">
                 <a href="{{route('gestioneOfferte')}}" class="btn">Gestione offerte</a>
