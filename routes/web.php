@@ -258,20 +258,20 @@ Route::delete("/gestioneStaff/elimina/{username}", [UserController::class, 'dele
  * -------------------------- */
 Route::get("/gestioneAziende", [FactoryController::class, 'getDataGA'])
     ->name("gestioneAziende");
-/*Rotta per ricercare lo Staff da gestire*/
+/*Rotta per ricercare l'azienda da gestire*/
 Route::post('/gestioneAziende', [FactoryController::class, 'getDataBRGA']);
 
-//Rotta per inserire un membro dello staff
+//Rotta per inserire un'azienda
 Route::view("/inserisciAziende", 'inserisciAzienda')
     ->name('inserisciAziende');
 Route::post('/inserisciAziende', [FactoryController::class, 'addAzienda']);
 
-//Rotta per agiornare un membro dello Staff
+//Rotta per agiornare un'azienda'
 Route::get('/aggiornaAziende/{id}/edit', [FactoryController::class, 'getDataSingleAzienda'])
     ->name('aggiornaAziende');
 Route::put('/aggiornaAziende/{id}', [FactoryController::class, 'updateDataSingleAzienda']);
 
-//QUESTA ROTTA SERVE PER ELIMINARE UN MEMBRO DELLO STAFF
+//QUESTA ROTTA SERVE PER ELIMINARE UN'AZIENDA'
 Route::delete("/gestioneAziende/elimina/{id}", [FactoryController::class, 'deleteA'])
     ->name("eliminaAziende");
 

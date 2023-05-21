@@ -56,7 +56,7 @@ class FactoryController extends Controller
     {
         // Trova la riga nel database
         // Elimina la riga
-        DB::table('utenti')->where('username', $id)->delete();
+        DB::table('aziende')->where('id', $id)->delete();
 
         // Esempio di reindirizzamento alla pagina principale
         return redirect()->route('gestioneAziende');
@@ -68,13 +68,13 @@ class FactoryController extends Controller
 //            'domanda' => 'required|string',
 //            'risposta' => 'required|string',
 //        ]);
-
         $factory = new Factory();
         $admin = "root";
+        $logo = file_get_contents(base64_encode($request->file('logo')));
         $factory['nome'] = $request->input('nome');
         $factory['tipologia'] = $request->input('tipologia');
         $factory['descrizione'] = $request->input('descrizione');
-        $factory['logo'] = $request->input('logo');
+        $factory['logo'] = $logo;
         $factory['ragioneSociale'] = $request->input('ragioneSociale');
         $factory['managerUsername'] = $admin;
         $factory->save();
@@ -89,13 +89,14 @@ class FactoryController extends Controller
 
     function updateDataSingleAzienda(Request $request, $id)
     {
+        $logo = file_get_contents(base64_decode($request->file('logo')));
         Factory::where('id', $id)->update(
             [
                 'nome'=>$request->input('nome'),
                 'descrizione'=>$request->input('descrizione'),
                 'tipologia'=>$request->input('tipologia'),
                 'ragioneSociale'=>$request->input('ragioneSociale'),
-                'logo'=>$request->input('logo'),
+                'logo'=>$logo
             ]);
 //        $user['username'] = $request->input('username');
 //        $user['nome'] = $request->input('nome');

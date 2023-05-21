@@ -30,9 +30,9 @@
                             <fieldset title="Carica immagini in formato .png o .jpeg">
                                 <label for="logo">Aggiorna l'immagine dell'Azienda:</label>
                                 <p style="margin-bottom: 5px;"><em>Logo attualmete selezionato:</em></p>
-                                <img src="data:image/png/jpg/webp/jpeg;base64,{{ base64_encode($dati['logo']) }}" style="max-height: 40%;max-width: 40%;">
+                                <img src="data:image/png/jpg/webp/jpeg/bin;base64,{{ base64_encode($dati['logo']) }}" style="max-height: 40%;max-width: 40%;">
                                 <input type="file" id="logo" name="logo"
-                                       accept="image/png, image/jpeg" value="{{$dati['logo']}}" required>
+                                       accept="image/png, image/jpeg, image/bin, image/jpg" required>
                             </fieldset>
                         </fieldset>
                     </div>
@@ -41,7 +41,7 @@
                 <button class="btn" type="submit">Aggiorna l'offerta</button>
             </form>
             <div class="panel-buttons">
-                <a class="btn btn-back" href="{{ route('gestioneOfferte') }}">Torna indietro</a>
+                <a class="btn btn-back" href="{{ route('gestioneAziende') }}">Torna indietro</a>
             </div>
         </div>
     </div>
