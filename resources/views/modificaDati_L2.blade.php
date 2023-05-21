@@ -5,7 +5,7 @@
         <div class="form-box form-box-inputdialog login">
             <h2>Aggiorna Offerte</h2>
             <br>
-            <form class="form-insertFAQ" action={{url('/modificaDati_L2/'.$dati['id'])}} method="POST">
+            <form class="form-insertFAQ" {{--action={{url('/modificaDati_L2/'.$dati['id'])}} method="POST"--}}>
                 @csrf
                 @method('PUT')
                 <div class="form-left">
@@ -42,7 +42,7 @@
                         <input type="text" id="username" name="username" value="{{$dati['username']}}" required>
 
                         <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" value="{{$dati['password']}}" required>
+                        <input type="password" id="password" name="password" value="{{$dati['password ']}}" required>
                     </fieldset>
                 </div>
                 <div style="clear:both;"></div>

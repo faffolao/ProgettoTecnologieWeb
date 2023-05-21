@@ -15,7 +15,7 @@
                             <input type="text" id="nome" name="nome" value="{{$dati['nome']}}" required>
 
                             <label for="oggetto">Aggiorna l'oggetto:</label>
-                            <input type="text" id="oggetto" name="oggetto" value="{{$dati['oggetto']}}" required>
+                            <textarea type="text" id="oggetto" name="oggetto" required>{{$dati['oggetto']}}"</textarea>
 
                             <label for="idAzienda">Azienda:</label>
                             <p><em>Azienda attuale: {{$dati['idAzienda']}}</em></p>
@@ -26,14 +26,14 @@
                             </select>
 
                             <label for="modalitaFruizione">Modalità di fruizione:</label>
-                            <input type="text" id="modalitaFruizione" name="modalitaFruizione" value="{{$dati['modalitaFruizione']}}" required>
+                            <textarea type="text" id="modalitaFruizione" name="modalitaFruizione" required>{{$dati['modalitaFruizione']}}</textarea>
                         </fieldset>
                     </div>
 
                     <div class="form-right">
                         <fieldset title="Inserisci dati offerta">
                             <label for="luogoFruizione">Luogo di fruizione:</label>
-                            <input type="text" id="luogoFruizione" name="luogoFruizione" value="{{$dati['luogoFruizione']}}" required>
+                            <textarea type="text" id="luogoFruizione" name="luogoFruizione" required>{{$dati['luogoFruizione']}}</textarea>
 
                             <label for="dataOraScadenza">Data e ora di scadenza:</label>
                             <input type="datetime-local" id="dataOraScadenza" name="dataOraScadenza" value="{{$dati['dataOraScadenza']}}" required>
