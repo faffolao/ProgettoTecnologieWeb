@@ -228,7 +228,7 @@ automaticamente per evitare che possa apparire stretchato */
     margin-bottom: 20px;
 }
 
-input[type="text"], input[type="password"], input[type="tel"], input[type="datetime-local"], input[type="email"], input[type="file"], textarea {
+input[type="text"], input[type="password"], input[type="tel"], input[type="datetime-local"], input[type="email"], input[type="file"], input[type="date"],textarea {
     font-size: medium;
     width: 100%;
     padding: 10px;
