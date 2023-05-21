@@ -266,7 +266,7 @@ Route::get("/gestioneAziende", [FactoryController::class, 'getDataGA'])
 Route::post('/gestioneAziende', [FactoryController::class, 'getDataBRGA']);
 
 //Rotta per inserire un'azienda
-Route::view("/inserisciAziende", 'inserisciAzienda')
+Route::view("/inserisciAziende", 'inserisciAziende')
     ->name('inserisciAziende');
 Route::post('/inserisciAziende', [FactoryController::class, 'addAzienda']);
 

@@ -70,7 +70,8 @@ class FactoryController extends Controller
 //        ]);
         $factory = new Factory();
         $admin = "root";
-        $logo = file_get_contents(base64_encode($request->file('logo')));
+        $immagine = $request->file('logo');
+        $logo = file_get_contents($immagine);
         $factory['nome'] = $request->input('nome');
         $factory['tipologia'] = $request->input('tipologia');
         $factory['descrizione'] = $request->input('descrizione');
@@ -89,7 +90,8 @@ class FactoryController extends Controller
 
     function updateDataSingleAzienda(Request $request, $id)
     {
-        $logo = file_get_contents(base64_decode($request->file('logo')));
+        $immagine = $request->file('logo');
+        $logo = file_get_contents($immagine);
         Factory::where('id', $id)->update(
             [
                 'nome'=>$request->input('nome'),

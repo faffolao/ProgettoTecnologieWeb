@@ -7,7 +7,7 @@
             <h2>Inserisci Azienda</h2>
 
             <!-- effettiva form di input -->
-            {{ Form::open(array('url' => '/inserisciAzienda', 'class' => 'contact-form')) }}
+            {{ Form::open(array('url' => '/inserisciAziende', 'class' => 'contact-form', 'enctype' => 'multipart/form-data')) }}
             <div class="form-row">
                 <div class="form-left">
                     {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
@@ -67,7 +67,7 @@
             {{ Form::close() }}
             <div style="clear:both;"></div>
             <div class="panel-buttons">
-                <a class="btn btn-back" href="{{ route('gestioneAzienda') }}">Torna indietro</a>
+                <a class="btn btn-back" href="{{ route('gestioneAziende') }}">Torna indietro</a>
             </div>
         </div>
     </div>

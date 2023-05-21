@@ -5,7 +5,7 @@
         <div class="form-box form-box-inputdialog">
             <h2>Aggiorna Azienda</h2>
             <br>
-            <form class="contact-form" action={{url('/aggiornaAziende/'.$dati['id'])}} method="POST">
+            <form class="contact-form" action={{url('/aggiornaAziende/'.$dati['id'])}} method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-row">
@@ -30,7 +30,7 @@
                             <fieldset title="Carica immagini in formato .png o .jpeg">
                                 <label for="logo">Aggiorna l'immagine dell'Azienda:</label>
                                 <p style="margin-bottom: 5px;"><em>Logo attualmete selezionato:</em></p>
-                                <img src="data:image/png/jpg/webp/jpeg/bin;base64,{{ base64_encode($dati['logo']) }}" style="max-height: 40%;max-width: 40%;">
+                                <img src="data:image/png/jpg/webp/jpeg/bin;base64,{{ base64_encode($dati['logo']) }}" style="max-height: 40%;max-width: 40%;" alt="Logo Azienda">
                                 <input type="file" id="logo" name="logo"
                                        accept="image/png, image/jpeg, image/bin, image/jpg" required>
                             </fieldset>
