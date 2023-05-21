@@ -1,8 +1,8 @@
 @extends('layouts.skel')
 
 @section('content')
-    <div class="container">
-        <div class="ins-off ins-off-inputdialog">
+    <div class="wrapper wrapper-register">
+        <div class="form-box form-box-inputdialog login">
             <h2>Aggiorna Offerte</h2>
             <br>
             <form class="form-insertFAQ" action={{url('/aggiornaOfferte/'.$dati['id'])}} method="POST">

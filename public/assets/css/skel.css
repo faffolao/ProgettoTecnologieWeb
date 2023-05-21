@@ -228,7 +228,7 @@ automaticamente per evitare che possa apparire stretchato */
     margin-bottom: 20px;
 }
 
-input[type="text"], input[type="password"], input[type="tel"], input[type="date"], input[type="email"] {
+input[type="text"], input[type="password"], input[type="tel"], input[type="date"], input[type="email"], input[type="file"] {
     font-size: medium;
     width: 100%;
     padding: 10px;
@@ -238,8 +238,13 @@ input[type="text"], input[type="password"], input[type="tel"], input[type="date"
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-input[type="radio"]{
+input[type="radio"] {
     margin-bottom: 20px;
+}
+
+#idAzienda {
+    margin-bottom: 20px;
+    font-size: 1em;
 }
 
 .search-wrapper input[type="text"] {
@@ -370,36 +375,6 @@ input[type="radio"]{
 .panel-buttons {text-align: center; padding-top: 30px;}
 .panel-buttons .btn {margin: 10px;}
 
-/*---------------------------------------------------
- | Background Inserisci offerte
------------------------------------------------------*/
-.ins-off {
-    position: relative;
-    text-align: center;
-    margin: 0 auto;
-    max-height: min-content;
-    background: #f5f5f5;
-    box-shadow: 0 0 5px #ccc;
-    border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 20px;
-    backdrop-filter: blur(100px);
-    overflow: hidden;
-    color: black;
-    padding: 70px 40px;
-    width: 430px;
-}
-.ins-off-inputdialog {padding: 40px; width: 760px;}
-.ins-off-inputdialog .form-row {display: flex; text-align: left; margin-top: 25px; margin-bottom: 15px;}
-.ins-off-inputdialog .form-left {width: 50%; padding-right: 18px;}
-.ins-off-inputdialog .form-right {width: 50%; padding-left: 18px;}
-.ins-off-inputdialog fieldset {border: none;}
-
-.btn-Ins {
-    font-size: 1em;
-    padding: 8px 20px;
-    border-radius: 25px;
-}
-
 
 
 /*---------------------------------------------------
@@ -493,7 +468,7 @@ input[type="radio"]{
 }
 
 /*-----------------------
- | Footer (pie di pagina
+ | Footer (pie di pagina)
 -------------------------*/
 
 /* Il footer è composto da due colonne disposte in orizzontale: per una visualizzazione ottimale

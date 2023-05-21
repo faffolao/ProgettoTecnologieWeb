@@ -2,9 +2,9 @@
 
 @section('content')
     <!-- il wrapper è il contenitore che contiene il box della form di login -->
-    <div>
+    <div class="wrapper wrapper-register">
         <!-- box che contiene la form di login -->
-        <div class="ins-off ins-off-inputdialog">
+        <div class="form-box form-box-inputdialog login">
             <h2>Inserisci una nuova offerta</h2>
 
             <!-- effettiva form di input -->
@@ -19,6 +19,7 @@
                             <label for="oggetto">Oggetto:</label>
                             <input type="text" id="oggetto" name="oggetto" required>
 
+                            <label for="idAzienda">Azienda:</label>
                             <select id="idAzienda" name="idAzienda" required>
                                 @foreach($ListaNomi as $listaNomi)
                                     <option value="{{ $listaNomi['nome'] }}">{{ $listaNomi['nome'] }}</option>
