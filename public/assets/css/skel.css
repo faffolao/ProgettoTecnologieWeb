@@ -247,6 +247,11 @@ input[type="radio"] {
     margin-bottom: 20px;
 }
 
+.sex{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 #idAzienda {
     margin-bottom: 20px;
     font-size: 1em;
