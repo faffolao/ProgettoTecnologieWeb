@@ -46,7 +46,7 @@ class FAQController extends Controller
 //        $root = "root";
         $faq['domanda'] = $request->input('domanda');
         $faq['risposta'] = $request->input('risposta');
-        $faq['usernameCreatore'] = $root;
+        $faq['usernameCreatore'] = $root['username'];
         $faq->save();
 
         return redirect()->route('gestioneFAQ');

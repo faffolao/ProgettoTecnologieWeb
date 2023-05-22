@@ -78,7 +78,7 @@ class FactoryController extends Controller
         $factory['descrizione'] = $request->input('descrizione');
         $factory['logo'] = $logo;
         $factory['ragioneSociale'] = $request->input('ragioneSociale');
-        $factory['managerUsername'] = $admin;
+        $factory['managerUsername'] = $admin['username'];
         $factory->save();
 
         return redirect()->route('gestioneAziende');
