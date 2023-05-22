@@ -247,6 +247,11 @@ input[type="radio"] {
     margin-bottom: 20px;
 }
 
+.sex{
+    display: flex;
+    justify-content: space-evenly;
+}
+
 #idAzienda {
     margin-bottom: 20px;
     font-size: 1em;
@@ -377,7 +382,7 @@ input[type="radio"] {
 .toggle h2 {font-size: 24px; margin-bottom: 15px;}
 .hidden {display: none;}
 /* contenitore dei pulsanti di un Panel */
-.panel-buttons {text-align: center; padding-top: 30px;}
+.panel-buttons {text-align: center; padding-top: 30px; padding-bottom: 12px;}
 .panel-buttons .btn {margin: 10px;}
 
 
@@ -390,6 +395,9 @@ input[type="radio"] {
     border-collapse: collapse;
     width: 100%;
 }
+
+.insert-element-table .insert-element-desc {text-align: center; font-weight: bold;}
+.insert-element-table .insert-element-btn-container {text-align: left;}
 
 .tabella th, td {
     text-align: left;

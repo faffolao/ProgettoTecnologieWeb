@@ -200,7 +200,7 @@ Route::get('/modifica-credenziali', function () {
 Route::view("/hubStaff", 'hubStaff')
     ->name("hubStaff");
 
-//Rotta modifica dati personali
+//Rotta modifica dati personali (Livello 2)
 Route::view("/modifcaDati_L2", 'modificaDati_L2')
     ->name("modificaDati_L2");
 

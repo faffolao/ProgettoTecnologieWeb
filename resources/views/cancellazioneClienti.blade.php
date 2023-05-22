@@ -4,7 +4,7 @@
     <div class="container">
         <div class="panel">
             <h2>Cancellazione Clienti</h2>
-            <br>
+
             <div class="search-container">
                 <form id="search-form" method="POST" action="{{route('cancellazioneClienti')}}">
                     @csrf
@@ -15,13 +15,15 @@
                     </div>
                 </form>
             </div>
+
             <table class="tabella">
                 <thead>
-                <tr>
-                    <th>Clienti</th>
-                    <th>Elimina</th>
-                </tr>
+                    <tr>
+                        <th>Clienti</th>
+                        <th>Elimina</th>
+                    </tr>
                 </thead>
+
                 <tbody>
                 @foreach($List as $list)
                     <tr>
@@ -38,10 +40,12 @@
                 @endforeach
                 </tbody>
             </table>
+
             <div class="panel-buttons">
                 <a class="btn btn-back" href="{{ route('hubAmministratore') }}">Torna indietro</a>
             </div>
         </div>
     </div>
+
     <script type="text/javascript" src="{{ asset('assets/js/searchOfferta.js') }}"></script>
 @endsection
