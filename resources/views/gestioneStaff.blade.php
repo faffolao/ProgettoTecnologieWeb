@@ -4,9 +4,9 @@
     <div class="container">
         <div class="panel">
             <h2>Gestione Staff</h2>
-            <br>
+
             <div class="search-container">
-                <form id="search-form" method="POST" action="{{route('gestioneStaff')}}">
+                <form id="search-form" method="POST" action="{{ route('gestioneStaff') }}">
                     @csrf
                     <div class="search-wrapper">
                         <!-- l'evento onkeyup viene attivato quando viene premuto un tasto qualsiasi della tastiera quando ho il focus sull'input -->
@@ -15,13 +15,14 @@
                     </div>
                 </form>
             </div>
-            <table class="tabella">
+
+            <table class="tabella insert-element-table">
                 <tbody>
                 <tr>
-                    <th style="text-align: center;">Vuoi inserire un nuovo membro dello Staff?</th>
-                    <th style="text-align: left;">
-                        <a href="{{route('inserisciStaff')}}" class="btn btn-FAQ">Inserisci</a>
-                    </th>
+                    <td class="insert-element-desc">Vuoi inserire un nuovo membro dello Staff?</td>
+                    <td class="insert-element-btn-container">
+                        <a href="{{ route('inserisciStaff') }}" class="btn btn-FAQ">Inserisci</a>
+                    </td>
                 </tr>
                 </tbody>
             </table>
@@ -29,17 +30,18 @@
             <br>
             <table class="tabella">
                 <thead>
-                <tr>
-                    <th>Username</th>
-                    <th>Modifica</th>
-                    <th>Elimina</th>
-                </tr>
+                    <tr>
+                        <th>Username</th>
+                        <th>Modifica</th>
+                        <th>Elimina</th>
+                    </tr>
                 </thead>
+
                 <tbody>
                 @foreach($List as $list)
                     <tr>
                         <td>{{$list['username']}}</td>
-                        <td title="Clicca qui per AGGIORNARE il seguente membro Staff"><a class="update-btn" href="{{route('aggiornaStaff', $list['username'])}}">Modifica</a></td>
+                        <td title="Clicca qui per AGGIORNARE il seguente membro Staff"><a class="update-btn" href="{{ route('aggiornaStaff', $list['username']) }}">Modifica</a></td>
                         <td title="Clicca qui per ELIMINARE il seguente membro dello Staff">
                             <form class="delete-form" action="{{ route('eliminaStaff', $list['username']) }}" method="POST">
                                 @csrf
@@ -48,16 +50,17 @@
                                     Elimina</button>
                             </form>
                         </td>
-                        {{--                        <td><button class="delete-btn">Elimina</button></td>--}}
                     </tr>
                 @endforeach
                 </tbody>
             </table>
+
             <div class="panel-buttons">
                 <a class="btn btn-back" href="{{ route('hubAmministratore') }}">Torna indietro</a>
             </div>
         </div>
     </div>
+
     <script type="text/javascript" src="{{ asset('assets/js/searchGestioneStaff.js') }}"></script>
 @endsection
 

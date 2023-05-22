@@ -4,9 +4,9 @@
     <div class="container">
         <div class="panel">
             <h2>Gestione Offerte</h2>
-            <br>
+
             <div class="search-container">
-                <form id="search-form" method="POST" action="{{route('gestioneOfferte')}}">
+                <form id="search-form" method="POST" action="{{ route('gestioneOfferte') }}">
                     @csrf
                     <div class="search-wrapper">
                         <!-- l'evento onkeyup viene attivato quando viene premuto un tasto qualsiasi della tastiera quando ho il focus sull'input -->
@@ -15,34 +15,36 @@
                     </div>
                 </form>
             </div>
-            {{--            Inserire form inserisci Offerte--}}
-            <table class="tabella">
+
+            <table class="tabella insert-element-table">
                 <tbody>
-                <tr>
-                    <th style="text-align: center;">Vuoi inserire una nuova Offerta?</th>
-                    <th style="text-align: left;">
-                        <a href="{{route('inserisciOfferte')}}" class="btn btn-FAQ">Inserisci</a>
-                    </th>
-                </tr>
+                    <tr>
+                        <td class="insert-element-desc">Vuoi inserire una nuova Offerta?</td>
+                        <td class="insert-element-btn-container">
+                            <a href="{{route('inserisciOfferte')}}" class="btn btn-FAQ">Inserisci</a>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
+
             <br>
             <br>
             <table class="tabella">
                 <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>Modifica</th>
-                    <th>Elimina</th>
-                </tr>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nome</th>
+                        <th>Modifica</th>
+                        <th>Elimina</th>
+                    </tr>
                 </thead>
+
                 <tbody>
                 @foreach($List as $list)
                     <tr>
                         <td>{{$list['id']}}</td>
                         <td>{{$list['nome']}}</td>
-                        <td title="Clicca qui per AGGIORNARE la seguente offerta"><a class="update-btn" href="{{route('aggiornaOfferte', $list['id'])}}">Modifica</a></td>
+                        <td title="Clicca qui per AGGIORNARE la seguente offerta"><a class="update-btn" href="{{ route('aggiornaOfferte', $list['id']) }}">Modifica</a></td>
                         <td title="Clicca qui per ELIMINARE la seguente offerta">
                             <form class="delete-form" action="{{ route('eliminaOfferte', $list['id']) }}" method="POST">
                                 @csrf
@@ -51,11 +53,11 @@
                                     Elimina</button>
                             </form>
                         </td>
-                        {{--                        <td><button class="delete-btn">Elimina</button></td>--}}
                     </tr>
                 @endforeach
                 </tbody>
             </table>
+
             <div class="panel-buttons">
                 <a class="btn btn-back" href="{{ route('hubStaff') }}">Torna indietro</a>
             </div>
