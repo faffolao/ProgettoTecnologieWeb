@@ -15,7 +15,7 @@
                             <input type="text" id="nome" name="nome" value="{{$dati['nome']}}" required>
 
                             <label for="oggetto">Oggetto:</label>
-                            <textarea type="text" id="oggetto" name="oggetto" required>{{$dati['oggetto']}}"</textarea>
+                            <textarea type="text" id="oggetto" name="oggetto" required>{{$dati['oggetto']}}</textarea>
 
                             <label for="idAzienda">Azienda:</label>
                             <p><em>Azienda attuale: {{$dati['idAzienda']}}</em></p>
