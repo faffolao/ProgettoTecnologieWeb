@@ -13,10 +13,10 @@
                 <a href="{{ route('modificaDatiL1') }}" class="btn">Modifica dati personali</a>
             </div>
             <div class="panel-buttons">
-                <a href="#" class="btn">Visualizza coupon utilizzati</a>
+                <a href="#" class="btn">Visualizza i coupon utilizzati</a>
             </div>
             <div class="panel-buttons">
-                <a href="#" class="btn btn-back">Logout</a>
+                <a href="{{route('homepage')}}" class="btn btn-back">Logout</a>
             </div>
         </div>
     </div>
