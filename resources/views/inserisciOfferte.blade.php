@@ -24,7 +24,7 @@
                             <select id="idAzienda" name="idAzienda" required>
                                 <option value="NULL">seleziona</option>
                                 @foreach($ListaNomi as $listaNomi)
-                                    <option value="{{ $listaNomi['id'] }}">{{$listaNomi['id']}}: {{ $listaNomi['nome'] }}</option>
+                                    <option value="{{ $listaNomi['nome'] }}">{{$listaNomi['id']}}: {{ $listaNomi['nome'] }}</option>
                                 @endforeach
                             </select>
 
