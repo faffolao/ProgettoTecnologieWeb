@@ -1,7 +1,7 @@
 @extends('layouts.skel')
 
 @section('content')
-    <div class="wrapper">
+    <div class="wrapper wrapper-register">
         <div class="form-box form-box-inputdialog login">
             <h2>Modifica dati personali</h2>
             <br>
@@ -12,13 +12,13 @@
                     <div class="form-left">
                         <fieldset title="Modifica i dati personali">
                             <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome" required>
+                            <input type="text" id="nome" name="nome"{{-- value="{{$dati['nome']}}"--}} required>
 
                             <label for="cognome">Cognome:</label>
-                            <input type="text" id="cognome" name="cognome" required>
+                            <input type="text" id="cognome" name="cognome"{{-- value="{{$dati['cognome']}}"--}} required>
 
                             <label for="eta">Data di nascita:</label>
-                            <input type="date" id="eta" name="eta" required>
+                            <input type="date" id="eta" name="eta" {{--value="{{$dati['eta']}}" --}}required>
 
                             <fieldset title="Inserisci il sesso" class="sex">
                                 <legend>Sesso:</legend>
