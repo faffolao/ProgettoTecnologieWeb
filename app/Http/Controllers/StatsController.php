@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 
 class StatsController extends Controller
 {
-    //
+    //Ardu sappi che le query non vanno
     function getData()
     {
         $count = Coupon::count();
