@@ -70,6 +70,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                {{-- cane delle bestie
                                 @foreach($Offerte as $offerte)
                                         <tr>
                                         <td>{{$offerte['idOfferta']}}</td>
@@ -78,6 +79,7 @@
                                     </tr>
                                 @endforeach
                                 </tbody>
+                                --}}
                             </table>
                         </div>
                     </th>

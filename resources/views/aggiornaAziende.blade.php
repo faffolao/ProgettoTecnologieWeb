@@ -1,7 +1,7 @@
 @extends('layouts.skel')
 
 @section('content')
-    <div class="wrapper wrapper-register">
+    <div class="wrapper">
         <div class="form-box form-box-inputdialog">
             <h2>Aggiorna Azienda</h2>
             <br>

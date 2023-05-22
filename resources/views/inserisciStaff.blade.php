@@ -1,7 +1,7 @@
 @extends('layouts.skel')
 
 @section('content')
-    <div class="wrapper wrapper-register">
+    <div class="wrapper">
         <!-- box che contiene la form di login -->
         <div class="form-box form-box-inputdialog">
             <h2>Inserisci Staff</h2>

@@ -285,12 +285,14 @@ input[type="radio"] {
 .wrapper {
     width: 100%;
     margin: 50px auto;
-    background-image: url('../images/login_wall.jpeg');
+    background-image: url('../images/wrapper_wall.jpg');
     background-position: bottom;
     background-size: cover;
     padding: 100px 0;
     text-align: center;
 }
+
+.wrapper-login {background-image: url('../images/login_wall.jpeg');}
 .wrapper-register {background-image: url("../images/register_wall.jpg");}
 .form-box {
     position: relative;

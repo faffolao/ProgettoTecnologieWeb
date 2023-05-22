@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- il wrapper è il contenitore -->
-    <div class="wrapper wrapper-register">
+    <div class="wrapper">
 
         <div class="form-box form-box-inputdialog login">
             <h2>Inserisci una nuova offerta</h2>

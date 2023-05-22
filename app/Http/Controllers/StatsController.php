@@ -10,22 +10,12 @@ use Illuminate\Support\Facades\DB;
 
 class StatsController extends Controller
 {
-    //Ardu sappi che le query non vanno
     function getData()
     {
-        $count = Coupon::count();
-//        $clienti = User::where('livello', 1)->get();
-        $risultatiClienti = Coupon::select('usernameCliente', DB::raw('COUNT(*) as conteggioC'))
-            ->groupBy('usernameCliente')
-            ->get();
-        $risultatiOfferte = Coupon::select('idOfferta', DB::raw('COUNT(*) as conteggioO'))
-            ->groupBy('idOfferta')
-            ->get();
-        $nomiOfferte = Offer::where('id', $risultatiOfferte['idOfferta'])->get();
-
-        return view('statistiche', [['coupon'=>$count], ['Clienti'=>$risultatiClienti],
-            ['Offerte'=>$risultatiOfferte], ['nomiOfferte'=>$nomiOfferte]]);
+        return view("statistiche");
     }
+
+    // BRS = Barra Ricerca Statistiche
     public function getDataBRS(Request $request)
     {
         $count = Coupon::count();

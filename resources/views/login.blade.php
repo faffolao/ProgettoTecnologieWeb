@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- il wrapper è il contenitore che contiene il box della form di login -->
-    <div class="wrapper">
+    <div class="wrapper wrapper-login">
         <!-- box che contiene la form di login -->
         <div class="form-box login">
             <h2>Login</h2>
