@@ -51,31 +51,21 @@ class OfferController extends Controller
         if ($request->input('idAzienda')=="NULL")
         {
             $azienda = Factory::first();
-            $off['idAzienda'] = $azienda['id'];
-            $off['nome'] = $request->input('nome');
-            $off['oggetto'] = $request->input('oggetto');
-            $off['modalitaFruizione'] = $request->input('modalitaFruizione');
-            $off['dataOraScadenza'] = $request->input('dataOraScadenza');
-            $off['luogoFruizione'] = $request->input('luogoFruizione');
-            $img = $request->file('immagine');
-            $immagine = file_get_contents($img);
-            $off['immagine'] = $immagine;
-            $off->save();
         } else
         {
             $nomeA = $request->input('idAzienda');
             $azienda = Factory::where('nome', $nomeA)->first();
-            $off['idAzienda'] = $azienda['id'];
-            $off['nome'] = $request->input('nome');
-            $off['oggetto'] = $request->input('oggetto');
-            $off['modalitaFruizione'] = $request->input('modalitaFruizione');
-            $off['dataOraScadenza'] = $request->input('dataOraScadenza');
-            $off['luogoFruizione'] = $request->input('luogoFruizione');
-            $img = $request->file('immagine');
-            $immagine = file_get_contents($img);
-            $off['immagine'] = $immagine;
-            $off->save();
         }
+        $off['idAzienda'] = $azienda['id'];
+        $off['nome'] = $request->input('nome');
+        $off['oggetto'] = $request->input('oggetto');
+        $off['modalitaFruizione'] = $request->input('modalitaFruizione');
+        $off['dataOraScadenza'] = $request->input('dataOraScadenza');
+        $off['luogoFruizione'] = $request->input('luogoFruizione');
+        $img = $request->file('immagine');
+        $immagine = file_get_contents($img);
+        $off['immagine'] = $immagine;
+        $off->save();
 
         return redirect()->route('gestioneOfferte');
     }
