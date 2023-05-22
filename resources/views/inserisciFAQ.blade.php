@@ -5,7 +5,7 @@
         <div class="panel">
             <h2>Inserisci F.A.Q.</h2>
             <br>
-            <form class="form-insertFAQ" action="/inserisciFAQ" method="POST">
+            <form class="form-insertFAQ" action="{{ route('inserisciFAQ') }}" method="POST">
                 @csrf
                 <label for="domanda">Inserisci la domanda:</label>
                 <input type="text" id="domanda" name="domanda" placeholder="Domanda..." required>
