@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Offer;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Factory;
 use Illuminate\Support\Facades\DB;
@@ -69,7 +70,7 @@ class FactoryController extends Controller
 //            'risposta' => 'required|string',
 //        ]);
         $factory = new Factory();
-        $admin = "root";
+        $admin = User::where('livello', 3)->first();
         $immagine = $request->file('logo');
         $logo = file_get_contents($immagine);
         $factory['nome'] = $request->input('nome');

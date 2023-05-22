@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\FAQ;
 
@@ -41,7 +42,8 @@ class FAQController extends Controller
 //        ]);
 
         $faq = new FAQ;
-        $root = "root";
+        $root = User::where('livello', 3)->first();
+//        $root = "root";
         $faq['domanda'] = $request->input('domanda');
         $faq['risposta'] = $request->input('risposta');
         $faq['usernameCreatore'] = $root;
