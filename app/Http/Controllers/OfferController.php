@@ -25,7 +25,7 @@ class OfferController extends Controller
         return view('gestioneOfferte', ['List'=>$data]);
     }
 
-    public function getDataRO(Request $request)
+    public function getDataBRGO(Request $request)
     {
         $data = Offer::all();
         $query = $request->input('query');

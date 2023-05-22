@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\StatsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -207,7 +208,7 @@ Route::view("/modifcaDati_L2", 'modificaDati_L2')
 Route::get("/gestioneOfferte", [OfferController::class, 'getDataOff'])
     ->name("gestioneOfferte");
 //Rotta per ricercare lo Staff da gestire
-Route::post('/gestioneOfferte', [OfferController::class, 'getDataRO']);
+Route::post('/gestioneOfferte', [OfferController::class, 'getDataBRGO']);
 
 // Rotta per inserire una nuova offerta
 Route::get("/inserisciOfferte", [OfferController::class, 'getNomeAziende'])
@@ -304,6 +305,13 @@ Route::put('/aggiornaAziende/{id}', [FactoryController::class, 'updateDataSingle
 Route::delete("/gestioneAziende/elimina/{id}", [FactoryController::class, 'deleteA'])
     ->name("eliminaAziende");
 
+/* --------------------------
+ * ROTTE Gestione Aziende
+ * -------------------------- */
+Route::get("/stattistiche", [StatsController::class, 'getData'])
+    ->name('statistiche');
+/*Rotta per ricercare l'azienda da gestire*/
+Route::post('/statistiche', [StatsController::class, 'getDataBRS']);
 
 /*
 Route::get('/gestioneFAQ','utenteController@gestioneFAQ')

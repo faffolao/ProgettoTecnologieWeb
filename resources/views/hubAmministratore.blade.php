@@ -11,7 +11,7 @@
                 <a href="{{route('gestioneFAQ')}}" class="btn">Gestione F.A.Q.</a>
             </div>
             <div class="panel-buttons">
-                <a href="#" class="btn">Statistiche</a>
+                <a href="{{route('statistiche')}}" class="btn">Statistiche</a>
             </div>
             <div class="panel-buttons">
                 <a href="{{route('cancellazioneClienti')}}" class="btn">Cancellazione clienti</a>
