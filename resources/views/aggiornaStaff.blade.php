@@ -131,7 +131,7 @@
             </div>
             {{ Form::submit('Aggiorna questo membro dello Staff', ['class' => 'btn'])}}
             {{ Form::close() }}
-            <div style="clear:both;"></div>
+
             <div class="panel-buttons">
                 <a class="btn btn-back" href="{{ route('gestioneStaff') }}">Torna indietro</a>
             </div>

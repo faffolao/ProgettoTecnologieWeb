@@ -52,7 +52,6 @@
                     </div>
                 </div>
 
-                <div style="clear:both;"></div>
                 <button type="submit" class="btn">Inserisci Offerta</button>
                 <div class="panel-buttons">
                     <a class="btn btn-back" href="{{ route('gestioneOfferte') }}">Torna indietro</a>

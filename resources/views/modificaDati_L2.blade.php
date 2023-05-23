@@ -12,10 +12,10 @@
                     <div class="form-left">
                         <fieldset title="Modifica i dati personali">
                             <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome"{{-- value="{{$dati['nome']}}"--}} required>
+                            <input type="text" id="nome" name="nome" required>
 
                             <label for="cognome">Cognome:</label>
-                            <input type="text" id="cognome" name="cognome"{{-- value="{{$dati['cognome']}}"--}} required>
+                            <input type="text" id="cognome" name="cognome" required>
 
                             <label for="eta">Data di nascita:</label>
                             <input type="date" id="eta" name="eta" {{--value="{{$dati['eta']}}" --}}required>
@@ -47,7 +47,7 @@
                         </fieldset>
                     </div>
                 </div>
-                <div style="clear:both;"></div>
+
                 <button type="submit" class="btn">Modifica dati</button>
                 <br>
             </form>

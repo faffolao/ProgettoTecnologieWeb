@@ -65,7 +65,7 @@
             </div>
             {{ Form::submit('Inserisci questa Azienda', ['class' => 'btn'])}}
             {{ Form::close() }}
-            <div style="clear:both;"></div>
+
             <div class="panel-buttons">
                 <a class="btn btn-back" href="{{ route('gestioneAziende') }}">Torna indietro</a>
             </div>

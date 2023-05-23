@@ -47,7 +47,7 @@
                         </fieldset>
                     </div>
                 </div>
-                <div style="clear:both;"></div>
+
                 <button type="submit" class="btn">Modifica dati</button>
                 <br>
             </form>

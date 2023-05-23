@@ -1,4 +1,5 @@
 @extends('layouts.skel')
+@section('title', 'Cancellazione clienti')
 
 @section('content')
     <div class="container">
@@ -10,7 +11,7 @@
                     @csrf
                     <div class="search-wrapper">
                         <!-- l'evento onkeyup viene attivato quando viene premuto un tasto qualsiasi della tastiera quando ho il focus sull'input -->
-                        <input type="text" id="search-bar" name="query" {{--onkeyup="search()"--}} placeholder="Cerca un cliente..." title="Cerca un cliente scrivendo qui e poi premendo il tasto INVIO/ENTER">
+                        <input type="text" id="search-bar" name="query" placeholder="Cerca un cliente..." title="Cerca un cliente scrivendo qui e poi premendo il tasto INVIO/ENTER">
                         <button type="submit"><img src="{{ asset("assets/images/search.svg") }}" alt="Cerca"></button>
                     </div>
                 </form>
