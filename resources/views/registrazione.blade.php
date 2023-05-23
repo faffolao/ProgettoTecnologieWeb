@@ -13,93 +13,93 @@
             {{ Form::open(array('route' => 'registrazione', 'class' => 'contact-form')) }}
             <div class="form-row">
                 <div class="form-left">
-                {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
-                {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome']) }}
-                @if ($errors->first('nome'))
-                    <ul class="errors">
-                        @foreach ($errors->get('nome') as $message)
-                            <li>{{ $message }}</li>
-                        @endforeach
-                    </ul>
-                @endif
+                    {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
+                    {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome', 'required' => 'required']) }}
+                    @if ($errors->first('nome'))
+                        <ul class="errors">
+                            @foreach ($errors->get('nome') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
 
-                {{ Form::label('cognome', 'Cognome', ['class' => 'label-input']) }}
-                {{ Form::text('cognome', '', ['class' => 'input', 'id' => 'cognome']) }}
-                @if ($errors->first('cognome'))
-                    <ul class="errors">
-                        @foreach ($errors->get('cognome') as $message)
-                            <li>{{ $message }}</li>
-                        @endforeach
-                    </ul>
-                @endif
+                    {{ Form::label('cognome', 'Cognome', ['class' => 'label-input']) }}
+                    {{ Form::text('cognome', '', ['class' => 'input', 'id' => 'cognome', 'required' => 'required']) }}
+                    @if ($errors->first('cognome'))
+                        <ul class="errors">
+                            @foreach ($errors->get('cognome') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
 
-                {{ Form::label('eta', 'Data di nascita', ['class' => 'label-input']) }}
-                {{ Form::date('eta', '', ['class' => 'input', 'id' => 'eta', 'rules' => 'date_format:d-m-Y']) }}
-                @if ($errors->first('cognome'))
-                    <ul class="errors">
-                        @foreach ($errors->get('data_nascita') as $message)
-                            <li>{{ $message }}</li>
-                        @endforeach
-                    </ul>
-                @endif
+                    {{ Form::label('eta', 'Data di nascita', ['class' => 'label-input']) }}
+                    {{ Form::date('eta', '', ['class' => 'input', 'id' => 'eta', 'rules' => 'date_format:d-m-Y', 'required' => 'required']) }}
+                    @if ($errors->first('cognome'))
+                        <ul class="errors">
+                            @foreach ($errors->get('data_nascita') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
 
-                {{ Form::label('genere', 'Genere') }}
+                    {{ Form::label('genere', 'Genere') }}
 
-                {{ Form::radio('genere', 'maschio', true, ['style' => 'display:inline;']) }}
-                {{ Form::label('genere', 'Maschio', ['style' => 'display:inline;']) }}
-                {{ Form::radio('genere', 'femmina', false, ['style' => 'display:inline;']) }}
-                {{ Form::label('genere', 'Femmina', ['style' => 'display:inline;']) }}
-                {{ Form::radio('genere', 'altro', false, ['style' => 'display:inline;']) }}
-                {{ Form::label('genere', 'Altro', ['style' => 'display:inline;']) }}
-                @if ($errors->first('genere'))
-                    <ul class="errors">
-                        @foreach ($errors->get('genere') as $message)
-                            <li>{{ $message }}</li>
-                        @endforeach
-                    </ul>
-                @endif
+                    {{ Form::radio('genere', 'maschio', true, ['style' => 'display:inline;']) }}
+                    {{ Form::label('genere', 'Maschio', ['style' => 'display:inline;']) }}
+                    {{ Form::radio('genere', 'femmina', false, ['style' => 'display:inline;']) }}
+                    {{ Form::label('genere', 'Femmina', ['style' => 'display:inline;']) }}
+                    {{ Form::radio('genere', 'altro', false, ['style' => 'display:inline;']) }}
+                    {{ Form::label('genere', 'Altro', ['style' => 'display:inline;']) }}
+                    @if ($errors->first('genere'))
+                        <ul class="errors">
+                            @foreach ($errors->get('genere') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
 
-                {{ Form::label('telefono', 'Numero di telefono', ['class' => 'label-input']) }}
-                {{ Form::text('telefono', '', ['class' => 'input', 'id' => 'telefono', 'rules' => 'phone']) }}
-                @if ($errors->first('telefono'))
-                    <ul class="errors">
-                        @foreach ($errors->get('telefono') as $message)
-                            <li>{{ $message }}</li>
-                        @endforeach
-                    </ul>
-                @endif
+                    {{ Form::label('telefono', 'Numero di telefono', ['class' => 'label-input']) }}
+                    {{ Form::text('telefono', '', ['class' => 'input', 'id' => 'telefono', 'rules' => 'phone', 'required' => 'required']) }}
+                    @if ($errors->first('telefono'))
+                        <ul class="errors">
+                            @foreach ($errors->get('telefono') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
 
-                {{ Form::label('email', 'Email', ['class' => 'label-input']) }}
-                {{ Form::text('email', '', ['class' => 'input', 'id' => 'email', 'rules' => 'email']) }}
-                @if ($errors->first('email'))
-                    <ul class="errors">
-                        @foreach ($errors->get('email') as $message)
-                            <li>{{ $message }}</li>
-                        @endforeach
-                    </ul>
-                @endif
+                    {{ Form::label('email', 'Email', ['class' => 'label-input']) }}
+                    {{ Form::text('email', '', ['class' => 'input', 'id' => 'email', 'rules' => 'email', 'required' => 'required']) }}
+                    @if ($errors->first('email'))
+                        <ul class="errors">
+                            @foreach ($errors->get('email') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
                 </div>
 
                 <div class="form-right">
-                {{ Form::label('username','Username' ) }}
-                {{ Form::text('username') }}
-                @if ($errors->first('username'))
-                    <ul class="errors">
-                        @foreach ($errors->get('username') as $message)
-                            <li>{{ $message }}</li>
-                        @endforeach
-                    </ul>
-                @endif
+                    {{ Form::label('username','Username' ) }}
+                    {{ Form::text('username', '', array('required' => 'required')) }}
+                    @if ($errors->first('username'))
+                        <ul class="errors">
+                            @foreach ($errors->get('username') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
 
-                {{ Form::label('password', 'Password') }}
-                {{ Form::password('password') }}
-                @if ($errors->first('password'))
-                    <ul class="errors">
-                        @foreach ($errors->get('password') as $message)
-                            <li>{{ $message }}</li>
-                        @endforeach
-                    </ul>
-                @endif
+                    {{ Form::label('password', 'Password') }}
+                    {{ Form::password('password', array('required' => 'required')) }}
+                    @if ($errors->first('password'))
+                        <ul class="errors">
+                            @foreach ($errors->get('password') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
                 </div>
             </div>
 
@@ -110,11 +110,11 @@
             <div style="clear:both;"></div>
 
 
-                <div class="register">
-                    <p>Hai già un account?<b><a href="{{ route('login') }}" class="register-link">
-                                Effettua il Login</a></b>
-                    </p>
-                </div>
+            <div class="register">
+                <p>Hai già un account?<b><a href="{{ route('login') }}" class="register-link">
+                            Effettua il Login</a></b>
+                </p>
+            </div>
             </form>
         </div>
     </div>

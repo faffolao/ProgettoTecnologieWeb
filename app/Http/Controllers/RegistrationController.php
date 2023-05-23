@@ -5,22 +5,23 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class RegistrationController extends Controller
 {
     public function register(Request $request)
     {
         // Validazione dei dati inviati dalla form di registrazione
-        $this->validate($request, [
-            'username' => 'required|string|max:255|unique:utenti',
-            'password' => 'required|string|min:8',
-            'nome' => 'required|string|max:255',
-            'cognome' => 'required|string|max:255',
-            'eta' => 'required|date',
-            'genere' => 'required|string|in:maschio,femmina,altro',
-            'telefono' => 'string',
-            'email' => 'string|email|max:255',
-        ]);
+//        $this->validate($request, [
+//            'username' => 'required|string|max:255|unique:utenti',
+//            'password' => 'required|string|min:8',
+//            'nome' => 'required|string|max:255',
+//            'cognome' => 'required|string|max:255',
+//            'eta' => 'required|date',
+//            'genere' => 'required|string|in:maschio,femmina,altro',
+//            'telefono' => 'string',
+//            'email' => 'string|email|max:255',
+//        ]);
 
         // Creazione dell'utente nel database
         $user = User::create([
