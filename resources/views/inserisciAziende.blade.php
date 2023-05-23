@@ -11,7 +11,7 @@
             <div class="form-row">
                 <div class="form-left">
                     {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
-                    {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome']) }}
+                    {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome', 'required' => 'required']) }}
                     @if ($errors->first('nome'))
                         <ul class="errors">
                             @foreach ($errors->get('nome') as $message)
@@ -21,7 +21,7 @@
                     @endif
 
                     {{ Form::label('descrizione', 'Descrizione', ['class' => 'label-input']) }}
-                    {{ Form::textarea('descrizione', '', ['class' => 'input', 'id' => 'descrizione']) }}
+                    {{ Form::textarea('descrizione', '', ['class' => 'input', 'id' => 'descrizione', 'required' => 'required']) }}
                     @if ($errors->first('descrizione'))
                         <ul class="errors">
                             @foreach ($errors->get('descrizione') as $message)
@@ -31,7 +31,7 @@
                     @endif
 
                     {{ Form::label('ragioneSociale', 'Ragione Sociale', ['class' => 'label-input']) }}
-                    {{ Form::text('ragioneSociale', '',['class' => 'input', 'id' => 'ragioneSociale']) }}
+                    {{ Form::text('ragioneSociale', '',['class' => 'input', 'id' => 'ragioneSociale', 'required' => 'required']) }}
                     @if ($errors->first('ragioneSociale'))
                         <ul class="errors">
                             @foreach ($errors->get('ragioneSociale') as $message)
@@ -43,7 +43,7 @@
 
                 <div class="form-right">
                     {{ Form::label('tipologia', 'Tipologia', ['class' => 'label-input']) }}
-                    {{ Form::text('tipologia', '',['class' => 'input', 'id' => 'tipologia']) }}
+                    {{ Form::text('tipologia', '',['class' => 'input', 'id' => 'tipologia', 'required' => 'required']) }}
                     @if ($errors->first('tipologia'))
                         <ul class="errors">
                             @foreach ($errors->get('tipologia') as $message)
@@ -53,7 +53,7 @@
                     @endif
 
                     {{ Form::label('logo','Logo di questa azienda' ) }}
-                    {{ Form::file('logo') }}
+                    {{ Form::file('logo', array('required' => 'required')) }}
                     @if ($errors->first('logo'))
                         <ul class="errors">
                             @foreach ($errors->get('logo') as $message)

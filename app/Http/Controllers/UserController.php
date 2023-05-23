@@ -105,17 +105,32 @@ class UserController extends Controller
 
     function updateDataSingleStaff(Request $request, $username)
     {
-        User::where('username', $username)->update(
-            [
-                'username'=>$request->input('username'),
-                'nome'=>$request->input('nome'),
-                'cognome'=>$request->input('cognome'),
-                'eta'=>$request->input('eta'),
-                'password'=>$request->input('password'),
-                'email'=>$request->input('email'),
-                'telefono'=>$request->input('telefono'),
-                'genere'=>$request->input('genere')
-            ]);
+        if (!($request->input('password')))
+        {
+            User::where('username', $username)->update(
+                [
+                    'username'=>$request->input('username'),
+                    'nome'=>$request->input('nome'),
+                    'cognome'=>$request->input('cognome'),
+                    'eta'=>$request->input('eta'),
+                    'email'=>$request->input('email'),
+                    'telefono'=>$request->input('telefono'),
+                    'genere'=>$request->input('genere')
+                ]);
+        } else
+        {
+            User::where('username', $username)->update(
+                [
+                    'username'=>$request->input('username'),
+                    'nome'=>$request->input('nome'),
+                    'cognome'=>$request->input('cognome'),
+                    'eta'=>$request->input('eta'),
+                    'password'=>$request->input('password'),
+                    'email'=>$request->input('email'),
+                    'telefono'=>$request->input('telefono'),
+                    'genere'=>$request->input('genere')
+                ]);
+        }
 //        $user['username'] = $request->input('username');
 //        $user['nome'] = $request->input('nome');
 //        $user['cognome'] = $request->input('cognome');

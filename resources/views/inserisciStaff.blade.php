@@ -11,7 +11,7 @@
             <div class="form-row">
                 <div class="form-left">
                     {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
-                    {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome']) }}
+                    {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome', 'required' => 'required']) }}
                     @if ($errors->first('nome'))
                         <ul class="errors">
                             @foreach ($errors->get('nome') as $message)
@@ -21,7 +21,7 @@
                     @endif
 
                     {{ Form::label('cognome', 'Cognome', ['class' => 'label-input']) }}
-                    {{ Form::text('cognome', '', ['class' => 'input', 'id' => 'cognome']) }}
+                    {{ Form::text('cognome', '', ['class' => 'input', 'id' => 'cognome', 'required' => 'required']) }}
                     @if ($errors->first('cognome'))
                         <ul class="errors">
                             @foreach ($errors->get('cognome') as $message)
@@ -31,7 +31,7 @@
                     @endif
 
                     {{ Form::label('eta', 'Data di nascita', ['class' => 'label-input']) }}
-                    {{ Form::date('eta', '',['class' => 'input', 'id' => 'eta', 'rules' => 'date_format:d-m-Y']) }}
+                    {{ Form::date('eta', '',['class' => 'input', 'id' => 'eta', 'rules' => 'date_format:d-m-Y', 'required' => 'required']) }}
                     @if ($errors->first('cognome'))
                         <ul class="errors">
                             @foreach ($errors->get('eta') as $message)
@@ -57,7 +57,7 @@
                     @endif
 
                     {{ Form::label('telefono', 'Numero di telefono', ['class' => 'label-input']) }}
-                    {{ Form::text('telefono', '', ['class' => 'input', 'id' => 'telefono', 'rules' => 'phone']) }}
+                    {{ Form::text('telefono', '', ['class' => 'input', 'id' => 'telefono', 'rules' => 'phone', 'required' => 'required']) }}
                     @if ($errors->first('telefono'))
                         <ul class="errors">
                             @foreach ($errors->get('telefono') as $message)
@@ -68,7 +68,7 @@
 
 
                     {{ Form::label('email', 'Email', ['class' => 'label-input']) }}
-                    {{ Form::text('email', '', ['class' => 'input', 'id' => 'email', 'rules' => 'email']) }}
+                    {{ Form::text('email', '', ['class' => 'input', 'id' => 'email', 'rules' => 'email', 'required' => 'required']) }}
                     @if ($errors->first('email'))
                         <ul class="errors">
                             @foreach ($errors->get('email') as $message)
@@ -80,7 +80,7 @@
 
                 <div class="form-right">
                     {{ Form::label('username','Username' ) }}
-                    {{ Form::text('username') }}
+                    {{ Form::text('username', '', array('required' => 'required')) }}
                     @if ($errors->first('username'))
                         <ul class="errors">
                             @foreach ($errors->get('username') as $message)
@@ -90,7 +90,7 @@
                     @endif
 
                     {{ Form::label('password', 'Password') }}
-                    {{ Form::text('password') }}
+                    {{ Form::password('password', array('required' => 'required')) }}
                     @if ($errors->first('password'))
                         <ul class="errors">
                             @foreach ($errors->get('password') as $message)
