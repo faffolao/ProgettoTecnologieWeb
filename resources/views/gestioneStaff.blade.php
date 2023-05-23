@@ -60,7 +60,5 @@
             </div>
         </div>
     </div>
-
-    <script type="text/javascript" src="{{ asset('assets/js/searchGestioneStaff.js') }}"></script>
 @endsection
 
