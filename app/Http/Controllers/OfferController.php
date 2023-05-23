@@ -29,8 +29,8 @@ class OfferController extends Controller
     {
         $data = Offer::all();
         $query = $request->input('query');
-        $dataUN = Offer::where('nome', 'LIKE', '%' .$query. '%')->get();
-        return view('gestioneOfferte', ['Offerta'=>$data], ['List'=>$dataUN]);
+        $dataNO = Offer::where('nome', 'LIKE', '%' .$query. '%')->get();
+        return view('gestioneOfferte', ['Offerta'=>$data], ['List'=>$dataNO]);
     }
 
     function deleteR($id)

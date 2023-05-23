@@ -81,6 +81,24 @@ Route::post("user", [UserAuth::class, 'userLogin']);
 Route::view("/profile", 'profile')
     ->name("profile");
 
+
+/*
+ * Route::get('/login', [
+ *     'uses' => 'Auth\AuthController@getLogin',
+ *     'as' => 'login'
+ * ]);
+ * Route::post('/login', [
+ *     'uses' => 'Auth\AuthController@getLogin',
+ *     'as' => 'login.post'
+ * ]);
+ * Route::group(['middleware' => 'auth'], function() {
+ *     Route::get('/logout', [
+ *     'uses' => 'Auth\AuthController@getLogout',
+ *     'as' => 'logout'
+ * ]);
+ * });
+ */
+
 // Rotta per il caricamento della pagina di registrazione.
 Route::view("/registrazione", 'registrazione')
     ->name("registrazione");
@@ -93,6 +111,12 @@ Route::get("/dettagliOfferta/{id}", [OfferController::class, 'getDataDO'])
 Route::get("/coupon/{id}", [CouponController::class, 'getDataNO'])
     ->name("coupon");
 
+// Rotta per mostrare le FAQ
+
+// Rotta per mostrare la lista del catalogo
+
+// Rotta per mostrare l'elenco delle aziende
+
 // Rotta per accedere all'area personale di un Cliente (utente di livello 1).
 Route::view("/hubUtente", 'hubUtente')
     ->name("hubUtente");
@@ -101,9 +125,82 @@ Route::view("/hubUtente", 'hubUtente')
 Route::view("/modificaDati_L1", 'modificaDati_L1')
     ->name("modificaDatiL1");
 
+//Rout che ti fa visualizzare i coupon utilizzati
+Route::get("/listaCouponUsati", [CouponController::class, 'getDataLCU'])
+    ->name("listaCouponUsati");
+//Rotta per ricercare i coupon
+Route::post('/listaCouponUsati', [CouponController::class, 'getDataBRCU']);
+
 // Rotta di registrazione
 Route::post('/registrazione', [RegistrationController::class, 'register'])
     ->name('registrazione');
+
+/*
+Route::post('/registrazione', function(){
+    User::create([
+        'username' => request('username'),
+        'nome' => request('nome'),
+        'cognome' => request('cognome'),
+        'data_nascita' => request('data_nascita'),
+        'sesso' => request('sesso'),
+        'livello' => request('livello'),
+        'password' => request('password'),
+        'telefono' => request('telefono'),
+        'email' => request('email'),
+    ]);
+    return redirect('/login');
+});
+*/
+
+// Rotte per andare nella Home dopo il Login
+
+/*
+
+Route::post('/login', function () {
+    $credentials = request(['username', 'password']);
+    if (Auth::attempt($credentials)) {
+        $user = Auth::user();
+        if ($user->livello == 1) {
+            return redirect()->route('hubUtente');
+        } else if ($user->livello == 2) {
+            return redirect()->route('hubStaff');
+        } else if ($user->livello == 3) {
+            return redirect()->route('hubAmministratore');
+        }
+    }
+    return redirect()->back()->withErrors([
+        'username' => 'Le credenziali inserite non sono valide.',
+    ])->withInput(request(['username']));
+});
+
+/* ??
+ Route::get('/users/{username}', function ($username) {
+    // check if user is level 1
+    if (Auth::user()->level == 1) {
+        // do something
+    } else {
+        return redirect('/');
+    }
+});
+
+ * /
+*/
+
+/* --------------------------
+ * ROTTE CLIENTI
+ * -------------------------- */
+
+// Rotta per richiede una promozione
+
+
+
+// Rotta per la modifica delle profilo
+
+/*
+Route::get('/modifica-credenziali', function () {
+    return view('modifica-credenziali');
+})->middleware(['auth', 'checkLevel']);
+*/
 
 // Rotta per lo staff
 Route::view("/hubStaff", 'hubStaff')
@@ -136,6 +233,8 @@ Route::delete("/gestioneOfferte/elimina/{id}", [OfferController::class, 'deleteR
 // Rotta per l'amministratore
 Route::view("/hubAmministratore", 'hubAmministratore')
     ->name("hubAmministratore");
+
+
 
 /* --------------------------
  * ROTTE F.A.Q
@@ -217,14 +316,36 @@ Route::delete("/gestioneAziende/elimina/{id}", [FactoryController::class, 'delet
  * -------------------------- */
 Route::get("/statistiche", [StatsController::class, 'getData'])
     ->name('statistiche');
-Route::post("/statistiche", [StatsController::class, 'getDataBR'])
-    ->name("statistiche.ricerca");
 
 Route::post('/statistiche/offerta', [StatsController::class, 'getOffertaCoupons'])
     ->name('statistiche.offerta');
 
 Route::post('/statistiche/cliente', [StatsController::class, 'getClienteCoupons'])
     ->name('statistiche.cliente');
+
+/*
+Route::get('/gestioneFAQ','utenteController@gestioneFAQ')
+    ->name("gestioneFAQ")
+    ->middleware('can:isAdmin');
+
+// Rotte get e post per modificare le FAQ
+Route::get('/modifica_faq/{id}', 'utenteController@modificaFAQ')
+    ->name("modificaFAQ")
+    ->middleware('can:isAdmin');
+
+Route::post('/modifica_faq/{id}', 'utenteController@modificaFAQ')
+    ->name("modificaFAQ")
+    ->middleware('can:isAdmin');
+
+// Rotte get e post per eliminare le FAQ
+Route::get('/elimina_faq/{id}', 'utenteController@eliminaFAQ')
+    ->name("eliminaFAQ")
+    ->middleware('can:isAdmin');
+
+Route::post('/elimina_faq/{id}', 'utenteController@eliminaFAQ')
+    ->name("eliminaFAQ")
+    ->middleware('can:isAdmin');
+*/
 
 //Rotta per il controller user (lavoro database)
 Route::get('UtentiDB', [UserController::class, 'getData']);
