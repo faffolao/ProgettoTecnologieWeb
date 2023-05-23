@@ -308,10 +308,14 @@ Route::delete("/gestioneAziende/elimina/{id}", [FactoryController::class, 'delet
 /* --------------------------
  * ROTTE Gestione Aziende
  * -------------------------- */
-Route::get("/stattistiche", [StatsController::class, 'getData'])
+Route::get("/statistiche", [StatsController::class, 'getData'])
     ->name('statistiche');
-/*Rotta per ricercare l'azienda da gestire*/
-Route::post('/statistiche', [StatsController::class, 'getDataBRS']);
+
+Route::post('/statistiche/offerta', [StatsController::class, 'getOffertaCoupons'])
+    ->name('statistiche.offerta');
+
+Route::post('/statistiche/cliente', [StatsController::class, 'getClienteCoupons'])
+    ->name('statistiche.cliente');
 
 /*
 Route::get('/gestioneFAQ','utenteController@gestioneFAQ')

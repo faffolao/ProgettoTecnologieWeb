@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Coupon;
+use App\Models\Factory;
 use App\Models\Offer;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -12,54 +13,48 @@ class StatsController extends Controller
 {
     function getData()
     {
-        return view("statistiche");
+        // ottengo tutte le offerte
+        $promo = Offer::select('id', 'nome')->get();
+
+        // ottengo gli utenti di livello 1, che sono i clienti
+        $clienti = User::select('username', 'nome', 'cognome')->where('livello', 1)->get();
+
+        // ottengo il numero di coupon totali che sono stati generati
+        $couponNum = Coupon::count();
+
+        // ritorno la view con tutti i dati che servono
+        return view("statistiche", ["Promo" => $promo, "Clienti" => $clienti, "NumeroCoupon" => $couponNum]);
     }
 
-    // BRS = Barra Ricerca Statistiche
-    public function getDataBRS(Request $request)
-    {
-        $count = Coupon::count();
-        if ($request['tipoRicerca']=="username")
-        {
-            $query = $request->input('query');
-            $dataUN = Coupon::where('usernameCliente', 'LIKE', '%' .$query. '%')
-                ->groupBy('usernameCliente')
-                ->get();
+    function getOffertaCoupons(Request $request) {
+        // ottengo l'id dell'offerta a partire dai parametri arrivati in POST
+        $idOfferta = $request->input("idOfferta");
 
-            $risultatiOfferte = Coupon::select('idOfferta', DB::raw('COUNT(*) as conteggioO'))
-                ->groupBy('idOfferta')
-                ->get();
-            $nomiOfferte = Offer::where('id', $risultatiOfferte['idOfferta'])->get();
+        // ottengo il nome dell'offerta selezionata
+        // NOTA: uso first() per prendere soltanto un elemento, in modo tale che ricevo subito un oggetto senza dover
+        // prima accedere all'array
+        $offer = Offer::select('nome')->where('id', $idOfferta)->first();
 
-            return view('statistiche', [['coupon'=>$count], ['Clienti'=>$dataUN],
-                ['Offerte'=>$risultatiOfferte], ['nomiOfferte'=>$nomiOfferte]]);
-        } elseif ($request['tipoRicerca']=="offerta")
-        {
-            $query = $request->input('query');
-            $nomeOfferta = Offer::where('nome',  'LIKE', '%' .$query. '%')->get();
-            $dataO = Coupon::where('idOfferta', $nomeOfferta['id'])
-                ->groupBy('idOfferta')
-                ->get();
-            $nomiOfferte = Offer::where('id', $dataO['idOfferta'])->get();
+        // ottengo il numero di coupon generati da questa offerta
+        $couponNumber = Coupon::join('offerte', 'coupons.idOfferta', '=', 'offerte.id')
+                                ->where('idOfferta', $idOfferta)
+                                ->count();
 
-            $risultatiClienti = Coupon::select('usernameCliente', DB::raw('COUNT(*) as conteggioC'))
-                ->groupBy('usernameCliente')
-                ->get();
+        // restituisco questi dati come risposta in formato JSON
+        return response()->json(['offerName' => $offer->nome, 'couponNumber' => $couponNumber]);
+    }
 
-            return view('statistiche', [['coupon'=>$count], ['Clienti'=>$risultatiClienti],
-                ['Offerte'=>$dataO], ['nomiOfferte'=>$nomiOfferte]]);
-        } else
-        {
-            $risultatiClienti = Coupon::select('usernameCliente', DB::raw('COUNT(*) as conteggioC'))
-                ->groupBy('usernameCliente')
-                ->get();
-            $risultatiOfferte = Coupon::select('idOfferta', DB::raw('COUNT(*) as conteggioO'))
-                ->groupBy('idOfferta')
-                ->get();
-            $nomiOfferte = Offer::where('id', $risultatiOfferte['idOfferta'])->get();
+    function getClienteCoupons(Request $request) {
+        // ottengo lo username a partire dai parametri arrivati in POST
+        $username = $request->input("username");
 
-            return view('statistiche', [['coupon'=>$count], ['Clienti'=>$risultatiClienti],
-                ['Offerte'=>$risultatiOfferte], ['nomiOfferte'=>$nomiOfferte]]);
-        }
+        // ottengo il numero di coupon che il cliente ha richiesto
+        $couponNumber = Coupon::join('utenti', 'coupons.usernameCliente', '=', 'utenti.username')
+                                ->where('livello', 1)
+                                ->where('username', $username)
+                                ->count();
+
+        // restituisco questi dati come risposta in formato JSON
+        return response()->json(['username' => $username, 'couponNumber' => $couponNumber]);
     }
 }

@@ -101,7 +101,7 @@ il flexbox layout per poter visualizzare allo stesso livello sia l'aside che il 
     text-align: center;
 }
 .desc h2{text-align: center; font-size: 36px; margin-bottom: 20px;}
-.desc p{margin-bottom: 10px; font-size: 20px;}
+.emphatized-text {font-size: 20px;}
 
 /*
     Aside Navigation Bar (aside-nav): barra di navigazione posta a sinistra del contenuto. Viene usata nel catalogo per filtrare le offerte
@@ -531,5 +531,29 @@ La proprietà vertical-align indica l'allineamento in verticale che l'immagine d
     width: 70px; margin-bottom: 20px;
 }
 
-/*Ardu OCCHIO QUESTO FORM È USATO D'APPERTUTTO SE ME LO NASCONDI QUI NON LO VEDO DA NESSUNA PARTE*/
-/*#search-form {display: none;}*/
+
+.two-cols-layout {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+}
+.col {float: left; width: 50%; padding: 0 20px;}
+.col-title {font-size: 20px !important;}
+.hint-container {
+    padding: 20px;
+    background-color: #ded9d4;
+    border-radius: 12px;
+    text-align: left;
+    margin: 17px 0;
+}
+.hint-container img {vertical-align: bottom; width: 25px; margin-right: 10px;}
+.list-item {
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 10px 0;
+    margin: 4px 0;
+    color: black;
+    text-decoration: none;
+}
+.list-item:hover {background-color: #ded9d4;}

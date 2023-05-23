@@ -13,6 +13,9 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
     <!-- inserimento fogli di stile necessari al rendering del layout della pagina -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/skel.css') }}">
+
+    <!-- importazione jQuery tramite CDN (Content Delivery Network) -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 </head>
 
 <body>
