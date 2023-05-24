@@ -49,7 +49,8 @@ class OfferController extends Controller
 
         //Controlla se i campi sono stati compilati correttamente
         $request->validate([
-            'nome' => ['required','string','max:70', 'unique:offerte']
+            'nome' => ['required','string','max:70', 'unique:offerte'],
+            'immagine' => ['required','file','mimes:jpg,jpeg,png,bin']
         ]);
 
         $off = new Offer();
@@ -94,7 +95,7 @@ class OfferController extends Controller
         $request->validate([
             'nome' => ['required','string','max:70',
                 Rule::unique('offerte')->ignore($id)]
-            ]);
+        ]);
 
         if (!$request->file('immagine'))
         {
@@ -121,6 +122,10 @@ class OfferController extends Controller
             }
         } else
         {
+            $request->validate([
+                'immagine' => ['required','file','mimes:jpg,jpeg,png,bin'],
+            ]);
+
             $img = $request->file('immagine');
             $immagine = file_get_contents($img);
             if ($request->input('idAzienda')=="NULL")

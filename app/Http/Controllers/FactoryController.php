@@ -118,6 +118,12 @@ class FactoryController extends Controller
                 ]);
         } else
         {
+
+            //Controlla se i campi sono stati compilati correttamente
+            $request->validate([
+                'logo' => ['required','file','mimes:jpg,jpeg,png,bin'],
+            ]);
+
             $immagine = $request->file('logo');
             $logo = file_get_contents($immagine);
             Factory::where('id', $id)->update(
