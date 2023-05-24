@@ -6,7 +6,8 @@
             <div class="title-with-logo">
                 <img src="{{ asset('assets/images/customer_icon.png') }}" alt="Logo utente">
                 @auth
-                    <h2>Benvenuto nell'Area personale, {{ Auth::user()->name }} {{ Auth::user()->surname }}</h2>
+                    <h2>Benvenuto nell'Area personale, {{ $user->name }} {{ $user->surname }} </h2>
+                {{--{{ Auth::user()->surname }}--}}
                 @else
                     <h2>Benvenuto nell'Area personale</h2>
                 @endauth

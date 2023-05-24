@@ -7,6 +7,8 @@ use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Validation\Validator;
 use App\Models\User;
 
 class AuthenticatedSessionController extends Controller
@@ -45,36 +47,70 @@ class AuthenticatedSessionController extends Controller
     }
 */
 
+    /**
+     * @throws ValidationException
+     */
     public function store(Request $request)
-    {
-    //    $credentials = $request->validate([
-    //        'username' => ['required', 'string'],
-    //        'password' => ['required', 'string'],
-    //    ]);
+    { /*
+        $credentials = $request->validate([
+            'username' => ['required', 'string'],
+            'password' => ['required', 'string'],
+        ]);
 
-        $request->authenticate();
+          $credentials = $request->only('username', 'password');
 
-        $request->session()->regenerate();
+         // $request->authenticate();
 
-      //  if (Auth::attempt($credentials)) {
+          $request->session()->regenerate();
+
+          if (Auth::attempt($credentials)) {
+          //if (Auth::login($credentials)) {
+
+              $livello = auth()->user()->livello;
+
+              switch ($livello) {
+                  case User::LIVELLO_1:
+                      return redirect()->route('hubUtente');
+                  case User::LIVELLO_2:
+                      return redirect()->intended('/hubStaff');
+                  case User::LIVELLO_3:
+                      return redirect()->intended('/hubAmministratore');
+                  default:
+                      return redirect()->intended('/');
+              }
+          }
+
+          return redirect()->back()->withErrors([
+              'username' => 'Credenziali non valide.',
+          ]);
+          */
+
+        validator(request()->all(), [
+            'username' => ['required', 'string'],
+            'password' => ['required', 'string']
+        ])->validate();
+
+        if(auth()->attempt(request()->only(['username', 'password']))){
 
             $livello = auth()->user()->livello;
 
             switch ($livello) {
                 case User::LIVELLO_1:
-                    return redirect()->route('hubUtente');
+                    return redirect('/hubUtente');
                 case User::LIVELLO_2:
                     return redirect()->intended('/hubStaff');
                 case User::LIVELLO_3:
                     return redirect()->intended('/hubAmministratore');
                 default:
-                    return redirect()->intended('/');
-            }
-        //}
+                    return redirect('/');
 
-        return redirect()->back()->withErrors([
-            'username' => 'Credenziali non valide.',
-        ]);
+            }
+
+            return redirect()->back()->withErrors([
+                'username' => 'Credenziali non valide.',
+            ]);
+
+            }
     }
         /**
      * Destroy an authenticated session.
