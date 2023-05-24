@@ -331,22 +331,30 @@ input[type="radio"] {
 
 .form-box h2 {font-size: 30px;}
 .input-box {
-    position: relative;
     width: 100%;
-    height: 50px;
-    border-bottom: 2px solid;
-    margin: 30px 0;
+    margin: 20px 0;
     text-align: left;
     color: black;
 }
-.input-box .icon {position: absolute; right: 8px; bottom: 18px; font-size: 1.2em; color: black;}
-.input-box input {width: 100%; height: 100%; background: transparent; border: none; outline: none; font-size: 1em; color: black; padding: 0 35px 0 5px;}
-.input-box label {position: absolute; color: black; top: 50%; left: 5px; transform: translateY(-50%); font-size: 1em; font-weight: bold; transition: .3s;}
+.input-box .input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: black;
+    border-bottom: 2px solid black;
+}
+.input-box .label-input {
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 16px;
+}
 .register-link {color: black; text-decoration: none;}
 .register {margin-top: 30px;}
-
-/* quando si fa click su un input box (quindi questa ottiene il focus), il label di questa viene shiftato di 5px verso l'alto */
-.input-box input:focus~label, .input-box input:valid~label{top: -5px;}
 
 /* quando si passa sopra il link quest'ultimo viene sottolineato*/
 .register a:hover    {text-decoration: underline;}
