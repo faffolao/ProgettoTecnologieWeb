@@ -5,41 +5,67 @@
         <div class="form-box form-box-inputdialog">
             <h2>Aggiorna Azienda</h2>
             <br>
-            <form class="contact-form" action={{url('/aggiornaAziende/'.$dati['id'])}} method="POST" enctype="multipart/form-data">
-                @csrf
-                @method('PUT')
-                <div class="form-row">
-                    <div class="form-left">
-                        <fieldset title="Aggiorna i dati dell'azienda">
-                            <label for="nome">Aggiorna il nome:</label>
-                            <input type="text" id="nome" name="nome" value="{{$dati['nome']}}" required>
+            {{ Form::open(array('url' => '/aggiornaAziende/'.$dati['id'], 'class' => 'contact-form', 'enctype' => 'multipart/form-data', 'method' => 'PUT')) }}
+            <div class="form-row">
+                <div class="form-left">
+                    {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
+                    {{ Form::text('nome', $dati['nome'], ['class' => 'input', 'id' => 'nome', 'required' => 'required']) }}
+                    @if ($errors->first('nome'))
+                        <ul class="errors">
+                            @foreach ($errors->get('nome') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
 
-                            <label for="descrizione">Descrizione:</label>
-                            <textarea type="text" id="descrizione" name="descrizione" required>{{$dati['descrizione']}}</textarea>
+                    {{ Form::label('descrizione', 'Descrizione', ['class' => 'label-input']) }}
+                    {{ Form::textarea('descrizione', $dati['descrizione'], ['class' => 'input', 'id' => 'descrizione', 'required' => 'required']) }}
+                    @if ($errors->first('descrizione'))
+                        <ul class="errors">
+                            @foreach ($errors->get('descrizione') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
 
-                            <label for="ragioneSociale">Ragione Sociale:</label>
-                            <input type="text" id="ragioneSociale" name="ragioneSociale" value="{{$dati['ragioneSociale']}}" required>
-                        </fieldset>
-                    </div>
-
-                    <div class="form-right">
-                        <fieldset title="Aggiorna i dati dell'azienda">
-                            <label for="tipologia">Tipologia:</label>
-                            <input type="text" id="tipologia" name="tipologia" value="{{$dati['tipologia']}}" required>
-
-                            <fieldset title="Carica immagini in formato .png o .jpeg">
-                                <label for="logo">Aggiorna l'immagine dell'Azienda:</label>
-                                <p><em>Logo attualmete selezionato:</em></p>
-                                <img src="data:image/png/jpg/webp/jpeg/bin;base64,{{ base64_encode($dati['logo']) }}" class="form-image-input-preview" alt="Logo Azienda">
-                                <input type="file" id="logo" name="logo"
-                                       accept="image/png, image/jpeg, image/bin, image/jpg">
-                            </fieldset>
-                        </fieldset>
-                    </div>
+                    {{ Form::label('ragioneSociale', 'Ragione Sociale', ['class' => 'label-input']) }}
+                    {{ Form::text('ragioneSociale', $dati['ragioneSociale'], ['class' => 'input', 'id' => 'ragioneSociale', 'required' => 'required']) }}
+                    @if ($errors->first('ragioneSociale'))
+                        <ul class="errors">
+                            @foreach ($errors->get('ragioneSociale') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
                 </div>
 
-                <button class="btn" type="submit">Aggiorna l'azienda</button>
-            </form>
+                <div class="form-right">
+                    {{ Form::label('tipologia', 'Tipologia', ['class' => 'label-input']) }}
+                    {{ Form::text('tipologia', $dati['tipologia'], ['class' => 'input', 'id' => 'tipologia', 'required' => 'required']) }}
+                    @if ($errors->first('tipologia'))
+                        <ul class="errors">
+                            @foreach ($errors->get('tipologia') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+
+                    {{ Form::label('logo','Logo di questa azienda' ) }}
+                    <p><em>Logo attualmete selezionato:</em></p>
+                    <img src="data:image/png/jpg/webp/jpeg/bin;base64,{{ base64_encode($dati['logo']) }}" class="form-image-input-preview" alt="Logo Azienda">
+                    {{ Form::file('logo') }}
+                    @if ($errors->first('logo'))
+                        <ul class="errors">
+                            @foreach ($errors->get('logo') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+                </div>
+            </div>
+            {{ Form::submit('Aggiorna questa Azienda', ['class' => 'btn'])}}
+            {{ Form::close() }}
+
             <div class="panel-buttons">
                 <a class="btn btn-back" href="{{ route('gestioneAziende') }}">Torna indietro</a>
             </div>
