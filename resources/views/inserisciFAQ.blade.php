@@ -5,7 +5,7 @@
         <div class="panel">
             <h2>Inserisci F.A.Q.</h2>
             <br>
-            <form class="form-insertFAQ" action="{{ route('inserisciFAQ') }}" method="POST">
+            {{ Form::open(array('route' => 'inserisciFAQ', 'class' => 'form-insertFAQ', 'enctype' => 'multipart/form-data')) }}
                 @csrf
                 {{ Form::label('domanda', 'Domanda') }}
                 {{ Form::text('domanda', '', ['class' => 'input', 'id' => 'domanda', 'required' => 'required', 'placeholder' => 'Domanda...']) }}

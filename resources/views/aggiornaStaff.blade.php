@@ -8,6 +8,7 @@
 
             <!-- effettiva form di input -->
             {{ Form::open(array('url' => '/aggiornaStaff/'.$dati['username'], 'class' => 'contact-form', 'method'=>'PUT')) }}
+            @csrf
             <div class="form-row">
                 <div class="form-left">
                     {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
