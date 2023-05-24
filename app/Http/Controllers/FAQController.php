@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\FAQ;
+use Illuminate\Validation\Rule;
 
 class FAQController extends Controller
 {
@@ -36,10 +37,10 @@ class FAQController extends Controller
     function addFAQ(Request $request){
 
         // Validazione dei dati inviati nella form
-//        $validatedData = $request->validate([
-//            'domanda' => 'required|string',
-//            'risposta' => 'required|string',
-//        ]);
+        $request->validate([
+            'domanda' => ['required','string','max:300', 'unique:faqs'],
+            'risposta' => ['required','string','max:300', 'unique:faqs']
+        ]);
 
         $faq = new FAQ;
         $root = User::where('livello', 3)->first();
@@ -59,6 +60,14 @@ class FAQController extends Controller
 
     function updateDataSingleFAQ(Request $request, $id)
     {
+        // Validazione dei dati inviati nella form
+        $request->validate([
+            'domanda' => ['required','string','max:300',
+                Rule::unique('faqs')->ignore($id)],
+            'risposta' => ['required','string','max:300',
+                Rule::unique('faqs')->ignore($id)]
+        ]);
+
         $record = FAQ::where('id', $id)->first();
         $record['domanda'] = $request->input('domanda');
         $record['risposta'] = $request->input('risposta');

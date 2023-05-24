@@ -127,56 +127,6 @@ Route::post('/listaCouponUsati', [CouponController::class, 'getDataBRCU']);
 Route::post('/registrazione', [RegistrationController::class, 'register'])
     ->name('registrazione');
 
-/*
-Route::post('/registrazione', function(){
-    User::create([
-        'username' => request('username'),
-        'nome' => request('nome'),
-        'cognome' => request('cognome'),
-        'data_nascita' => request('data_nascita'),
-        'sesso' => request('sesso'),
-        'livello' => request('livello'),
-        'password' => request('password'),
-        'telefono' => request('telefono'),
-        'email' => request('email'),
-    ]);
-    return redirect('/login');
-});
-*/
-
-// Rotte per andare nella Home dopo il Login
-
-/*
-Route::post('/login', function () {
-    $credentials = request(['username', 'password']);
-    if (Auth::attempt($credentials)) {
-        $user = Auth::user();
-        if ($user->livello == 1) {
-            return redirect()->route('hubUtente');
-        } else if ($user->livello == 2) {
-            return redirect()->route('hubStaff');
-        } else if ($user->livello == 3) {
-            return redirect()->route('hubAmministratore');
-        }
-    }
-    return redirect()->back()->withErrors([
-        'username' => 'Le credenziali inserite non sono valide.',
-    ])->withInput(request(['username']));
-});
-*/
-
-/* ??
- Route::get('/users/{username}', function ($username) {
-    // check if user is level 1
-    if (Auth::user()->level == 1) {
-        // do something
-    } else {
-        return redirect('/');
-    }
-});
-
-*/
-
 /* --------------------------
  * ROTTE CLIENTI
  * -------------------------- */

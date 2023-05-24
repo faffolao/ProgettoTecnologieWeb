@@ -68,6 +68,15 @@ class FactoryController extends Controller
         return redirect()->route('gestioneAziende');
     }
     function addAzienda(Request $request){
+
+        //Controlla se i campi sono stati compilati correttamente
+        $request->validate([
+            'nome' => ['required','string','max:40', 'unique:aziende'],
+            'tipologia' => ['required','string','max:30'],
+            'descrizione' => ['required','string'],
+            'ragioneSociale' => ['string','max:50']
+        ]);
+
         $factory = new Factory();
         $admin = User::where('livello', 3)->first();
         $immagine = $request->file('logo');
@@ -90,6 +99,14 @@ class FactoryController extends Controller
 
     function updateDataSingleAzienda(Request $request, $id)
     {
+        //Controlla se i campi sono stati compilati correttamente
+        $request->validate([
+            'nome' => ['required','string','max:40', 'unique:aziende'],
+            'tipologia' => ['required','string','max:30'],
+            'descrizione' => ['required','string'],
+            'ragioneSociale' => ['string','max:50']
+        ]);
+
         if (!$request->file('logo'))
         {
             Factory::where('id', $id)->update(
@@ -101,6 +118,12 @@ class FactoryController extends Controller
                 ]);
         } else
         {
+
+            //Controlla se i campi sono stati compilati correttamente
+            $request->validate([
+                'logo' => ['required','file','mimes:jpg,jpeg,png,bin'],
+            ]);
+
             $immagine = $request->file('logo');
             $logo = file_get_contents($immagine);
             Factory::where('id', $id)->update(
