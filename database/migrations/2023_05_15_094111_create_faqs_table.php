@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('risposta', 300)->unique();
 
             // definizione del vincolo di FK
-            $table->foreign('usernameCreatore')->references('username')->on('utenti');
+            $table->foreign('usernameCreatore')->references('username')->on('utenti')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

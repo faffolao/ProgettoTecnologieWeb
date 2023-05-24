@@ -26,8 +26,8 @@ return new class extends Migration
             $table->dateTime('dataOraCreazione')->default(DB::raw('CURRENT_TIMESTAMP'));
 
             // definizione dei vincoli di FK
-            $table->foreign('usernameCliente')->references('username')->on('utenti');
-            $table->foreign('idOfferta')->references('id')->on('offerte');
+            $table->foreign('usernameCliente')->references('username')->on('utenti')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('idOfferta')->references('id')->on('offerte')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

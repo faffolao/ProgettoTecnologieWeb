@@ -30,7 +30,7 @@ return new class extends Migration
             $table->dateTime('dataOraScadenza');
 
             // definizione dei vincoli della FK
-            $table->foreign('idAzienda')->references('id')->on('aziende');
+            $table->foreign('idAzienda')->references('id')->on('aziende')->onDelete('cascade')->onUpdate('cascade');
         });
 
         // aggiungo qua il logo perchè Eloquent non supporta il tipo LONGBLOB direttamente. Per poter aggiungere un
