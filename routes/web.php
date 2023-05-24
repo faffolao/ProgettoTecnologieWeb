@@ -91,13 +91,13 @@ Route::post('/catalogo', [CatalogoController::class, 'getDataBR']);
 // Rotta per il caricamento della pagina di registrazione.
 
 Route::view("/registrazione", 'registrazione')
-    ->middleware('guest')
+   // ->middleware('guest')
     ->name("registrazione");
 
 // Rotta di registrazione
 
 Route::post('/registrazione', [RegistrationController::class, 'register'])
-    ->middleware('guest')
+  //  ->middleware('guest')
     ->name('registrazione');
 
 // Rotta per il caricamento della pagina dei dettagli di un'offerta selezionata.
@@ -116,18 +116,18 @@ Route::get("/coupon/{id}", [CouponController::class, 'getDataNO'])
 
 // Rotta per accedere all'area personale di un Cliente (utente di livello 1).
 Route::view("/hubUtente", 'hubUtente')
-    ->middleware('auth')
+ //   ->middleware('auth')
     ->name("hubUtente");
 
 
 // Rotta per accedere alla modifica dei dati personali (livello 1).
 Route::view("/modificaDati_L1", 'modificaDati_L1')
-    ->middleware('auth')
+ //   ->middleware('auth')
     ->name("modificaDatiL1");
 
 //Rout che ti fa visualizzare i coupon utilizzati
 Route::get("/listaCouponUsati", [CouponController::class, 'getDataLCU'])
-    ->middleware('auth')
+ //   ->middleware('auth')
     ->name("listaCouponUsati");
 
 //Rotta per ricercare i coupon
@@ -152,17 +152,17 @@ Route::get('/modifica-credenziali', function () {
 
 // Rotta per lo staff
 Route::view("/hubStaff", 'hubStaff')
-    ->middleware('auth')
+  //  ->middleware('auth')
     ->name("hubStaff");
 
 //Rotta modifica dati personali (Livello 2)
 Route::view("/modifcaDati_L2", 'modificaDati_L2')
-    ->middleware('auth')
+  //  ->middleware('auth')
     ->name("modificaDati_L2");
 
 //Rotta standard
 Route::get("/gestioneOfferte", [OfferController::class, 'getDataOff'])
-    ->middleware('auth')
+   // ->middleware('auth')
     ->name("gestioneOfferte");
 
 //Rotta per ricercare lo Staff da gestire
@@ -171,19 +171,19 @@ Route::post('/gestioneOfferte', [OfferController::class, 'getDataBRGO']);
 
 // Rotta per inserire una nuova offerta
 Route::get("/inserisciOfferte", [OfferController::class, 'getNomeAziende'])
-    ->middleware('auth')
+ //   ->middleware('auth')
     ->name('inserisciOfferte');
 Route::post('/inserisciOfferte', [OfferController::class, 'addOff']);
 
 //Rotta per agiornare un'offerta
 Route::get('/aggiornaOfferte/{id}/edit', [OfferController::class, 'getDataSingleOff'])
-    ->middleware('auth')
+ //   ->middleware('auth')
     ->name('aggiornaOfferte');
 Route::put('/aggiornaOfferte/{id}', [OfferController::class, 'updateDataSingleOff']);
 
 //QUESTA ROTTA SERVER PER ELIMINARE UN'OFFERTA
 Route::delete("/gestioneOfferte/elimina/{id}", [OfferController::class, 'deleteR'])
-    ->middleware('auth')
+  //  ->middleware('auth')
     ->name("eliminaOfferte");
 
 // Rotta per l'amministratore
