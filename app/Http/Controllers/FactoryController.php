@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Factory;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 
 define("NUM_PAGES", 12);
 
@@ -101,7 +102,8 @@ class FactoryController extends Controller
     {
         //Controlla se i campi sono stati compilati correttamente
         $request->validate([
-            'nome' => ['required','string','max:40', 'unique:aziende'],
+            'nome' => ['required','string','max:40',
+                Rule::unique('aziende')->ignore($id)],
             'tipologia' => ['required','string','max:30'],
             'descrizione' => ['required','string'],
             'ragioneSociale' => ['string','max:50']
