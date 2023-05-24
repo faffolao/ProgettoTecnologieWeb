@@ -99,7 +99,6 @@
             <div class="panel-buttons">
                 <a class="btn btn-back" href="{{ route('gestioneOfferte') }}">Torna indietro</a>
             </div>
-            </form>
         </div>
     </div>
 @endsection
