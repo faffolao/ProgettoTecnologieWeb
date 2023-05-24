@@ -5,7 +5,7 @@
         <div class="form-box form-box-inputdialog">
             <h2>Aggiorna Azienda</h2>
             <br>
-            <form class="contact-form" action={{url('/aggiornaAziende/'.$dati['id'])}} method="POST" enctype="multipart/form-data">
+            <form action={{ url('/aggiornaAziende/'.$dati['id']) }} method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="form-row">
@@ -15,7 +15,7 @@
                             <input type="text" id="nome" name="nome" value="{{$dati['nome']}}" required>
 
                             <label for="descrizione">Descrizione:</label>
-                            <textarea type="text" id="descrizione" name="descrizione" required>{{$dati['descrizione']}}</textarea>
+                            <textarea id="descrizione" name="descrizione" required>{{$dati['descrizione']}}</textarea>
 
                             <label for="ragioneSociale">Ragione Sociale:</label>
                             <input type="text" id="ragioneSociale" name="ragioneSociale" value="{{$dati['ragioneSociale']}}" required>

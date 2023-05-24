@@ -107,15 +107,11 @@
 
             {{ Form::close() }}
 
-            <div style="clear:both;"></div>
-
-
-            <div class="register">
-                <p>Hai già un account?<b><a href="{{ route('login') }}" class="register-link">
+            <div class="form-alt-container">
+                <p>Hai già un account?<b><a href="{{ route('login') }}" class="form-alt-link">
                             Effettua il Login</a></b>
                 </p>
             </div>
-            </form>
         </div>
     </div>
 @endsection

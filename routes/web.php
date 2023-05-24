@@ -308,6 +308,9 @@ Route::delete("/gestioneAziende/elimina/{id}", [FactoryController::class, 'delet
 Route::get("/statistiche", [StatsController::class, 'getData'])
     ->name('statistiche');
 
+Route::post("/statistiche", [StatsController::class, 'getDataBR'])
+    ->name('statistiche.ricerca');
+
 Route::post('/statistiche/offerta', [StatsController::class, 'getOffertaCoupons'])
     ->name('statistiche.offerta');
 

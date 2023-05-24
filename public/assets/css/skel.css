@@ -1,14 +1,21 @@
-/* --------------------------------------------
-    impostazioni di base per tutte le pagine
------------------------------------------------- */
-*{
+/* -----------------------------------------------------------------------------------------------------------------------------
+    skel.css
+    --------
+    Contiene le proprietà di stile di base, ovvero che compongono gli elementi fondamentali della pagina (quelli che compongono
+    la grafica di base di tutte le pagine).
+    Contiene anche proprietà grafiche di stampo utilitaristico, ovvero che possono servire per alcuni elementi.
+------------------------------------------------------------------------------------------------------------------------------ */
+
+/* Proprietà in comune per tutti gli elementi HTML */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
-header{
+/* Header della pagina */
+header {
     background-color: #333;
     color: #fff;
     padding: 20px;
@@ -22,7 +29,7 @@ header{
     spostarsi una sotto l'altra) e gli elementi contenuti devono essere allineati al centro.
     Ognuna delle due colonne contenute occupa il 50% dello spazio.
 */
-nav{
+nav {
     display: flex;
     align-items: center; /* gli elementi contenuti saranno allineati verticalmente al centro */
     text-decoration: none;
@@ -33,367 +40,28 @@ nav{
     display: flex;
     align-items: center;
 }
-
 .navbar-logo  {vertical-align: bottom; width: 170px; margin-right: 10px;}
 .navbar-title {display: inline;}
 
-/* gli elementi di questo contenitore sono disposti da destra verso sinistra, anzichè il contrario */
+/* per motivi di estetica, gli elementi di questo contenitore sono disposti da destra verso sinistra, anzichè il contrario */
 .navbar-links-container {
     display: flex;
     width: 50%;
     justify-content: flex-end;
 }
 
-nav ul               {display: flex; list-style: none;}
-nav ul li            {margin-right: 20px;}
+/* lista che contiene le ancore della navbar che puntano alle altre pagine */
+nav ul    {display: flex; list-style: none;}
+nav ul li {margin-right: 20px;}
 
 /* l'ultimo elemento della lista non ordinata (UL, Unordered List) non avrà margine a destra, per evitare problemi grafici */
 nav ul li:last-child {margin-right: 0;}
 
-nav ul li a          {color: #fff; text-decoration: none; font-size: 1.1em;}
-nav ul li a:hover    {text-decoration: underline;}
-
-/*
-    Main: è l'area della pagina che contiene il corpo della pagina (quello che viene inserito dinamicamente con Blade e Laravel)
-*/
-main {margin: 50px 10%;}
-
-/*
-    Questa classe grafica conferisce ad ancore (<a>) e pulsanti (<button>) un aspetto estetico da pulsante cliccabile.
-*/
-.btn {
-    background-color: #d35400;
-    color: #fff;
-    font-size: 18px;
-    padding: 13px 30px;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;    /* assegna il cursore della "manina" a questo elemento */
-    text-decoration: none;
-}
-
-.btn:hover{
-    background: #cccccc;
-    color: black;
-}
-
-/*
-    "container" contiene il corpo testuale della pagina e in generale contenuti standard (quindi nessun contenuto in
-    primo piano o contenuto particolarmente rilevante)
- */
-.container        {margin-top: 30px; text-align: center;}
-.container h1, h2 {text-align: center}
-.container h2     {font-size: 36px;}
-/* se il container contiene un elemento aside (un menu di navigazione che giace ai lati della pagina) questi dovrà assumere
-il flexbox layout per poter visualizzare allo stesso livello sia l'aside che il corpo della pagina */
-.container-with-aside {display: flex;}
-
-/* "desc" contiene del contenuto descrittivo alla pagina, ad esempio, dei testi introduttivi */
-.desc{
-    padding-top: 20px;
-    display: block;
-    flex-wrap: wrap; /*mposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe.*/
-                     /*Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate.*/
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-    flex-direction: row;
-    text-align: center;
-}
-.desc h2{text-align: center; font-size: 36px; margin-bottom: 20px;}
-.emphatized-text {font-size: 20px;}
-
-/*
-    Aside Navigation Bar (aside-nav): barra di navigazione posta a sinistra del contenuto. Viene usata nel catalogo per filtrare le offerte
-    in base all'azienda specifica che si desidera (o anche per tutte le aziende)
- */
-aside {
-    background-color: #fff;
-    text-align: left;
-}
-.aside-nav h2 {text-align: left;}
-.aside-nav ul{list-style: none; padding: 0; margin: 0;}
-.aside-nav li{margin-bottom: 10px;}
-.aside-nav a{text-decoration: none; color: #333; font-size: 1.2em; display: block; padding: 5px; border-radius: 5px;}
-.aside-nav a:hover{background-color: #f2f2f2;}
-
-/* ----------------------------------------------------
-        impostazioni specifiche per home page
------------------------------------------------------ */
-.hero-image{
-    background-image: url("../images/home_wall.jpeg");
-    background-position: bottom;
-    background-size: cover;
-    text-align: center;
-    padding: 100px;
-}
-
-.hero-image h1{
-    color: antiquewhite;
-    font-size: 50px;
-    margin-bottom: 20px;
-}
-
-.hero-image p{
-    color: white;
-    font-size: 30px;
-    margin-bottom: 50px;
-}
-
-/*
-    Card Deck: contiene le Card, ovvero un insieme di elementi graficamente rappresentati come delle "carte"
- */
-.card-deck{
-    display: flex;
-    flex-wrap: wrap; /* imposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe. */
-                     /* Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate. */
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    width: 100%;
-}
-
-.card{
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-    max-width: 300px;
-    box-shadow: 0 0 5px rgba(0,0,0,.3);
-}
-
-/* l'immagine dell'azienda viene impostata ad una dimensione fissa (150x150 px) e il suo contenuto viene riadattato
-automaticamente per evitare che possa apparire stretchato */
-.card img {width: 150px; height: 150px; object-fit: scale-down; margin-bottom: 20px;}
-.card h3  {font-size: 24px; margin-bottom: 10px;}
-.card-title-link {font-size: 21px; text-decoration: none; display: block; color: black; font-weight: bold;}
-.card-title-link:hover {color: #d35400;}
-.card p   {font-size: 16px;}
-.card-btn {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-}
-.card-btn:hover {background-color: #d35400;}
-
-/*.desc button{
-    background-color: #d35400;
-    color: #fff;
-    font-size: 18px;
-    padding: 10px 30px;
-    border-radius: 25px;
-    border: none;
-    cursor: pointer;
-}*/
-
-.faq              {margin-top: 17px; text-align: center}
-.faq h2           {font-size: 2rem;}
-.faq ul           {list-style: none; margin: 0; padding: 0;}
-.faq li           {margin: 20px 0;}
-.faq .question    {font-size: 1.2rem; font-weight: bold; cursor: pointer;}
-.faq .answer      {display: none; font-size: 1rem; padding: 10px;}
-.faq .answer.show {display: block;}
-
-/*
-    Barra di ricerca
- */
-
-/* search-container è il contenitore della barra di ricerca */
-.search-container {
-    position: relative;
-    justify-content: center;
-    margin: 30px auto;
-    align-items: center;
-    background: transparent;
-    max-width: 45%;
-    text-align: center;
-}
-.search-container-aside {text-align: left; margin: 0; min-width: 100%;}
+/* ancore della navigation bar */
+nav ul li a       {color: #fff; text-decoration: none; font-size: 1.1em;}
+nav ul li a:hover {text-decoration: underline;}
 
 
-/* search-wrapper è la barra stessa di ricerca (l'input box per intenderci) */
-.search-wrapper {
-    position: relative;
-    display: flex;
-    border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 50px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-}
-
-input[type="text"], input[type="password"], input[type="tel"], input[type="datetime-local"], input[type="email"], input[type="file"], input[type="date"],textarea {
-    font-size: medium;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form textarea {
-    max-width: 320px;
-    min-height: 100px;
-}
-
-input[type="radio"] {
-    margin-bottom: 20px;
-}
-
-.sex{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#idAzienda {
-    margin-bottom: 20px;
-    font-size: 1em;
-}
-
-.search-wrapper input[type="text"] {
-    margin-bottom: 0;
-    padding: 10px 20px;
-    border: none;
-    font-size: 16px;
-    width: 100%;
-    border-radius: 50px;
-}
-
-.search-wrapper button {
-    padding: 10px 20px;
-    background-color: transparent;
-    border: none;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
-
-.search-wrapper button img {width: 17px; height: 17px;}
-
-/*
-    Form: gestione grafiche delle form, del form-box (il suo contenitore) e il wrapper (l'area che contiene tutto)
-    Il form-box ha una variante, il form-box-inputdialog, che è il form impiegato in tutte le pagine che non sono la
-    pagina di login (quindi in tutte le pagine dove sono richiesti molti dati in input da inviare ad una pagina)
- */
-.wrapper {
-    width: 100%;
-    margin: 50px auto;
-    background-image: url('../images/wrapper_wall.jpg');
-    background-position: bottom;
-    background-size: cover;
-    padding: 100px 0;
-    text-align: center;
-}
-
-.wrapper-login {background-image: url('../images/login_wall.jpeg');}
-.wrapper-register {background-image: url("../images/register_wall.jpg");}
-.form-box {
-    position: relative;
-    text-align: center;
-    margin: 0 auto;
-    max-height: min-content;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .5);
-    border-radius: 20px;
-    backdrop-filter: blur(100px);
-    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
-    overflow: hidden;
-    color: black;
-    padding: 70px 40px;
-    width: 430px;
-}
-.form-box-inputdialog {padding: 40px; width: 760px;}
-.form-box-inputdialog .form-row {display: flex; text-align: left; margin-top: 25px; margin-bottom: 15px;}
-.form-box-inputdialog .form-left {width: 50%; padding-right: 18px;}
-.form-box-inputdialog .form-right {width: 50%; padding-left: 18px;}
-.form-box-inputdialog fieldset {border: none;}
-.form-box-inputdialog label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: left;
-}
-
-.form-box-inputdialog legend {
-    margin-bottom: 10px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: left;
-}
-
-.form-box h2 {font-size: 30px;}
-.input-box {
-    width: 100%;
-    margin: 20px 0;
-    text-align: left;
-    color: black;
-}
-.input-box .input {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    font-size: 1em;
-    color: black;
-    border-bottom: 2px solid black;
-}
-.input-box .label-input {
-    color: black;
-    font-size: 1em;
-    font-weight: bold;
-    display: block;
-    margin-bottom: 16px;
-}
-.register-link {color: black; text-decoration: none;}
-.register {margin-top: 30px;}
-
-/* quando si passa sopra il link quest'ultimo viene sottolineato*/
-.register a:hover    {text-decoration: underline;}
-/*
-    Panel: contenitore aggiuntivo (puramente estetico), caratteristico delle aree personali (di tutti i livelli di utenza)
-    Il Panel può contenere una Toggle List, ovvero una lista di elementi che si può comprimere
- */
-.panel {
-    background-color: #f5f5f5;
-    box-shadow: 0 0 5px #ccc;
-    border-radius: 5px;
-    margin: 20px;
-    padding: 30px;
-    align-items: center;
-    justify-content: center;
-    flex: 1 1 300px;
-    height: max-content;
-}
-/* contenitore che contiene un logo seguito da un titolo */
-.title-with-logo {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: left;
-    align-items: center;
-}
-.title-with-logo img {max-width: 125px;}
-.title-with-logo h2 {margin-left: 25px; font-size: 28px;}
-
-.toggle-list {
-    margin-top: 25px;
-    text-align: center;
-}
-.toggle-list ul {list-style: none; margin-bottom: 10px;}
-.toggle {cursor: pointer;}
-.toggle h2 {font-size: 24px; margin-bottom: 15px;}
-.hidden {display: none;}
-/* contenitore dei pulsanti di un Panel */
-.panel-buttons {text-align: center; padding-top: 30px; padding-bottom: 12px;}
-.panel-buttons .btn {margin: 10px;}
 
 
 

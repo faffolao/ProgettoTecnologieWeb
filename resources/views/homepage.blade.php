@@ -33,13 +33,13 @@
         </div>
 
         <h2>F.A.Q.</h2>
-        <div class="faq">
+        <div class="toggle-list-mini">
             <p>Queste sono le domande più frequenti che gli utenti ci pongono. Clicca sulla domanda che ti interessa per scoprire la risposta!</p>
             <ul>
                 @foreach($List as $list)
                     <li>
-                        <div class="question">{{$list['domanda']}}</div>
-                        <div class="answer">{{$list['risposta']}}</div>
+                        <div class="toggle">{{$list['domanda']}}</div>
+                        <div class="hidden">{{$list['risposta']}}</div>
                     </li>
                 @endforeach
             </ul>
