@@ -6,7 +6,7 @@
             <h2>Aggiorna Azienda</h2>
             <br>
 
-            {{ Form::open(array('url' => '/aggiornaAziende/'.$dati['id'], 'class' => 'contact-form', 'enctype' => 'multipart/form-data', 'method' => 'PUT')) }}
+            {{ Form::open(array('url' => '/aggiornaAziende/'.$dati['id'], 'enctype' => 'multipart/form-data', 'method' => 'PUT')) }}
             <div class="form-row">
                 <div class="form-left">
                     {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
