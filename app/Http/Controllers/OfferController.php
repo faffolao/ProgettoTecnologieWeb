@@ -46,6 +46,14 @@ class OfferController extends Controller
     }
     function addOff(Request $request){
 
+        //Controlla se i campi sono stati compilati correttamente
+        $request->validate([
+            'nome' => ['required','string','max:70', 'unique:offerte'],
+            'oggetto' => ['required','string'],
+            'modalitaFroizione' => ['required','string'],
+            'luogoFruizione' => ['required', 'string']
+        ]);
+
         $off = new Offer();
         $root = "root";
         if ($request->input('idAzienda')=="NULL")
@@ -84,6 +92,14 @@ class OfferController extends Controller
 
     function updateDataSingleOff(Request $request, $id)
     {
+        //Controlla se i campi sono stati compilati correttamente
+        $request->validate([
+            'nome' => ['required','string','max:70', 'unique:offerte'],
+            'oggetto' => ['required','string'],
+            'modalitaFroizione' => ['required','string'],
+            'luogoFruizione' => ['required', 'string']
+        ]);
+
         if (!$request->file('immagine'))
         {
             if ($request->input('idAzienda')=="NULL")

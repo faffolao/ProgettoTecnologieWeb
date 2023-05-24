@@ -82,6 +82,18 @@ class UserController extends Controller
 //            'risposta' => 'required|string',
 //        ]);
 
+        // Validazione dei dati inviati dalla form di registrazione
+        $request->validate([
+            'username' => ['required','string', 'max:30', 'unique:utenti'],
+            'password' => ['required','string','min:8'],
+            'nome' => ['required','string','max:20'],
+            'cognome' => ['required','string','max:20'],
+            'eta' => ['required'],
+            'genere' => ['required'],
+            'telefono' => ['string', 'max:10'],
+            'email' => ['string','email','max:30']
+        ]);
+
         $user = new User();
         $livello = 2;
         $user['username'] = $request->input('username');
@@ -105,6 +117,17 @@ class UserController extends Controller
 
     function updateDataSingleStaff(Request $request, $username)
     {
+        // Validazione dei dati inviati dalla form di registrazione
+        $request->validate([
+            'username' => ['required','string', 'max:30', 'unique:utenti'],
+            'nome' => ['required','string','max:20'],
+            'cognome' => ['required','string','max:20'],
+            'eta' => ['required'],
+            'genere' => ['required'],
+            'telefono' => ['string', 'max:10'],
+            'email' => ['string','email','max:30']
+            ]);
+
         if (!($request->input('password')))
         {
             User::where('username', $username)->update(
@@ -119,6 +142,9 @@ class UserController extends Controller
                 ]);
         } else
         {
+            $request->validate([
+                'password' => ['required','string','min:8']
+            ]);
             User::where('username', $username)->update(
                 [
                     'username'=>$request->input('username'),
