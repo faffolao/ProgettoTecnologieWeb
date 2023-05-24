@@ -27,7 +27,7 @@
                     <img src="{{ asset('assets/images/search_offer.png') }}" alt="Apri sezione di ricerca" class="open-search-area">
                 </a>
 
-                <form id="catalog-search-form" method="POST" action="{{ route('catalogo') }}" style="display: none;">
+                <form id="catalog-search-form" method="POST" action="{{ route('catalogo') }}">
                     @csrf
                     <h2>Ricerca per offerta</h2>
                     <input type="text" id="search-bar" name="offer_query" placeholder="Cerca un'offerta...">

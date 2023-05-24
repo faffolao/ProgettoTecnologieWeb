@@ -12,12 +12,16 @@ define("NUM_PAGES", 12);
 
 class FactoryController extends Controller
 {
+    // C = Catalogo
     function getDataC()
     {
-        $data = Factory::all();
-        $dataAO = Offer::paginate(9);
-        return view('catalogo', ['Aziende'=>$data], ['Offerte'=>$dataAO]);
+        // Ordino la lista di offerte in base all'ID dell'azienda, questo per far si che le offerte della stessa azienda
+        // compaiano tutte di seguito.
+        $dataAO = Offer::orderBy('idAzienda')->paginate(9);
+        return view('catalogo', ['Offerte'=>$dataAO]);
     }
+
+    // A = Aziende
     function getDataA()
     {
         $data = Factory::paginate(NUM_PAGES);
@@ -39,13 +43,14 @@ class FactoryController extends Controller
         return view('aziende', ['Aziende' => $dataNO, 'searchQuery' => $query]);
     }
 
+    // GA = Gestione Aziende
     function getDataGA()
     {
         $data = Factory::all();
         return view('gestioneAziende', ['List'=>$data]);
     }
 
-    // per la Barra di Ricerca in gestioneStaff
+    // BRGA = Barra di Ricerca in Gestione Staff
     function getDataBRGA(Request $request)
     {
         $data = Factory::all();
@@ -63,12 +68,6 @@ class FactoryController extends Controller
         return redirect()->route('gestioneAziende');
     }
     function addAzienda(Request $request){
-
-        // Validazione dei dati inviati nella form
-//        $validatedData = $request->validate([
-//            'domanda' => 'required|string',
-//            'risposta' => 'required|string',
-//        ]);
         $factory = new Factory();
         $admin = User::where('livello', 3)->first();
         $immagine = $request->file('logo');
@@ -82,8 +81,8 @@ class FactoryController extends Controller
         $factory->save();
 
         return redirect()->route('gestioneAziende');
-//        return view('modificaFAQ');
     }
+
     function getDataSingleAzienda($id){
         $data = Factory::where('id', $id)->first();
         return view('aggiornaAziende', ['dati'=>$data]);
@@ -113,15 +112,6 @@ class FactoryController extends Controller
                     'logo'=>$logo
                 ]);
         }
-//        $user['username'] = $request->input('username');
-//        $user['nome'] = $request->input('nome');
-//        $user['cognome'] = $request->input('cognome');
-//        $user['eta'] = $request->input('eta');
-//        $user['password'] = $request->input('password');
-//        $user['email'] = $request->input('email');
-//        $user['telefono'] = $request->input('telefono');
-//        $user['genere'] = $request->input('genere');
-//        $user->update();
         return redirect()->route('gestioneAziende');
     }
 }

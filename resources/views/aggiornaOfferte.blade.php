@@ -42,8 +42,8 @@
 
                             <fieldset title="Carica immagini in formato .png o .jpeg">
                                 <label for="logo">Aggiorna l'immagine dell'Offerta:</label>
-                                <p style="margin-bottom: 5px;"><em>Immagine attualmete selezionata:</em></p>
-                                <img src="data:image/png/jpg/webp/jpeg/bin;base64,{{ base64_encode($dati['immagine']) }}" style="max-height: 40%;max-width: 40%;" alt="Immagine Offerta">
+                                <p><em>Immagine attualmete selezionata:</em></p>
+                                <img src="data:image/png/jpg/webp/jpeg/bin;base64,{{ base64_encode($dati['immagine']) }}" class="form-image-input-preview" alt="Immagine Offerta">
                                 <input type="file" id="immagine" name="immagine"
                                        accept="image/png, image/jpeg, image/bin, image/jpg">
                             </fieldset>

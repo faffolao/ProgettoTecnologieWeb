@@ -26,15 +26,15 @@ class DatabaseSeeder extends Seeder
         // Creazione tabella Utenti.
         DB::table('utenti') -> insert([
             [
-                'username' => 'mrossi1',
-                'nome' => 'Mario',
-                'cognome' => 'Rossi',
-                'eta' => 2005-06-11,
-                'genere' => 'M',
-                'livello' => 1,
+                'username' => 'root',
+                'nome' => 'System',
+                'cognome' => 'Administration',
+                'eta' => NULL,
+                'genere' => NULL,
+                'livello' => 3,
                 'password' => Hash::make('root'),
                 'telefono' => NULL,
-                'email' => NULL,
+                'email' => 'root@admin',
             ],
             [
                 'username' => 'marco99',
@@ -43,7 +43,7 @@ class DatabaseSeeder extends Seeder
                 'eta' => '2023-05-08',
                 'genere' => 'M',
                 'livello' => 1,
-                'password' => Hash::make("ciao"),
+                'password' => Hash::make("marco99"),
                 'telefono' => '7832891231',
                 'email' => 'marcoaless99@gmail.com'
             ]

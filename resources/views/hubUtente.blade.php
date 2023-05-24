@@ -16,7 +16,7 @@
                 <a href="{{ route('modificaDatiL1') }}" class="btn">Modifica dati personali</a>
             </div>
             <div class="panel-buttons">
-                <a href="#" class="btn">Visualizza i coupon utilizzati</a>
+                <a href="{{ route('listaCouponUsati') }}" class="btn">Visualizza i coupon utilizzati</a>
             </div>
             <div class="panel-buttons">
                 <a href="{{route('logout')}}" class="btn btn-back">Logout</a>

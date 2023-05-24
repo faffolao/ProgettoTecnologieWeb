@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('tipologia', 30);
 
             // definizione del vincolo di FK
-            $table->foreign('managerUsername')->references('username')->on('utenti');
+            $table->foreign('managerUsername')->references('username')->on('utenti')->onDelete('cascade')->onUpdate('cascade');
         });
 
         // aggiungo qua il logo perchè Eloquent non supporta il tipo LONGBLOB direttamente. Per poter aggiungere un

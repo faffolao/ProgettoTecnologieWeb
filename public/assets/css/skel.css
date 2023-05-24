@@ -557,3 +557,7 @@ La proprietà vertical-align indica l'allineamento in verticale che l'immagine d
     text-decoration: none;
 }
 .list-item:hover {background-color: #ded9d4;}
+
+#catalog-search-form {display: none;}
+
+.form-image-input-preview {max-height: 40%; max-width: 40%;}

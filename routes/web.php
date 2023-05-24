@@ -149,6 +149,33 @@ Route::view("/hubUtente", 'hubUtente')
 Route::view("/modificaDati_L1", 'modificaDati_L1')
     ->name("modificaDatiL1");
 
+//Rout che ti fa visualizzare i coupon utilizzati
+Route::get("/listaCouponUsati", [CouponController::class, 'getDataLCU'])
+    ->name("listaCouponUsati");
+//Rotta per ricercare i coupon
+Route::post('/listaCouponUsati', [CouponController::class, 'getDataBRCU']);
+
+// Rotta di registrazione
+Route::post('/registrazione', [RegistrationController::class, 'register'])
+    ->name('registrazione');
+
+/*
+Route::post('/registrazione', function(){
+    User::create([
+        'username' => request('username'),
+        'nome' => request('nome'),
+        'cognome' => request('cognome'),
+        'data_nascita' => request('data_nascita'),
+        'sesso' => request('sesso'),
+        'livello' => request('livello'),
+        'password' => request('password'),
+        'telefono' => request('telefono'),
+        'email' => request('email'),
+    ]);
+    return redirect('/login');
+});
+*/
+
 // Rotte per andare nella Home dopo il Login
 
 /*
