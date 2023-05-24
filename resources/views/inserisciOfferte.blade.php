@@ -9,6 +9,7 @@
 
             <!-- effettiva form di input -->
             {{ Form::open(array('url' => '/inserisciOfferte', 'class' => 'contact-form', 'enctype' => 'multipart/form-data')) }}
+            @csrf
             <div class="form-row">
                 <div class="form-left">
                     <fieldset title="Inserisci dati offerta">
