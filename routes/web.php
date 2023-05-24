@@ -69,38 +69,6 @@ Route::get('/catalogo', [FactoryController::class, 'getDataC'])
     ->name('catalogo');
 Route::post('/catalogo', [CatalogoController::class, 'getDataBR']);
 
-// Rotta per il caricamento della pagina di Login.
-Route::view("/login", 'login')
-    ->name("login");
-
-//Rotta per il POST del login
-/*
-Route::post("user", [UserAuth::class, 'userLogin']);
-// Rotta post login
-Route::view("/profile", 'profile')
-    ->name("profile");
-*/
-
-
-
-
-
-Route::post('/login', array(AuthenticatedSessionController::class, 'store'))
-    ->middleware('guest');
-
-
-//Rotta di logout
-Route::get('/logout', function(){
-    Session::flush();
-    Auth::logout();
-    return redirect('/');
-});
-
-/*
-Route::post('/logout', [Logoutcontroller::class, 'destroy'])
-	->middleware('auth');
-*/
-
 /*
  * Route::get('/login', [
  *     'uses' => 'Auth\AuthController@getLogin',
