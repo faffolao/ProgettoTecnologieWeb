@@ -48,10 +48,7 @@ class OfferController extends Controller
 
         //Controlla se i campi sono stati compilati correttamente
         $request->validate([
-            'nome' => ['required','string','max:70', 'unique:offerte'],
-            'oggetto' => ['required','string'],
-            'modalitaFroizione' => ['required','string'],
-            'luogoFruizione' => ['required', 'string']
+            'nome' => ['required','string','max:70', 'unique:offerte']
         ]);
 
         $off = new Offer();
@@ -94,10 +91,7 @@ class OfferController extends Controller
     {
         //Controlla se i campi sono stati compilati correttamente
         $request->validate([
-            'nome' => ['required','string','max:70', 'unique:offerte'],
-            'oggetto' => ['required','string'],
-            'modalitaFroizione' => ['required','string'],
-            'luogoFruizione' => ['required', 'string']
+            'nome' => ['required','string','max:70', 'unique:offerte']
         ]);
 
         if (!$request->file('immagine'))
