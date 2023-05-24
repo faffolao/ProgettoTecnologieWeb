@@ -76,19 +76,19 @@
                         @endif
 
                         <fieldset title="Carica immagini in formato .png o .jpeg">
-                        {{ Form::label('immagine','Immagine della offerta', ['class' => 'label-input']) }}
-                        {{ Form::file('immagine', array('required' => 'required')) }}
-                        @if ($errors->first('immagine'))
-                            <ul class="errors">
-                                @foreach ($errors->get('immagine') as $message)
-                                    <li>{{ $message }}</li>
-                                @endforeach
-                            </ul>
-                        @endif
+                            {{ Form::label('immagine','Immagine della offerta', ['class' => 'label-input']) }}
+                            {{ Form::file('immagine', array('required' => 'required')) }}
+                            @if ($errors->first('immagine'))
+                                <ul class="errors">
+                                    @foreach ($errors->get('immagine') as $message)
+                                        <li>{{ $message }}</li>
+                                    @endforeach
+                                </ul>
+                            @endif
                         </fieldset>
-{{--                            <label for="immagine">Inserisci l'immagine dell'Offerta:</label>--}}
-{{--                            <input type="file" id="immagine" name="immagine"--}}
-{{--                                   accept="image/png, image/jpeg, image/bin, image/jpg" required>--}}
+                        {{--                            <label for="immagine">Inserisci l'immagine dell'Offerta:</label>--}}
+                        {{--                            <input type="file" id="immagine" name="immagine"--}}
+                        {{--                                   accept="image/png, image/jpeg, image/bin, image/jpg" required>--}}
 
                     </fieldset>
                 </div>
@@ -97,9 +97,9 @@
             {{ Form::submit('Inserisci questa nuova offerta', ['class' => 'btn'])}}
             {{ Form::close() }}
             <div class="panel-buttons">
-            <a class="btn btn-back" href="{{ route('gestioneOfferte') }}">Torna indietro</a>
+                <a class="btn btn-back" href="{{ route('gestioneOfferte') }}">Torna indietro</a>
+            </div>
+            </form>
         </div>
-        </form>
-    </div>
     </div>
 @endsection
