@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Factory;
 use Illuminate\Http\Request;
 use App\Models\Offer;
+use Illuminate\Validation\Rule;
 
 class OfferController extends Controller
 {
@@ -91,8 +92,9 @@ class OfferController extends Controller
     {
         //Controlla se i campi sono stati compilati correttamente
         $request->validate([
-            'nome' => ['required','string','max:70', 'unique:offerte']
-        ]);
+            'nome' => ['required','string','max:70',
+                Rule::unique('offerte')->ignore($id)]
+            ]);
 
         if (!$request->file('immagine'))
         {

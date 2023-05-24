@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -119,7 +120,8 @@ class UserController extends Controller
     {
         // Validazione dei dati inviati dalla form di registrazione
         $request->validate([
-            'username' => ['required','string', 'max:30', 'unique:utenti'],
+            'username' => ['required','string', 'max:30',
+                Rule::unique('utenti')->ignore($username)],
             'nome' => ['required','string','max:20'],
             'cognome' => ['required','string','max:20'],
             'eta' => ['required'],
