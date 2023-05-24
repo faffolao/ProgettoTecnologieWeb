@@ -1,0 +1,180 @@
+/* -----------------------------------------------------------------------------------------------------------------------------------
+    elements.css
+    ------------
+    Contiene gli stili grafici degli elementi contenuti nelle pagine, ad esempio pulsanti, link, titoli, barre di ricerca, etc...
+----------------------------------------------------------------------------------------------------------------------------------- */
+
+/*
+    Questa classe grafica conferisce ad ancore (<a>) e pulsanti (<button>) un aspetto estetico da pulsante cliccabile.
+*/
+.btn {
+    background-color: #d35400;
+    color: #fff;
+    font-size: 18px;
+    padding: 13px 30px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;    /* assegna il cursore della "manina" a questo elemento */
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #cccccc;
+    color: black;
+}
+
+/*
+    Emphatized Text: indica un testo particolarmente importante per una pagina web; ad esempio, un testo introduttivo
+    oppure un testo che contiene un dato particolarmente rilevante per una pagina
+*/
+.emphatized-text {font-size: 20px;}
+
+/*
+    Hero Image: area di grande rilevanza, funge da copertina iniziale di una pagina web.
+*/
+.hero-image {
+    background-image: url("../images/home_wall.jpeg");
+    background-position: bottom;
+    background-size: cover;
+    text-align: center;
+    padding: 100px;
+}
+
+.hero-image h1 {color: antiquewhite; font-size: 50px; margin-bottom: 20px;}
+.hero-image p {color: white; font-size: 30px; margin-bottom: 50px;}
+
+/*
+    Card Deck: contiene le Card, ovvero un insieme di elementi graficamente rappresentati come delle "carte"
+ */
+.card-deck{
+    display: flex;
+    flex-wrap: wrap; /* imposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe. */
+                     /* Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate. */
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+
+.card {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+}
+
+/* immagine delle card. Viene impostata con una dimensione fissa ed è in grado di adattarsi automaticamente alla dimensione della card */
+.card img {width: 150px; height: 150px; object-fit: scale-down; margin-bottom: 20px;}
+
+/* titolo della card */
+.card h3 {font-size: 24px; margin-bottom: 10px;}
+
+/* il titolo della card può anche assumere la funzione di ancora */
+.card-title-link       {font-size: 21px; text-decoration: none; display: block; color: black; font-weight: bold;}
+.card-title-link:hover {color: #d35400;}
+
+/* testo della card */
+.card p {font-size: 16px;}
+
+/* pulsanti inclusi in una card */
+.card-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+.card-btn:hover {background-color: #d35400;}
+
+/*
+    Toggle Lists: liste che contengono elementi che possono essere nascosti e visualizzati al click.
+    Due varianti: toggle-list-mini e toggle-list.
+ */
+.toggle-list-mini              {margin-top: 17px; text-align: center}
+
+/* lista degli elementi toggle */
+.toggle-list-mini ul           {list-style: none; margin: 0; padding: 0;}
+
+/* elementi della lista di toggle */
+.toggle-list-mini li           {margin: 20px 0;}
+
+/* elemento toggle (si può aprire e chiudere) */
+.toggle-list-mini .toggle      {font-size: 1.2rem; font-weight: bold; cursor: pointer;}
+.toggle-list-mini h2           {font-size: 2rem;}
+
+/* parte del toggle che non è visibile all'inizio (viene resa visibile al click dell'utente) */
+.toggle-list-mini .hidden      {display: none; font-size: 1rem; padding: 10px;}
+.toggle-list-mini .hidden.show {display: block;}
+
+/* stessa cosa del toggle-list-mini */
+.toggle-list    {margin-top: 25px; text-align: center;}
+.toggle-list ul {list-style: none; margin-bottom: 10px;}
+.toggle         {cursor: pointer;}
+.toggle h2      {font-size: 24px; margin-bottom: 15px;}
+.hidden         {display: none;}
+
+/*
+    Barra di ricerca
+*/
+
+/* search-container è il contenitore della barra di ricerca */
+.search-container {
+    position: relative; /* necessaria per visualizzare il logo della ricerca sulla barra di ricerca */
+    justify-content: center;
+    margin: 30px auto;
+    align-items: center;
+    background: transparent;
+    max-width: 45%;
+    text-align: center;
+}
+/* il search container, se adagiato in un <aside>, assume uno stile grafico che si adatta all'uopo */
+.search-container-aside {text-align: left; margin: 0; min-width: 100%;}
+
+/* search-wrapper è la barra stessa di ricerca (l'input box per intenderci) */
+.search-wrapper {
+    display: flex;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 50px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.search-wrapper input[type="text"] {
+    margin-bottom: 0;
+    padding: 10px 20px;
+    border: none;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.search-wrapper button {
+    padding: 10px 20px;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.search-wrapper button img {width: 17px; height: 17px;}
+
+/*
+    Title with Logo: titolo contenente anche un logo descrittivo.
+ */
+.title-with-logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+}
+.title-with-logo img     {max-width: 125px;}
+.title-with-logo h1, h2  {margin-left: 25px; font-size: 28px;}
+

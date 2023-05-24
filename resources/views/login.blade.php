@@ -39,9 +39,9 @@
                 {{ Form::submit('Login', ['class' => 'btn']) }}
             </div>
 
-                <div class="register">
+                <div class="form-alt-container">
                     <p>
-                        Non hai un account?&nbsp;&nbsp;<b><a href="{{ route('registrazione') }}" class="register-link">Registrati</a></b>
+                        Non hai un account?&nbsp;&nbsp;<b><a href="{{ route('registrazione') }}" class="form-alt-link">Registrati</a></b>
                     </p>
                 </div>
             {{ Form::close() }}

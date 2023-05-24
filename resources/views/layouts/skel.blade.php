@@ -11,8 +11,12 @@
 
     <!-- icona della pagina (favicon) -->
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+
     <!-- inserimento fogli di stile necessari al rendering del layout della pagina -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/skel.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/containers.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/elements.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/forms.css') }}">
 
     <!-- importazione jQuery tramite CDN (Content Delivery Network) -->
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>

@@ -45,11 +45,11 @@
 
                     {{ Form::label('genere', 'Genere') }}
 
-                    {{ Form::radio('genere', 'maschio', true, ['style' => 'display:inline;']) }}
+                    {{ Form::radio('genere', 'M', true, ['style' => 'display:inline;']) }}
                     {{ Form::label('genere', 'Maschio', ['style' => 'display:inline;']) }}
-                    {{ Form::radio('genere', 'femmina', false, ['style' => 'display:inline;']) }}
+                    {{ Form::radio('genere', 'F', false, ['style' => 'display:inline;']) }}
                     {{ Form::label('genere', 'Femmina', ['style' => 'display:inline;']) }}
-                    {{ Form::radio('genere', 'altro', false, ['style' => 'display:inline;']) }}
+                    {{ Form::radio('genere', 'A', false, ['style' => 'display:inline;']) }}
                     {{ Form::label('genere', 'Altro', ['style' => 'display:inline;']) }}
                     @if ($errors->first('genere'))
                         <ul class="errors">
@@ -107,15 +107,11 @@
 
             {{ Form::close() }}
 
-            <div style="clear:both;"></div>
-
-
-            <div class="register">
-                <p>Hai già un account?<b><a href="{{ route('login') }}" class="register-link">
+            <div class="form-alt-container">
+                <p>Hai già un account?<b><a href="{{ route('login') }}" class="form-alt-link">
                             Effettua il Login</a></b>
                 </p>
             </div>
-            </form>
         </div>
     </div>
 @endsection

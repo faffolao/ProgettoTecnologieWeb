@@ -1,4 +1,4 @@
-var questions = document.querySelectorAll(".faq .question");
+var questions = document.querySelectorAll(".toggle-list-mini .toggle");
 
 questions.forEach(function(question) {
     question.addEventListener("click", function() {

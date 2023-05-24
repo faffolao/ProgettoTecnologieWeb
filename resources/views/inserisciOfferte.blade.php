@@ -12,8 +12,8 @@
             <div class="form-row">
                 <div class="form-left">
                     <fieldset title="Inserisci dati offerta">
-                        {{ Form::label('nome', 'Nome') }}
-                        {{ Form::text('nome', '', ['id' => 'nome', 'required' => 'required']) }}
+                        {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
+                        {{ Form::text('nome', '', ['class' => 'input', 'id' => 'nome', 'required' => 'required']) }}
                         @if ($errors->first('nome'))
                             <ul class="errors">
                                 @foreach ($errors->get('nome') as $message)
@@ -22,8 +22,8 @@
                             </ul>
                         @endif
 
-                        {{ Form::label('oggetto', 'Oggetto') }}
-                        {{ Form::text('oggetto', '', ['id' => 'oggetto', 'required' => 'required']) }}
+                        {{ Form::label('oggetto', 'Oggetto', ['class' => 'label-input']) }}
+                        {{ Form::text('oggetto', '', ['class' => 'input', 'id' => 'oggetto', 'required' => 'required']) }}
                         @if ($errors->first('oggetto'))
                             <ul class="errors">
                                 @foreach ($errors->get('oggetto') as $message)
@@ -40,8 +40,8 @@
                             @endforeach
                         </select>
 
-                        {{ Form::label('modalitaFruizione', 'Modalità di fruizione') }}
-                        {{ Form::text('modalitaFruizione', '', ['id' => 'modalitaFruizione', 'required' => 'required']) }}
+                        {{ Form::label('modalitaFruizione', 'Modalità di fruizione', ['class' => 'label-input']) }}
+                        {{ Form::text('modalitaFruizione', '', ['class' => 'input', 'id' => 'modalitaFruizione', 'required' => 'required']) }}
                         @if ($errors->first('modalitaFruizione'))
                             <ul class="errors">
                                 @foreach ($errors->get('modalitaFruizione') as $message)
@@ -54,8 +54,8 @@
                 </div>
                 <div class="form-right">
                     <fieldset title="Inserisci dati offerta">
-                        {{ Form::label('luogoFruizione', 'Luogo di fruizione') }}
-                        {{ Form::text('luogoFruizione', '', ['id' => 'luogoFruizione', 'required' => 'required']) }}
+                        {{ Form::label('luogoFruizione', 'Luogo di fruizione', ['class' => 'label-input']) }}
+                        {{ Form::text('luogoFruizione', '', ['class' => 'input', 'id' => 'luogoFruizione', 'required' => 'required']) }}
                         @if ($errors->first('luogoFruizione'))
                             <ul class="errors">
                                 @foreach ($errors->get('luogoFruizione') as $message)
@@ -64,8 +64,8 @@
                             </ul>
                         @endif
 
-                        {{ Form::label('dataOraScadenza', 'Data e ora di scadenza') }}
-                        {{ Form::datetimeLocal('dataOraScadenza', '',['id' => 'dataOraScadenza', 'rules' => 'date_format:d-m-Y H:mm:ss', 'required' => 'required']) }}
+                        {{ Form::label('dataOraScadenza', 'Data e ora di scadenza', ['class' => 'label-input']) }}
+                        {{ Form::datetimeLocal('dataOraScadenza', '',['class' => 'input', 'id' => 'dataOraScadenza', 'rules' => 'date_format:d-m-Y H:mm:ss', 'required' => 'required']) }}
                         @if ($errors->first('dataOraScadenza'))
                             <ul class="errors">
                                 @foreach ($errors->get('dataOraScadenza') as $message)
@@ -75,7 +75,7 @@
                         @endif
 
                         <fieldset title="Carica immagini in formato .png o .jpeg">
-                        {{ Form::label('immagine','Immagine della offerta' ) }}
+                        {{ Form::label('immagine','Immagine della offerta', ['class' => 'label-input']) }}
                         {{ Form::file('immagine', array('required' => 'required')) }}
                         @if ($errors->first('immagine'))
                             <ul class="errors">
@@ -95,8 +95,7 @@
 
             {{ Form::submit('Inserisci questa nuova offerta', ['class' => 'btn'])}}
             {{ Form::close() }}
-            <br>
-            <br>
+            <div class="panel-buttons">
             <a class="btn btn-back" href="{{ route('gestioneOfferte') }}">Torna indietro</a>
         </div>
         </form>
