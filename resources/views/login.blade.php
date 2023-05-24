@@ -9,30 +9,48 @@
         <div class="form-box login">
             <h2>Login</h2>
             <!-- effettiva form di login -->
-            <form action="hubUtente" method="POST">
+            {{ Form::open(array('route' => 'login', 'class' => 'contact-form')) }}
+
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="person"></ion-icon>
                     </span>
-                    <input type="text" id="username" name="username" required>
-                    <label for="username">Username</label>
+                    {{ Form::label('username', 'Username', ['class' => 'label-input']) }}
+                    {{ Form::text('username', '', ['class' => 'input','id' => 'username']) }}
+                    @if ($errors->first('username'))
+                        <ul class="errors">
+                            @foreach ($errors->get('username') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
                 </div>
 
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="lock-open"></ion-icon>
                     </span>
-                    <input type="password" id="password" name="password" required>
-                    <label for="password">Password</label>
+                    {{ Form::label('password', 'Password', ['class' => 'label-input']) }}
+                    {{ Form::password('password', ['class' => 'input', 'id' => 'password']) }}
+                    @if ($errors->first('password'))
+                        <ul class="errors">
+                            @foreach ($errors->get('password') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
                 </div>
 
-                <button type="submit" class="btn">Login</button>
+            <div class="container-form-btn">
+                {{ Form::submit('Login', ['class' => 'btn']) }}
+            </div>
+
                 <div class="register">
                     <p>
                         Non hai un account?&nbsp;&nbsp;<b><a href="{{ route('registrazione') }}" class="register-link">Registrati</a></b>
                     </p>
                 </div>
-            </form>
+            {{ Form::close() }}
         </div>
     </div>
 

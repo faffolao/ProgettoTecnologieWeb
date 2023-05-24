@@ -4,9 +4,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StatsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
-//use Illuminate\Support\Facades\Auth;
-//use Illuminate\Support\Facades\Route;
 use App\Models\User;
 
 //per database
@@ -19,6 +16,7 @@ use App\Http\Controllers\CouponController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CatalogoController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,11 +74,32 @@ Route::view("/login", 'login')
     ->name("login");
 
 //Rotta per il POST del login
+/*
 Route::post("user", [UserAuth::class, 'userLogin']);
 // Rotta post login
 Route::view("/profile", 'profile')
     ->name("profile");
+*/
 
+
+
+
+
+Route::post('/login', array(AuthenticatedSessionController::class, 'store'))
+    ->middleware('guest');
+
+
+//Rotta di logout
+Route::get('/logout', function(){
+    Session::flush();
+    Auth::logout();
+    return redirect('/');
+});
+
+/*
+Route::post('/logout', [Logoutcontroller::class, 'destroy'])
+	->middleware('auth');
+*/
 
 /*
  * Route::get('/login', [
@@ -100,8 +119,13 @@ Route::view("/profile", 'profile')
  */
 
 // Rotta per il caricamento della pagina di registrazione.
+
 Route::view("/registrazione", 'registrazione')
     ->name("registrazione");
+// Rotta di registrazione
+Route::post('/registrazione', [RegistrationController::class, 'register'])
+    ->name('registrazione');
+
 
 // Rotta per il caricamento della pagina dei dettagli di un'offerta selezionata.
 Route::get("/dettagliOfferta/{id}", [OfferController::class, 'getDataDO'])
@@ -125,31 +149,9 @@ Route::view("/hubUtente", 'hubUtente')
 Route::view("/modificaDati_L1", 'modificaDati_L1')
     ->name("modificaDatiL1");
 
-// Rotta di registrazione
-Route::post('/registrazione', [RegistrationController::class, 'register'])
-    ->name('registrazione');
-
-/*
-Route::post('/registrazione', function(){
-    User::create([
-        'username' => request('username'),
-        'nome' => request('nome'),
-        'cognome' => request('cognome'),
-        'data_nascita' => request('data_nascita'),
-        'sesso' => request('sesso'),
-        'livello' => request('livello'),
-        'password' => request('password'),
-        'telefono' => request('telefono'),
-        'email' => request('email'),
-    ]);
-    return redirect('/login');
-});
-*/
-
 // Rotte per andare nella Home dopo il Login
 
 /*
-
 Route::post('/login', function () {
     $credentials = request(['username', 'password']);
     if (Auth::attempt($credentials)) {
@@ -166,6 +168,7 @@ Route::post('/login', function () {
         'username' => 'Le credenziali inserite non sono valide.',
     ])->withInput(request(['username']));
 });
+*/
 
 /* ??
  Route::get('/users/{username}', function ($username) {
@@ -177,7 +180,6 @@ Route::post('/login', function () {
     }
 });
 
- * /
 */
 
 /* --------------------------
@@ -348,3 +350,12 @@ Route::get('FAQsDB', [FAQController::class, 'getData']);
 Route::get('CouponsDB', [CouponController::class, 'getData']);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+/*
+
+Route::get('/', function () {
+    return ['Laravel' => app()->version()];
+});
+
+require __DIR__.'/auth.php';
+*/

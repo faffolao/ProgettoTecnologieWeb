@@ -34,10 +34,10 @@
                     @endif
 
                     {{ Form::label('eta', 'Data di nascita', ['class' => 'label-input']) }}
-                    {{ Form::date('eta', '', ['class' => 'input', 'id' => 'eta', 'rules' => 'date_format:d-m-Y', 'required' => 'required']) }}
-                    @if ($errors->first('cognome'))
+                    {{ Form::date('eta', '',['class' => 'input', 'id' => 'eta', 'rule' => 'date_format=d-m-Y', 'required' => 'required']) }}
+                    @if ($errors->first('eta'))
                         <ul class="errors">
-                            @foreach ($errors->get('data_nascita') as $message)
+                            @foreach ($errors->get('eta') as $message)
                                 <li>{{ $message }}</li>
                             @endforeach
                         </ul>
@@ -45,11 +45,11 @@
 
                     {{ Form::label('genere', 'Genere') }}
 
-                    {{ Form::radio('genere', 'maschio', true, ['style' => 'display:inline;']) }}
+                    {{ Form::radio('genere', 'M', true, ['style' => 'display:inline;']) }}
                     {{ Form::label('genere', 'Maschio', ['style' => 'display:inline;']) }}
-                    {{ Form::radio('genere', 'femmina', false, ['style' => 'display:inline;']) }}
+                    {{ Form::radio('genere', 'F', false, ['style' => 'display:inline;']) }}
                     {{ Form::label('genere', 'Femmina', ['style' => 'display:inline;']) }}
-                    {{ Form::radio('genere', 'altro', false, ['style' => 'display:inline;']) }}
+                    {{ Form::radio('genere', 'A', false, ['style' => 'display:inline;']) }}
                     {{ Form::label('genere', 'Altro', ['style' => 'display:inline;']) }}
                     @if ($errors->first('genere'))
                         <ul class="errors">

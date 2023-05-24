@@ -5,8 +5,11 @@
         <div class="panel">
             <div class="title-with-logo">
                 <img src="{{ asset('assets/images/customer_icon.png') }}" alt="Logo utente">
-                <h2>Benvenuto nell'Area personale</h2>
-{{--            <!--    <p> {{Auth::user() -> nome }} {{Auth::user() -> cognome }}</p>  -->--}}
+                @auth
+                    <h2>Benvenuto nell'Area personale, {{ Auth::user()->name }} {{ Auth::user()->surname }}</h2>
+                @else
+                    <h2>Benvenuto nell'Area personale</h2>
+                @endauth
             </div>
 
             <div class="panel-buttons">
@@ -16,7 +19,7 @@
                 <a href="#" class="btn">Visualizza i coupon utilizzati</a>
             </div>
             <div class="panel-buttons">
-                <a href="{{route('homepage')}}" class="btn btn-back">Logout</a>
+                <a href="{{route('logout')}}" class="btn btn-back">Logout</a>
             </div>
         </div>
     </div>
