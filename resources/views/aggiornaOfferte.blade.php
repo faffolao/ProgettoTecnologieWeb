@@ -6,6 +6,7 @@
             <h2>Aggiorna Offerte</h2>
             <br>
             {{ Form::open(array('url' => '/aggiornaOfferte/'.$dati['id'], 'class' => 'contact-form', 'method'=>'PUT', 'enctype' => 'multipart/form-data')) }}
+            @csrf
             {{--            <form class="form-insertFAQ" action={{url('/aggiornaOfferte/'.$dati['id'])}} method="POST" enctype="multipart/form-data">--}}
             {{--                @method('PUT')--}}
             <div class="form-row">
@@ -95,7 +96,7 @@
                             {{ Form::label('immagine','Immagine della offerta', ['class' => 'label-input']) }}
                             <p><em>Immagine attualmete selezionata:</em></p>
                             <img src="data:image/png/jpg/webp/jpeg/bin;base64,{{ base64_encode($dati['immagine']) }}" class="form-image-input-preview" alt="Immagine Offerta">
-                            {{ Form::file('immagine', array('required' => 'required')) }}
+                            {{ Form::file('immagine') }}
                             @if ($errors->first('immagine'))
                                 <ul class="errors">
                                     @foreach ($errors->get('immagine') as $message)

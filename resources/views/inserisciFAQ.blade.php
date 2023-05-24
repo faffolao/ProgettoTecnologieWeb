@@ -7,12 +7,28 @@
             <br>
             <form class="form-insertFAQ" action="{{ route('inserisciFAQ') }}" method="POST">
                 @csrf
-                <label for="domanda">Inserisci la domanda:</label>
-                <input type="text" id="domanda" name="domanda" placeholder="Domanda..." required>
-                <label for="risposta">Inserisci la risposta:</label>
-                <textarea type="text" id="risposta" name="risposta" placeholder="Risposta..." required></textarea>
-                <button class="btn" type="submit">Aggiungi domanda e risposta</button>
-            </form>
+                {{ Form::label('domanda', 'Domanda') }}
+                {{ Form::text('domanda', '', ['class' => 'input', 'id' => 'domanda', 'required' => 'required', 'placeholder' => 'Domanda...']) }}
+                @if ($errors->first('domanda'))
+                    <ul class="errors">
+                        @foreach ($errors->get('domanda') as $message)
+                            <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+
+                {{ Form::label('risposta', 'Risposta') }}
+                {{ Form::textArea('risposta', '', ['class' => 'input', 'id' => 'risposta', 'required' => 'required', 'placeholder' => 'Risposta...']) }}
+                @if ($errors->first('risposta'))
+                    <ul class="errors">
+                        @foreach ($errors->get('risposta') as $message)
+                            <li>{{ $message }}</li>
+                        @endforeach
+                    </ul>
+                @endif
+
+                {{ Form::submit('Aggiungi domanda e risposta', ['class' => 'btn'])}}
+                {{ Form::close() }}
             <div class="panel-buttons">
                 <a class="btn btn-back" href="{{ route('gestioneFAQ') }}">Torna indietro</a>
             </div>
