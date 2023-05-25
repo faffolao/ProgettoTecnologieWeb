@@ -33,7 +33,7 @@
                            <form class="delete-form" action="{{ route('eliminaClienti', $list['username']) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="delete-btn" onclick="return confirm('Sei sicuro di voler eliminare questa domanda?')">
+                                <button type="submit" class="btn-table-delete" onclick="return confirm('Sei sicuro di voler eliminare questa domanda?')">
                                     Elimina</button>
                             </form>
                         </td>

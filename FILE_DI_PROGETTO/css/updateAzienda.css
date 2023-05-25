@@ -113,7 +113,7 @@ tr:nth-child(even) {
     height: 20px;
 }
 
-.update-btn {
+.btn-table-update {
     background-color: rgb(238, 0, 255);
     color: #fff;
     border: none;
@@ -122,12 +122,12 @@ tr:nth-child(even) {
     border-radius: 25px;
 }
 
-.update-btn:hover{
+.btn-table-update:hover{
     background: #cccccc;
     color: black;
 }
 
-.delete-btn {
+.btn-table-delete {
     background-color: red;
     color: #fff;
     border: none;
@@ -136,7 +136,7 @@ tr:nth-child(even) {
     border-radius: 25px;
 }
 
-.delete-btn:hover{
+.btn-table-delete:hover{
     background: #cccccc;
     color: black;
 }

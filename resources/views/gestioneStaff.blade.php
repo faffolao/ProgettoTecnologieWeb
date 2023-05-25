@@ -41,12 +41,12 @@
                 @foreach($List as $list)
                     <tr>
                         <td>{{$list['username']}}</td>
-                        <td title="Clicca qui per AGGIORNARE il seguente membro Staff"><a class="update-btn" href="{{ route('aggiornaStaff', $list['username']) }}">Modifica</a></td>
+                        <td title="Clicca qui per AGGIORNARE il seguente membro Staff"><a class="btn-table-update" href="{{ route('aggiornaStaff', $list['username']) }}">Modifica</a></td>
                         <td title="Clicca qui per ELIMINARE il seguente membro dello Staff">
                             <form class="delete-form" action="{{ route('eliminaStaff', $list['username']) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="delete-btn" onclick="return confirm('Sei sicuro di voler eliminare questo membro dello Staff?')">
+                                <button type="submit" class="btn-table-delete" onclick="return confirm('Sei sicuro di voler eliminare questo membro dello Staff?')">
                                     Elimina</button>
                             </form>
                         </td>

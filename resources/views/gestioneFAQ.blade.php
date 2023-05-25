@@ -37,12 +37,12 @@
                         <td>{{$list['id']}}</td>
                         <td>{{$list['domanda']}}</td>
                         <td>{{$list['risposta']}}</td>
-                        <td title="Clicca qui per AGGIORNARE la seguente domanda/risposta"><a class="update-btn" href="{{ route('aggiornaFAQ', $list['id']) }}">Modifica</a></td>
+                        <td title="Clicca qui per AGGIORNARE la seguente domanda/risposta"><a class="btn-table-update" href="{{ route('aggiornaFAQ', $list['id']) }}">Modifica</a></td>
                         <td title="Clicca qui per ELIMINARE la seguente domanda/risposta">
                             <form class="delete-form" action="{{ route('eliminaFAQ', $list['id']) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="delete-btn" onclick="return confirm('Sei sicuro di voler eliminare questa domanda?')">
+                                <button type="submit" class="btn-table-delete" onclick="return confirm('Sei sicuro di voler eliminare questa domanda?')">
                                     Elimina</button>
                             </form>
                         </td>

@@ -74,7 +74,7 @@ main{
     height: 20px;
 }
 
-.tabella .update-btn {
+.tabella .btn-table-update {
     background-color: rgb(238, 0, 255);
     color: #fff;
     border: none;
@@ -83,12 +83,12 @@ main{
     border-radius: 25px;
 }
 
-.tabella .update-btn:hover{
+.tabella .btn-table-update:hover{
     background: #cccccc;
     color: black;
 }
 
-.tabella .delete-btn {
+.tabella .btn-table-delete {
     background-color: red;
     color: #fff;
     border: none;
@@ -97,7 +97,7 @@ main{
     border-radius: 25px;
 }
 
-.tabella .delete-btn:hover{
+.tabella .btn-table-delete:hover{
     background: #cccccc;
     color: black;
 }

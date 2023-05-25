@@ -129,7 +129,7 @@ tr:nth-child(even) {
     margin-bottom: 10px;
 }
 
-.delete-btn {
+.btn-table-delete {
     background-color: red;
     color: #fff;
     border: none;
@@ -138,7 +138,7 @@ tr:nth-child(even) {
     border-radius: 25px;
 }
 
-.delete-btn:hover{
+.btn-table-delete:hover{
     background: #cccccc;
     color: black;
 }

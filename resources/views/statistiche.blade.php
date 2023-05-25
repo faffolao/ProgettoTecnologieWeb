@@ -10,7 +10,7 @@
                 <div class="col">
                     <h2 class="col-title">Per promozione</h2>
 
-                    <div class="hint-container">
+                    <div class="callout">
                         <img src="{{ asset('assets/images/shop.jpg') }}" alt="Area contenente il numero di coupon emessi per ogni promozione">
                         <span id="promoCouponsNumber">Clicca su una promozione per conoscere il numero di coupon emessi per questa.</span>
                     </div>
@@ -37,7 +37,7 @@
                 <div class="col">
                     <h2 class="col-title">Per cliente</h2>
 
-                    <div class="hint-container">
+                    <div class="callout">
                         <img src="{{ asset('assets/images/customers.png') }}" width="30" alt="Area contenente il numero di coupon emessi da ogni cliente">
                         <span id="customerCouponsNumber">Clicca su un cliente per conoscere quanti coupon ha richiesto.</span>
                     </div>
