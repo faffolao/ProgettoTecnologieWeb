@@ -44,12 +44,12 @@
                     <tr>
                         <td>{{$list['id']}}</td>
                         <td>{{$list['nome']}}</td>
-                        <td title="Clicca qui per AGGIORNARE la seguente azienda"><a class="update-btn" href="{{ route('aggiornaAziende', $list['id']) }}">Modifica</a></td>
+                        <td title="Clicca qui per AGGIORNARE la seguente azienda"><a class="btn-table-update" href="{{ route('aggiornaAziende', $list['id']) }}">Modifica</a></td>
                         <td title="Clicca qui per ELIMINARE la seguente azienda">
                             <form class="delete-form" action="{{ route('eliminaAziende', $list['id']) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="delete-btn" onclick="return confirm('Sei sicuro di voler eliminare questa Azienda?')">
+                                <button type="submit" class="btn-table-delete" onclick="return confirm('Sei sicuro di voler eliminare questa Azienda?')">
                                     Elimina</button>
                             </form>
                         </td>

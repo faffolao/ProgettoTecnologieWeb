@@ -10,7 +10,7 @@
 //     });
 // });
 
-const deleteButtons = document.querySelectorAll('.delete-btn');
+const deleteButtons = document.querySelectorAll('.btn-table-delete');
 
 deleteButtons.forEach(button => {
 	button.addEventListener('click', function() {

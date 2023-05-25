@@ -1,5 +1,5 @@
 // Aggiungi un listener click su tutti i bottoni "Elimina"
-const deleteButtons = document.querySelectorAll('.delete-btn');
+const deleteButtons = document.querySelectorAll('.btn-table-delete');
 
 // deleteButtons.forEach(button => {
 // 	button.addEventListener('click', function() {

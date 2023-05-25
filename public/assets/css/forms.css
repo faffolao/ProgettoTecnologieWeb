@@ -138,6 +138,10 @@ input[type="radio"] {margin-bottom: 20px;}
     text-align: left;
 }
 
+/* contenitore che contiene un'immagine ottenuta dal server */
+.form-image-input-preview {max-height: 40%; max-width: 40%;}
+
+
 /*
     Form Alternative: contiene un contenuto che è alternativo a quello che il form chiede, ad esempio, azioni contrarie
     (es.: Register nel Login form, Login nel Register form).

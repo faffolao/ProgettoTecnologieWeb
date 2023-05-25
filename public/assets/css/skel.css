@@ -61,109 +61,10 @@ nav ul li:last-child {margin-right: 0;}
 nav ul li a       {color: #fff; text-decoration: none; font-size: 1.1em;}
 nav ul li a:hover {text-decoration: underline;}
 
-
-
-
-
-/*---------------------------------------------------
- | Tabella per la gestione delle F.A.Q./utente/staff
------------------------------------------------------*/
-
-.tabella {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.insert-element-table .insert-element-desc {text-align: center; font-weight: bold;}
-.insert-element-table .insert-element-btn-container {text-align: left;}
-
-.tabella th, td {
-    text-align: left;
-    padding: 8px;
-}
-
-.tabella th {
-    background-color: #ddd;
-}
-
-.tabella tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.tabella .checkbox {
-    width: 20px;
-    height: 20px;
-}
-
-.tabella .update-btn {
-    background-color: rgb(238, 0, 255);
-    color: #fff;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: .86em;
-}
-
-.tabella .update-btn:hover {
-    background: #cccccc;
-    color: black;
-}
-
-.tabella .delete-btn {
-    background-color: red;
-    color: #fff;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
-    border-radius: 25px;
-}
-
-.tabella .delete-btn:hover {
-    background: #cccccc;
-    color: black;
-}
-
-.btn-back {
-    /*height: 45px;*/
-    cursor: pointer;
-    background-color: #d30000;
-    text-align: center;
-}
-
-.btn-FAQ {
-    font-size: 1em;
-    padding: 8px 20px;
-    border-radius: 25px;
-}
-
-.form-insertFAQ label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-insertFAQ textarea {
-    display: block;
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-weight: bold;
-    font-size: .9em;
-    max-width: 100%;
-    min-width: 100%;
-    min-height: 100px;
-}
-
-/*-----------------------
- | Footer (pie di pagina)
--------------------------*/
-
-/* Il footer è composto da due colonne disposte in orizzontale: per una visualizzazione ottimale
-utilizzo la proprietà flex e allineo verticalmente gli elementi contenuti nelle due colonne al centro. */
+/*
+    Footer: piè di pagina, è composto da due colonne disposte in orizzontale: per una visualizzazione ottimale
+    utilizzo la proprietà flex e allineo verticalmente gli elementi contenuti nelle due colonne al centro.
+*/
 footer {
     background-color: #333;
     color: #fff;
@@ -180,60 +81,7 @@ verso sinistra, in modo tale che queste vengono inserite orizzontalmente all'int
     padding: 5px 0;
 }
 
-/* Proprietà utilitaria che imposta l'allineamento del testo del tag a cui è applicata a destra. */
+/*
+    Text Right: Proprietà utilitaria che imposta l'allineamento del testo del tag a cui è applicata a destra.
+*/
 .text-right {text-align: right;}
-
-/* Proprietà grafiche dei link del contatto telefonico. Sono contenute anche le prorpietà grafiche dell'icona del telefono
-(se presente).
-La proprietà vertical-align indica l'allineamento in verticale che l'immagine deve avere rispetto al testo che la segue. */
-.phone-link     {color: white; text-decoration: none;}
-.phone-link img {width: 20px; vertical-align: middle; color: white;}
-
-.pagination {
-    margin-top: 20px;
-    text-align: center;
-}
-.paginator-icon {width: 25px; vertical-align: bottom; margin: 0 5px;}
-/* serve per risolvere un bug che comportava la sottolineatura non volontaria delle immagini */
-.pagination a {text-decoration: none;}
-.search-container-aside h2 {text-align: left; font-size: 20px; margin-bottom: 12px;}
-
-.active-filters-container {
-    margin-top: 25px;
-    text-align: center;
-}
-
-.open-search-area {
-    width: 70px; margin-bottom: 20px;
-}
-
-
-.two-cols-layout {
-    display: flex;
-    justify-content: center;
-    margin: 30px 0;
-}
-.col {float: left; width: 50%; padding: 0 20px;}
-.col-title {font-size: 20px !important;}
-.hint-container {
-    padding: 20px;
-    background-color: #ded9d4;
-    border-radius: 12px;
-    text-align: left;
-    margin: 17px 0;
-}
-.hint-container img {vertical-align: bottom; width: 25px; margin-right: 10px;}
-.list-item {
-    display: block;
-    text-align: left;
-    width: 100%;
-    padding: 10px 0;
-    margin: 4px 0;
-    color: black;
-    text-decoration: none;
-}
-.list-item:hover {background-color: #ded9d4;}
-
-#catalog-search-form {display: none;}
-
-.form-image-input-preview {max-height: 40%; max-width: 40%;}
