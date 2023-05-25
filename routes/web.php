@@ -104,7 +104,7 @@ Route::get("/coupon/{id}", [CouponController::class, 'getDataNO'])
 
 // Rotta per accedere all'area personale di un Cliente (utente di livello 1).
 Route::view("/hubUtente", 'hubUtente')
- //   ->middleware('auth')
+    ->middleware('auth')
     ->name("hubUtente");
 
 
