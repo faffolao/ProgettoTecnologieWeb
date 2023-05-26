@@ -13,9 +13,14 @@
             <div class="panel-buttons">
                 <a href="{{route('gestioneOfferte')}}" class="btn">Gestione offerte</a>
             </div>
-            <div class="panel-buttons">
+        {{--    <div class="panel-buttons">
                 <a href="{{route('logout')}}" class="btn btn-back">Logout</a>
             </div>
+        --}}
+            <a href="" class="btn btn-back" title="Esci dal sito" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
         </div>
     </div>
 @endsection
