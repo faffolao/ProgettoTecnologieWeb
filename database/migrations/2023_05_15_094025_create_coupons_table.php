@@ -22,6 +22,10 @@ return new class extends Migration
             $table->string('usernameCliente', 30);
             $table->bigInteger('idOfferta')->unsigned();
 
+            // creo lo unique index che mi permette di avere tuple usernameCliente - idOfferta sempre diverse
+            // per evitare che lo stesso cliente riprenda la stessa offerta più volte
+            $table->unique(['usernameCliente', 'idOfferta']);
+
             // inserisco come data di default la data corrente, nel caso questo valore non dovesse essere riempito
             $table->dateTime('dataOraCreazione')->default(DB::raw('CURRENT_TIMESTAMP'));
 

@@ -112,6 +112,9 @@
 /* elementi della lista di toggle */
 .toggle-list-mini li           {margin: 20px 0;}
 
+/* questo testo viene messo prima dei toggle list per spiegare il funzionamento dei toggle list */
+.toggle-list-hint {margin-bottom: 20px; font-style: italic;}
+
 /* elemento toggle (si può aprire e chiudere) */
 .toggle-list-mini .toggle      {font-size: 1.2rem; font-weight: bold; cursor: pointer;}
 .toggle-list-mini h2           {font-size: 2rem;}

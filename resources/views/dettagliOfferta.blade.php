@@ -11,6 +11,7 @@
             </div>
 
             <div class="toggle-list">
+                <p class="toggle-list-hint">Clicca sui titoli per espandere i contenitori dei dettagli</p>
                 <ul>
                     <li class="toggle" title="Clicca qui per aprire la descrizione dell'offerta"><h2>Descrizione</h2>
                         <ul class="sub-list hidden">
