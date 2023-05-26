@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
 class UserController extends Controller
@@ -83,7 +85,7 @@ class UserController extends Controller
         $user['nome'] = $request->input('nome');
         $user['cognome'] = $request->input('cognome');
         $user['eta'] = $request->input('eta');
-        $user['password'] = $request->input('password');
+        $user['password'] = Hash::make($request->input('password'));
         $user['email'] = $request->input('email');
         $user['telefono'] = $request->input('telefono');
         $user['genere'] = $request->input('genere');
@@ -103,7 +105,7 @@ class UserController extends Controller
         // Validazione dei dati inviati dalla form di registrazione
         $request->validate([
             'username' => ['required','string', 'max:30',
-                Rule::unique('utenti')],
+                Rule::unique('utenti')->ignore($username, 'username')],
             'nome' => ['required','string','max:20'],
             'cognome' => ['required','string','max:20'],
             'eta' => ['required'],
@@ -136,7 +138,7 @@ class UserController extends Controller
                     'nome'=>$request->input('nome'),
                     'cognome'=>$request->input('cognome'),
                     'eta'=>$request->input('eta'),
-                    'password'=>$request->input('password'),
+                    'password'=>Hash::make($request->input('password')),
                     'email'=>$request->input('email'),
                     'telefono'=>$request->input('telefono'),
                     'genere'=>$request->input('genere')
