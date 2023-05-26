@@ -58,6 +58,7 @@ Route::get("/coupon/{id}", [CouponController::class, 'getDataNO'])
 
 // Rotta per accedere all'area personale del cliente.
 Route::view("/hubUtente", 'hubUtente')
+    ->middleware('auth')
     ->name("hubUtente");
 
 // Rotta per accedere alla modifica dei dati personali (livello 1).
