@@ -75,7 +75,8 @@ class FactoryController extends Controller
             'nome' => ['required','string','max:40', 'unique:aziende'],
             'tipologia' => ['required','string','max:30'],
             'descrizione' => ['required','string'],
-            'ragioneSociale' => ['string','max:50']
+            'ragioneSociale' => ['required', 'string','max:50'],
+            'logo' => ['required', 'file', 'mimes:png,jpg,jpeg,bin']
         ]);
 
         $factory = new Factory();
@@ -106,7 +107,7 @@ class FactoryController extends Controller
                 Rule::unique('aziende')->ignore($id)],
             'tipologia' => ['required','string','max:30'],
             'descrizione' => ['required','string'],
-            'ragioneSociale' => ['string','max:50']
+            'ragioneSociale' => ['required', 'string','max:50']
         ]);
 
         if (!$request->file('logo'))
