@@ -9,8 +9,6 @@ use App\Models\Factory;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
-define("NUM_PAGES", 12);
-
 class FactoryController extends Controller
 {
     // C = Catalogo
@@ -25,7 +23,7 @@ class FactoryController extends Controller
     // A = Aziende
     function getDataA()
     {
-        $data = Factory::paginate(NUM_PAGES);
+        $data = Factory::paginate(12);
         return view('aziende', ['Aziende'=>$data]);
     }
 
@@ -40,7 +38,7 @@ class FactoryController extends Controller
     public function getDataBR(Request $request)
     {
         $query = $request->input('query');
-        $dataNO = Factory::where('nome', 'LIKE', '%' .$query. '%')->paginate(NUM_PAGES);
+        $dataNO = Factory::where('nome', 'LIKE', '%' .$query. '%')->paginate(12);
         return view('aziende', ['Aziende' => $dataNO, 'searchQuery' => $query]);
     }
 

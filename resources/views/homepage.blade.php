@@ -27,7 +27,6 @@
                 <div class="card">
                     <img src="data:image/png/jpg/webp/jpeg;base64,{{ base64_encode($aziende['logo']) }}" alt="Service Image" class="logo-azienda">
                     <a class="card-title-link" href="{{ route('dettagliAzienda', $aziende['nome']) }}">{{$aziende['nome']}}</a>
-                    {{--                    <a class="card-title-link" href="{{ route('dettagliAzienda') }}">{{$aziende['nome']}}</a>--}}
                 </div>
             @endforeach
         </div>
@@ -51,6 +50,5 @@
         </p>
     </div>
 
-    <script type="text/javascript" src="{{ asset('assets/js/homepage.js') }}"></script>
     <script type="text/javascript" src="{{ asset('assets/js/faq_viewer.js') }}"></script>
 @endsection
