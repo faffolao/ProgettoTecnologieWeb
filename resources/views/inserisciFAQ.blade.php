@@ -1,5 +1,7 @@
 @extends('layouts.skel')
 
+@section('title', 'Inserimento nuova F.A.Q.')
+
 @section('content')
     <div class="container">
         <div class="panel">

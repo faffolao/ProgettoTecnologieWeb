@@ -1,5 +1,7 @@
 @extends('layouts.skel')
 
+@section('title', 'Modifica azienda')
+
 @section('content')
     <div class="wrapper">
         <div class="form-box form-box-inputdialog">

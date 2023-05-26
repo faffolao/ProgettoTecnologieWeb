@@ -1,5 +1,7 @@
 @extends('layouts.skel')
 
+@section('title', 'Lista dei coupon usati')
+
 @section('content')
     <div class="container">
         <div class="panel">

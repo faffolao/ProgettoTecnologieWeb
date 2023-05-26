@@ -1,5 +1,7 @@
 @extends('layouts.skel')
 
+@section('title', 'Gestione delle offerte')
+
 @section('content')
     <div class="container">
         <div class="panel">
