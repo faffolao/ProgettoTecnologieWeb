@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Offer;
 use Illuminate\Http\Request;
 
-define("NUM_PAGES", 9);
-
 class CatalogoController extends Controller
 {
     // BR = Barra Ricerca
