@@ -19,7 +19,10 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/forms.css') }}">
 
     <!-- importazione jQuery tramite CDN (Content Delivery Network) -->
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <!-- NOTA - gli attributi integrity e crossorigin servono per certificare l'autenticità del file inviato dal CDN -->
+    <!-- e quindi per dimostrare che è completamente originale e non è stato compromesso da terzi -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"></script>
 </head>
 
 <body>
