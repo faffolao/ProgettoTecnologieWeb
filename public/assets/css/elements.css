@@ -112,6 +112,9 @@
 /* elementi della lista di toggle */
 .toggle-list-mini li           {margin: 20px 0;}
 
+/* questo testo viene messo prima dei toggle list per spiegare il funzionamento dei toggle list */
+.toggle-list-hint {margin-bottom: 20px; font-style: italic;}
+
 /* elemento toggle (si può aprire e chiudere) */
 .toggle-list-mini .toggle      {font-size: 1.2rem; font-weight: bold; cursor: pointer;}
 .toggle-list-mini h2           {font-size: 2rem;}
@@ -192,8 +195,8 @@
     justify-content: left;
     align-items: center;
 }
-.title-with-logo img     {max-width: 125px;}
-.title-with-logo h1, h2  {margin-left: 25px; font-size: 28px;}
+.title-with-logo img                      {max-width: 125px;}
+.title-with-logo h1, .title-with-logo h2  {margin-left: 25px; font-size: 28px;}
 
 /*
     Tabelle: stile grafico delle tabelle presenti nel sito web.

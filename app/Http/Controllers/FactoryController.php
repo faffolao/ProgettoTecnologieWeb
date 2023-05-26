@@ -75,6 +75,7 @@ class FactoryController extends Controller
             'nome' => ['required','string','max:40', 'unique:aziende'],
             'tipologia' => ['required','string','max:30'],
             'descrizione' => ['required','string'],
+            'localizzazione' => ['required','string'],
             'ragioneSociale' => ['required', 'string','max:50'],
             'logo' => ['required', 'file', 'mimes:png,jpg,jpeg,bin']
         ]);
@@ -86,6 +87,7 @@ class FactoryController extends Controller
         $factory['nome'] = $request->input('nome');
         $factory['tipologia'] = $request->input('tipologia');
         $factory['descrizione'] = $request->input('descrizione');
+        $factory['localizzazione'] = $request->input('localizzazione');
         $factory['logo'] = $logo;
         $factory['ragioneSociale'] = $request->input('ragioneSociale');
         $factory['managerUsername'] = $admin['username'];
@@ -117,7 +119,8 @@ class FactoryController extends Controller
                     'nome'=>$request->input('nome'),
                     'descrizione'=>$request->input('descrizione'),
                     'tipologia'=>$request->input('tipologia'),
-                    'ragioneSociale'=>$request->input('ragioneSociale')
+                    'ragioneSociale'=>$request->input('ragioneSociale'),
+                    'localizzazione' => $request->input('localizzazione')
                 ]);
         } else
         {
@@ -135,6 +138,7 @@ class FactoryController extends Controller
                     'descrizione'=>$request->input('descrizione'),
                     'tipologia'=>$request->input('tipologia'),
                     'ragioneSociale'=>$request->input('ragioneSociale'),
+                    'localizzazione' => $request->input('localizzazione'),
                     'logo'=>$logo
                 ]);
         }

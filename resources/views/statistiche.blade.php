@@ -1,4 +1,5 @@
 @extends('layouts.skel')
+
 @section('title', 'Statistiche del sito')
 
 @section('content')

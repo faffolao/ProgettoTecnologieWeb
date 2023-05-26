@@ -1,4 +1,5 @@
 @extends('layouts.skel')
+
 @section('title', 'Cancellazione clienti')
 
 @section('content')

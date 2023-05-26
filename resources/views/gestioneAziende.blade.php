@@ -1,9 +1,11 @@
 @extends('layouts.skel')
 
+@section('title', 'Gestione aziende')
+
 @section('content')
     <div class="container">
         <div class="panel">
-            <h2>Gestione Azienda</h2>
+            <h2>Gestione Aziende</h2>
 
             <div class="search-container">
                 <form id="search-form" method="POST" action="{{ route('gestioneAziende') }}">

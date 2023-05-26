@@ -1,5 +1,7 @@
 @extends('layouts.skel')
 
+@section('title', 'Gestione dello staff')
+
 @section('content')
     <div class="container">
         <div class="panel">
@@ -26,6 +28,7 @@
                 </tr>
                 </tbody>
             </table>
+
             <br>
             <br>
             <table class="tabella">

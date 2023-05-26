@@ -1,5 +1,7 @@
 @extends('layouts.skel')
 
+@section('title', 'Inserimento nuova azienda')
+
 @section('content')
     <div class="wrapper">
         <!-- box che contiene la form di login -->
@@ -47,6 +49,16 @@
                     @if ($errors->first('tipologia'))
                         <ul class="errors">
                             @foreach ($errors->get('tipologia') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+
+                    {{ Form::label('localizzazione', 'Dove si trova', ['class' => 'label-input']) }}
+                    {{ Form::textarea('localizzazione', '', ['class' => 'input', 'id' => 'tipologia', 'required' => 'required']) }}
+                    @if ($errors->first('localizzazione'))
+                        <ul class="errors">
+                            @foreach ($errors->get('localizazione') as $message)
                                 <li>{{ $message }}</li>
                             @endforeach
                         </ul>

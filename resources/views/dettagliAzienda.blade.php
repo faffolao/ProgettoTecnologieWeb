@@ -11,6 +11,7 @@
             </div>
 
             <div class="toggle-list">
+                <p class="toggle-list-hint">Clicca sui titoli per espandere i contenitori dei dettagli</p>
                 <ul>
                     <li class="toggle" title="Clicca qui per saperne di più!"><h2>Descrizione</h2>
                         <ul class="sub-list hidden">
@@ -25,6 +26,11 @@
                     <li class="toggle" title="Clicca qui per saperne di più!"><h2>Ragione Sociale</h2>
                         <ul class="sub-list hidden">
                             <li><p>{{$tuple['ragioneSociale']}}</p></li>
+                        </ul>
+                    </li>
+                    <li class="toggle" title="Clicca qui per saperne di più!"><h2>Dove si trova</h2>
+                        <ul class="sub-list hidden">
+                            <li><p>{{$tuple['localizzazione']}}</p></li>
                         </ul>
                     </li>
                 </ul>

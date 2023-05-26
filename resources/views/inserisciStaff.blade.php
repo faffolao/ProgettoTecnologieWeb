@@ -1,5 +1,7 @@
 @extends('layouts.skel')
 
+@section('title', 'Inserimento nuovo F.A.Q.')
+
 @section('content')
     <div class="wrapper">
         <!-- box che contiene la form di login -->
