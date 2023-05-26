@@ -10,7 +10,20 @@
             <li><a href="{{ route('homepage') }}">Home</a></li>
             <li><a href="{{ route('aziende') }}">Aziende</a></li>
             <li><a href="{{ route('catalogo') }}">Catalogo</a></li>
-            <li><a href="{{ route('login') }}">Login</a></li>
+            @guest
+                <li><a href="{{ route('login') }}">Login</a></li>
+            @endguest
+            @auth
+                @if (auth()->user()->livello == 1)
+                    <li><a href="{{route('hubUtente')}}">Area Personale</a></li>
+                @endif
+                @if (auth()->user()->livello == 2)
+                    <li><a href="{{route('hubStaff')}}">Area Personale</a></li>
+                @endif
+                @if (auth()->user()->livello == 3)
+                    <li><a href="{{route('hubAmministratore')}}">Area Personale</a></li>
+                @endif
+            @endauth
         </ul>
     </div>
 </nav>
