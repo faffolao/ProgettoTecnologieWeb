@@ -1,9 +1,11 @@
 @extends('layouts.skel')
 
+@section('title', 'Lista dei coupon usati')
+
 @section('content')
     <div class="container">
         <div class="panel">
-            <h2>Lista coupo utilizzati</h2>
+            <h2>Lista coupon utilizzati</h2>
 
             <div class="search-container">
                 <form id="search-form" method="POST" action="{{ route('listaCouponUsati') }}">
@@ -15,7 +17,7 @@
                     </div>
                 </form>
             </div>
-            <br>
+
             <br>
             <table class="tabella">
                 <thead>

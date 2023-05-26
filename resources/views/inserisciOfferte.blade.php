@@ -1,5 +1,7 @@
 @extends('layouts.skel')
 
+@section('title', 'Inserimento nuova offerta')
+
 @section('content')
     <!-- il wrapper è il contenitore -->
     <div class="wrapper">

@@ -1,4 +1,5 @@
 @extends('layouts.skel')
+
 @section('title', 'Gestione delle F.A.Q.')
 
 @section('content')
