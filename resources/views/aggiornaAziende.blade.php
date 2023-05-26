@@ -53,6 +53,16 @@
                         </ul>
                     @endif
 
+                    {{ Form::label('localizzazione', 'Dove si trova', ['class' => 'label-input']) }}
+                    {{ Form::textarea('localizzazione', $dati['localizzazione'], ['class' => 'input', 'id' => 'tipologia', 'required' => 'required']) }}
+                    @if ($errors->first('localizzazione'))
+                        <ul class="errors">
+                            @foreach ($errors->get('localizazione') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+
                     {{ Form::label('logo','Logo di questa azienda' ) }}
                     <p><em>Logo attualmete selezionato:</em></p>
                     <img src="data:image/png/jpg/webp/jpeg/bin;base64,{{ base64_encode($dati['logo']) }}" class="form-image-input-preview" alt="Logo Azienda">

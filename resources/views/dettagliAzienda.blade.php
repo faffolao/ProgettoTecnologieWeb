@@ -30,7 +30,7 @@
                     </li>
                     <li class="toggle" title="Clicca qui per saperne di più!"><h2>Dove si trova</h2>
                         <ul class="sub-list hidden">
-                            <li><p>{{$tuple['ragioneSociale']}}</p></li>
+                            <li><p>{{$tuple['localizzazione']}}</p></li>
                         </ul>
                     </li>
                 </ul>

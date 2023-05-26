@@ -54,6 +54,16 @@
                         </ul>
                     @endif
 
+                    {{ Form::label('localizzazione', 'Dove si trova', ['class' => 'label-input']) }}
+                    {{ Form::textarea('localizzazione', '', ['class' => 'input', 'id' => 'tipologia', 'required' => 'required']) }}
+                    @if ($errors->first('localizzazione'))
+                        <ul class="errors">
+                            @foreach ($errors->get('localizazione') as $message)
+                                <li>{{ $message }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
+
                     {{ Form::label('logo','Logo di questa azienda' ) }}
                     {{ Form::file('logo', array('required' => 'required')) }}
                     @if ($errors->first('logo'))
