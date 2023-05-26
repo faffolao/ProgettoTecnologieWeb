@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Factory;
 use Illuminate\Http\Request;
 use App\Models\Offer;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Validation\Rule;
 
 class OfferController extends Controller
@@ -50,6 +51,7 @@ class OfferController extends Controller
         //Controlla se i campi sono stati compilati correttamente
         $request->validate([
             'nome' => ['required','string','max:70', 'unique:offerte'],
+            'dataOraScadenza' => ['required', 'after:'.Date::now()],
             'immagine' => ['required','file','mimes:jpg,jpeg,png,bin']
         ]);
 
@@ -94,7 +96,8 @@ class OfferController extends Controller
         //Controlla se i campi sono stati compilati correttamente
         $request->validate([
             'nome' => ['required','string','max:70',
-                Rule::unique('offerte')->ignore($id)]
+                Rule::unique('offerte')->ignore($id)],
+            'dataOraScadenza' => ['required', 'after:'.Date::now()]
         ]);
 
         if (!$request->file('immagine'))
