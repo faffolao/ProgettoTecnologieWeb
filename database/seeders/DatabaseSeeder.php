@@ -58,7 +58,8 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Just Eat',
                 'ragioneSociale' => 'Just Eat',
                 'logo' => $justEatLogo,
-                'tipologia' => 'Cibo e Ristorazione'
+                'tipologia' => 'Cibo e Ristorazione',
+                'localizzazione' => 'Via Cesare Battisti N°13'
             ],
             [
                 'id' => NULL,
@@ -69,7 +70,8 @@ class DatabaseSeeder extends Seeder
                 'nome' => 'Huawei',
                 'ragioneSociale' => 'Huawei Tecnologies Corporation, Limited',
                 'logo' => $huaweiLogo,
-                'tipologia' => 'Informatica'
+                'tipologia' => 'Informatica',
+                'localizzazione' => 'Via Napoleone Battaglia N°69'
             ]
         ]);
 

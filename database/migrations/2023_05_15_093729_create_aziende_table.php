@@ -20,6 +20,7 @@ return new class extends Migration
 
             $table->string('managerUsername', 30); // foreign key -> punta a Utenti(username)
             $table->text('descrizione');
+            $table->text('localizzazione');
             $table->string('nome', 40)->unique();
             $table->string('ragioneSociale', 50)->unique();
             $table->string('tipologia', 30);
