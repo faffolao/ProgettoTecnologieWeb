@@ -28,15 +28,15 @@ class AuthServiceProvider extends ServiceProvider
         //Gate per definire i permessi di Clienti, Staff e Amministratore
 
         Gate::define('isUser', function($user) {
-            return $user->Livello == 1;
+            return $user->livello == 1;
         });
 
         Gate::define('isStaff', function($user) {
-            return $user->Livello == 2;
+            return $user->livello == 2;
         });
 
         Gate::define('isAdmin', function($user) {
-            return $user->Livello == 3;
+            return $user->livello == 3;
         });
 
     }
