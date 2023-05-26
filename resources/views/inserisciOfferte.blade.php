@@ -33,13 +33,16 @@
                             </ul>
                         @endif
 
-                        <label title="ATTENZIONE SELEZIONARE QUESTO CAMPO ALMENO UNA VOLTA ALTRIMENTI INSERIRÀ LA PRIMA AZIENDA DISPONIBILE!!!" for="idAzienda">Azienda</label>
-                        <select id="idAzienda" name="idAzienda" required>
-                            <option value="NULL">seleziona</option>
-                            @foreach($ListaNomi as $listaNomi)
-                                <option value="{{ $listaNomi['nome'] }}">{{$listaNomi['id']}}: {{ $listaNomi['nome'] }}</option>
-                            @endforeach
-                        </select>
+                        <fieldset title="ATTENZIONE SE NON SELEZIONATA VERRÀ INSERITA LA PRIMA AZIENDA DISPONIBILE">
+                            <label for="idAzienda">Azienda</label>
+                            <p><em>Se non selezionato verrà inserita la prima azienda registrata</em></p>
+                            <select id="idAzienda" name="idAzienda" required>
+                                <option value="NULL">seleziona</option>
+                                @foreach($ListaNomi as $listaNomi)
+                                    <option value="{{ $listaNomi['nome'] }}">{{$listaNomi['id']}}: {{ $listaNomi['nome'] }}</option>
+                                @endforeach
+                            </select>
+                        </fieldset>
 
                         {{ Form::label('modalitaFruizione', 'Modalità di fruizione', ['class' => 'label-input']) }}
                         {{ Form::text('modalitaFruizione', '', ['class' => 'input', 'id' => 'modalitaFruizione', 'required' => 'required']) }}
