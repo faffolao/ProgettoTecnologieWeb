@@ -3,8 +3,8 @@
 @section('title', 'Modifica dati personali del cliente')
 
 @section('content')
-    <div class="wrapper">
-        <div class="form-box form-box-inputdialog login">
+    <div class="wrapper wrapper-register">
+        <div class="form-box form-box-inputdialog">
             <h2>Modifica dati personali</h2>
             <br>
             <form class="form-insertFAQ">

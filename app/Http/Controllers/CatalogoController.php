@@ -38,7 +38,7 @@ class CatalogoController extends Controller
             $viewData["OfferQuery"] = $offerQuery;
         }
 
-        $offerList = $dbQuery->where('dataOraScadenza', '>', now())->paginate(NUM_PAGES);
+        $offerList = $dbQuery->where('dataOraScadenza', '>', now())->paginate(9);
         $viewData["Offerte"] = $offerList;
 
         return view("catalogo", $viewData);
