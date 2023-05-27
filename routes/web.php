@@ -55,8 +55,14 @@ Route::get("/dettagliOfferta/{id}", [OfferController::class, 'getDataDO'])
 Route::group(['middleware' => 'can:isUser'], function() {  //vincolo la funzionalità delle seguenti rotte
                                                            //ai soli utenti di livello 1
     // Rotta per mostrare la pagina stampabile del coupon.
-    Route::get("/coupon/{id}", [CouponController::class, 'getDataNO'])
+    // getDataNOU == get data Offerta & Cliente
+    Route::get("/coupon/{idOfferta}/{usernameCliente}", [CouponController::class, 'getDataOC'])
         ->name("coupon");
+    // Rotta per il salvataggio del coupon nel DB
+    Route::post("/inserisciCoupon/{idOfferta}/{usernameCliente}", [CouponController::class, 'saveDataC']);
+
+    Route::post('/inserisciCoupon/', [CouponController::class, 'saveData'])
+        ->name('inserisciCoupon');
 
     // Rotta per accedere all'area personale del cliente.
     Route::view("/hubUtente", 'hubUtente')
@@ -67,10 +73,10 @@ Route::group(['middleware' => 'can:isUser'], function() {  //vincolo la funziona
         ->name("modificaDatiL1");
 
     // Rotta che ti fa visualizzare i coupon utilizzati
-    Route::get("/listaCouponUsati", [CouponController::class, 'getDataLCU'])
+    Route::get("/listaCouponUsati/{usernameCliente}", [CouponController::class, 'getDataLCU'])
         ->name("listaCouponUsati");
     // Rotta per ricercare i coupon
-    Route::post('/listaCouponUsati', [CouponController::class, 'getDataBRCU']);
+    Route::post('/listaCouponUsati/{usernameCliente}', [CouponController::class, 'getDataBRCU']);
 
 });
 

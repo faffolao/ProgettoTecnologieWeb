@@ -34,7 +34,6 @@ class AuthenticatedSessionController extends Controller {
         /**
          * Redirezione su diverse Home Page in base alla classe d'utenza.
          */
-
         $livello = auth()->user()->livello;
         switch ($livello) {
             case '1': return redirect()->route('hubUtente');

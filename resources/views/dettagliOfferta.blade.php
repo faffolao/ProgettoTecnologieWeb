@@ -43,7 +43,23 @@
 
             <div class="panel-buttons">
                 <a class="btn" href="{{ route('catalogo') }}">Torna indietro</a>
-                <a class="btn" href="{{ url('/coupon/'.$tuple['id']) }}">Genera Coupon</a> <br>
+                @if(isset(Auth::user()->livello))
+                    @if(Auth::user()->livello==1)
+                        <a {{--id="saveData"--}} class="btn" onclick="event.preventDefault(); document.getElementById('save-cp').submit();" href="">Genera Coupon</a> <br>
+                        <form id="save-cp" action="{{ url('/inserisciCoupon/'.$tuple['id'].'/'.Auth::user()->username) }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    @else
+                        <a {{--id="saveData"--}} class="btn" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="{{ route('login') }}">Accedi come cliente</a> <br>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    @endif
+                @else
+                    <a {{--id="saveData"--}} class="btn" href="{{ route('login') }}">Effettua il login</a> <br>
+
+                @endif
+
             </div>
         </div>
     </div>

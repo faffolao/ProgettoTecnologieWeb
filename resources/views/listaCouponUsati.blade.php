@@ -8,7 +8,7 @@
             <h2>Lista coupon utilizzati</h2>
 
             <div class="search-container">
-                <form id="search-form" method="POST" action="{{ route('listaCouponUsati') }}">
+                <form id="search-form" method="POST" action="{{ route('listaCouponUsati', Auth::user()->username ) }}">
                     @csrf
                     <div class="search-wrapper">
                         <!-- l'evento onkeyup viene attivato quando viene premuto un tasto qualsiasi della tastiera quando ho il focus sull'input -->
@@ -39,7 +39,13 @@
                         <td>{{$list['nomeAziende']}}</td>
                         <td>{{$list['dataOraCreazione']}}</td>
                         <td>{{$list['dataOraScadenza']}}</td>
-                        <td>{{$list['codice']}}</td>
+                        <td>
+                            <a onclick="event.preventDefault(); document.getElementById('save-cp').submit();" href="">{{$list['codice']}}</a>
+                            <form id="save-cp" action="{{ url('/inserisciCoupon/'.$list['idOfferte'].'/'.Auth::user()->username) }}" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
+                        </td>
+                        {{--                        <td>{{$list['codice']}}</td>--}}
                     </tr>
                 @endforeach
                 </tbody>

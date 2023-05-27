@@ -42,10 +42,11 @@
         <h1>{{$tuple['nome']}}</h1>
 
         <img src="https://api.qrserver.com/v1/create-qr-code/?data=IY7FSDYKI3CWUTKFKG" alt="Codice QR del coupon" width="200px">
-        <h2>Codice alfanumerico: <span id="codice-generato"></span></h2>
+        <h2>Codice alfanumerico: {{--<span id="codice-generato"></span>--}} {{$datiCoupon['codice']}}</h2>
 
-        <h2>Data: <?php echo date('d/m/Y'); ?></h2>
-        <h2>Nome: Nome Cognome</h2>
+        <h2>Data Creazione:{{--<?php echo date('d/m/Y'); ?>--}} {{$datiCoupon['dataOraCreazione']}}</h2>
+        <h2>Data Scadenza:{{--<?php echo date('d/m/Y'); ?>--}} {{$tuple['dataOraScadenza']}}</h2>
+        <h2>Cliente: {{$cliente['nome']}} {{$cliente['cognome']}}</h2>
     </div>
 </main>
 

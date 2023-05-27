@@ -35,7 +35,7 @@
 
                     {{ Form::label('eta', 'Data di nascita', ['class' => 'label-input']) }}
                     {{ Form::date('eta', $dati['eta'],['class' => 'input', 'id' => 'eta', 'rules' => 'date_format:d-m-Y', 'required' => 'required']) }}
-                    @if ($errors->first('cognome'))
+                    @if ($errors->first('eta'))
                         <ul class="errors">
                             @foreach ($errors->get('eta') as $message)
                                 <li>{{ $message }}</li>
@@ -73,9 +73,9 @@
                         {{ Form::radio('genere', 'A', false, ['style' => 'display:inline;']) }}
                         {{ Form::label('genere', 'Altro', ['style' => 'display:inline;']) }}
                     @endif
-                    @if ($errors->first('sesso'))
+                    @if ($errors->first('genere'))
                         <ul class="errors">
-                            @foreach ($errors->get('sesso') as $message)
+                            @foreach ($errors->get('genere') as $message)
                                 <li>{{ $message }}</li>
                             @endforeach
                         </ul>

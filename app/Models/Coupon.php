@@ -10,4 +10,9 @@ class Coupon extends Model
     use HasFactory;
     public $table = "coupons";
     public $timestamps = false;
+    protected $fillable =
+        [
+            'usernameCliente',
+            'idOfferta',
+        ];
 }
