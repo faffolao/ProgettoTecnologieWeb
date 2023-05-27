@@ -37,7 +37,7 @@
                     {{ Form::date('eta', '', ['class' => 'input', 'id' => 'eta', 'rules' => 'date_format:d-m-Y', 'required' => 'required']) }}
                     @if ($errors->first('cognome'))
                         <ul class="errors">
-                            @foreach ($errors->get('data_nascita') as $message)
+                            @foreach ($errors->get('eta') as $message)
                                 <li>{{ $message }}</li>
                             @endforeach
                         </ul>

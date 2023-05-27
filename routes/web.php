@@ -69,8 +69,10 @@ Route::group(['middleware' => 'can:isUser'], function() {  //vincolo la funziona
         ->name("hubUtente");
 
     // Rotta per accedere alla modifica dei dati personali (livello 1).
-    Route::view("/modificaDati_L1", 'modificaDati_L1')
-        ->name("modificaDatiL1");
+    Route::get('/modificaDatiL1/{username}/edit', [UserController::class, 'getDatiPersonali1'])
+        ->name('modificaDatiL1');
+    // Rotta che aggiorna i dati.
+    Route::put('/modificaDatiL1/{username}', [UserController::class, 'updateDatiPersonali1']);
 
     // Rotta che ti fa visualizzare i coupon utilizzati
     Route::get("/listaCouponUsati/{usernameCliente}", [CouponController::class, 'getDataLCU'])
@@ -91,8 +93,10 @@ Route::group(['middleware' => 'can:isStaff'],function () {  //vincolo la funzion
         ->name("hubStaff");
 
     // Rotta per aprire la pagina della modifica dei dati personali per lo Staff.
-    Route::view("/modificaDati_L2", 'modificaDati_L2')
-        ->name("modificaDati_L2");
+    Route::get('/modificaDatiL2/{username}/edit', [UserController::class, 'getDatiPersonali2'])
+        ->name('modificaDatiL2');
+    // Rotta che aggiorna i dati.
+    Route::put('/modificaDatiL2/{username}', [UserController::class, 'updateDatiPersonali2']);
 
     // Rotta per aprire la pagina per inserire una nuova offerta.
     Route::get("/inserisciOfferte", [OfferController::class, 'getNomeAziende'])

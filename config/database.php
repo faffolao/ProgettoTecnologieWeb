@@ -1,8 +1,11 @@
 <?php
 
+global $HOST, $DB, $USER, $PASSWORD;
+
 use Illuminate\Support\Str;
 
 require( __DIR__ . '/../../include/connect.php');
+
 
 return [
 

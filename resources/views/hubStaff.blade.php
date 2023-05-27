@@ -8,7 +8,7 @@
                 <h2>Benvenuto nell'Area personale, {{ Auth::user()->nome }} {{ Auth::user()->cognome }}</h2>
             </div>
             <div class="panel-buttons">
-                <a href="{{route('modificaDati_L2')}}" class="btn">Modifica dati personali</a>
+                <a href="{{route('modificaDatiL2', Auth::user()->username)}}" class="btn">Modifica dati personali</a>
             </div>
             <div class="panel-buttons">
                 <a href="{{route('gestioneOfferte')}}" class="btn">Gestione offerte</a>
