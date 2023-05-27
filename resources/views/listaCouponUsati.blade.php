@@ -40,7 +40,7 @@
                         <td>{{$list['dataOraCreazione']}}</td>
                         <td>{{$list['dataOraScadenza']}}</td>
                         <td>
-                            <a onclick="event.preventDefault(); document.getElementById('save-cp').submit();" href="">{{$list['codice']}}</a>
+                            <a id="link-cp" onclick="event.preventDefault(); document.getElementById('save-cp').submit();" href="">{{$list['codice']}}</a>
                             <form id="save-cp" action="{{ url('/inserisciCoupon/'.$list['idOfferte'].'/'.Auth::user()->username) }}" method="POST" style="display: none;">
                                 {{ csrf_field() }}
                             </form>

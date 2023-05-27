@@ -56,7 +56,7 @@
 .card-deck{
     display: flex;
     flex-wrap: wrap; /* imposta se gli elementi flex sono forzati su una riga o possono andare a capo su più righe. */
-                     /* Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate. */
+    /* Se l'avvolgimento è consentito, imposta la direzione in cui le righe vengono impilate. */
     justify-content: center;
     align-items: center;
     flex-direction: row;
@@ -286,3 +286,9 @@
     text-decoration: none;
 }
 .list-item:hover {background-color: #ded9d4;}
+
+/*
+    Style per i link ai coupon presenti nella view "listaCouponUsati" per gli utenti di livello 1
+ */
+#link-cp {text-decoration: none;}
+#link-cp:hover {text-decoration: underline;}
