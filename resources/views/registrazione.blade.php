@@ -10,7 +10,7 @@
             <h2>Registrazione</h2>
 
             <!-- effettiva form di input -->
-            {{ Form::open(array('route' => 'registrazione', 'class' => 'contact-form')) }}
+            {{ Form::open(array('route' => 'register', 'class' => 'contact-form')) }}
             <div class="form-row">
                 <div class="form-left">
                     {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
