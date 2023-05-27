@@ -5,7 +5,7 @@
         <div class="panel">
             <div class="title-with-logo">
                 <img src="{{ asset('assets/images/staff_icon.png') }}" alt="Logo staff">
-                <h2>Benvenuto nell'Area personale</h2>
+                <h2>Benvenuto nell'Area personale, {{ Auth::user()->nome }} {{ Auth::user()->cognome }}</h2>
             </div>
             <div class="panel-buttons">
                 <a href="{{route('modificaDati_L2')}}" class="btn">Modifica dati personali</a>
