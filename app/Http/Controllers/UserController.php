@@ -112,7 +112,7 @@ class UserController extends Controller
             'genere' => ['required'],
             'telefono' => ['string', 'max:10'],
             'email' => ['string','email','max:30']
-            ]);
+        ]);
 
         if (!($request->input('password')))
         {
@@ -146,5 +146,123 @@ class UserController extends Controller
         }
 
         return redirect()->route('gestioneStaff');
+    }
+
+    function getDatiPersonali1($username){
+        $data = User::where('username', $username)->first();
+        return view('modificaDatiL1', ['dati'=>$data]);
+    }
+
+    function updateDatiPersonali1(Request $request, $username)
+    {
+        // Validazione dei dati inviati dalla form di registrazione
+        $request->validate([
+            'username' => ['required','string', 'max:30',
+                Rule::unique('utenti')->ignore($username, 'username')],
+            'nome' => ['required','string','max:20'],
+            'cognome' => ['required','string','max:20'],
+            'eta' => ['required'],
+            'genere' => ['required'],
+            'telefono' => ['string', 'max:10'],
+            'email' => ['string','email','max:30']
+        ]);
+
+        if (!($request->input('password')))
+        {
+            User::where('username', $username)->update(
+                [
+                    'username'=>$request->input('username'),
+                    'nome'=>$request->input('nome'),
+                    'cognome'=>$request->input('cognome'),
+                    'eta'=>$request->input('eta'),
+                    'email'=>$request->input('email'),
+                    'telefono'=>$request->input('telefono'),
+                    'genere'=>$request->input('genere')
+                ]);
+        }
+        else
+        {
+            $request->validate([
+                'password' => ['required','string','min:8']
+            ]);
+            User::where('username', $username)->update(
+                [
+                    'username'=>$request->input('username'),
+                    'nome'=>$request->input('nome'),
+                    'cognome'=>$request->input('cognome'),
+                    'eta'=>$request->input('eta'),
+                    'password'=>Hash::make($request->input('password')),
+                    'email'=>$request->input('email'),
+                    'telefono'=>$request->input('telefono'),
+                    'genere'=>$request->input('genere')
+                ]);
+        }
+        if (($username)==($request->input('username')))
+        {
+            return redirect()->route('hubUtente');
+        }
+        else
+        {
+            return redirect()->route('login');
+        }
+    }
+
+    function getDatiPersonali2($username){
+        $data = User::where('username', $username)->first();
+        return view('modificaDatiL2', ['dati'=>$data]);
+    }
+
+    function updateDatiPersonali2(Request $request, $username)
+    {
+        // Validazione dei dati inviati dalla form di registrazione
+        $request->validate([
+            'username' => ['required','string', 'max:30',
+                Rule::unique('utenti')->ignore($username, 'username')],
+            'nome' => ['required','string','max:20'],
+            'cognome' => ['required','string','max:20'],
+            'eta' => ['required'],
+            'genere' => ['required'],
+            'telefono' => ['string', 'max:10'],
+            'email' => ['string','email','max:30']
+        ]);
+
+        if (!($request->input('password')))
+        {
+            User::where('username', $username)->update(
+                [
+                    'username'=>$request->input('username'),
+                    'nome'=>$request->input('nome'),
+                    'cognome'=>$request->input('cognome'),
+                    'eta'=>$request->input('eta'),
+                    'email'=>$request->input('email'),
+                    'telefono'=>$request->input('telefono'),
+                    'genere'=>$request->input('genere')
+                ]);
+        }
+        else
+        {
+            $request->validate([
+                'password' => ['required','string','min:8']
+            ]);
+            User::where('username', $username)->update(
+                [
+                    'username'=>$request->input('username'),
+                    'nome'=>$request->input('nome'),
+                    'cognome'=>$request->input('cognome'),
+                    'eta'=>$request->input('eta'),
+                    'password'=>Hash::make($request->input('password')),
+                    'email'=>$request->input('email'),
+                    'telefono'=>$request->input('telefono'),
+                    'genere'=>$request->input('genere')
+                ]);
+        }
+        if (($username)==($request->input('username')))
+        {
+            return redirect()->route('hubStaff');
+        }
+        else
+        {
+            return redirect()->route('login');
+        }
     }
 }

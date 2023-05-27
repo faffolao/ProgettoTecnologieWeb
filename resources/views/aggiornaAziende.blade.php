@@ -9,6 +9,7 @@
             <br>
 
             {{ Form::open(array('url' => '/aggiornaAziende/'.$dati['id'], 'enctype' => 'multipart/form-data', 'method' => 'PUT')) }}
+            @csrf
             <div class="form-row">
                 <div class="form-left">
                     {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}
