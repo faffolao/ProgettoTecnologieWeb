@@ -205,6 +205,8 @@ class UserController extends Controller
 //        {
 //            return redirect()->route('login');
 //        }
+        // Commentare questa riga di codie se si volesse tornare a modificare
+        // l'username. (Decommentare tutte le righe del metodo soprastante ovviamente)
         return redirect()->route('hubUtente');
     }
 
@@ -265,6 +267,8 @@ class UserController extends Controller
 //        {
 //            return redirect()->route('login');
 //        }
+        // Commentare questa riga di codie se si volesse tornare a modificare
+        // l'username. (Decommentare tutte le righe del metodo soprastante ovviamente)
         return redirect()->route('hubStaff');
     }
 }

@@ -107,6 +107,8 @@
                 </div>
 
                 <div class="form-right">
+                    {{--                    Nel caso si volesse aggiornare anche l'username decommentare qui e nel--}}
+                    {{--                    controller UserController le parti di codice del medoto updateDatiPersonali2--}}
                     {{--                    {{ Form::label('username','Username' ) }}--}}
                     {{--                    <p><em>Attenzione!!</em></p>--}}
                     {{--                    <p><em>Se modificato sarà necessario effettuare di nuovo l'accesso.</em></p>--}}
