@@ -53,7 +53,7 @@ Route::get("/dettagliOfferta/{id}", [OfferController::class, 'getDataDO'])
  */
 
 Route::group(['middleware' => 'can:isUser'], function() {  //vincolo la funzionalità delle seguenti rotte
-                                                           //ai soli utenti di livello 1
+    //ai soli utenti di livello 1
     // Rotta per mostrare la pagina stampabile del coupon.
     // getDataNOU == get data Offerta & Cliente
     Route::get("/coupon/{idOfferta}/{usernameCliente}", [CouponController::class, 'getDataOC'])
@@ -87,7 +87,7 @@ Route::group(['middleware' => 'can:isUser'], function() {  //vincolo la funziona
  */
 
 Route::group(['middleware' => 'can:isStaff'],function () {  //vincolo la funzionalità delle seguenti rotte
-                                                            //ai soli utenti di livello 2
+    //ai soli utenti di livello 2
     // Rotta per caricare l'area personale dello staff.
     Route::view("/hubStaff", 'hubStaff')
         ->name("hubStaff");
@@ -110,24 +110,23 @@ Route::group(['middleware' => 'can:isStaff'],function () {  //vincolo la funzion
     // Rotta che aggiorna una determinata offerta.
     Route::put('/aggiornaOfferte/{id}', [OfferController::class, 'updateDataSingleOff']);
 
+    // Rotta per aprire la pagina della gestione delle offerte.
+    Route::get("/gestioneOfferte", [OfferController::class, 'getDataOff'])
+        ->name("gestioneOfferte");
+    // Rotta per la ricerca di un'offerta dall'apposito gestionale.
+    Route::post('/gestioneOfferte', [OfferController::class, 'getDataBRGO']);
+
     // Rotta che elimina una determinata offerta.
     Route::delete("/gestioneOfferte/elimina/{id}", [OfferController::class, 'deleteR'])
         ->name("eliminaOfferte");
-
 });
-
-// Rotta per aprire la pagina della gestione delle offerte.
-Route::get("/gestioneOfferte", [OfferController::class, 'getDataOff'])
-    ->name("gestioneOfferte");
-// Rotta per la ricerca di un'offerta dall'apposito gestionale.
-Route::post('/gestioneOfferte', [OfferController::class, 'getDataBRGO']);
 
 /*
  * ROTTE DI LIVELLO 3
  */
 
 Route::group(['middleware' => 'can:isAdmin'],function () {   //vincolo la funzionalità delle seguenti rotte
-                                                             //al solo utente di livello  3
+    //al solo utente di livello  3
     // Rotta per aprire la home page dell'area personale dell'amministratore.
     Route::view("/hubAmministratore", 'hubAmministratore')
         ->name("hubAmministratore");
