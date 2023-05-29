@@ -157,8 +157,8 @@ class UserController extends Controller
     {
         // Validazione dei dati inviati dalla form di registrazione
         $request->validate([
-            'username' => ['required','string', 'max:30',
-                Rule::unique('utenti')->ignore($username, 'username')],
+//            'username' => ['required','string', 'max:30',
+//                Rule::unique('utenti')->ignore($username, 'username')],
             'nome' => ['required','string','max:20'],
             'cognome' => ['required','string','max:20'],
             'eta' => ['required'],
@@ -171,7 +171,7 @@ class UserController extends Controller
         {
             User::where('username', $username)->update(
                 [
-                    'username'=>$request->input('username'),
+//                    'username'=>$request->input('username'),
                     'nome'=>$request->input('nome'),
                     'cognome'=>$request->input('cognome'),
                     'eta'=>$request->input('eta'),
@@ -187,7 +187,7 @@ class UserController extends Controller
             ]);
             User::where('username', $username)->update(
                 [
-                    'username'=>$request->input('username'),
+//                    'username'=>$request->input('username'),
                     'nome'=>$request->input('nome'),
                     'cognome'=>$request->input('cognome'),
                     'eta'=>$request->input('eta'),
@@ -197,14 +197,15 @@ class UserController extends Controller
                     'genere'=>$request->input('genere')
                 ]);
         }
-        if (($username)==($request->input('username')))
-        {
-            return redirect()->route('hubUtente');
-        }
-        else
-        {
-            return redirect()->route('login');
-        }
+//        if (($username)==($request->input('username')))
+//        {
+//            return redirect()->route('hubUtente');
+//        }
+//        else
+//        {
+//            return redirect()->route('login');
+//        }
+        return redirect()->route('hubUtente');
     }
 
     function getDatiPersonali2($username){
@@ -216,8 +217,8 @@ class UserController extends Controller
     {
         // Validazione dei dati inviati dalla form di registrazione
         $request->validate([
-            'username' => ['required','string', 'max:30',
-                Rule::unique('utenti')->ignore($username, 'username')],
+//            'username' => ['required','string', 'max:30',
+//                Rule::unique('utenti')->ignore($username, 'username')],
             'nome' => ['required','string','max:20'],
             'cognome' => ['required','string','max:20'],
             'eta' => ['required'],
@@ -230,7 +231,7 @@ class UserController extends Controller
         {
             User::where('username', $username)->update(
                 [
-                    'username'=>$request->input('username'),
+//                    'username'=>$request->input('username'),
                     'nome'=>$request->input('nome'),
                     'cognome'=>$request->input('cognome'),
                     'eta'=>$request->input('eta'),
@@ -246,7 +247,7 @@ class UserController extends Controller
             ]);
             User::where('username', $username)->update(
                 [
-                    'username'=>$request->input('username'),
+//                    'username'=>$request->input('username'),
                     'nome'=>$request->input('nome'),
                     'cognome'=>$request->input('cognome'),
                     'eta'=>$request->input('eta'),
@@ -256,13 +257,14 @@ class UserController extends Controller
                     'genere'=>$request->input('genere')
                 ]);
         }
-        if (($username)==($request->input('username')))
-        {
-            return redirect()->route('hubStaff');
-        }
-        else
-        {
-            return redirect()->route('login');
-        }
+//        if (($username)==($request->input('username')))
+//        {
+//            return redirect()->route('hubStaff');
+//        }
+//        else
+//        {
+//            return redirect()->route('login');
+//        }
+        return redirect()->route('hubStaff');
     }
 }

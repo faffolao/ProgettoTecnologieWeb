@@ -107,17 +107,17 @@
                 </div>
 
                 <div class="form-right">
-                    {{ Form::label('username','Username' ) }}
-                    <p><em>Attenzione!!</em></p>
-                    <p><em>Se modificato sarà necessario effettuare di nuovo l'accesso.</em></p>
-                    {{ Form::text('username', $dati['username'], array('required' => 'required'))}}
-                    @if ($errors->first('username'))
-                        <ul class="errors">
-                            @foreach ($errors->get('username') as $message)
-                                <li>{{ $message }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
+                    {{--                    {{ Form::label('username','Username' ) }}--}}
+                    {{--                    <p><em>Attenzione!!</em></p>--}}
+                    {{--                    <p><em>Se modificato sarà necessario effettuare di nuovo l'accesso.</em></p>--}}
+                    {{--                    {{ Form::text('username', $dati['username'], array('required' => 'required'))}}--}}
+                    {{--                    @if ($errors->first('username'))--}}
+                    {{--                        <ul class="errors">--}}
+                    {{--                            @foreach ($errors->get('username') as $message)--}}
+                    {{--                                <li>{{ $message }}</li>--}}
+                    {{--                            @endforeach--}}
+                    {{--                        </ul>--}}
+                    {{--                    @endif--}}
 
                     {{ Form::label('password', 'Password') }}
                     {{ Form::password('password')}}
