@@ -6,7 +6,7 @@
     <div class="wrapper">
         <!-- box che contiene la form di login -->
         <div class="form-box form-box-inputdialog">
-            <h2>Aggiorna Staff</h2>
+            <h2>Aggiorna Staff: {{$dati['username']}}</h2>
 
             <!-- effettiva form di input -->
             {{ Form::open(array('url' => '/aggiornaStaff/'.$dati['username'], 'class' => 'contact-form', 'method'=>'PUT')) }}
@@ -91,6 +91,9 @@
                         </ul>
                     @endif
 
+                </div>
+                <div class="form-right">
+
                     {{ Form::label('email', 'Email', ['class' => 'label-input']) }}
                     {{ Form::text('email', $dati['email'], ['class' => 'input', 'id' => 'email', 'rules' => 'email', 'required' => 'required']) }}
                     @if ($errors->first('email'))
@@ -100,18 +103,18 @@
                             @endforeach
                         </ul>
                     @endif
-                </div>
 
-                <div class="form-right">
-                    {{ Form::label('username','Username' ) }}
-                    {{ Form::text('username', $dati['username'], array('required' => 'required'))}}
-                    @if ($errors->first('username'))
-                        <ul class="errors">
-                            @foreach ($errors->get('username') as $message)
-                                <li>{{ $message }}</li>
-                            @endforeach
-                        </ul>
-                    @endif
+                    {{--                    Nel caso si volesse aggiornare anche l'username decommentare qui e nel--}}
+                    {{--                    controller UserController le parti di codice del medoto updateDatiPersonali1--}}
+                    {{--                    {{ Form::label('username','Username' ) }}--}}
+                    {{--                    {{ Form::text('username', $dati['username'], array('required' => 'required'))}}--}}
+                    {{--                    @if ($errors->first('username'))--}}
+                    {{--                        <ul class="errors">--}}
+                    {{--                            @foreach ($errors->get('username') as $message)--}}
+                    {{--                                <li>{{ $message }}</li>--}}
+                    {{--                            @endforeach--}}
+                    {{--                        </ul>--}}
+                    {{--                    @endif--}}
 
                     {{ Form::label('password', 'Password') }}
                     {{ Form::password('password')}}

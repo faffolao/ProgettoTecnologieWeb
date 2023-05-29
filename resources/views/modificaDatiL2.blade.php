@@ -94,7 +94,9 @@
                             @endforeach
                         </ul>
                     @endif
+                </div>
 
+                <div class="form-right">
                     {{ Form::label('email', 'Email', ['class' => 'label-input']) }}
                     {{ Form::text('email', $dati['email'], ['class' => 'input', 'id' => 'email', 'rules' => 'email', 'required' => 'required']) }}
                     @if ($errors->first('email'))
@@ -104,9 +106,7 @@
                             @endforeach
                         </ul>
                     @endif
-                </div>
 
-                <div class="form-right">
                     {{--                    Nel caso si volesse aggiornare anche l'username decommentare qui e nel--}}
                     {{--                    controller UserController le parti di codice del medoto updateDatiPersonali2--}}
                     {{--                    {{ Form::label('username','Username' ) }}--}}
