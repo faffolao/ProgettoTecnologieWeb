@@ -5,7 +5,7 @@
 @section('content')
     <div class="wrapper wrapper-register">
         <div class="form-box form-box-inputdialog">
-            <h2>Modifica dati personali</h2>
+            <h2>Modifica dati personali di: {{$dati['username']}}</h2>
             @if (session('success'))
                 <div class="form-insertFAQ">
                     {{ session('success') }}
