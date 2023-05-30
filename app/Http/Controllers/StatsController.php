@@ -22,7 +22,7 @@ class StatsController extends Controller
         $couponNum = Coupon::count();
 
         // ritorno la view con tutti i dati che servono
-        return view("statistiche", ["Promo" => $promo, "Clienti" => $clienti, "NumeroCoupon" => $couponNum]);
+        return view("admin/statistiche", ["Promo" => $promo, "Clienti" => $clienti, "NumeroCoupon" => $couponNum]);
     }
 
     // restituisce un JSON che contiene i coupon che sono stati emessi per una certa offerta dato il suo ID
@@ -82,6 +82,6 @@ class StatsController extends Controller
         $couponNum = Coupon::count();
 
         // ritorno la view con tutti i dati che servono
-        return view("statistiche", ["Promo" => $promo, "Clienti" => $clienti, "NumeroCoupon" => $couponNum]);
+        return view("admin/statistiche", ["Promo" => $promo, "Clienti" => $clienti, "NumeroCoupon" => $couponNum]);
     }
 }

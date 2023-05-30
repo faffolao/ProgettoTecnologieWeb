@@ -43,7 +43,7 @@
                 @foreach($Aziende as $aziende)
                     <div class="card" title="Clicca su nome dell'azienda per saparne di più!!!">
                         <img src="data:image/png/jpeg;base64,{{ base64_encode($aziende['logo']) }}" alt="Logo di un'azienda" class="logo-azienda">
-                        <a class="card-title-link" href="{{ route('dettagliAzienda', $aziende['nome']) }}">{{$aziende['nome']}}</a>
+                        <a class="card-title-link" href="{{ route('dettagliAzienda', $aziende['id']) }}">{{$aziende['nome']}}</a>
                     </div>
                 @endforeach
             @else

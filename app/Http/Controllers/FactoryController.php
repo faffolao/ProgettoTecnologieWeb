@@ -28,9 +28,9 @@ class FactoryController extends Controller
     }
 
     // DA = Dettagli Azienda
-    public function getDataDA($nome)
+    public function getDataDA($id)
     {
-        $data = Factory::where('nome', $nome)->first();
+        $data = Factory::where('id', $id)->first();
         return view('dettagliAzienda', ['tuple'=>$data]);
     }
 
@@ -46,7 +46,7 @@ class FactoryController extends Controller
     function getDataGA()
     {
         $data = Factory::all();
-        return view('gestioneAziende', ['List'=>$data]);
+        return view('admin/gestioneAziende', ['List'=>$data]);
     }
 
     // BRGA = Barra di Ricerca in Gestione Staff
@@ -55,7 +55,7 @@ class FactoryController extends Controller
         $data = Factory::all();
         $query = $request->input('query');
         $dataN = Factory::where('nome', 'LIKE', '%' .$query. '%')->get();
-        return view('gestioneAziende', ['Azienda'=>$data], ['List'=>$dataN]);
+        return view('admin/gestioneAziende', ['Azienda'=>$data], ['List'=>$dataN]);
     }
     function deleteA($id)
     {
@@ -96,7 +96,7 @@ class FactoryController extends Controller
 
     function getDataSingleAzienda($id){
         $data = Factory::where('id', $id)->first();
-        return view('aggiornaAziende', ['dati'=>$data]);
+        return view('admin/aggiornaAziende', ['dati'=>$data]);
     }
 
     function updateDataSingleAzienda(Request $request, $id)

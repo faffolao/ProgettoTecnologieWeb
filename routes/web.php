@@ -36,7 +36,7 @@ Route::get("/aziende", [FactoryController::class, 'getDataA'])
 Route::post('/aziende', [FactoryController::class, 'getDataBR']);
 
 // Rotta per il caricamento della pagina dei dettagli di un'azienda.
-Route::get("/dettagliAzienda/{nome}", [FactoryController::class, 'getDataDA'])
+Route::get("/dettagliAzienda/{id}", [FactoryController::class, 'getDataDA'])
     ->name('dettagliAzienda');
 
 // Rotta per il caricamento del catalogo corredato di lista delle offerte.
@@ -60,9 +60,6 @@ Route::group(['middleware' => 'can:isUser'], function() {  //vincolo la funziona
         ->name("coupon");
     // Rotta per il salvataggio del coupon nel DB
     Route::post("/inserisciCoupon/{idOfferta}/{usernameCliente}", [CouponController::class, 'saveDataC']);
-
-    Route::post('/inserisciCoupon/', [CouponController::class, 'saveData'])
-        ->name('inserisciCoupon');
 
     // Rotta per accedere all'area personale del cliente.
     Route::view("/hubUtente", 'hubUtente')
@@ -99,7 +96,7 @@ Route::group(['middleware' => 'can:isStaff'],function () {  //vincolo la funzion
     Route::put('/modificaDatiL2/{username}', [UserController::class, 'updateDatiPersonali2']);
 
     // Rotta per aprire la pagina per inserire una nuova offerta.
-    Route::get("/inserisciOfferte", [OfferController::class, 'getNomeAziende'])
+    Route::get("/inserisciOfferte", [OfferController::class, 'getInsertOfferPage'])
         ->name('inserisciOfferte');
     // Rotta per inserire una nuova offerta.
     Route::post('/inserisciOfferte', [OfferController::class, 'addOff']);
@@ -136,7 +133,7 @@ Route::group(['middleware' => 'can:isAdmin'],function () {   //vincolo la funzio
         ->name("gestioneFAQ");
 
     // Rotta per l'apertura della pagina per inserire una nuova FAQ.
-    Route::view("/inserisciFAQ", 'inserisciFAQ')
+    Route::view("/inserisciFAQ", 'admin/inserisciFAQ')
         ->name('inserisciFAQ');
     // Rotta per inserire la FAQ.
     Route::post('/inserisciFAQ', [FAQController::class, 'addFAQ']);
@@ -167,7 +164,7 @@ Route::group(['middleware' => 'can:isAdmin'],function () {   //vincolo la funzio
     Route::post('/gestioneStaff', [UserController::class, 'getDataBRGS']);
 
     // Rotta che apre la pagina per inserire un nuovo membro dello staff.
-    Route::view("/inserisciStaff", 'inserisciStaff')
+    Route::view("/inserisciStaff", 'admin/inserisciStaff')
         ->name('inserisciStaff');
     // Rotta che inserisce lo staff.
     Route::post('/inserisciStaff', [UserController::class, 'addStaff']);
@@ -189,7 +186,7 @@ Route::group(['middleware' => 'can:isAdmin'],function () {   //vincolo la funzio
     Route::post('/gestioneAziende', [FactoryController::class, 'getDataBRGA']);
 
     // Rotta che apre la pagina per l'inserimento di una nuova azienda.
-    Route::view("/inserisciAziende", 'inserisciAziende')
+    Route::view("/inserisciAziende", 'admin/inserisciAziende')
         ->name('inserisciAziende');
     // Rotta che aggiunge un'azienda.
     Route::post('/inserisciAziende', [FactoryController::class, 'addAzienda']);
@@ -222,27 +219,5 @@ Route::group(['middleware' => 'can:isAdmin'],function () {   //vincolo la funzio
 
 });
 
-
-/* Route::get('/', [PublicController::class, 'showCatalog1'])
-        ->name('catalog1');
-
-Route::get('/selTopCat/{topCatId}', [PublicController::class, 'showCatalog2'])
-        ->name('catalog2');
-
-Route::get('/selTopCat/{topCatId}/selCat/{catId}', [PublicController::class, 'showCatalog3'])
-        ->name('catalog3');
-
-Route::get('/admin', [AdminController::class, 'index'])
-        ->name('admin');
-
-Route::get('/admin/newproduct', [AdminController::class, 'addProduct'])
-        ->name('newproduct');
-
-Route::post('/admin/newproduct', [AdminController::class, 'storeProduct'])
-        ->name('newproduct.store');
-
-Route::get('/user', [UserController::class, 'index'])
-        ->name('user')->middleware('can:isUser'); */
-
-
+// Inclusione delle Routes per il login
 require __DIR__.'/auth.php';

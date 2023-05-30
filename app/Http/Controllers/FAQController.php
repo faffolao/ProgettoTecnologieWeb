@@ -13,7 +13,7 @@ class FAQController extends Controller
     {
         $data = FAQ::all();
 
-        return view('gestioneFAQ', ['List'=>$data]);
+        return view('admin/gestioneFAQ', ['List'=>$data]);
     }
     function deleteR($id)
     {
@@ -50,7 +50,7 @@ class FAQController extends Controller
     }
     function getDataSingleFAQ($id){
         $data = FAQ::where('id', $id)->first();
-        return view('aggiornaFAQ', ['dati'=>$data]);
+        return view('admin/aggiornaFAQ', ['dati'=>$data]);
     }
 
     function updateDataSingleFAQ(Request $request, $id)

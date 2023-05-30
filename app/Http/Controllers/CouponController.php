@@ -22,7 +22,7 @@ class CouponController extends Controller
             ->first();
         $dataO = Offer::where('id', $idOfferta)->first();
         $dataC = User::where('username', $usernameCliente)->first();
-        return view('coupon', ['tuple'=>$dataO, 'cliente'=>$dataC, 'datiCoupon'=>$dataCP]);
+        return view('customer/coupon', ['tuple'=>$dataO, 'cliente'=>$dataC, 'datiCoupon'=>$dataCP]);
     }
 
     function saveDataC($idOfferta, $usernameCliente)
@@ -48,10 +48,10 @@ class CouponController extends Controller
         $dataCP = Coupon::where('idOfferta', $idOfferta)
             ->where('usernameCliente', $usernameCliente)
             ->first();
-        return view('coupon', ['tuple'=>$dataO, 'cliente'=>$dataC, 'datiCoupon'=>$dataCP]);
+        return view('customer/coupon', ['tuple'=>$dataO, 'cliente'=>$dataC, 'datiCoupon'=>$dataCP]);
     }
 
-    //Per mostrare la lista di coupons usati
+    // Per mostrare la Lista di Coupons Usati
     function getDataLCU($usernameCliente)
     {
         $data = Coupon::join('offerte', 'coupons.idOfferta', '=', 'offerte.id')
@@ -61,12 +61,11 @@ class CouponController extends Controller
             ->select('utenti.username', 'offerte.id as idOfferte', 'offerte.nome as nomeOfferte', 'aziende.nome as nomeAziende', 'coupons.dataOraCreazione', 'offerte.dataOraScadenza', 'coupons.codice')
             ->where('coupons.usernameCliente', $usernameCliente)
             ->get();
-        //            ->where('usernameCliente', $usernameCliente)
-        // dd($data);
-        return view('listaCouponUsati', ['List'=>$data]);
+
+        return view('customer/listaCouponUsati', ['List'=>$data]);
     }
 
-    // Metodo per la barra di ricerca per view listaCouponUsati
+    // Metodo per la Barra di Ricerca per view lista Coupon Usati
     public function getDataBRCU(Request $request , $usernameCliente)
     {
         $data = Coupon::all();
@@ -80,6 +79,6 @@ class CouponController extends Controller
             ->where('coupons.usernameCliente', $usernameCliente)
             ->get();
 
-        return view('listaCouponUsati', ['Coupon'=>$data], ['List'=>$dataCU]);
+        return view('customer/listaCouponUsati', ['Coupon'=>$data], ['List'=>$dataCU]);
     }
 }

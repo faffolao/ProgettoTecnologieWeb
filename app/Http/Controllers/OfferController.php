@@ -24,7 +24,7 @@ class OfferController extends Controller
     function getDataOff()
     {
         $data = Offer::all();
-        return view('gestioneOfferte', ['List'=>$data]);
+        return view('staff/gestioneOfferte', ['List'=>$data]);
     }
 
     public function getDataBRGO(Request $request)
@@ -32,7 +32,7 @@ class OfferController extends Controller
         $data = Offer::all();
         $query = $request->input('query');
         $dataNO = Offer::where('nome', 'LIKE', '%' .$query. '%')->get();
-        return view('gestioneOfferte', ['Offerta'=>$data], ['List'=>$dataNO]);
+        return view('staff/gestioneOfferte', ['Offerta'=>$data], ['List'=>$dataNO]);
     }
 
     function deleteR($id)
@@ -79,16 +79,16 @@ class OfferController extends Controller
         return redirect()->route('gestioneOfferte');
     }
 
-    function getNomeAziende()
+    function getInsertOfferPage()
     {
         $data = Factory::orderBy('id', 'asc')->get();
-        return view('inserisciOfferte', ['ListaNomi'=>$data]);
+        return view('staff/inserisciOfferte', ['ListaNomi'=>$data]);
     }
 
     function getDataSingleOff($id){
         $dataAziende = Factory::orderBy('id' , 'asc')->get();
         $data = Offer::where('id', $id)->first();
-        return view('aggiornaOfferte', ['dati'=>$data], ['ListaNomi'=>$dataAziende]);
+        return view('staff/aggiornaOfferte', ['dati'=>$data], ['ListaNomi'=>$dataAziende]);
     }
 
     function updateDataSingleOff(Request $request, $id)

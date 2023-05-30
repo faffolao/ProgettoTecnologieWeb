@@ -24,7 +24,7 @@ class UserController extends Controller
         $dataUN = User::where('username', 'LIKE', '%' .$query. '%')
             ->where('livello', 1)
             ->get();
-        return view('cancellazioneClienti', ['Clienti'=>$data], ['List'=>$dataUN]);
+        return view('admin/cancellazioneClienti', ['Clienti'=>$data], ['List'=>$dataUN]);
     }
     function deleteC($username)
     {
@@ -38,13 +38,13 @@ class UserController extends Controller
     function getDataClienti()
     {
         $data = User::where('livello', 1)->get();
-        return view('cancellazioneClienti', ['List'=>$data]);
+        return view('admin/cancellazioneClienti', ['List'=>$data]);
     }
 
     function getDataGS()
     {
         $data = User::where('livello', 2)->get();
-        return view('gestioneStaff', ['List'=>$data]);
+        return view('admin/gestioneStaff', ['List'=>$data]);
     }
 
     // per la Barra di Ricerca in gestioneStaff
@@ -55,7 +55,7 @@ class UserController extends Controller
         $dataUN = User::where('username', 'LIKE', '%' .$query. '%')
             ->where('livello', 2)
             ->get();
-        return view('gestioneStaff', ['Staff'=>$data], ['List'=>$dataUN]);
+        return view('admin/gestioneStaff', ['Staff'=>$data], ['List'=>$dataUN]);
     }
     function deleteS($username)
     {
@@ -97,15 +97,13 @@ class UserController extends Controller
 
     function getDataSingleStaff($username){
         $data = User::where('username', $username)->first();
-        return view('aggiornaStaff', ['dati'=>$data]);
+        return view('admin/aggiornaStaff', ['dati'=>$data]);
     }
 
     function updateDataSingleStaff(Request $request, $username)
     {
         // Validazione dei dati inviati dalla form di registrazione
         $request->validate([
-//            'username' => ['required','string', 'max:30',
-//                Rule::unique('utenti')->ignore($username, 'username')],
             'nome' => ['required','string','max:20'],
             'cognome' => ['required','string','max:20'],
             'eta' => ['required'],
@@ -118,7 +116,6 @@ class UserController extends Controller
         {
             User::where('username', $username)->update(
                 [
-//                    'username'=>$request->input('username'),
                     'nome'=>$request->input('nome'),
                     'cognome'=>$request->input('cognome'),
                     'eta'=>$request->input('eta'),
@@ -134,7 +131,6 @@ class UserController extends Controller
             ]);
             User::where('username', $username)->update(
                 [
-//                    'username'=>$request->input('username'),
                     'nome'=>$request->input('nome'),
                     'cognome'=>$request->input('cognome'),
                     'eta'=>$request->input('eta'),
@@ -150,15 +146,13 @@ class UserController extends Controller
 
     function getDatiPersonali1($username){
         $data = User::where('username', $username)->first();
-        return view('modificaDatiL1', ['dati'=>$data]);
+        return view('customer/modificaDatiL1', ['dati'=>$data]);
     }
 
     function updateDatiPersonali1(Request $request, $username)
     {
         // Validazione dei dati inviati dalla form di registrazione
         $request->validate([
-//            'username' => ['required','string', 'max:30',
-//                Rule::unique('utenti')->ignore($username, 'username')],
             'nome' => ['required','string','max:20'],
             'cognome' => ['required','string','max:20'],
             'eta' => ['required'],
@@ -171,7 +165,6 @@ class UserController extends Controller
         {
             User::where('username', $username)->update(
                 [
-//                    'username'=>$request->input('username'),
                     'nome'=>$request->input('nome'),
                     'cognome'=>$request->input('cognome'),
                     'eta'=>$request->input('eta'),
@@ -187,7 +180,6 @@ class UserController extends Controller
             ]);
             User::where('username', $username)->update(
                 [
-//                    'username'=>$request->input('username'),
                     'nome'=>$request->input('nome'),
                     'cognome'=>$request->input('cognome'),
                     'eta'=>$request->input('eta'),
@@ -197,14 +189,7 @@ class UserController extends Controller
                     'genere'=>$request->input('genere')
                 ]);
         }
-//        if (($username)==($request->input('username')))
-//        {
-//            return redirect()->route('hubUtente');
-//        }
-//        else
-//        {
-//            return redirect()->route('login');
-//        }
+
         // Commentare questa riga di codie se si volesse tornare a modificare
         // l'username. (Decommentare tutte le righe del metodo soprastante ovviamente)
         return redirect()->route('hubUtente');
@@ -212,15 +197,13 @@ class UserController extends Controller
 
     function getDatiPersonali2($username){
         $data = User::where('username', $username)->first();
-        return view('modificaDatiL2', ['dati'=>$data]);
+        return view('staff/modificaDatiL2', ['dati'=>$data]);
     }
 
     function updateDatiPersonali2(Request $request, $username)
     {
         // Validazione dei dati inviati dalla form di registrazione
         $request->validate([
-//            'username' => ['required','string', 'max:30',
-//                Rule::unique('utenti')->ignore($username, 'username')],
             'nome' => ['required','string','max:20'],
             'cognome' => ['required','string','max:20'],
             'eta' => ['required'],
@@ -233,7 +216,6 @@ class UserController extends Controller
         {
             User::where('username', $username)->update(
                 [
-//                    'username'=>$request->input('username'),
                     'nome'=>$request->input('nome'),
                     'cognome'=>$request->input('cognome'),
                     'eta'=>$request->input('eta'),
@@ -249,7 +231,6 @@ class UserController extends Controller
             ]);
             User::where('username', $username)->update(
                 [
-//                    'username'=>$request->input('username'),
                     'nome'=>$request->input('nome'),
                     'cognome'=>$request->input('cognome'),
                     'eta'=>$request->input('eta'),
@@ -259,14 +240,7 @@ class UserController extends Controller
                     'genere'=>$request->input('genere')
                 ]);
         }
-//        if (($username)==($request->input('username')))
-//        {
-//            return redirect()->route('hubStaff');
-//        }
-//        else
-//        {
-//            return redirect()->route('login');
-//        }
+
         // Commentare questa riga di codie se si volesse tornare a modificare
         // l'username. (Decommentare tutte le righe del metodo soprastante ovviamente)
         return redirect()->route('hubStaff');
