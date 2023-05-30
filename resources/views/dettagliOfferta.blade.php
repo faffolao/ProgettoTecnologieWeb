@@ -4,6 +4,7 @@
 
 @section('content')
     <div class="container">
+        @if(isset($tuple))
         <div class="panel">
             <div class="title-with-logo">
                 <img src="data:image/png/jpeg;base64,{{ base64_encode($tuple['immagine']) }}" alt="Immagine Offerta">
@@ -46,7 +47,7 @@
                 @if(isset(Auth::user()->livello))
                     @if(Auth::user()->livello==1)
                         <a class="btn" onclick="event.preventDefault(); document.getElementById('save-cp').submit();" href="">Genera Coupon</a> <br>
-                        <form id="save-cp" action="{{ url('/inserisciCoupon/'.$tuple['id'].'/'.Auth::user()->username) }}" method="POST" style="display: none;">
+                        <form id="save-cp" action="{{ url('/inserisciCoupon/'.$tuple['id']) }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
                     @else
@@ -62,6 +63,7 @@
 
             </div>
         </div>
+        @endif
     </div>
 
     <script type="text/javascript" src="{{ asset('assets/js/toggleListManager.js') }}"></script>

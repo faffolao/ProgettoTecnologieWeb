@@ -3,6 +3,7 @@
 @section('title', 'Modifica utente dello Staff')
 
 @section('content')
+    @if(isset($dati))
     <div class="wrapper">
         <!-- box che contiene la form di login -->
         <div class="form-box form-box-inputdialog">
@@ -123,4 +124,5 @@
             </div>
         </div>
     </div>
+    @endif
 @endsection

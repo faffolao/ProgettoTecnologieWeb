@@ -6,6 +6,7 @@ use App\Models\Offer;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Coupon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class CouponController extends Controller
@@ -15,18 +16,23 @@ class CouponController extends Controller
     {
         return Coupon::all();
     }
-    function getDataOC($idOfferta, $usernameCliente)
+    function getDataOC($idOfferta)
     {
+        $usernameCliente = Auth::user()->username;
+
         $dataCP = Coupon::where('idOfferta', $idOfferta)
             ->where('usernameCliente', $usernameCliente)
             ->first();
         $dataO = Offer::where('id', $idOfferta)->first();
         $dataC = User::where('username', $usernameCliente)->first();
+
         return view('customer/coupon', ['tuple'=>$dataO, 'cliente'=>$dataC, 'datiCoupon'=>$dataCP]);
     }
 
-    function saveDataC($idOfferta, $usernameCliente)
+    function saveDataC($idOfferta)
     {
+        $usernameCliente = Auth::user()->username;
+
         if(!Coupon::where('idOfferta', $idOfferta)
             ->where('usernameCliente', $usernameCliente)
             ->exists()) {
@@ -52,8 +58,10 @@ class CouponController extends Controller
     }
 
     // Per mostrare la Lista di Coupons Usati
-    function getDataLCU($usernameCliente)
+    function getDataLCU()
     {
+        $usernameCliente = Auth::user()->username;
+
         $data = Coupon::join('offerte', 'coupons.idOfferta', '=', 'offerte.id')
             ->join('aziende', 'offerte.idAzienda', '=', 'aziende.id')
             ->join('utenti', 'utenti.username', '=', 'coupons.usernameCliente')
@@ -66,8 +74,9 @@ class CouponController extends Controller
     }
 
     // Metodo per la Barra di Ricerca per view lista Coupon Usati
-    public function getDataBRCU(Request $request , $usernameCliente)
+    public function getDataBRCU(Request $request)
     {
+        $usernameCliente = Auth::user()->username;
         $data = Coupon::all();
         $query = $request->input('query');
         $dataCU = Coupon::join('offerte', 'coupons.idOfferta', '=', 'offerte.id')

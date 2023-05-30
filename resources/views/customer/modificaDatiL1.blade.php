@@ -15,7 +15,7 @@
 
             <br>
             @csrf
-            {{ Form::open(array('url' => '/modificaDatiL1/'.$dati['username'], 'enctype' => 'multipart/form-data', 'method' => 'PUT')) }}
+            {{ Form::open(array('url' => '/modificaDatiL1', 'enctype' => 'multipart/form-data', 'method' => 'PUT')) }}
             <div class="form-row">
                 <div class="form-left">
                     {{ Form::label('nome', 'Nome', ['class' => 'label-input']) }}

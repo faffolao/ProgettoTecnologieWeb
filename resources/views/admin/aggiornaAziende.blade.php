@@ -3,6 +3,7 @@
 @section('title', 'Modifica azienda')
 
 @section('content')
+    @if(isset($dati))
     <div class="wrapper">
         <div class="form-box form-box-inputdialog">
             <h2>Aggiorna Azienda</h2>
@@ -85,5 +86,6 @@
             </div>
         </div>
     </div>
+    @endif
 @endsection
 

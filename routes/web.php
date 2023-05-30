@@ -55,27 +55,26 @@ Route::get("/dettagliOfferta/{id}", [OfferController::class, 'getDataDO'])
 Route::group(['middleware' => 'can:isUser'], function() {  //vincolo la funzionalità delle seguenti rotte
     //ai soli utenti di livello 1
     // Rotta per mostrare la pagina stampabile del coupon.
-    // getDataNOU == get data Offerta & Cliente
-    Route::get("/coupon/{idOfferta}/{usernameCliente}", [CouponController::class, 'getDataOC'])
+    Route::get("/coupon/{idOfferta}", [CouponController::class, 'getDataOC'])
         ->name("coupon");
     // Rotta per il salvataggio del coupon nel DB
-    Route::post("/inserisciCoupon/{idOfferta}/{usernameCliente}", [CouponController::class, 'saveDataC']);
+    Route::post("/inserisciCoupon/{idOfferta}", [CouponController::class, 'saveDataC']);
 
     // Rotta per accedere all'area personale del cliente.
     Route::view("/hubUtente", 'hubUtente')
         ->name("hubUtente");
 
     // Rotta per accedere alla modifica dei dati personali (livello 1).
-    Route::get('/modificaDatiL1/{username}/edit', [UserController::class, 'getDatiPersonali1'])
+    Route::get('/modificaDatiL1/edit', [UserController::class, 'getDatiPersonali1'])
         ->name('modificaDatiL1');
     // Rotta che aggiorna i dati.
-    Route::put('/modificaDatiL1/{username}', [UserController::class, 'updateDatiPersonali1']);
+    Route::put('/modificaDatiL1', [UserController::class, 'updateDatiPersonali1']);
 
     // Rotta che ti fa visualizzare i coupon utilizzati
-    Route::get("/listaCouponUsati/{usernameCliente}", [CouponController::class, 'getDataLCU'])
+    Route::get("/listaCouponUsati", [CouponController::class, 'getDataLCU'])
         ->name("listaCouponUsati");
     // Rotta per ricercare i coupon
-    Route::post('/listaCouponUsati/{usernameCliente}', [CouponController::class, 'getDataBRCU']);
+    Route::post('/listaCouponUsati', [CouponController::class, 'getDataBRCU']);
 
 });
 
@@ -90,10 +89,10 @@ Route::group(['middleware' => 'can:isStaff'],function () {  //vincolo la funzion
         ->name("hubStaff");
 
     // Rotta per aprire la pagina della modifica dei dati personali per lo Staff.
-    Route::get('/modificaDatiL2/{username}/edit', [UserController::class, 'getDatiPersonali2'])
+    Route::get('/modificaDatiL2/edit', [UserController::class, 'getDatiPersonali2'])
         ->name('modificaDatiL2');
     // Rotta che aggiorna i dati.
-    Route::put('/modificaDatiL2/{username}', [UserController::class, 'updateDatiPersonali2']);
+    Route::put('/modificaDatiL2', [UserController::class, 'updateDatiPersonali2']);
 
     // Rotta per aprire la pagina per inserire una nuova offerta.
     Route::get("/inserisciOfferte", [OfferController::class, 'getInsertOfferPage'])

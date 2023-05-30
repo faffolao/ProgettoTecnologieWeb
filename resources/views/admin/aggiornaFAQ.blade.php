@@ -3,6 +3,7 @@
 @section('title', 'Modifica FAQ')
 
 @section('content')
+    @if(isset($dati))
     <div class="container">
         <div class="panel">
             <h2>Aggiorna F.A.Q.</h2>
@@ -38,4 +39,5 @@
             </div>
         </div>
     </div>
+    @endif
 @endsection

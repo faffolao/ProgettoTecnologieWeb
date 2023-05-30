@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -144,13 +145,18 @@ class UserController extends Controller
         return redirect()->route('gestioneStaff');
     }
 
-    function getDatiPersonali1($username){
+    function getDatiPersonali1(){
+        $username = Auth::user()->username;
         $data = User::where('username', $username)->first();
+
         return view('customer/modificaDatiL1', ['dati'=>$data]);
     }
 
-    function updateDatiPersonali1(Request $request, $username)
+    function updateDatiPersonali1(Request $request)
     {
+        // questo è lo username dell'utente che si è loggato
+        $username = Auth::user()->username;
+
         // Validazione dei dati inviati dalla form di registrazione
         $request->validate([
             'nome' => ['required','string','max:20'],
@@ -195,13 +201,17 @@ class UserController extends Controller
         return redirect()->route('hubUtente');
     }
 
-    function getDatiPersonali2($username){
+    function getDatiPersonali2(){
+        $username = Auth::user()->username;
         $data = User::where('username', $username)->first();
+
         return view('staff/modificaDatiL2', ['dati'=>$data]);
     }
 
-    function updateDatiPersonali2(Request $request, $username)
+    function updateDatiPersonali2(Request $request)
     {
+        $username = Auth::user()->username;
+
         // Validazione dei dati inviati dalla form di registrazione
         $request->validate([
             'nome' => ['required','string','max:20'],

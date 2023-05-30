@@ -4,6 +4,7 @@
 
 @section('content')
     <div class="container">
+        @if(isset($tuple))
         <div class="panel">
             <div class="title-with-logo">
                 <img src="data:image/png/jpeg;base64,{{ base64_encode($tuple['logo']) }}" alt="Logo Azienda" class="logo-azienda">
@@ -40,6 +41,7 @@
                 <a class="btn" href="{{ route('aziende') }}">Torna alla lista delle aziende</a><br><br>
             </div>
         </div>
+        @endif
 
         <script type="text/javascript" src="{{ asset('assets/js/toggleListManager.js') }}"></script>
     </div>
