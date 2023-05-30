@@ -3,10 +3,10 @@
 @section('title', 'Modifica utente dello Staff')
 
 @section('content')
-    @if(isset($dati))
     <div class="wrapper">
         <!-- box che contiene la form di login -->
         <div class="form-box form-box-inputdialog">
+            @if(isset($dati))
             <h2>Aggiorna Staff: {{$dati['username']}}</h2>
 
             <!-- effettiva form di input -->
@@ -119,10 +119,13 @@
             {{ Form::submit('Aggiorna questo membro dello Staff', ['class' => 'btn'])}}
             {{ Form::close() }}
 
+            @else
+                <h1>Errore: l'utente desiderato non è presente nel database.</h1>
+            @endif
+
             <div class="panel-buttons">
                 <a class="btn btn-back" href="{{ route('gestioneStaff') }}">Torna indietro</a>
             </div>
         </div>
     </div>
-    @endif
 @endsection

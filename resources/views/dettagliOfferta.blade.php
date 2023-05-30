@@ -4,8 +4,8 @@
 
 @section('content')
     <div class="container">
-        @if(isset($tuple))
         <div class="panel">
+            @if(isset($tuple))
             <div class="title-with-logo">
                 <img src="data:image/png/jpeg;base64,{{ base64_encode($tuple['immagine']) }}" alt="Immagine Offerta">
                 <h2>{{$tuple['nome']}}</h2>
@@ -58,12 +58,13 @@
                     @endif
                 @else
                     <a class="btn" href="{{ route('login') }}">Effettua il login</a> <br>
-
                 @endif
-
             </div>
+            @else
+                <p>Errore: l'offerta desiderata non è disponibile.</p><br><br>
+                <a class="btn" href="{{ route('catalogo') }}">Torna indietro</a>
+            @endif
         </div>
-        @endif
     </div>
 
     <script type="text/javascript" src="{{ asset('assets/js/toggleListManager.js') }}"></script>

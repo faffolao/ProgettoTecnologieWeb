@@ -3,9 +3,9 @@
 @section('title', 'Modifica azienda')
 
 @section('content')
-    @if(isset($dati))
     <div class="wrapper">
         <div class="form-box form-box-inputdialog">
+            @if(isset($dati))
             <h2>Aggiorna Azienda</h2>
             <br>
 
@@ -81,11 +81,14 @@
             {{ Form::submit('Aggiorna questa Azienda', ['class' => 'btn'])}}
             {{ Form::close() }}
 
+            @else
+                <h1>Errore: l'azienda desiderata non è presente nel database.</h1>
+            @endif
+
             <div class="panel-buttons">
                 <a class="btn btn-back" href="{{ route('gestioneAziende') }}">Torna indietro</a>
             </div>
         </div>
     </div>
-    @endif
 @endsection
 

@@ -3,9 +3,9 @@
 @section('title', 'Modifica offerta')
 
 @section('content')
-    @if(isset($dati))
     <div class="wrapper">
         <div class="form-box form-box-inputdialog login">
+            @if(isset($dati))
             <h2>Aggiorna Offerte</h2>
             <br>
 
@@ -97,11 +97,14 @@
             {{ Form::submit('Aggiorna offerta', ['class' => 'btn'])}}
             {{ Form::close() }}
 
+            @else
+                <h1>Errore: l'offerta selezionata non è disponibile nel database.</h1>
+            @endif
+
             <div class="panel-buttons">
                 <a class="btn btn-back" href="{{ route('gestioneOfferte') }}">Torna indietro</a>
             </div>
         </div>
     </div>
-    @endif
 @endsection
 

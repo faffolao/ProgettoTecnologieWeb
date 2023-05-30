@@ -3,8 +3,8 @@
 @section('title', 'Modifica FAQ')
 
 @section('content')
-    @if(isset($dati))
     <div class="container">
+        @if(isset($dati))
         <div class="panel">
             <h2>Aggiorna F.A.Q.</h2>
             <br>
@@ -38,6 +38,12 @@
                 <a class="btn btn-back" href="{{ route('gestioneFAQ') }}">Torna indietro</a>
             </div>
         </div>
+        @else
+            <h1>Errore: la FAQ selezionata non è presente nel database.</h1>
+
+            <div class="panel-buttons">
+                <a class="btn btn-back" href="{{ route('gestioneFAQ') }}">Torna indietro</a>
+            </div>
+        @endif
     </div>
-    @endif
 @endsection
