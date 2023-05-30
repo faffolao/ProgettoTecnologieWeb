@@ -6,13 +6,14 @@
     <div class="wrapper wrapper-register">
         <div class="form-box form-box-inputdialog">
             <h2>Modifica dati personali di: {{$dati['username']}}</h2>
+
             @if (session('success'))
                 <div class="form-insertFAQ">
                     {{ session('success') }}
                 </div>
             @endif
             <br>
-            {{--            <form class="form-insertFAQ">--}}
+
             @csrf
             {{ Form::open(array('url' => '/modificaDatiL2/'.$dati['username'], 'enctype' => 'multipart/form-data', 'method' => 'PUT')) }}
             <div class="form-row">
@@ -106,20 +107,6 @@
                             @endforeach
                         </ul>
                     @endif
-
-                    {{--                    Nel caso si volesse aggiornare anche l'username decommentare qui e nel--}}
-                    {{--                    controller UserController le parti di codice del medoto updateDatiPersonali2--}}
-                    {{--                    {{ Form::label('username','Username' ) }}--}}
-                    {{--                    <p><em>Attenzione!!</em></p>--}}
-                    {{--                    <p><em>Se modificato sarà necessario effettuare di nuovo l'accesso.</em></p>--}}
-                    {{--                    {{ Form::text('username', $dati['username'], array('required' => 'required'))}}--}}
-                    {{--                    @if ($errors->first('username'))--}}
-                    {{--                        <ul class="errors">--}}
-                    {{--                            @foreach ($errors->get('username') as $message)--}}
-                    {{--                                <li>{{ $message }}</li>--}}
-                    {{--                            @endforeach--}}
-                    {{--                        </ul>--}}
-                    {{--                    @endif--}}
 
                     {{ Form::label('password', 'Password') }}
                     {{ Form::password('password')}}

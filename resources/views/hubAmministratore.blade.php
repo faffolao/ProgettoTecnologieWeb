@@ -22,12 +22,9 @@
             <div class="panel-buttons">
                 <a href="{{route('gestioneAziende')}}" class="btn">Gestione aziende</a>
             </div>
-            {{--   <div class="panel-buttons">
-                    <a href="{{route('logout')}}" class="btn btn-back">Logout</a>
-                </div>
-                --}}
+
             <div class="panel-buttons">
-                <a href="" class="btn btn-back" title="Esci dal sito" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                <a href="" class="btn btn-back" title="Esci dal sito" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     {{ csrf_field() }}
                 </form>

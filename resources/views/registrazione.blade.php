@@ -104,7 +104,6 @@
             </div>
 
             {{ Form::submit('Registrazione', ['class' => 'btn'])}}
-
             {{ Form::close() }}
 
             <div class="form-alt-container">

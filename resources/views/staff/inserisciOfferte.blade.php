@@ -91,10 +91,6 @@
                                 </ul>
                             @endif
                         </fieldset>
-                        {{--                            <label for="immagine">Inserisci l'immagine dell'Offerta:</label>--}}
-                        {{--                            <input type="file" id="immagine" name="immagine"--}}
-                        {{--                                   accept="image/png, image/jpeg, image/bin, image/jpg" required>--}}
-
                     </fieldset>
                 </div>
             </div>

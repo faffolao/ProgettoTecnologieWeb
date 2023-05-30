@@ -45,7 +45,6 @@
                                 {{ csrf_field() }}
                             </form>
                         </td>
-                        {{--                        <td>{{$list['codice']}}</td>--}}
                     </tr>
                 @endforeach
                 </tbody>

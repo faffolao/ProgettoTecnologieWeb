@@ -104,18 +104,6 @@
                         </ul>
                     @endif
 
-                    {{--                    Nel caso si volesse aggiornare anche l'username decommentare qui e nel--}}
-                    {{--                    controller UserController le parti di codice del medoto updateDatiPersonali1--}}
-                    {{--                    {{ Form::label('username','Username' ) }}--}}
-                    {{--                    {{ Form::text('username', $dati['username'], array('required' => 'required'))}}--}}
-                    {{--                    @if ($errors->first('username'))--}}
-                    {{--                        <ul class="errors">--}}
-                    {{--                            @foreach ($errors->get('username') as $message)--}}
-                    {{--                                <li>{{ $message }}</li>--}}
-                    {{--                            @endforeach--}}
-                    {{--                        </ul>--}}
-                    {{--                    @endif--}}
-
                     {{ Form::label('password', 'Password') }}
                     {{ Form::password('password')}}
                     @if ($errors->first('password'))
