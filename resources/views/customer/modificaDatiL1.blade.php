@@ -135,7 +135,7 @@
 
             <button type="submit" class="btn">Modifica dati</button>
             <br>
-            </form>
+
             <div class="panel-buttons">
                 <a class="btn btn-back" href="{{ route('hubUtente') }}">Torna indietro</a>
             </div>
