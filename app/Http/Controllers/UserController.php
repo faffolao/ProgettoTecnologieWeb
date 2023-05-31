@@ -17,7 +17,7 @@ class UserController extends Controller
         return User::all();
     }
 
-    // per la Barra di Ricerca in CancellazioneClienti
+    // per la Barra di Ricerca in Cancellazione Clienti
     public function getDataBRCC(Request $request)
     {
         $data = User::where('livello', 1)->get();
@@ -253,6 +253,6 @@ class UserController extends Controller
 
         // Commentare questa riga di codie se si volesse tornare a modificare
         // l'username. (Decommentare tutte le righe del metodo soprastante ovviamente)
-        return redirect()->route('hubStaff');
+        return redirect()->route('hubUtente');
     }
 }

@@ -26,21 +26,14 @@ class AuthenticatedSessionController extends Controller {
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(LoginRequest $request) {
-
+        // eseguo l'autenticazione
         $request->authenticate();
 
+        // genero una nuova sessione relativa a questo utente
         $request->session()->regenerate();
 
-        /**
-         * Redirezione su diverse Home Page in base alla classe d'utenza.
-         */
-        $livello = auth()->user()->livello;
-        switch ($livello) {
-            case '1': return redirect()->route('hubUtente');
-            case '2': return redirect()->route('hubStaff');
-            case '3': return redirect()->route('hubAmministratore');
-            default: return redirect('/');
-        }
+        // faccio il redirect all'area personale dell'utente
+        return redirect()->route('hubUtente');
     }
 
     /**

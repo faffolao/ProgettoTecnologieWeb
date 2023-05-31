@@ -16,7 +16,12 @@ class FactoryController extends Controller
     {
         // Ordino la lista di offerte in base all'ID dell'azienda, questo per far si che le offerte della stessa azienda
         // compaiano tutte di seguito.
-        $dataAO = Offer::where('dataOraScadenza', '>', now())->orderBy('idAzienda')->paginate(9);
+        $dataAO = Offer::select('offerte.id as idOfferta', 'offerte.nome as nomeOfferta', 'offerte.oggetto as oggettoOfferta',
+                                'offerte.immagine as immagineOfferta', 'aziende.logo as logoAzienda')
+            ->join("aziende", "offerte.idAzienda", "=", "aziende.id")
+            ->where('offerte.dataOraScadenza', '>', now())
+            ->orderBy('aziende.id')->paginate(9);
+
         return view('catalogo', ['Offerte'=>$dataAO]);
     }
 

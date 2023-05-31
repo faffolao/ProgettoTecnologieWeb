@@ -76,6 +76,9 @@
 /* immagine delle card. Viene impostata con una dimensione fissa ed è in grado di adattarsi automaticamente alla dimensione della card */
 .card img {width: 150px; height: 150px; object-fit: scale-down; margin-bottom: 20px;}
 
+/* la card può contenere anche un'immagine aggiuntiva posta in alto */
+.card-top-logo {height: fit-content !important; display: block; width: 100% !important; max-height: 28px;}
+
 /* titolo della card */
 .card h3 {font-size: 24px; margin-bottom: 10px;}
 

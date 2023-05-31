@@ -44,10 +44,11 @@
             @if(count($Offerte) > 0)
                 @foreach($Offerte as $offerte)
                     <div class="card">
-                        <img src="data:image/png/jpg/webp/jpeg;base64,{{ base64_encode($offerte['immagine']) }}" alt="Offerta">
-                        <h3>{{$offerte['nome']}}</h3>
-                        <p>{{$offerte['oggetto']}}</p>
-                        <a href="{{ url('/dettagliOfferta/'.$offerte['id']) }}" class="card-btn">Scopri di più</a>
+                        <img src="data:image/png/jpg/webp/jpeg;base64,{{ base64_encode($offerte['logoAzienda']) }}" class="card-top-logo" alt="Logo azienda">
+                        <img src="data:image/png/jpg/webp/jpeg;base64,{{ base64_encode($offerte['immagineOfferta']) }}" alt="Offerta">
+                        <h3>{{$offerte['nomeOfferta']}}</h3>
+                        <p>{{$offerte['oggettoOfferta']}}</p>
+                        <a href="{{ url('/dettagliOfferta/'.$offerte['idOfferta']) }}" class="card-btn">Scopri di più</a>
                     </div>
                 @endforeach
             @else

@@ -10,7 +10,6 @@ use Illuminate\Validation\Rule;
 
 class OfferController extends Controller
 {
-    //
     function getData()
     {
         return Offer::all();
@@ -27,6 +26,7 @@ class OfferController extends Controller
         return view('staff/gestioneOfferte', ['List'=>$data]);
     }
 
+    // BRGO = Barra di Ricerca Gestione Offerte
     public function getDataBRGO(Request $request)
     {
         $data = Offer::all();

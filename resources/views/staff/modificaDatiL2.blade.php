@@ -124,7 +124,7 @@
             <br>
 
             <div class="panel-buttons">
-                <a class="btn btn-back" href="{{ route('hubStaff') }}">Torna indietro</a>
+                <a class="btn btn-back" href="{{ route('hubUtente') }}">Torna indietro</a>
             </div>
         </div>
 @endsection

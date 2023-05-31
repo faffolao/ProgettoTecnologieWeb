@@ -49,20 +49,25 @@ Route::get("/dettagliOfferta/{id}", [OfferController::class, 'getDataDO'])
     ->name("dettagliOfferta");
 
 /*
+ * ROTTA PER L'HUB UTENTE, accedibile indipendentemente dal livello di utenza.
+ */
+Route::middleware('auth')->group(function() {
+    Route::view("/hubUtente", 'hubUtente')
+        ->name("hubUtente");
+});
+
+/*
  * ROTTE DI LIVELLO 1
  */
 
 Route::group(['middleware' => 'can:isUser'], function() {  //vincolo la funzionalità delle seguenti rotte
     //ai soli utenti di livello 1
+
     // Rotta per mostrare la pagina stampabile del coupon.
     Route::get("/coupon/{idOfferta}", [CouponController::class, 'getDataOC'])
         ->name("coupon");
     // Rotta per il salvataggio del coupon nel DB
     Route::post("/inserisciCoupon/{idOfferta}", [CouponController::class, 'saveDataC']);
-
-    // Rotta per accedere all'area personale del cliente.
-    Route::view("/hubUtente", 'hubUtente')
-        ->name("hubUtente");
 
     // Rotta per accedere alla modifica dei dati personali (livello 1).
     Route::get('/modificaDatiL1/edit', [UserController::class, 'getDatiPersonali1'])
@@ -75,7 +80,6 @@ Route::group(['middleware' => 'can:isUser'], function() {  //vincolo la funziona
         ->name("listaCouponUsati");
     // Rotta per ricercare i coupon
     Route::post('/listaCouponUsati', [CouponController::class, 'getDataBRCU']);
-
 });
 
 /*
@@ -84,9 +88,6 @@ Route::group(['middleware' => 'can:isUser'], function() {  //vincolo la funziona
 
 Route::group(['middleware' => 'can:isStaff'],function () {  //vincolo la funzionalità delle seguenti rotte
     //ai soli utenti di livello 2
-    // Rotta per caricare l'area personale dello staff.
-    Route::view("/hubStaff", 'hubStaff')
-        ->name("hubStaff");
 
     // Rotta per aprire la pagina della modifica dei dati personali per lo Staff.
     Route::get('/modificaDatiL2/edit', [UserController::class, 'getDatiPersonali2'])
@@ -123,9 +124,6 @@ Route::group(['middleware' => 'can:isStaff'],function () {  //vincolo la funzion
 
 Route::group(['middleware' => 'can:isAdmin'],function () {   //vincolo la funzionalità delle seguenti rotte
     //al solo utente di livello  3
-    // Rotta per aprire la home page dell'area personale dell'amministratore.
-    Route::view("/hubAmministratore", 'hubAmministratore')
-        ->name("hubAmministratore");
 
     // Rotta per l'apertura della pagina del gestionale delle FAQ.
     Route::get("/gestioneFAQ", [FAQController::class, 'getData'])

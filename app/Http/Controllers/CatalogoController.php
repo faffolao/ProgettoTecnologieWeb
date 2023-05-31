@@ -10,7 +10,9 @@ class CatalogoController extends Controller
     // BR = Barra Ricerca
     public function getDataBR(Request $request)
     {
-        $dbQuery = Offer::query();
+        $dbQuery = Offer::select('offerte.id as idOfferta', 'offerte.nome as nomeOfferta', 'offerte.oggetto as oggettoOfferta',
+                                'offerte.immagine as immagineOfferta', 'aziende.logo as logoAzienda')
+                        ->join("aziende", "offerte.idAzienda", "=", "aziende.id");
         $viewData = Array();
 
         $factoryQuery = $request->input("factory_query");
@@ -18,10 +20,7 @@ class CatalogoController extends Controller
 
         if ($factoryQuery != null)
         {
-            $dbQuery->select("offerte.*")
-                    ->join("aziende", "offerte.idAzienda", "=", "aziende.id")
-                    ->where("aziende.nome", "LIKE", "%" . $factoryQuery . "%");
-
+            $dbQuery->where("aziende.nome", "LIKE", "%" . $factoryQuery . "%");
             $viewData['FactoryQuery'] = $factoryQuery;
         }
 
@@ -38,7 +37,7 @@ class CatalogoController extends Controller
             $viewData["OfferQuery"] = $offerQuery;
         }
 
-        $offerList = $dbQuery->where('dataOraScadenza', '>', now())->paginate(9);
+        $offerList = $dbQuery->where('offerte.dataOraScadenza', '>', now())->orderBy('aziende.id')->paginate(9);
         $viewData["Offerte"] = $offerList;
 
         return view("catalogo", $viewData);

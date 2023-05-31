@@ -68,7 +68,7 @@
             </p>
 
             <div class="panel-buttons">
-                <a href="{{ route('hubAmministratore') }}" class="btn btn-back">Torna indietro</a>
+                <a href="{{ route('hubUtente') }}" class="btn btn-back">Torna indietro</a>
             </div>
         </div>
     </div>

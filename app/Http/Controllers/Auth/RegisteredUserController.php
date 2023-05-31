@@ -33,30 +33,6 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        /*
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'surname' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'username' => ['required', 'string', 'min:8', 'unique:users'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
-
-        $user = User::create([
-            'name' => $request->name,
-            'surname' => $request->surname,
-            'email' => $request->email,
-            'username' => $request->username,
-            'password' => Hash::make($request->password),
-        ]);
-
-        event(new Registered($user));
-
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
-        */
-
         // Validazione dei dati inviati dalla form di registrazione
         $request->validate([
             'username' => ['required','string', 'max:255', 'unique:utenti'],
@@ -70,8 +46,7 @@ class RegisteredUserController extends Controller
         ]);
 
         // Creazione dell'utente nel database
-
-        $user = User::create([
+        User::create([
             'username' => $request->input('username'),
             'password' => bcrypt($request->input('password')),
             'nome' => $request->input('nome'),
@@ -85,6 +60,5 @@ class RegisteredUserController extends Controller
 
         // Reindirizza l'utente alla pagina di login
         return redirect()->route('login')->with('success', 'Registrazione completata con successo! Ora puoi effettuare il login.');
-
     }
 }

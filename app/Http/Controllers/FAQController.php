@@ -26,10 +26,6 @@ class FAQController extends Controller
         // Esempio di reindirizzamento alla pagina principale
         return redirect()->route('gestioneFAQ');
     }
-    function getForm()
-    {
-        return view('inserisciFAQ');
-    }
 
     function addFAQ(Request $request){
         // Validazione dei dati inviati nella form
