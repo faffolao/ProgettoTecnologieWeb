@@ -2,4 +2,4 @@
 Sito web di coupon
 
 ## Confermo
-Confermo
+Confermo di aver confermato
