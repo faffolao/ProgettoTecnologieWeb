@@ -31,7 +31,7 @@
                 </ul>
             @endif
 
-            {{ Form::submit('Aggiungi domanda e risposta', ['class' => 'btn'])}}
+            {{ Form::submit('Modifica domanda e risposta', ['class' => 'btn'])}}
             {{ Form::close() }}
 
             <div class="panel-buttons">

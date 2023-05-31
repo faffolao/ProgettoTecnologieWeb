@@ -51,13 +51,13 @@
                             {{ csrf_field() }}
                         </form>
                     @else
-                        <a class="btn" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="{{ route('login') }}">Accedi come cliente</a> <br>
+                        <a class="btn" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" href="{{ route('login') }}">Accedi come cliente per usare l'offerta</a> <br>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
                     @endif
                 @else
-                    <a class="btn" href="{{ route('login') }}">Effettua il login</a> <br>
+                    <a class="btn" href="{{ route('login') }}">Effettua il login per utilizzare l'offerta</a> <br>
                 @endif
             </div>
             @else

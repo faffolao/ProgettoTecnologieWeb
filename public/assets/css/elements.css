@@ -182,9 +182,6 @@
     padding: 10px 20px;
     background-color: transparent;
     border: none;
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
 .search-wrapper button img {width: 17px; height: 17px;}

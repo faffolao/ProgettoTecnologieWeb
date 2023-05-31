@@ -11,7 +11,6 @@ use Illuminate\Support\Str;
 
 class CouponController extends Controller
 {
-    //
     function getData()
     {
         return Coupon::all();
@@ -31,11 +30,11 @@ class CouponController extends Controller
 
     function saveDataC($idOfferta)
     {
+        // questo è lo username del cliente
         $usernameCliente = Auth::user()->username;
 
-        if(!Coupon::where('idOfferta', $idOfferta)
-            ->where('usernameCliente', $usernameCliente)
-            ->exists()) {
+        // se l'utente non ha richiesto già il coupon della stessa offerta vado a generare il suo coupon
+        if(!Coupon::where('idOfferta', $idOfferta)->where('usernameCliente', $usernameCliente)->exists()) {
             // Genera il codice alfanumerico controllando
             // che non venga ripetuto
             do {
@@ -47,13 +46,16 @@ class CouponController extends Controller
             $coupon['usernameCliente'] = $usernameCliente;
             $coupon['codice'] = $codice;
             $coupon->save();
-
         }
+
+        // ottengo i dettagli del coupon
         $dataO = Offer::where('id', $idOfferta)->first();
         $dataC = User::where('username', $usernameCliente)->first();
         $dataCP = Coupon::where('idOfferta', $idOfferta)
             ->where('usernameCliente', $usernameCliente)
             ->first();
+
+        // ritorno la vista del coupon compresa di tutti i dati necessari
         return view('customer/coupon', ['tuple'=>$dataO, 'cliente'=>$dataC, 'datiCoupon'=>$dataCP]);
     }
 
@@ -62,11 +64,12 @@ class CouponController extends Controller
     {
         $usernameCliente = Auth::user()->username;
 
-        $data = Coupon::join('offerte', 'coupons.idOfferta', '=', 'offerte.id')
+        $data = Coupon::select('utenti.username', 'offerte.id as idOfferte', 'offerte.nome as nomeOfferte', 'aziende.nome as nomeAziende',
+                               'coupons.dataOraCreazione', 'offerte.dataOraScadenza', 'coupons.codice')
+            ->join('offerte', 'coupons.idOfferta', '=', 'offerte.id')
             ->join('aziende', 'offerte.idAzienda', '=', 'aziende.id')
             ->join('utenti', 'utenti.username', '=', 'coupons.usernameCliente')
             ->orderBy('coupons.dataOraCreazione', 'asc')
-            ->select('utenti.username', 'offerte.id as idOfferte', 'offerte.nome as nomeOfferte', 'aziende.nome as nomeAziende', 'coupons.dataOraCreazione', 'offerte.dataOraScadenza', 'coupons.codice')
             ->where('coupons.usernameCliente', $usernameCliente)
             ->get();
 
@@ -79,11 +82,12 @@ class CouponController extends Controller
         $usernameCliente = Auth::user()->username;
         $data = Coupon::all();
         $query = $request->input('query');
-        $dataCU = Coupon::join('offerte', 'coupons.idOfferta', '=', 'offerte.id')
+        $dataCU = Coupon::select('utenti.username', 'offerte.id as idOfferte', 'offerte.nome as nomeOfferte', 'aziende.nome as nomeAziende',
+                                 'coupons.dataOraCreazione', 'offerte.dataOraScadenza', 'coupons.codice')
+            ->join('offerte', 'coupons.idOfferta', '=', 'offerte.id')
             ->join('aziende', 'offerte.idAzienda', '=', 'aziende.id')
             ->join('utenti', 'utenti.username', '=', 'coupons.usernameCliente')
             ->orderBy('coupons.dataOraCreazione', 'asc')
-            ->select('utenti.username', 'offerte.id as idOfferte', 'offerte.nome as nomeOfferte', 'aziende.nome as nomeAziende', 'coupons.dataOraCreazione', 'offerte.dataOraScadenza', 'coupons.codice')
             ->where('offerte.nome', 'LIKE', '%' .$query. '%')
             ->where('coupons.usernameCliente', $usernameCliente)
             ->get();
