@@ -44,7 +44,7 @@
 
                 <div class="panel-buttons">
                     <a class="btn" href="{{ route('catalogo') }}">Torna indietro</a>
-                    @if(strtotime($tuple['dataOraScadenza']) > strtotime(now()))
+                    @if(strtotime($tuple['dataOraScadenza']) < strtotime(now()))
                         <a class="btn btn-back" href="{{ route('catalogo') }}">Offerta Scaduta!</a> <br>
                     @else
                         @if(isset(Auth::user()->livello))
