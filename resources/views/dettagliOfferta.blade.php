@@ -37,7 +37,6 @@
                         <li class="toggle" title="Clicca qui per sapere quando l'offerta scade"><h2>Data di Scadenza</h2>
                             <ul class="sub-list hidden">
                                 <li><p>{{$tuple['dataOraScadenza']}}</p></li>
-                                <li><p>{{now('Europe/Rome')->format('Y-m-d H:i:s')}}</p></li>
                             </ul>
                         </li>
                     </ul>
