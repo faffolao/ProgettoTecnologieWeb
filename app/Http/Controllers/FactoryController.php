@@ -6,6 +6,7 @@ use App\Models\Offer;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Factory;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
 
@@ -19,7 +20,7 @@ class FactoryController extends Controller
         $dataAO = Offer::select('offerte.id as idOfferta', 'offerte.nome as nomeOfferta', 'offerte.oggetto as oggettoOfferta',
                                 'offerte.immagine as immagineOfferta', 'aziende.logo as logoAzienda')
             ->join("aziende", "offerte.idAzienda", "=", "aziende.id")
-            ->where('offerte.dataOraScadenza', '>', now())
+            ->where('offerte.dataOraScadenza', '>', Carbon::now('Europe/Rome')->format('Y-m-d H:i:s'))
             ->orderBy('aziende.id')->paginate(9);
 
         return view('catalogo', ['Offerte'=>$dataAO]);
