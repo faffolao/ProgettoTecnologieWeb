@@ -10,31 +10,29 @@ use Illuminate\Validation\Rule;
 
 class OfferController extends Controller
 {
-    function getData()
-    {
-        return Offer::all();
-    }
+    // Ottenimento Dettagli di un'Offerta
     function getDataDO($id)
     {
         $data = Offer::where('id', $id)->first();
         return view('dettagliOfferta', ['tuple'=>$data]);
     }
 
+    // Ottenimento lista completa delle Offerte
     function getDataOff()
     {
         $data = Offer::all();
         return view('staff/gestioneOfferte', ['List'=>$data]);
     }
 
-    // BRGO = Barra di Ricerca Gestione Offerte
+    // Ottenimento offerte filtrate in base alla query scritta nella Barra di Ricerca in Gestione Offerte
     public function getDataBRGO(Request $request)
     {
-        $data = Offer::all();
         $query = $request->input('query');
         $dataNO = Offer::where('nome', 'LIKE', '%' .$query. '%')->get();
-        return view('staff/gestioneOfferte', ['Offerta'=>$data], ['List'=>$dataNO]);
+        return view('staff/gestioneOfferte', ['List'=>$dataNO]);
     }
 
+    // Cancellazione Record di un'Offerta
     function deleteR($id)
     {
         // Trova la riga nel database
@@ -46,9 +44,11 @@ class OfferController extends Controller
         // Esempio di reindirizzamento alla pagina principale
         return redirect()->route('gestioneOfferte')->with('message', 'Offerta eliminata con successo.');
     }
-    function addOff(Request $request){
 
-        //Controlla se i campi sono stati compilati correttamente
+    // Aggiunta di un'Offerta
+    function addOff(Request $request)
+    {
+        // Controlla se i campi sono stati compilati correttamente
         $request->validate([
             'nome' => ['required','string','max:70', 'unique:offerte'],
             'dataOraScadenza' => ['required', 'after:'.Date::now()],
@@ -56,15 +56,16 @@ class OfferController extends Controller
         ]);
 
         $off = new Offer();
-        $root = "root";
-        if ($request->input('idAzienda')=="NULL")
+        if ($request->input('idAzienda') == "NULL")
         {
             $azienda = Factory::first();
-        } else
+        }
+        else
         {
             $nomeA = $request->input('idAzienda');
             $azienda = Factory::where('nome', $nomeA)->first();
         }
+
         $off['idAzienda'] = $azienda['id'];
         $off['nome'] = $request->input('nome');
         $off['oggetto'] = $request->input('oggetto');
@@ -79,21 +80,26 @@ class OfferController extends Controller
         return redirect()->route('gestioneOfferte');
     }
 
+    // Apre la pagina di inserimento di un'Offerta, comprensiva dell'elenco delle Aziende.
     function getInsertOfferPage()
     {
         $data = Factory::orderBy('id', 'asc')->get();
         return view('staff/inserisciOfferte', ['ListaNomi'=>$data]);
     }
 
-    function getDataSingleOff($id){
+    // Ottiene i dati di una specifica Offerta, usata per la pagina Modifica Offerta.
+    // Viene corredata anche della lista di Aziende.
+    function getDataSingleOff($id)
+    {
         $dataAziende = Factory::orderBy('id' , 'asc')->get();
         $data = Offer::where('id', $id)->first();
         return view('staff/aggiornaOfferte', ['dati'=>$data], ['ListaNomi'=>$dataAziende]);
     }
 
+    // Modifica una specifica Offerta.
     function updateDataSingleOff(Request $request, $id)
     {
-        //Controlla se i campi sono stati compilati correttamente
+        // Controlla se i campi sono stati compilati correttamente
         $request->validate([
             'nome' => ['required','string','max:70',
                 Rule::unique('offerte')->ignore($id)],
@@ -112,7 +118,9 @@ class OfferController extends Controller
                         'luogoFruizione'=>$request->input('luogoFruizione'),
                         'dataOraScadenza'=>$request->input('dataOraScadenza')
                     ]);
-            } else {
+            }
+            else
+            {
                 Offer::where('id', $id)->update(
                     [
                         'idAzienda' => $request->input('idAzienda'),
@@ -123,7 +131,8 @@ class OfferController extends Controller
                         'dataOraScadenza'=>$request->input('dataOraScadenza')
                     ]);
             }
-        } else
+        }
+        else
         {
             $request->validate([
                 'immagine' => ['required','file','mimes:jpg,jpeg,png,bin'],
@@ -131,6 +140,7 @@ class OfferController extends Controller
 
             $img = $request->file('immagine');
             $immagine = file_get_contents($img);
+
             if ($request->input('idAzienda')=="NULL")
             {
                 Offer::where('id', $id)->update(
@@ -142,7 +152,8 @@ class OfferController extends Controller
                         'dataOraScadenza'=>$request->input('dataOraScadenza'),
                         'immagine'=>$immagine
                     ]);
-            } else
+            }
+            else
             {
                 Offer::where('id', $id)->update(
                     [

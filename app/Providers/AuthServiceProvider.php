@@ -25,8 +25,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //Gate per definire i permessi di Clienti, Staff e Amministratore
-
+        // Gate per definire i permessi di Clienti, Staff e Amministratore
         Gate::define('isUser', function($user) {
             return $user->livello == 1;
         });

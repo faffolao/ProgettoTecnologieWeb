@@ -9,12 +9,14 @@ use Illuminate\Validation\Rule;
 
 class FAQController extends Controller
 {
+    // Ottiene l'intera lista di FAQ, utilizzata per la pagina di Gestione FAQ
     function getData()
     {
         $data = FAQ::all();
-
         return view('admin/gestioneFAQ', ['List'=>$data]);
     }
+
+    // Cancellazione di un Record di FAQ
     function deleteR($id)
     {
         // Trova la riga nel database
@@ -27,6 +29,7 @@ class FAQController extends Controller
         return redirect()->route('gestioneFAQ');
     }
 
+    // Aggiunta di una FAQ
     function addFAQ(Request $request){
         // Validazione dei dati inviati nella form
         $request->validate([
@@ -44,11 +47,14 @@ class FAQController extends Controller
 
         return redirect()->route('gestioneFAQ');
     }
+
+    // Ottenimento dettagli di una FAQ specifica, utilizzata per la pagina Modifica FAQ
     function getDataSingleFAQ($id){
         $data = FAQ::where('id', $id)->first();
         return view('admin/aggiornaFAQ', ['dati'=>$data]);
     }
 
+    // Modifica una FAQ precisa.
     function updateDataSingleFAQ(Request $request, $id)
     {
         // Validazione dei dati inviati nella form

@@ -7,6 +7,7 @@ use App\Models\FAQ;
 
 class HomeController extends Controller
 {
+    // Apre la home page, corredata di lista parziale delle Aziende e delle FAQ
     public function index()
     {
         $dataHome = Factory::all()->take(8);

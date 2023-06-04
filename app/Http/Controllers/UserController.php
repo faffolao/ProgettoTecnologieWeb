@@ -12,21 +12,18 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
-    function getData()
-    {
-        return User::all();
-    }
-
-    // per la Barra di Ricerca in Cancellazione Clienti
+    // ottiene la lista di clienti secondo la query di ricerca scritta nella Barra di Ricerca in Cancellazione Clienti
     public function getDataBRCC(Request $request)
     {
-        $data = User::where('livello', 1)->get();
         $query = $request->input('query');
         $dataUN = User::where('username', 'LIKE', '%' .$query. '%')
             ->where('livello', 1)
             ->get();
-        return view('admin/cancellazioneClienti', ['Clienti'=>$data], ['List'=>$dataUN]);
+
+        return view('admin/cancellazioneClienti', ['List'=>$dataUN]);
     }
+
+    // Cancellazione di un Cliente
     function deleteC($username)
     {
         //In questo caso è stata necessaria una query cruda perchè non riconosceva l'id username
@@ -36,37 +33,43 @@ class UserController extends Controller
         return redirect()->route('cancellazioneClienti');
     }
 
+    // Ottenimento lista completa dei clienti
     function getDataClienti()
     {
         $data = User::where('livello', 1)->get();
         return view('admin/cancellazioneClienti', ['List'=>$data]);
     }
 
+    // Ottenimento lista di Staff per la pagina Gestione Staff
     function getDataGS()
     {
         $data = User::where('livello', 2)->get();
         return view('admin/gestioneStaff', ['List'=>$data]);
     }
 
-    // per la Barra di Ricerca in gestioneStaff
+    // Ottenimento lista di Staff filtrata in base alla query di ricerca scritta nella Barra di Ricerca in Gestione Staff
     function getDataBRGS(Request $request)
     {
-        $data = User::where('livello', 2)->get();
         $query = $request->input('query');
-        $dataUN = User::where('username', 'LIKE', '%' .$query. '%')
+        $dataUserName = User::where('username', 'LIKE', '%' .$query. '%')
             ->where('livello', 2)
             ->get();
-        return view('admin/gestioneStaff', ['Staff'=>$data], ['List'=>$dataUN]);
+
+        return view('admin/gestioneStaff', ['List'=>$dataUserName]);
     }
+
+    // Cancellazione di uno Staff
     function deleteS($username)
     {
         // Trova la riga nel database
         // Elimina la riga
         DB::table('utenti')->where('username', $username)->delete();
 
-        // Esempio di reindirizzamento alla pagina principale
+        // reindirizzamento alla pagina principale
         return redirect()->route('gestioneStaff');
     }
+
+    // Aggiunta di uno Staff
     function addStaff(Request $request){
         // Validazione dei dati inviati dalla form di registrazione
         $request->validate([
@@ -82,6 +85,7 @@ class UserController extends Controller
 
         $user = new User();
         $livello = 2;
+
         $user['username'] = $request->input('username');
         $user['nome'] = $request->input('nome');
         $user['cognome'] = $request->input('cognome');
@@ -96,11 +100,13 @@ class UserController extends Controller
         return redirect()->route('gestioneStaff');
     }
 
+    // Ottenimento dei dati di uno Staff per la pagina Modifica Staff
     function getDataSingleStaff($username){
         $data = User::where('username', $username)->first();
         return view('admin/aggiornaStaff', ['dati'=>$data]);
     }
 
+    // Modifica di uno Staff
     function updateDataSingleStaff(Request $request, $username)
     {
         // Validazione dei dati inviati dalla form di registrazione
@@ -130,6 +136,7 @@ class UserController extends Controller
             $request->validate([
                 'password' => ['required','string','min:8']
             ]);
+
             User::where('username', $username)->update(
                 [
                     'nome'=>$request->input('nome'),
@@ -145,6 +152,7 @@ class UserController extends Controller
         return redirect()->route('gestioneStaff');
     }
 
+    // Ottenimento dati personali del Cliente, per la pagina Modifica dati personali del Cliente.
     function getDatiPersonali1(){
         $username = Auth::user()->username;
         $data = User::where('username', $username)->first();
@@ -152,6 +160,7 @@ class UserController extends Controller
         return view('customer/modificaDatiL1', ['dati'=>$data]);
     }
 
+    // Modifica dei dati personali del cliente.
     function updateDatiPersonali1(Request $request)
     {
         // questo è lo username dell'utente che si è loggato
@@ -196,11 +205,10 @@ class UserController extends Controller
                 ]);
         }
 
-        // Commentare questa riga di codie se si volesse tornare a modificare
-        // l'username. (Decommentare tutte le righe del metodo soprastante ovviamente)
         return redirect()->route('hubUtente');
     }
 
+    // Ottenimento dati personali dello Staff, per la pagina Modifica dati personali dello Staff.
     function getDatiPersonali2(){
         $username = Auth::user()->username;
         $data = User::where('username', $username)->first();
@@ -208,6 +216,7 @@ class UserController extends Controller
         return view('staff/modificaDatiL2', ['dati'=>$data]);
     }
 
+    // Modifica dei dati personali dello Staff.
     function updateDatiPersonali2(Request $request)
     {
         $username = Auth::user()->username;
@@ -251,8 +260,6 @@ class UserController extends Controller
                 ]);
         }
 
-        // Commentare questa riga di codie se si volesse tornare a modificare
-        // l'username. (Decommentare tutte le righe del metodo soprastante ovviamente)
         return redirect()->route('hubUtente');
     }
 }

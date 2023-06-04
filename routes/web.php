@@ -36,7 +36,7 @@ Route::get("/dettagliAzienda/{id}", [FactoryController::class, 'getDataDA'])
     ->name('dettagliAzienda');
 
 // Rotta per il caricamento del catalogo corredato di lista delle offerte.
-Route::get('/catalogo', [FactoryController::class, 'getDataC'])
+Route::get('/catalogo', [CatalogoController::class, 'getDataC'])
     ->name('catalogo');
 Route::post('/catalogo', [CatalogoController::class, 'getDataBR']);
 

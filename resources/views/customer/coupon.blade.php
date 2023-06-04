@@ -22,9 +22,11 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/couponPage.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- includo la libreria esterna di JS che permette di generare un QR code a partire da una stringa. Verrà impiegata
-    per generare il QR code del coupon -->
-    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <!-- importazione jQuery tramite CDN (Content Delivery Network) -->
+    <!-- NOTA - gli attributi integrity e crossorigin servono per certificare l'autenticità del file inviato dal CDN -->
+    <!-- e quindi per dimostrare che è completamente originale e non è stato compromesso da terzi -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+            crossorigin="anonymous"></script>
 </head>
 
 <body>

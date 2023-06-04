@@ -11,10 +11,8 @@ use Illuminate\Support\Str;
 
 class CouponController extends Controller
 {
-    function getData()
-    {
-        return Coupon::all();
-    }
+    // OC = Offerte Coupon
+    // Apre la pagina stampabile del coupon, che comprende il coupon stesso e l'offerta a cui è associato.
     function getDataOC($idOfferta)
     {
         $usernameCliente = Auth::user()->username;
@@ -28,6 +26,7 @@ class CouponController extends Controller
         return view('customer/coupon', ['tuple'=>$dataO, 'cliente'=>$dataC, 'datiCoupon'=>$dataCP]);
     }
 
+    // Inserisce un nuovo Coupon nel database.
     function saveDataC($idOfferta)
     {
         // questo è lo username del cliente
@@ -77,11 +76,12 @@ class CouponController extends Controller
     }
 
     // Metodo per la Barra di Ricerca per view lista Coupon Usati
+    // Va ad ottenere i coupon che hanno come nome ciò che ho digitato nella barra di ricerca (Query di ricerca)
     public function getDataBRCU(Request $request)
     {
         $usernameCliente = Auth::user()->username;
-        $data = Coupon::all();
         $query = $request->input('query');
+
         $dataCU = Coupon::select('utenti.username', 'offerte.id as idOfferte', 'offerte.nome as nomeOfferte', 'aziende.nome as nomeAziende',
                                  'coupons.dataOraCreazione', 'offerte.dataOraScadenza', 'coupons.codice')
             ->join('offerte', 'coupons.idOfferta', '=', 'offerte.id')
@@ -92,6 +92,6 @@ class CouponController extends Controller
             ->where('coupons.usernameCliente', $usernameCliente)
             ->get();
 
-        return view('customer/listaCouponUsati', ['Coupon'=>$data], ['List'=>$dataCU]);
+        return view('customer/listaCouponUsati', ['List'=>$dataCU]);
     }
 }

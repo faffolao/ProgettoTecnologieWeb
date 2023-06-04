@@ -12,35 +12,21 @@ use Illuminate\Validation\Rule;
 
 class FactoryController extends Controller
 {
-    // C = Catalogo
-    function getDataC()
-    {
-        // Ordino la lista di offerte in base all'ID dell'azienda, questo per far si che le offerte della stessa azienda
-        // compaiano tutte di seguito.
-        $dataAO = Offer::select('offerte.id as idOfferta', 'offerte.nome as nomeOfferta', 'offerte.oggetto as oggettoOfferta',
-                                'offerte.immagine as immagineOfferta', 'aziende.logo as logoAzienda')
-            ->join("aziende", "offerte.idAzienda", "=", "aziende.id")
-            ->where('offerte.dataOraScadenza', '>', Carbon::now('Europe/Rome')->format('Y-m-d H:i:s'))
-            ->orderBy('aziende.id')->paginate(9);
-
-        return view('catalogo', ['Offerte'=>$dataAO]);
-    }
-
-    // A = Aziende
+    // Ottenimento lista di Aziende
     function getDataA()
     {
         $data = Factory::paginate(12);
         return view('aziende', ['Aziende'=>$data]);
     }
 
-    // DA = Dettagli Azienda
+    // Ottenimento Dettagli Azienda
     public function getDataDA($id)
     {
         $data = Factory::where('id', $id)->first();
         return view('dettagliAzienda', ['tuple'=>$data]);
     }
 
-    // BR = Barra Ricerca
+    // Ottenimento aziende in base alla query scritta nella Barra Ricerca
     public function getDataBR(Request $request)
     {
         $query = $request->input('query');
@@ -48,14 +34,14 @@ class FactoryController extends Controller
         return view('aziende', ['Aziende' => $dataNO, 'searchQuery' => $query]);
     }
 
-    // GA = Gestione Aziende
+    // Ottenimento lista COMPLETA e non impaginata delle Aziende, per la Gestione Aziende
     function getDataGA()
     {
         $data = Factory::all();
         return view('admin/gestioneAziende', ['List'=>$data]);
     }
 
-    // BRGA = Barra di Ricerca in Gestione Staff
+    // Ottenimento aziende filtrate secondo la query digitata nella Barra di Ricerca in Gestione Aziende
     function getDataBRGA(Request $request)
     {
         $data = Factory::all();
@@ -63,6 +49,8 @@ class FactoryController extends Controller
         $dataN = Factory::where('nome', 'LIKE', '%' .$query. '%')->get();
         return view('admin/gestioneAziende', ['Azienda'=>$data], ['List'=>$dataN]);
     }
+
+    // Cancellazione azienda
     function deleteA($id)
     {
         // Trova la riga nel database
@@ -72,8 +60,9 @@ class FactoryController extends Controller
         // Esempio di reindirizzamento alla pagina principale
         return redirect()->route('gestioneAziende');
     }
-    function addAzienda(Request $request){
 
+    // Aggiunta azienda
+    function addAzienda(Request $request){
         //Controlla se i campi sono stati compilati correttamente
         $request->validate([
             'nome' => ['required','string','max:40', 'unique:aziende'],
@@ -84,10 +73,11 @@ class FactoryController extends Controller
             'logo' => ['required', 'file', 'mimes:png,jpg,jpeg,bin']
         ]);
 
-        $factory = new Factory();
         $admin = User::where('livello', 3)->first();
         $immagine = $request->file('logo');
         $logo = file_get_contents($immagine);
+
+        $factory = new Factory();
         $factory['nome'] = $request->input('nome');
         $factory['tipologia'] = $request->input('tipologia');
         $factory['descrizione'] = $request->input('descrizione');
@@ -100,14 +90,16 @@ class FactoryController extends Controller
         return redirect()->route('gestioneAziende');
     }
 
+    // Ottiene i dati di un'Azienda specifica, per la pagina di modifica di un'Azienda
     function getDataSingleAzienda($id){
         $data = Factory::where('id', $id)->first();
         return view('admin/aggiornaAziende', ['dati'=>$data]);
     }
 
+    // Modifica i dati di una singola azienda
     function updateDataSingleAzienda(Request $request, $id)
     {
-        //Controlla se i campi sono stati compilati correttamente
+        // Controlla se i campi sono stati compilati correttamente
         $request->validate([
             'nome' => ['required','string','max:40',
                 Rule::unique('aziende')->ignore($id)],
@@ -126,16 +118,17 @@ class FactoryController extends Controller
                     'ragioneSociale'=>$request->input('ragioneSociale'),
                     'localizzazione' => $request->input('localizzazione')
                 ]);
-        } else
+        }
+        else
         {
-
-            //Controlla se i campi sono stati compilati correttamente
+            // Controlla se i campi sono stati compilati correttamente
             $request->validate([
                 'logo' => ['required','file','mimes:jpg,jpeg,png,bin'],
             ]);
 
             $immagine = $request->file('logo');
             $logo = file_get_contents($immagine);
+
             Factory::where('id', $id)->update(
                 [
                     'nome'=>$request->input('nome'),
@@ -146,6 +139,7 @@ class FactoryController extends Controller
                     'logo'=>$logo
                 ]);
         }
+
         return redirect()->route('gestioneAziende');
     }
 }
