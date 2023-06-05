@@ -45,6 +45,7 @@
         </div>
 
         <h2>Documentazione del sito</h2>
+        <br>
         <p>
             Tramite <a href="#">questo link</a> è possibile scaricare il documento in formato PDF che contiene la documentazione del sito web.
         </p>

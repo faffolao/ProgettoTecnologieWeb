@@ -35,9 +35,9 @@
 
                     {{ Form::label('eta', 'Data di nascita', ['class' => 'label-input']) }}
                     {{ Form::date('eta', '', ['class' => 'input', 'id' => 'eta', 'rules' => 'date_format:d-m-Y', 'required' => 'required']) }}
-                    @if ($errors->first('cognome'))
+                    @if ($errors->first('eta'))
                         <ul class="errors">
-                            @foreach ($errors->get('data_nascita') as $message)
+                            @foreach ($errors->get('eta') as $message)
                                 <li>{{ $message }}</li>
                             @endforeach
                         </ul>

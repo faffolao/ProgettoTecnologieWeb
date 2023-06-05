@@ -39,7 +39,7 @@ class RegisteredUserController extends Controller
             'password' => ['required','string','min:8'],
             'nome' => ['required','string','max:255'],
             'cognome' => ['required','string','max:255'],
-            'eta' => ['required'],
+            'eta' => ['required', 'date_format:Y-m-d'],
             'genere' => ['required','string','in:M,F,A'],
             'telefono' => ['string'],
             'email' => ['string','email','max:255'],

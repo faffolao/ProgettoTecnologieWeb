@@ -77,7 +77,7 @@ class UserController extends Controller
             'password' => ['required','string','min:8'],
             'nome' => ['required','string','max:20'],
             'cognome' => ['required','string','max:20'],
-            'eta' => ['required'],
+            'eta' => ['required', 'date_format:Y-m-d'],
             'genere' => ['required'],
             'telefono' => ['string', 'max:10'],
             'email' => ['string','email','max:30']
@@ -113,7 +113,7 @@ class UserController extends Controller
         $request->validate([
             'nome' => ['required','string','max:20'],
             'cognome' => ['required','string','max:20'],
-            'eta' => ['required'],
+            'eta' => ['required', 'date_format:Y-m-d'],
             'genere' => ['required'],
             'telefono' => ['string', 'max:10'],
             'email' => ['string','email','max:30']
@@ -170,7 +170,7 @@ class UserController extends Controller
         $request->validate([
             'nome' => ['required','string','max:20'],
             'cognome' => ['required','string','max:20'],
-            'eta' => ['required'],
+            'eta' => ['required', 'date_format:Y-m-d'],
             'genere' => ['required'],
             'telefono' => ['string', 'max:10'],
             'email' => ['string','email','max:30']
@@ -225,7 +225,7 @@ class UserController extends Controller
         $request->validate([
             'nome' => ['required','string','max:20'],
             'cognome' => ['required','string','max:20'],
-            'eta' => ['required'],
+            'eta' => ['required', 'date_format:Y-m-d'],
             'genere' => ['required'],
             'telefono' => ['string', 'max:10'],
             'email' => ['string','email','max:30']
