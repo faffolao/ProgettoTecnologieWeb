@@ -51,7 +51,7 @@ class OfferController extends Controller
         // Controlla se i campi sono stati compilati correttamente
         $request->validate([
             'nome' => ['required','string','max:70', 'unique:offerte'],
-            'dataOraScadenza' => ['required', 'after:'.Date::now()],
+            'dataOraScadenza' => ['required', 'after:'.Date::now('Europe/Rome')],
             'immagine' => ['required','file','mimes:jpg,jpeg,png,bin']
         ]);
 
@@ -103,7 +103,7 @@ class OfferController extends Controller
         $request->validate([
             'nome' => ['required','string','max:70',
                 Rule::unique('offerte')->ignore($id)],
-            'dataOraScadenza' => ['required', 'after:'.Date::now()]
+            'dataOraScadenza' => ['required', 'after:'.Date::now('Europe/Rome')]
         ]);
 
         if (!$request->file('immagine'))
