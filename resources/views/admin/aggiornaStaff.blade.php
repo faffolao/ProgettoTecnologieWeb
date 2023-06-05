@@ -35,6 +35,8 @@
                     @endif
 
                     {{ Form::label('eta', 'Data di nascita', ['class' => 'label-input']) }}
+                    {{-- NOTA - date_format si occupa solamente di visualizzare la data nell'input in formato italiano anzichè americano --}}
+                    {{-- La form invierà la data, una volta compilata, ugualmente in formato americano, che verrà controllata tramite i Validators --}}
                     {{ Form::date('eta', $dati['eta'],['class' => 'input', 'id' => 'eta', 'rules' => 'date_format:d-m-Y', 'required' => 'required']) }}
                     @if ($errors->first('eta'))
                         <ul class="errors">
