@@ -52,7 +52,7 @@ class OfferController extends Controller
         $request->validate([
             'nome' => ['required','string','max:70', 'unique:offerte'],
             'dataOraScadenza' => ['required', 'after:'.Date::now('Europe/Rome')],
-            'immagine' => ['required','file','mimes:jpg,jpeg,png,bin']
+            'immagine' => ['required','file','mimes:jpg,jpeg,png,bin','max:1024']
         ]);
 
         $off = new Offer();
@@ -135,7 +135,7 @@ class OfferController extends Controller
         else
         {
             $request->validate([
-                'immagine' => ['required','file','mimes:jpg,jpeg,png,bin'],
+                'immagine' => ['required','file','mimes:jpg,jpeg,png,bin','max:1024'],
             ]);
 
             $img = $request->file('immagine');

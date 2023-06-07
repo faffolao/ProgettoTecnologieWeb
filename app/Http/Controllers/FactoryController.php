@@ -70,7 +70,7 @@ class FactoryController extends Controller
             'descrizione' => ['required','string'],
             'localizzazione' => ['required','string'],
             'ragioneSociale' => ['required', 'string','max:50'],
-            'logo' => ['required', 'file', 'mimes:png,jpg,jpeg,bin']
+            'logo' => ['required', 'file', 'mimes:png,jpg,jpeg,bin', 'max:1024']
         ]);
 
         $admin = User::where('livello', 3)->first();
@@ -123,7 +123,7 @@ class FactoryController extends Controller
         {
             // Controlla se i campi sono stati compilati correttamente
             $request->validate([
-                'logo' => ['required','file','mimes:jpg,jpeg,png,bin'],
+                'logo' => ['required','file','mimes:jpg,jpeg,png,bin', 'max:1024'],
             ]);
 
             $immagine = $request->file('logo');
