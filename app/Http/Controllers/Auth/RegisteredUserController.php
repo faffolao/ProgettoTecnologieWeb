@@ -41,7 +41,7 @@ class RegisteredUserController extends Controller
             'cognome' => ['required','string','max:255'],
             'eta' => ['required', 'date_format:Y-m-d'],
             'genere' => ['required','string','in:M,F,A'],
-            'telefono' => ['string'],
+            'telefono' => ['string', 'max:10'],
             'email' => ['string','email','max:255'],
         ]);
 
