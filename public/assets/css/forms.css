@@ -21,12 +21,6 @@ input[type="file"], input[type="date"], textarea {
 /* aggiustamento grafico per i RadioButtons */
 input[type="radio"] {margin-bottom: 20px;}
 
-/* TODO - ma cos'è sta roba????? Devo riguardarmela!!! */
-.contact-form textarea {
-    max-width: 320px;
-    min-height: 100px;
-}
-
 .sex{
     display: flex;
     justify-content: space-evenly;
