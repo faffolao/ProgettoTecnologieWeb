@@ -1,3 +1,7 @@
+{{--
+REFUSO QUESTA PAGINA DOVEVA ESSERE ELIMINATA
+--}}
+
 @extends('layouts.skel')
 
 @section('title', 'Registrazione')
