@@ -74,7 +74,9 @@ class FactoryController extends Controller
         ]);
 
         $admin = User::where('livello', 3)->first();
+        //recupera il file inviato con una richiesta
         $immagine = $request->file('logo');
+        //legge il contenuto come binario
         $logo = file_get_contents($immagine);
 
         $factory = new Factory();
@@ -102,6 +104,8 @@ class FactoryController extends Controller
         // Controlla se i campi sono stati compilati correttamente
         $request->validate([
             'nome' => ['required','string','max:40',
+                //regola di validazione che verifica l'unicità del valore del campo rispetto ai dati presenti nella tabella,
+                //escludendo l'ID
                 Rule::unique('aziende')->ignore($id)],
             'tipologia' => ['required','string','max:30'],
             'descrizione' => ['required','string'],

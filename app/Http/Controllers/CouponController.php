@@ -80,6 +80,7 @@ class CouponController extends Controller
     public function getDataBRCU(Request $request)
     {
         $usernameCliente = Auth::user()->username;
+        //viene utilizzato per accedere ai parametri di input inviati con la richiesta
         $query = $request->input('query');
 
         $dataCU = Coupon::select('utenti.username', 'offerte.id as idOfferte', 'offerte.nome as nomeOfferte', 'aziende.nome as nomeAziende',
