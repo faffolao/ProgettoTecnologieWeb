@@ -25,7 +25,7 @@ class UsersSeeder extends Seeder
                 'eta' => NULL,
                 'genere' => NULL,
                 'livello' => 3,
-                'password' => Hash::make('nFwNcJsR'),
+                'password' => Hash::make('adminadmin'),
                 'telefono' => NULL,
                 'email' => 'root@admin',
             ],
@@ -36,7 +36,7 @@ class UsersSeeder extends Seeder
                 'eta' => '2001-04-24',
                 'genere' => 'M',
                 'livello' => 2,
-                'password' => Hash::make("nFwNcJsR"),
+                'password' => Hash::make("staffstaff"),
                 'telefono' => '7832891231',
                 'email' => 'mariorossi99@gmail.com'
             ],
@@ -47,7 +47,7 @@ class UsersSeeder extends Seeder
                 'eta' => '2001-04-29',
                 'genere' => 'M',
                 'livello' => 1,
-                'password' => Hash::make("nFwNcJsR"),
+                'password' => Hash::make("useruser"),
                 'telefono' => '21635761',
                 'email' => 'giannylay@hotmail.it'
             ]
