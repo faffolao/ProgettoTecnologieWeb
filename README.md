@@ -1,7 +1,8 @@
 # Offertopoli
-Sito web di coupon
 
-## Comandi di codice da user per runnare il codice:
+### Sito web di coupon
+
+## Comandi da usare per eseguire il codice:
 
 * $ systemctl restart mysqld
 
