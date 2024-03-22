@@ -10,6 +10,8 @@
 
     * Entrare nel DB con localhost e cancellare eventuali tabelle già essitenti nel DB
 
+    * http://localhost/phpmyadmin/
+
 * $ php artisan migrate
 
 * $ php artisan db:seed
