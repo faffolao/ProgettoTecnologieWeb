@@ -3,12 +3,14 @@ Sito web di coupon
 
 ## Comandi di codice da user per runnare il codice:
 
-* systemctl restart mysqld
+* $ systemctl restart mysqld
 
-* systemctl restart httpd
+* $ systemctl restart httpd
 
-* php artisan migrate
+    * Entrare nel DB con localhost e cancellare eventuali tabelle già essitenti nel DB
 
-* php artisan db:seed
+* $ php artisan migrate
 
-* php artisan serve
+* $ php artisan db:seed
+
+* $ php artisan serve
